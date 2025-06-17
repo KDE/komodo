@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Todo App
+Name[x-test]=xxTodo Appxx
+Exec=todoapp
+Icon=kde
+Type=Application
+Terminal=false
+Categories=Utility
