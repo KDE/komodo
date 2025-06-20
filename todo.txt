@@ -1,0 +1,11 @@
+(F) 2025-06-21 +TestFile this is the @test +file for @todoapp due:2026-01-01
+(A) +Family Call Mom @Phone
+(A) Schedule annual @checkup due:2025-12-31 +Health
+(A) 2025-06-21 +project description @context
+(B) 2025-06-21 Outline chapter 5 chapter:5 +Novel @Computer
+(C) 2025-06-21 Add cover sheets link:https://example.com @Office +TPSReports
+Plan backyard herb garden @Home
+2025-06-21 Pick up milk @GroceryStore
+Research self-publishing services +Novel @Computer
+x 2025-06-10 2025-06-08 Review merge request link:https://invent.kde.org/aaa/bbb/-/merge_requests/1234 +TodoApp @git
+x 2025-06-21 2025-06-21 Download Todo.txt mobile app note:blaa_text @Phone pri:F
