@@ -9,6 +9,10 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMFindQmlModule)
 include(ECMQmlModule)
+if (NOT ANDROID)
+    include(KDEClangFormat)
+endif()
+
 
 find_package(Qt6 REQUIRED COMPONENTS
     Core
