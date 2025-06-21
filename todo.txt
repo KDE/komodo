@@ -8,4 +8,4 @@ Plan backyard herb garden @Home
 2025-06-21 Pick up milk @GroceryStore
 Research self-publishing services +Novel @Computer
 x 2025-06-10 2025-06-08 Review merge request link:https://invent.kde.org/aaa/bbb/-/merge_requests/1234 +TodoApp @git
-x 2025-06-21 (F) 2025-06-21 Download Todo.txt mobile app note:blaa_text @Phone
+x 2025-06-21 2025-06-21 Download Todo.txt mobile app note:blaa_text @Phone pri:F

@@ -8,7 +8,7 @@ ecm_add_qml_module(todoapp
 target_sources(todoapp
     PRIVATE
     main.cpp
-    TodoParser.cpp
+    TodoModel.cpp
 )
 
 ecm_target_qml_sources(todoapp

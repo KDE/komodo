@@ -1,4 +1,4 @@
-#include "TodoParser.h"
+#include "TodoModel.h"
 #include <KIconTheme>
 #include <KLocalizedContext>
 #include <KLocalizedString>
@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     QApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QApplication::setApplicationName(QStringLiteral("Todo App"));
     QApplication::setDesktopFileName(QStringLiteral("org.kde.todoapp"));
+    qmlRegisterType<TodoModel>("TodoModel", 1, 0, "TodoModel");
 
     QApplication::setStyle(QStringLiteral("breeze"));
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
@@ -31,8 +32,6 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty()) {
         return -1;
     }
-
-    TodoParser todoParser(QStringLiteral("todo.txt"));
 
     return app.exec();
 }
