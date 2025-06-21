@@ -22,7 +22,7 @@ Kirigami.ApplicationWindow {
         title: "Edit Todo"
         padding: 10
         anchors.centerIn: parent
-
+        modal: true
         property var model
         property alias text: editPromptText.text
 
@@ -55,7 +55,7 @@ Kirigami.ApplicationWindow {
         id: addPrompt
         anchors.centerIn: parent
         title: "Add New Todo"
-
+        modal: true
         QQC2.TextField {
             anchors.fill: parent
             id: addPromptText
