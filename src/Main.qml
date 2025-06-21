@@ -9,9 +9,6 @@ Kirigami.ApplicationWindow {
     // Unique identifier to reference this object
     id: root
 
-    width: 400
-    height: 300
-
     // Window title
     // i18nc() makes a string translatable
     // and provides additional context for the translators

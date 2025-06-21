@@ -1,11 +1,12 @@
-#include <QApplication>
-#include <QQmlApplicationEngine>
-#include <QtQml>
-#include <QUrl>
-#include <QQuickStyle>
+#include "TodoParser.h"
+#include <KIconTheme>
 #include <KLocalizedContext>
 #include <KLocalizedString>
-#include <KIconTheme>
+#include <QApplication>
+#include <QQmlApplicationEngine>
+#include <QQuickStyle>
+#include <QUrl>
+#include <QtQml>
 
 int main(int argc, char *argv[])
 {
@@ -30,6 +31,8 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty()) {
         return -1;
     }
+
+    TodoParser todoParser(QStringLiteral("todo.txt"));
 
     return app.exec();
 }
