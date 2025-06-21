@@ -40,5 +40,7 @@ public:
     Q_INVOKABLE void deleteTodo(const QModelIndex &index);
 
 private:
+    void updateCompletionStatus(Todo &todo, const bool completed);
+
     QList<Todo> m_todos;
 };

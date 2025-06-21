@@ -129,6 +129,20 @@ QVariant TodoModel::data(const QModelIndex &index, int role) const
     }
 }
 
+void TodoModel::updateCompletionStatus(Todo &todo, const bool completed)
+{
+    auto newDescription = todo.description();
+    todo.setCompleted(completed);
+    if (todo.completed()) {
+        todo.setDescription(newDescription.prepend(QStringLiteral("x")));
+        // TODO: add pri:Priority keyval pair, remove the (P) item
+    } else {
+        // TODO: if there is pri:keyval pair, add that as a (P) item and remove the keyval
+        newDescription.replace(QRegularExpression(QStringLiteral("^[ \\t]*x")), QStringLiteral(""));
+        todo.setDescription(newDescription);
+    }
+}
+
 bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     if (index.row() < 0 || index.row() >= m_todos.count()) {
@@ -140,13 +154,7 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
 
     switch (role) {
     case CompletionRole:
-        todo.setCompleted(value.toBool());
-        if (!todo.completed()) {
-            descr.replace(QRegularExpression(QStringLiteral("^[ \\t]*x")), QStringLiteral(""));
-            todo.setDescription(descr);
-        } else {
-            todo.setDescription(descr.prepend(QStringLiteral("x")));
-        }
+        updateCompletionStatus(todo, value.toBool());
         break;
     case PriorityRole:
         todo.setPriority(value.toString());
