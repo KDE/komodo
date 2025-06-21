@@ -26,14 +26,12 @@ TodoModel::TodoModel()
         return;
     }
 
-    int currentLine = 0;
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString line = in.readLine();
         auto task = parseLine(line);
 
-        m_parsedTasks[currentLine] = task;
-        currentLine++;
+        m_parsedTodos.append(task);
     }
 }
 
@@ -82,13 +80,12 @@ TodoModel::ParsedTodo TodoModel::parseLine(const QString &description)
 
 int TodoModel::rowCount(const QModelIndex &) const
 {
-    return m_parsedTasks.count();
+    return m_parsedTodos.size();
 }
 
 QHash<int, QByteArray> TodoModel::roleNames() const
 {
     return {
-        {LineRole, "lineNumber"},
         {CompletionRole, "completion"},
         {PriorityRole, "priority"},
         {CompletionDateRole, "completionDate"},
@@ -102,27 +99,29 @@ QHash<int, QByteArray> TodoModel::roleNames() const
 
 QVariant TodoModel::data(const QModelIndex &index, int role) const
 {
-    const auto it = m_parsedTasks.begin() + index.row();
+    if (!index.isValid() || index.row() < 0 || index.row() >= m_parsedTodos.count()) {
+        return {};
+    }
+
+    auto todo = m_parsedTodos.at(index.row());
 
     switch (role) {
-    case LineRole:
-        return it.key();
     case CompletionRole:
-        return it.value().completed;
+        return todo.completed;
     case PriorityRole:
-        return it.value().priority;
+        return todo.priority;
     case CompletionDateRole:
-        return it.value().completionDate;
+        return todo.completionDate;
     case CreationDateRole:
-        return it.value().creationDate;
+        return todo.creationDate;
     case DescriptionRole:
-        return it.value().description;
+        return todo.description;
     case ContextsRole:
-        return it.value().contexts;
+        return todo.contexts;
     case ProjectsRole:
-        return it.value().projects;
+        return todo.projects;
     case KeyValuePairsRole:
-        return it.value().keyValuePairs;
+        return todo.keyValuePairs;
     default:
         return {};
     }
@@ -130,36 +129,70 @@ QVariant TodoModel::data(const QModelIndex &index, int role) const
 
 bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
-    if (!value.canConvert<QString>() && role != Qt::EditRole) {
+    if (index.row() < 0 || index.row() >= m_parsedTodos.count()) {
         return false;
     }
 
-    auto it = m_parsedTasks.begin() + index.row();
-    QString newDescription = value.toString();
+    auto &todo = m_parsedTodos[index.row()];
 
-    m_parsedTasks[it.key()] = parseLine(newDescription);
-    Q_EMIT dataChanged(index, index);
+    switch (role) {
+    case CompletionRole:
+        todo.completed = value.toBool();
+        break;
+    case PriorityRole:
+        todo.priority = value.toString();
+        break;
+    case CompletionDateRole:
+        todo.completionDate = value.toString();
+        break;
+    case CreationDateRole:
+        todo.creationDate = value.toString();
+        break;
+    case DescriptionRole:
+        todo.description = value.toString();
+        break;
+    case ContextsRole:
+        todo.contexts = value.toStringList();
+        break;
+    case ProjectsRole:
+        todo.projects = value.toStringList();
+        break;
+    case KeyValuePairsRole:
+        todo.keyValuePairs = value.toStringList();
+        break;
+    default:
+        return false;
+    }
+
+    Q_EMIT dataChanged(index, index, {role});
 
     return true;
 }
 
 void TodoModel::addTodo(const QString &description)
 {
-    beginInsertRows(QModelIndex(), m_parsedTasks.size(), m_parsedTasks.size());
-    m_parsedTasks.insert(m_parsedTasks.count() + 1, parseLine(description));
+    beginInsertRows(QModelIndex(), m_parsedTodos.count(), m_parsedTodos.count());
+    m_parsedTodos.append(parseLine(description));
     endInsertRows();
-    Q_EMIT dataChanged(index(0), index(m_parsedTasks.size()));
+
+    // TODO: save todo file
 }
 
-void TodoModel::deleteTodo(const int line, const int &rowIndex)
+void TodoModel::deleteTodo(const QModelIndex &index)
 {
-    beginRemoveRows(QModelIndex(), rowIndex, rowIndex);
-    m_parsedTasks.remove(line);
+    const int row = index.row();
+    if (row < 0 || row > m_parsedTodos.count()) {
+        return;
+    }
+
+    beginRemoveRows(QModelIndex(), row, row);
+    m_parsedTodos.removeAt(row);
     endRemoveRows();
-    Q_EMIT dataChanged(index(0), index(m_parsedTasks.size()));
+
+    // TODO: save todo file
 }
 
-QMap<int, TodoModel::ParsedTodo> TodoModel::parsedTasks()
+QList<TodoModel::ParsedTodo> TodoModel::parsedTodos()
 {
-    return m_parsedTasks;
+    return m_parsedTodos;
 }

@@ -23,12 +23,11 @@ public:
     };
 
     enum Roles {
-        LineRole = Qt::UserRole,
+        DescriptionRole = Qt::UserRole,
         CompletionRole,
         PriorityRole,
         CompletionDateRole,
         CreationDateRole,
-        DescriptionRole,
         ContextsRole,
         ProjectsRole,
         KeyValuePairsRole
@@ -40,7 +39,7 @@ public:
 
     QRegularExpression parserPattern;
 
-    QMap<int, ParsedTodo> parsedTasks();
+    QList<ParsedTodo> parsedTodos();
 
     int rowCount(const QModelIndex &) const override;
     QHash<int, QByteArray> roleNames() const override;
@@ -48,8 +47,8 @@ public:
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;
 
     Q_INVOKABLE void addTodo(const QString &description);
-    Q_INVOKABLE void deleteTodo(const int line, const int &rowIndex);
+    Q_INVOKABLE void deleteTodo(const QModelIndex &index);
 
 private:
-    QMap<int, ParsedTodo> m_parsedTasks;
+    QList<ParsedTodo> m_parsedTodos;
 };

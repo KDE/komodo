@@ -3,6 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
+import org.kde.kitemmodels
 import TodoModel 1.0
 
 // Provides basic features needed for all kirigami applications
@@ -68,7 +69,14 @@ Kirigami.ApplicationWindow {
         ]
         ColumnLayout {
             Repeater {
-                model: todoModel
+                model: KSortFilterProxyModel {
+                    id: filteredModel
+                    sourceModel: todoModel
+                    filterRoleName: "description"
+                    sortRoleName: "description"
+                    filterRegularExpression: RegExp("%1".arg(page.currentSearchText), "i")
+                }
+
                 delegate: Kirigami.AbstractCard {
                     Layout.fillHeight: true
                     header: Kirigami.Heading {
@@ -94,7 +102,8 @@ Kirigami.ApplicationWindow {
                             Controls.Button {
                                 text: "Delete"
                                 onClicked: {
-                                    todoModel.deleteTodo(model.lineNumber, index);
+                                    const originalIndex = filteredModel.index(index, 0)
+                                    todoModel.deleteTodo(filteredModel.mapToSource(originalIndex))
                                 }
                             }
                         }
