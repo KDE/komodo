@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Todo.h"
 #include <QAbstractListModel>
 #include <QDebug>
 #include <QMap>
@@ -11,17 +12,6 @@ class TodoModel : public QAbstractListModel
     Q_OBJECT
 public:
     // https://github.com/todotxt/todo.txt/blob/master/description.svg
-    struct ParsedTodo {
-        bool completed;
-        QString priority;
-        QString completionDate;
-        QString creationDate;
-        QString description;
-        QStringList contexts;
-        QStringList projects;
-        QStringList keyValuePairs;
-    };
-
     enum Roles {
         DescriptionRole = Qt::UserRole,
         CompletionRole,
@@ -35,11 +25,11 @@ public:
 
     TodoModel();
 
-    ParsedTodo parseLine(const QString &description);
+    Todo parseLine(const QString &description);
 
     QRegularExpression parserPattern;
 
-    QList<ParsedTodo> parsedTodos();
+    QList<Todo> todos();
 
     int rowCount(const QModelIndex &) const override;
     QHash<int, QByteArray> roleNames() const override;
@@ -50,5 +40,5 @@ public:
     Q_INVOKABLE void deleteTodo(const QModelIndex &index);
 
 private:
-    QList<ParsedTodo> m_parsedTodos;
+    QList<Todo> m_todos;
 };

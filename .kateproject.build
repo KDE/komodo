@@ -8,7 +8,7 @@
             "name": "todoapp",
             "targets": [
                 {
-                    "build_cmd": "kde-builder todoapp --no-src",
+                    "build_cmd": "kde-builder todoapp --no-src --refresh-build",
                     "name": "build",
                     "run_cmd": "kde-builder --run todoapp"
                 }

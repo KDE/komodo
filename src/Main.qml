@@ -1,10 +1,11 @@
 // Includes relevant modules used by the QML
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls as Controls
+import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels
 import TodoModel 1.0
+import org.kde.todoapp.ui
 
 // Provides basic features needed for all kirigami applications
 Kirigami.ApplicationWindow {
@@ -15,20 +16,33 @@ Kirigami.ApplicationWindow {
         id: todoModel
     }
 
-    Kirigami.OverlaySheet {
+
+    QQC2.Dialog {
         id: editPrompt
+        title: "Edit Todo"
+        padding: 10
+        anchors.centerIn: parent
 
         property var model
         property alias text: editPromptText.text
 
-        title: "Edit Todo"
+        ColumnLayout {
+            anchors.fill: parent
+            QQC2.Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                text: editPrompt.model.description
+            }
 
-        Controls.TextField {
-            id: editPromptText
+            QQC2.TextField {
+                id: editPromptText
+                Layout.fillWidth: true
+                placeholderText: editPrompt.model.description
+            }
+
         }
-
-        footer: Controls.DialogButtonBox {
-            standardButtons: Controls.DialogButtonBox.Ok
+        footer: QQC2.DialogButtonBox {
+            standardButtons: QQC2.DialogButtonBox.Ok
             onAccepted: {
                 const model = editPrompt.model;
                 model.description = editPromptText.text;
@@ -37,17 +51,19 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Kirigami.OverlaySheet {
+    QQC2.Dialog {
         id: addPrompt
-
+        anchors.centerIn: parent
         title: "Add New Todo"
 
-        Controls.TextField {
+        QQC2.TextField {
+            anchors.fill: parent
             id: addPromptText
+            placeholderText: "(A) 2024-01-01 description +project @context key:value"
         }
 
-        footer: Controls.DialogButtonBox {
-            standardButtons: Controls.DialogButtonBox.Ok
+        footer: QQC2.DialogButtonBox {
+            standardButtons: QQC2.DialogButtonBox.Ok
             onAccepted: {
                 todoModel.addTodo(addPromptText.text);
                 addPromptText.text = ""; // Clear TextField every time it's done
@@ -58,6 +74,14 @@ Kirigami.ApplicationWindow {
 
 
     pageStack.initialPage: Kirigami.ScrollablePage {
+
+        id: page
+
+        header: Kirigami.SearchField {
+            id: searchField
+            visible: true
+        }
+
         actions: [
             Kirigami.Action {
                 icon.name: "add"
@@ -74,40 +98,59 @@ Kirigami.ApplicationWindow {
                     sourceModel: todoModel
                     filterRoleName: "description"
                     sortRoleName: "description"
-                    filterRegularExpression: RegExp("%1".arg(page.currentSearchText), "i")
+                    filterString: searchField.text
+                    filterCaseSensitivity: Qt.CaseInsensitive
                 }
 
-                delegate: Kirigami.AbstractCard {
-                    Layout.fillHeight: true
-                    header: Kirigami.Heading {
-                        text: model.completion
-                        level: 2
-                    }
-                    contentItem: Item {
-                        implicitWidth: delegateLayout.implicitWidth
-                        implicitHeight: delegateLayout.implicitHeight
-                        ColumnLayout {
-                            id: delegateLayout
-                            Controls.Label {
-                                text: model.description
-                            }
-                            Controls.Button {
-                                text: "Edit"
-                                onClicked: {
-                                    editPrompt.text = model.description;
-                                    editPrompt.model = model;
-                                    editPrompt.open();
-                                }
-                            }
-                            Controls.Button {
-                                text: "Delete"
-                                onClicked: {
-                                    const originalIndex = filteredModel.index(index, 0)
-                                    todoModel.deleteTodo(filteredModel.mapToSource(originalIndex))
+
+                delegate: Kirigami.Card {
+                    anchors.margins: Kirigami.Units.smallSpacing
+                    implicitWidth: root.width
+                    header: RowLayout {
+                        width: parent.width
+                        QQC2.CheckBox {
+                            id: completionStatus
+                            checked: model.completion
+                            onCheckedChanged: {
+                                if (model.completion != checked) {
+                                    model.completion = checked;
                                 }
                             }
                         }
+
+                        Kirigami.Heading {
+                            Layout.fillWidth: true
+                            wrapMode: Text.WordWrap
+                            text: model.description
+                            level: 2
+                        }
+
                     }
+                    contentItem: QQC2.Label {
+                        anchors.margins: Kirigami.Units.smallSpacing
+                        wrapMode: Text.WordWrap
+                        text: "add all chips here etc"
+                    }
+
+                    actions: [
+                        Kirigami.Action {
+                            text: "Edit"
+                            icon.name: "edit-entry"
+                            onTriggered: {
+                                editPrompt.text = model.description;
+                                editPrompt.model = model;
+                                editPrompt.open();
+                            }
+                        },
+                        Kirigami.Action {
+                            text: "Delete"
+                            icon.name: "delete"
+                            onTriggered: {
+                                const originalIndex = filteredModel.index(index, 0)
+                                todoModel.deleteTodo(filteredModel.mapToSource(originalIndex))
+                            }
+                        }
+                    ]
                 }
             }
         }

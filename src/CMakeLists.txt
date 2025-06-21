@@ -1,4 +1,4 @@
-add_executable(todoapp)
+add_executable(${CMAKE_PROJECT_NAME})
 
 ecm_add_qml_module(todoapp
     URI
@@ -8,6 +8,7 @@ ecm_add_qml_module(todoapp
 target_sources(todoapp
     PRIVATE
     main.cpp
+    Todo.cpp
     TodoModel.cpp
 )
 
@@ -29,4 +30,5 @@ target_link_libraries(todoapp
     KF6::IconThemes
 )
 
-install(TARGETS todoapp ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+
+install(TARGETS ${CMAKE_PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
