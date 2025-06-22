@@ -91,63 +91,61 @@ Kirigami.ApplicationWindow {
                 }
             }
         ]
-        ColumnLayout {
-            Repeater {
-                model: KSortFilterProxyModel {
-                    id: filteredModel
-                    sourceModel: todoModel
-                    filterRoleName: "description"
-                    sortRoleName: "description"
-                    filterString: searchField.text
-                    filterCaseSensitivity: Qt.CaseInsensitive
-                }
+        Kirigami.CardsListView {
+            model: KSortFilterProxyModel {
+                id: filteredModel
+                sourceModel: todoModel
+                filterRoleName: "description"
+                sortRoleName: "description"
+                filterString: searchField.text
+                filterCaseSensitivity: Qt.CaseInsensitive
+            }
 
 
-                delegate: Kirigami.Card {
-                    anchors.margins: Kirigami.Units.smallSpacing
-                    implicitWidth: root.width
-                    header: RowLayout {
-                        width: parent.width
-                        QQC2.CheckBox {
-                            id: completionStatus
-                            checked: model.completion
-                            onToggled: model.completion = !model.completion
-                        }
-
-                        Kirigami.Heading {
-                            Layout.fillWidth: true
-                            wrapMode: Text.WordWrap
-                            text: model.prettyDescription
-                            level: 2
-                        }
-
+            delegate: Kirigami.Card {
+                anchors.margins: Kirigami.Units.smallSpacing
+                implicitWidth: root.width
+                header: RowLayout {
+                    width: parent.width
+                    QQC2.CheckBox {
+                        id: completionStatus
+                        checked: model.completion
+                        onToggled: model.completion = !model.completion
                     }
-                    contentItem: QQC2.Label {
-                        anchors.margins: Kirigami.Units.smallSpacing
+
+                    Kirigami.Heading {
+                        Layout.fillWidth: true
                         wrapMode: Text.WordWrap
-                        text: model.description
+                        text: model.prettyDescription
+                        level: 2
                     }
 
-                    actions: [
-                        Kirigami.Action {
-                            text: "Edit"
-                            icon.name: "edit-entry"
-                            onTriggered: {
-                                editPrompt.text = model.description;
-                                editPrompt.model = model;
-                                editPrompt.open();
-                            }
-                        },
-                        Kirigami.Action {
-                            text: "Delete"
-                            icon.name: "delete"
-                            onTriggered: {
-                                const originalIndex = filteredModel.index(index, 0)
-                                todoModel.deleteTodo(filteredModel.mapToSource(originalIndex))
-                            }
-                        }
-                    ]
                 }
+                contentItem: QQC2.Label {
+                    anchors.margins: Kirigami.Units.smallSpacing
+                    wrapMode: Text.WordWrap
+                    text: model.description
+                }
+
+                actions: [
+                    Kirigami.Action {
+                        text: "Edit"
+                        icon.name: "edit-entry"
+                        onTriggered: {
+                            editPrompt.text = model.description;
+                            editPrompt.model = model;
+                            editPrompt.open();
+                        }
+                    },
+                    Kirigami.Action {
+                        text: "Delete"
+                        icon.name: "delete"
+                        onTriggered: {
+                            const originalIndex = filteredModel.index(index, 0)
+                            todoModel.deleteTodo(filteredModel.mapToSource(originalIndex))
+                        }
+                    }
+                ]
             }
         }
     }
