@@ -16,7 +16,6 @@ Kirigami.ApplicationWindow {
         id: todoModel
     }
 
-
     QQC2.Dialog {
         id: editPrompt
         title: "Edit Todo"
@@ -39,7 +38,6 @@ Kirigami.ApplicationWindow {
                 Layout.fillWidth: true
                 placeholderText: editPrompt.model.description
             }
-
         }
         footer: QQC2.DialogButtonBox {
             standardButtons: QQC2.DialogButtonBox.Ok
@@ -57,8 +55,8 @@ Kirigami.ApplicationWindow {
         title: "Add New Todo"
         modal: true
         QQC2.TextField {
-            anchors.fill: parent
             id: addPromptText
+            anchors.fill: parent
             placeholderText: "(A) 2024-01-01 description +project @context key:value"
         }
 
@@ -72,9 +70,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
-
     pageStack.initialPage: Kirigami.ScrollablePage {
-
         id: page
 
         header: Kirigami.SearchField {
@@ -101,51 +97,91 @@ Kirigami.ApplicationWindow {
                 filterCaseSensitivity: Qt.CaseInsensitive
             }
 
+            delegate: Kirigami.AbstractCard {
+                id: todoDelegate
+                // TODO: clicking on card starts editing it
 
-            delegate: Kirigami.Card {
-                anchors.margins: Kirigami.Units.smallSpacing
-                implicitWidth: root.width
-                header: RowLayout {
-                    width: parent.width
-                    QQC2.CheckBox {
-                        id: completionStatus
-                        checked: model.completion
-                        onToggled: model.completion = !model.completion
-                    }
+                contentItem: Item {
+                    implicitWidth: delegateLayout.implicitWidth
+                    implicitHeight: delegateLayout.implicitHeight
 
-                    Kirigami.Heading {
-                        Layout.fillWidth: true
-                        wrapMode: Text.WordWrap
-                        text: model.prettyDescription
-                        level: 2
-                    }
-
-                }
-                contentItem: QQC2.Label {
-                    anchors.margins: Kirigami.Units.smallSpacing
-                    wrapMode: Text.WordWrap
-                    text: model.description
-                }
-
-                actions: [
-                    Kirigami.Action {
-                        text: "Edit"
-                        icon.name: "edit-entry"
-                        onTriggered: {
-                            editPrompt.text = model.description;
-                            editPrompt.model = model;
-                            editPrompt.open();
+                    GridLayout {
+                        id: delegateLayout
+                        anchors {
+                            left: parent.left
+                            top: parent.top
+                            right: parent.right
                         }
-                    },
-                    Kirigami.Action {
-                        text: "Delete"
-                        icon.name: "delete"
-                        onTriggered: {
-                            const originalIndex = filteredModel.index(index, 0)
-                            todoModel.deleteTodo(filteredModel.mapToSource(originalIndex))
+                        rowSpacing: Kirigami.Units.largeSpacing
+                        columnSpacing: Kirigami.Units.largeSpacing
+                        columns: width > Kirigami.Units.gridUnit * 20 ? 4 : 2
+                        ColumnLayout {
+                            QQC2.CheckBox {
+                                id: completionStatus
+                                Layout.alignment: Qt.AlignCenter
+                                checked: model.completion
+                                onToggled: model.completion = !model.completion
+                            }
+                        }
+
+                        ColumnLayout {
+                            RowLayout {
+                                width: parent.width
+
+                                QQC2.Label {
+                                    visible: model.priority
+                                    text: model.priority
+                                    font.bold: true
+                                    //TODO Set color by priority status?
+                                }
+
+                                Kirigami.Heading {
+                                    Layout.fillWidth: true
+                                    wrapMode: Text.WordWrap
+                                    text: model.prettyDescription
+                                    level: 1
+                                }
+                            }
+
+                            Kirigami.Separator {
+                                Layout.fillWidth: true
+                            }
+                            QQC2.Label {
+                                Layout.fillWidth: true
+                                anchors.margins: Kirigami.Units.smallSpacing
+                                wrapMode: Text.WordWrap
+                                text: model.description
+                            }
+                            Kirigami.Separator {
+                                Layout.fillWidth: true
+                            }
+
+                            Kirigami.ActionToolBar {
+                                id: actionsToolBar
+                                actions: [
+                                    Kirigami.Action {
+                                        text: "Edit"
+                                        icon.name: "edit-entry"
+                                        onTriggered: {
+                                            editPrompt.text = model.description;
+                                            editPrompt.model = model;
+                                            editPrompt.open();
+                                        }
+                                    },
+                                    Kirigami.Action {
+                                        text: "Delete"
+                                        icon.name: "delete"
+                                        onTriggered: {
+                                            const originalIndex = filteredModel.index(index, 0);
+                                            todoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
+                                        }
+                                    }
+                                ]
+                                position: QQC2.ToolBar.Footer
+                            }
                         }
                     }
-                ]
+                }
             }
         }
     }
