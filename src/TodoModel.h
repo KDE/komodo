@@ -26,7 +26,7 @@ public:
 
     TodoModel();
 
-    Todo parseLine(const QString &description);
+    Todo parseTodoFromDescription(const QString &description);
 
     QRegularExpression parserPattern;
 

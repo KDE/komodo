@@ -39,18 +39,17 @@ TodoModel::TodoModel()
     while (!in.atEnd()) {
         QString line = in.readLine();
         if (!line.isEmpty()) {
-            auto task = parseLine(line);
+            auto task = parseTodoFromDescription(line);
             m_todos.append(task);
         }
     }
 }
 
-Todo TodoModel::parseLine(const QString &description)
+Todo TodoModel::parseTodoFromDescription(const QString &description)
 {
     // read description from the file and turn it into task
     QRegularExpressionMatchIterator iter = parserPattern.globalMatch(description);
     Todo todo(description);
-    todo.setDescription(description);
     QStringList keyVals;
     bool completionStatus = false;
     while (iter.hasNext()) {
@@ -167,7 +166,7 @@ void TodoModel::updateCompletionStatus(Todo &todo, const bool completed)
         // Add completion date
         auto today = QDateTime::currentDateTime().date().toString(QStringLiteral("yyyy-MM-dd"));
 
-        todo = parseLine(newDescription.simplified().prepend(QStringLiteral("x %1 ").arg(today)));
+        todo = parseTodoFromDescription(newDescription.simplified().prepend(QStringLiteral("x %1 ").arg(today)));
     } else {
         // When todo is set uncompleted, check for pri:A and set that as the priority (A) at the start
         newDescription.replace(s_completionRegexp, QStringLiteral(""));
@@ -180,7 +179,7 @@ void TodoModel::updateCompletionStatus(Todo &todo, const bool completed)
             newDescription.prepend(QStringLiteral("(%1)").arg(prio.captured(1)));
         }
 
-        todo = parseLine(newDescription.simplified());
+        todo = parseTodoFromDescription(newDescription.simplified());
     }
 }
 
@@ -197,7 +196,7 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
     case CompletionRole:
         // We change the whole todo during this operation, so return early
         updateCompletionStatus(todo, value.toBool());
-        Q_EMIT dataChanged(index, index, {role});
+        Q_EMIT dataChanged(index, index);
         return true;
         break;
     case PriorityRole:
@@ -210,7 +209,10 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
         todo.setCreationDate(value.toString());
         break;
     case DescriptionRole:
-        todo.setDescription(value.toString());
+        // When description is changed, everything changes
+        todo = parseTodoFromDescription(value.toString());
+        Q_EMIT dataChanged(index, index);
+        return true;
         break;
     case ContextsRole:
         todo.addContext(value.toString());
@@ -227,7 +229,7 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
         return false;
     }
 
-    Q_EMIT dataChanged(index, index, {role});
+    Q_EMIT dataChanged(index, index);
 
     return true;
 }
@@ -235,7 +237,7 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
 void TodoModel::addTodo(const QString &description)
 {
     beginInsertRows(QModelIndex(), m_todos.count(), m_todos.count());
-    m_todos.append(parseLine(description));
+    m_todos.append(parseTodoFromDescription(description));
     endInsertRows();
 
     // TODO: save todo file
