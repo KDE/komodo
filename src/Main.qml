@@ -111,17 +111,13 @@ Kirigami.ApplicationWindow {
                         QQC2.CheckBox {
                             id: completionStatus
                             checked: model.completion
-                            onCheckedChanged: {
-                                if (model.completion != checked) {
-                                    model.completion = checked;
-                                }
-                            }
+                            onToggled: model.completion = !model.completion
                         }
 
                         Kirigami.Heading {
                             Layout.fillWidth: true
                             wrapMode: Text.WordWrap
-                            text: model.description
+                            text: model.prettyDescription
                             level: 2
                         }
 
@@ -129,7 +125,7 @@ Kirigami.ApplicationWindow {
                     contentItem: QQC2.Label {
                         anchors.margins: Kirigami.Units.smallSpacing
                         wrapMode: Text.WordWrap
-                        text: "add all chips here etc"
+                        text: model.description
                     }
 
                     actions: [

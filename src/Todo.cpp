@@ -42,6 +42,11 @@ QStringList Todo::keyValuePairs() const
     return m_keyValuePairs;
 }
 
+QString Todo::prettyDescription() const
+{
+    return m_prettyDescription;
+}
+
 void Todo::setCompleted(bool completed)
 {
     m_completed = completed;
@@ -73,4 +78,9 @@ void Todo::addProject(const QString &project)
 void Todo::addKeyValuePair(const QString &keyValuePair)
 {
     m_keyValuePairs.append(keyValuePair);
+}
+
+void Todo::setPrettyDescription(const QString &prettyDescription)
+{
+    m_prettyDescription = prettyDescription;
 }

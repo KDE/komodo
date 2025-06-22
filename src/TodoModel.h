@@ -20,7 +20,8 @@ public:
         CreationDateRole,
         ContextsRole,
         ProjectsRole,
-        KeyValuePairsRole
+        KeyValuePairsRole,
+        PrettyDescriptionRole
     };
 
     TodoModel();
@@ -41,6 +42,7 @@ public:
 
 private:
     void updateCompletionStatus(Todo &todo, const bool completed);
+    QString prettyPrintDescription(const Todo &todo);
 
     QList<Todo> m_todos;
 };

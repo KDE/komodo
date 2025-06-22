@@ -1,20 +1,28 @@
 #include "TodoModel.h"
 #include "Todo.h"
+#include <QDateTime>
 #include <QDebug>
 #include <QFile>
 #include <QRegularExpression>
 #include <QString>
 
+// Regexp for the whole todo line, with grouped items
+const static QRegularExpression s_todoRegexp =
+    QRegularExpression(QStringLiteral("(?:^[ "
+                                      "\\t]*(?P<Completion>x))|(?P<Priority>\\([A-Z]\\))|(?:(?P<CompletionDate>"
+                                      "\\d{4}-\\d\\d-\\d\\d)[ "
+                                      "\\t]*(?P<CreationDate>\\d{4}-\\d\\d-\\d\\d)?)|(?P<Projects>\\+\\w+)|(?P<"
+                                      "Contexts>(?<=\\s)@[^\\s]+)|(?P<KeyValuePairs>[a-zA-Z]+:[\\w:/.%-]*)"));
+
+// Regexp for the completion status: x
+const static QRegularExpression s_completionRegexp = QRegularExpression(QStringLiteral("^[ \\t]*x"));
+
+// Regexp for the priority: (A-Z)
+const static QRegularExpression s_priorityRegexp = QRegularExpression(QStringLiteral("^[ x\\t]*\\(([A-Z])\\)"));
+
 TodoModel::TodoModel()
 {
-    const QString pattern = QStringLiteral(
-        "(?:^[ "
-        "\\t]*(?P<Completion>x))|(?P<Priority>\\([A-Z]\\))|(?:(?P<CompletionDate>"
-        "\\d{4}-\\d\\d-\\d\\d)[ "
-        "\\t]*(?P<CreationDate>\\d{4}-\\d\\d-\\d\\d)?)|(?P<Projects>\\+\\w+)|(?P<"
-        "Contexts>(?<=\\s)@[^\\s]+)|(?P<KeyValuePairs>[a-zA-Z]+:[\\w:/.%-]*)");
-
-    parserPattern = QRegularExpression(pattern);
+    parserPattern = QRegularExpression(s_todoRegexp);
     qWarning() << parserPattern.isValid() << parserPattern.errorString();
     if (!parserPattern.isValid()) {
         return;
@@ -77,7 +85,21 @@ Todo TodoModel::parseLine(const QString &description)
     }
 
     todo.setCompleted(completionStatus);
+    todo.setPrettyDescription(prettyPrintDescription(todo));
     return todo;
+}
+
+QString TodoModel::prettyPrintDescription(const Todo &todo)
+{
+    auto prettyDescr = todo.description();
+    prettyDescr.replace(s_completionRegexp, QStringLiteral(""));
+    prettyDescr.replace(todo.creationDate(), QStringLiteral(""));
+    prettyDescr.replace(todo.completionDate(), QStringLiteral(""));
+    for (auto pair : todo.keyValuePairs()) {
+        prettyDescr.replace(pair, QStringLiteral(""));
+    }
+    prettyDescr.replace(s_priorityRegexp, QStringLiteral(""));
+    return prettyDescr.simplified();
 }
 
 int TodoModel::rowCount(const QModelIndex &) const
@@ -87,16 +109,15 @@ int TodoModel::rowCount(const QModelIndex &) const
 
 QHash<int, QByteArray> TodoModel::roleNames() const
 {
-    return {
-        {CompletionRole, "completion"},
-        {PriorityRole, "priority"},
-        {CompletionDateRole, "completionDate"},
-        {CreationDateRole, "creationDate"},
-        {DescriptionRole, "description"},
-        {ContextsRole, "contexts"},
-        {ProjectsRole, "projects"},
-        {KeyValuePairsRole, "keyValuePairs"},
-    };
+    return {{CompletionRole, "completion"},
+            {PriorityRole, "priority"},
+            {CompletionDateRole, "completionDate"},
+            {CreationDateRole, "creationDate"},
+            {DescriptionRole, "description"},
+            {ContextsRole, "contexts"},
+            {ProjectsRole, "projects"},
+            {KeyValuePairsRole, "keyValuePairs"},
+            {PrettyDescriptionRole, "prettyDescription"}};
 }
 
 QVariant TodoModel::data(const QModelIndex &index, int role) const
@@ -124,6 +145,8 @@ QVariant TodoModel::data(const QModelIndex &index, int role) const
         return todo.projects();
     case KeyValuePairsRole:
         return todo.keyValuePairs();
+    case PrettyDescriptionRole:
+        return todo.prettyDescription();
     default:
         return {};
     }
@@ -134,12 +157,30 @@ void TodoModel::updateCompletionStatus(Todo &todo, const bool completed)
     auto newDescription = todo.description();
     todo.setCompleted(completed);
     if (todo.completed()) {
-        todo.setDescription(newDescription.prepend(QStringLiteral("x")));
-        // TODO: add pri:Priority keyval pair, remove the (P) item
+        // When todo is set completed, remove the priority and add it as pri:A in the end
+        auto prio = s_priorityRegexp.match(newDescription);
+        if (prio.hasCaptured(1)) {
+            newDescription.append(QStringLiteral(" pri:%1").arg(prio.captured(1)));
+            newDescription.replace(s_priorityRegexp, QStringLiteral(""));
+        }
+
+        // Add completion date
+        auto today = QDateTime::currentDateTime().date().toString(QStringLiteral("yyyy-MM-dd"));
+
+        todo = parseLine(newDescription.simplified().prepend(QStringLiteral("x %1 ").arg(today)));
     } else {
-        // TODO: if there is pri:keyval pair, add that as a (P) item and remove the keyval
-        newDescription.replace(QRegularExpression(QStringLiteral("^[ \\t]*x")), QStringLiteral(""));
-        todo.setDescription(newDescription);
+        // When todo is set uncompleted, check for pri:A and set that as the priority (A) at the start
+        newDescription.replace(s_completionRegexp, QStringLiteral(""));
+        // Remove completion date
+        newDescription.replace(todo.completionDate(), QStringLiteral(""));
+
+        auto prio = QRegularExpression(QStringLiteral("pri:([A-Z])")).match(newDescription);
+        if (prio.hasCaptured(1)) {
+            newDescription.replace(QStringLiteral("pri:%1").arg(prio.captured(1)), QStringLiteral(""));
+            newDescription.prepend(QStringLiteral("(%1)").arg(prio.captured(1)));
+        }
+
+        todo = parseLine(newDescription.simplified());
     }
 }
 
@@ -154,7 +195,10 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
 
     switch (role) {
     case CompletionRole:
+        // We change the whole todo during this operation, so return early
         updateCompletionStatus(todo, value.toBool());
+        Q_EMIT dataChanged(index, index, {role});
+        return true;
         break;
     case PriorityRole:
         todo.setPriority(value.toString());
@@ -177,6 +221,8 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
     case KeyValuePairsRole:
         todo.addKeyValuePair(value.toString());
         break;
+    case PrettyDescriptionRole:
+        todo.setPrettyDescription(value.toString());
     default:
         return false;
     }

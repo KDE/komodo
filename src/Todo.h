@@ -27,6 +27,7 @@ public:
     QStringList contexts() const;
     QStringList projects() const;
     QStringList keyValuePairs() const;
+    QString prettyDescription() const;
 
     void setCompleted(bool completed);
     void setPriority(const QString &priority);
@@ -36,6 +37,7 @@ public:
     void addContext(const QString &context);
     void addProject(const QString &project);
     void addKeyValuePair(const QString &keyValuePair);
+    void setPrettyDescription(const QString &prettyDescription);
 
 private:
     bool m_completed;
@@ -46,4 +48,5 @@ private:
     QStringList m_contexts;
     QStringList m_projects;
     QStringList m_keyValuePairs;
+    QString m_prettyDescription;
 };
