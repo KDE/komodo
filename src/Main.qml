@@ -101,6 +101,10 @@ Kirigami.ApplicationWindow {
                 id: todoDelegate
                 // TODO: clicking on card starts editing it
 
+                property var projects: model.projects
+                property var contexts: model.contexts
+                property var keyValuePairs: model.keyValuePairs
+
                 contentItem: Item {
                     implicitWidth: delegateLayout.implicitWidth
                     implicitHeight: delegateLayout.implicitHeight
@@ -146,12 +150,65 @@ Kirigami.ApplicationWindow {
                             Kirigami.Separator {
                                 Layout.fillWidth: true
                             }
+                            RowLayout {
+                                QQC2.Label {
+                                    visible: projects.length > 0
+                                    text: "Projects:"
+                                    font.bold: true
+                                }
+                                Repeater {
+                                    Layout.fillWidth: true
+                                    model: projects
+                                    Kirigami.Chip {
+                                        id: projectChip
+                                        closable: false
+                                        text: modelData
+                                    }
+                                }
+                            }
+
+                            RowLayout {
+                                QQC2.Label {
+                                    visible: contexts.length > 0
+                                    text: "Contexts:"
+                                    font.bold: true
+                                }
+                                Repeater {
+                                    Layout.fillWidth: true
+                                    model: contexts
+                                    Kirigami.Chip {
+                                        id: contextChip
+                                        closable: false
+                                        text: modelData
+                                    }
+                                }
+                            }
+
+                            RowLayout {
+                                QQC2.Label {
+                                    visible: keyValuePairs.length > 0
+                                    text: "MetaData:"
+                                    font.bold: true
+                                }
+                                Repeater {
+                                    Layout.fillWidth: true
+                                    model: keyValuePairs
+                                    Kirigami.Chip {
+                                        id: keyValuePairChip
+                                        closable: false
+                                        text: modelData
+                                    }
+                                }
+                            }
+
                             QQC2.Label {
+                                visible: false
                                 Layout.fillWidth: true
                                 anchors.margins: Kirigami.Units.smallSpacing
                                 wrapMode: Text.WordWrap
                                 text: model.description
                             }
+
                             Kirigami.Separator {
                                 Layout.fillWidth: true
                             }
