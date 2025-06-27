@@ -18,8 +18,14 @@ Kirigami.ApplicationWindow {
     }
 
     Dialogs.FileDialog {
-        id: fileDialog
+        id: openDialog
         onAccepted: { todoModel.filePath = selectedFile; }
+    }
+
+    Dialogs.FileDialog {
+        id: createNewDialog
+        onAccepted: { todoModel.filePath = selectedFile; }
+        fileMode: Qt.SaveFile
     }
 
     QQC2.Dialog {
@@ -76,6 +82,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
+
     pageStack.initialPage: Kirigami.ScrollablePage {
         id: page
 
@@ -88,14 +95,14 @@ Kirigami.ApplicationWindow {
         actions: [
             Kirigami.Action {
                 icon.name: "document-open"
-                text: "Open File…"
+                text: i18nc("@button", "Open File…")
                 onTriggered: {
-                    fileDialog.open();
+                    openDialog.open();
                 }
             },
             Kirigami.Action {
                 icon.name: "add"
-                text: "Add New Todo…"
+                text: i18nc("@button","Add New Todo…")
                 enabled: todoModel.filePath != ""
                 onTriggered: {
                     addPrompt.open();
@@ -112,7 +119,15 @@ Kirigami.ApplicationWindow {
                 visible: todoModel.filePath == ""
                 icon.name: "korg-todo-symbolic"
                 text: i18nc("@info:placeholder", "No todo.txt file is loaded.")
-                explanation: xi18nc("@info:placeholder", "Click <interface>Open File…</interface> to start")
+                explanation: xi18nc("@info:placeholder", "Click <interface>Open File…</interface> to start or create new one")
+                helpfulAction: Kirigami.Action {
+                    icon.name: "add"
+                    text: i18nc("@button", "Create new…")
+                    onTriggered: {
+                        createNewDialog.open();
+                    }
+                }
+
             }
 
             Kirigami.PlaceholderMessage {
@@ -253,7 +268,7 @@ Kirigami.ApplicationWindow {
                                 id: actionsToolBar
                                 actions: [
                                     Kirigami.Action {
-                                        text: "Edit"
+                                        text: i18nc("@button","Edit")
                                         icon.name: "edit-entry"
                                         onTriggered: {
                                             editPrompt.text = model.description;
@@ -262,7 +277,7 @@ Kirigami.ApplicationWindow {
                                         }
                                     },
                                     Kirigami.Action {
-                                        text: "Delete"
+                                        text: i18nc("@button","Delete")
                                         icon.name: "delete"
                                         onTriggered: {
                                             const originalIndex = filteredModel.index(index, 0);

@@ -8,6 +8,7 @@
 #include <QUrl>
 #include <QFileInfo>
 #include <QDir>
+#include <qabstractitemmodel.h>
 
 // Regexp for the whole todo line, with grouped items
 const static QRegularExpression s_todoRegexp =
@@ -23,7 +24,8 @@ const static QRegularExpression s_completionRegexp = QRegularExpression(QStringL
 // Regexp for the priority: (A-Z)
 const static QRegularExpression s_priorityRegexp = QRegularExpression(QStringLiteral("^[ x\\t]*\\(([A-Z])\\)"));
 
-TodoModel::TodoModel()
+TodoModel::TodoModel(QObject *parent)
+:QAbstractListModel(parent)
 {
     parserPattern = QRegularExpression(s_todoRegexp);
     if (!parserPattern.isValid()) {

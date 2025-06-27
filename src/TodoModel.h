@@ -26,7 +26,7 @@ public:
         PrettyDescriptionRole
     };
 
-    TodoModel();
+    TodoModel(QObject *parent = nullptr);
 
     Todo parseTodoFromDescription(const QString &description);
 
