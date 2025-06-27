@@ -6,3 +6,4 @@ build
 /cmake-build*
 .cache
 .vscode
+.todo.txt.bak

@@ -6,10 +6,12 @@
 #include <QMap>
 #include <QRegularExpression>
 #include <QString>
+#include <QUrl>
 
 class TodoModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(QUrl filePath READ filePath WRITE setFilePath NOTIFY filePathChanged)
 public:
     // https://github.com/todotxt/todo.txt/blob/master/description.svg
     enum Roles {
@@ -40,9 +42,17 @@ public:
     Q_INVOKABLE void addTodo(const QString &description);
     Q_INVOKABLE void deleteTodo(const QModelIndex &index);
 
+    QUrl filePath();
+    void setFilePath(const QUrl &newFilePath);
+    Q_SIGNAL void filePathChanged();
+
+    Q_INVOKABLE bool loadFile();
+    Q_INVOKABLE bool saveFile();
+
 private:
     void updateCompletionStatus(Todo &todo, const bool completed);
     QString prettyPrintDescription(const Todo &todo);
 
+    QUrl m_filePath;
     QList<Todo> m_todos;
 };

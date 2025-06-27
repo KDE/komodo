@@ -5,6 +5,9 @@
 #include <QFile>
 #include <QRegularExpression>
 #include <QString>
+#include <QUrl>
+#include <QFileInfo>
+#include <QDir>
 
 // Regexp for the whole todo line, with grouped items
 const static QRegularExpression s_todoRegexp =
@@ -23,26 +26,12 @@ const static QRegularExpression s_priorityRegexp = QRegularExpression(QStringLit
 TodoModel::TodoModel()
 {
     parserPattern = QRegularExpression(s_todoRegexp);
-    qWarning() << parserPattern.isValid() << parserPattern.errorString();
     if (!parserPattern.isValid()) {
+        qWarning() << "Regular expression pattern for parsing is not valid!";
         return;
     }
-
-    QString filePath = QStringLiteral("todo.txt");
-    QFile file(filePath);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "could not open file" << filePath;
-        return;
-    }
-
-    QTextStream in(&file);
-    while (!in.atEnd()) {
-        QString line = in.readLine();
-        if (!line.isEmpty()) {
-            auto task = parseTodoFromDescription(line);
-            m_todos.append(task);
-        }
-    }
+    connect(this, &TodoModel::filePathChanged, this, &TodoModel::loadFile);
+    connect(this, &TodoModel::dataChanged, this, &TodoModel::saveFile);
 }
 
 Todo TodoModel::parseTodoFromDescription(const QString &description)
@@ -260,4 +249,64 @@ void TodoModel::deleteTodo(const QModelIndex &index)
 QList<Todo> TodoModel::todos()
 {
     return m_todos;
+}
+
+QUrl TodoModel::filePath() {
+    return m_filePath;
+}
+
+void TodoModel::setFilePath(const QUrl &newFilePath) {
+    if (m_filePath != newFilePath){
+        m_filePath = newFilePath;
+        Q_EMIT filePathChanged();
+    }
+}
+
+bool TodoModel::loadFile(){
+    beginResetModel();
+    QFile file(filePath().toLocalFile());
+    if (!file.open(QIODevice::ReadWrite | QIODevice::Text)) {
+        qWarning() << "Could not open file:" << filePath() << " - " << file.errorString();
+        return false;
+    }
+
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        if (!line.isEmpty()) {
+            auto task = parseTodoFromDescription(line);
+            m_todos.append(task);
+        }
+    }
+    endResetModel();
+    return true;
+}
+
+bool TodoModel::saveFile() {
+
+    QFileInfo fileInfo(filePath().toLocalFile());
+    const QString backupFileName = fileInfo.absolutePath() + QDir::separator() + QStringLiteral(".%1.bak").arg(fileInfo.fileName());
+    qWarning() << backupFileName;
+    QFile saveFile(filePath().toLocalFile());
+    QTextStream stream(&saveFile);
+    QFile backupFile(backupFileName);
+    if (backupFile.exists()){
+        backupFile.remove();
+    }
+    saveFile.copy(backupFileName);
+    if (!saveFile.open(QIODevice::WriteOnly)) {
+        qWarning() << "Failed to write todo list to disk";
+        return false;
+    }
+    QStringList sortedList;
+    for (const auto &todo : m_todos){
+        sortedList.append(todo.description());
+    }
+    std::sort(sortedList.begin(), sortedList.end());
+    for (const auto &descr : sortedList){
+        stream << descr << "\n";
+    }
+    saveFile.close();
+
+    return true;
 }

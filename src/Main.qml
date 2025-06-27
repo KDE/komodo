@@ -2,6 +2,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+import QtQuick.Dialogs as Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels
 import TodoModel 1.0
@@ -14,6 +15,11 @@ Kirigami.ApplicationWindow {
 
     TodoModel {
         id: todoModel
+    }
+
+    Dialogs.FileDialog {
+        id: fileDialog
+        onAccepted: { todoModel.filePath = selectedFile; }
     }
 
     QQC2.Dialog {
@@ -80,6 +86,13 @@ Kirigami.ApplicationWindow {
 
         actions: [
             Kirigami.Action {
+                icon.name: "document-open"
+                text: "Open File"
+                onTriggered: {
+                    fileDialog.open();
+                }
+            },
+            Kirigami.Action {
                 icon.name: "add"
                 text: "Add New Todo"
                 onTriggered: {
@@ -88,6 +101,7 @@ Kirigami.ApplicationWindow {
             }
         ]
         Kirigami.CardsListView {
+            id: cardsListView
             model: KSortFilterProxyModel {
                 id: filteredModel
                 sourceModel: todoModel
