@@ -277,14 +277,14 @@ void TodoModel::setFilePath(const QUrl &newFilePath)
 
 bool TodoModel::loadFile()
 {
-    beginResetModel();
-    QFile file(filePath().toLocalFile());
+    QFile file(m_filePath.toLocalFile());
     if (!file.open(QIODevice::ReadWrite | QIODevice::Text)) {
-        qWarning() << "Could not open file:" << filePath() << " - " << file.errorString();
-        endResetModel();
+        qWarning() << "Could not open file:" << m_filePath << " - " << file.errorString();
         return false;
     }
 
+    beginResetModel();
+    m_todos.clear();
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString line = in.readLine();
