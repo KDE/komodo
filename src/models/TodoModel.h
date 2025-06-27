@@ -4,6 +4,7 @@
 #include <QAbstractListModel>
 #include <QDebug>
 #include <QMap>
+#include <QQmlEngine>
 #include <QRegularExpression>
 #include <QString>
 #include <QUrl>
@@ -11,6 +12,8 @@
 class TodoModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
     Q_PROPERTY(QUrl filePath READ filePath WRITE setFilePath NOTIFY filePathChanged)
 public:
     // https://github.com/todotxt/todo.txt/blob/master/description.svg
@@ -26,7 +29,7 @@ public:
         PrettyDescriptionRole
     };
 
-    TodoModel(QObject *parent = nullptr);
+    explicit TodoModel(QObject *parent = nullptr);
 
     Todo parseTodoFromDescription(const QString &description);
 

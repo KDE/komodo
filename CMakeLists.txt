@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
-project(todoapp)
+project(todoapp VERSION 0.1)
+
+string(TOUPPER ${CMAKE_PROJECT_NAME} CMAKE_PROJECT_NAME_UPPERCASE)
+include(FeatureSummary)
 
 set(QT_MIN_VERSION 6.6)
 set(KF_MIN_VERSION 6.12)
@@ -25,29 +28,22 @@ include(ECMQmlModule)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 
-find_package(Qt6 REQUIRED COMPONENTS
-    Core
-    Quick
-    Test
-    Gui
-    QuickControls2
-    Widgets
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX ${CMAKE_PROJECT_NAME_UPPERCASE}
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/version-${CMAKE_PROJECT_NAME}.h"
 )
 
-find_package(KF6 REQUIRED COMPONENTS
-    Kirigami
-    I18n
-    CoreAddons
-    QQC2DesktopStyle
-    IconThemes
-    Config
-)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Widgets)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami CoreAddons Config I18n ItemModels WindowSystem QQC2DesktopStyle)
+set_package_properties(KF6QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 
 add_subdirectory(src)
 
-install(PROGRAMS org.kde.todoapp.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(PROGRAMS org.kde.${CMAKE_PROJECT_NAME}.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES src/*.cpp src/*.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
