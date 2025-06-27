@@ -2,12 +2,12 @@
 #include "Todo.h"
 #include <QDateTime>
 #include <QDebug>
+#include <QDir>
 #include <QFile>
+#include <QFileInfo>
 #include <QRegularExpression>
 #include <QString>
 #include <QUrl>
-#include <QFileInfo>
-#include <QDir>
 #include <qabstractitemmodel.h>
 
 // Regexp for the whole todo line, with grouped items
@@ -25,7 +25,7 @@ const static QRegularExpression s_completionRegexp = QRegularExpression(QStringL
 const static QRegularExpression s_priorityRegexp = QRegularExpression(QStringLiteral("^[ x\\t]*\\(([A-Z])\\)"));
 
 TodoModel::TodoModel(QObject *parent)
-:QAbstractListModel(parent)
+    : QAbstractListModel(parent)
 {
     parserPattern = QRegularExpression(s_todoRegexp);
     if (!parserPattern.isValid()) {
@@ -34,6 +34,7 @@ TodoModel::TodoModel(QObject *parent)
     }
     connect(this, &TodoModel::filePathChanged, this, &TodoModel::loadFile);
     connect(this, &TodoModel::dataChanged, this, &TodoModel::saveFile);
+    loadFile();
 }
 
 Todo TodoModel::parseTodoFromDescription(const QString &description)
@@ -253,22 +254,26 @@ QList<Todo> TodoModel::todos()
     return m_todos;
 }
 
-QUrl TodoModel::filePath() {
+QUrl TodoModel::filePath()
+{
     return m_filePath;
 }
 
-void TodoModel::setFilePath(const QUrl &newFilePath) {
-    if (m_filePath != newFilePath){
+void TodoModel::setFilePath(const QUrl &newFilePath)
+{
+    if (m_filePath != newFilePath) {
         m_filePath = newFilePath;
         Q_EMIT filePathChanged();
     }
 }
 
-bool TodoModel::loadFile(){
+bool TodoModel::loadFile()
+{
     beginResetModel();
     QFile file(filePath().toLocalFile());
     if (!file.open(QIODevice::ReadWrite | QIODevice::Text)) {
         qWarning() << "Could not open file:" << filePath() << " - " << file.errorString();
+        endResetModel();
         return false;
     }
 
@@ -284,14 +289,14 @@ bool TodoModel::loadFile(){
     return true;
 }
 
-bool TodoModel::saveFile() {
-
+bool TodoModel::saveFile()
+{
     QFileInfo fileInfo(filePath().toLocalFile());
     const QString backupFileName = fileInfo.absolutePath() + QDir::separator() + QStringLiteral(".%1.bak").arg(fileInfo.fileName());
     QFile saveFile(filePath().toLocalFile());
     QTextStream stream(&saveFile);
     QFile backupFile(backupFileName);
-    if (backupFile.exists()){
+    if (backupFile.exists()) {
         backupFile.remove();
     }
     saveFile.copy(backupFileName);
@@ -300,11 +305,11 @@ bool TodoModel::saveFile() {
         return false;
     }
     QStringList sortedList;
-    for (const auto &todo : m_todos){
+    for (const auto &todo : m_todos) {
         sortedList.append(todo.description());
     }
     std::sort(sortedList.begin(), sortedList.end());
-    for (const auto &descr : sortedList){
+    for (const auto &descr : sortedList) {
         stream << descr << "\n";
     }
     saveFile.close();

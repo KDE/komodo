@@ -1,5 +1,3 @@
-#include "TodoModel.h"
-#include <KIconTheme>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 #include <QApplication>
@@ -10,14 +8,12 @@
 
 int main(int argc, char *argv[])
 {
-    KIconTheme::initTheme();
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("todoapp");
     QApplication::setOrganizationName(QStringLiteral("KDE"));
     QApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QApplication::setApplicationName(QStringLiteral("Todo App"));
     QApplication::setDesktopFileName(QStringLiteral("org.kde.todoapp"));
-    qmlRegisterType<TodoModel>("TodoModel", 1, 0, "TodoModel");
 
     QApplication::setStyle(QStringLiteral("breeze"));
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {

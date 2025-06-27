@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+	  http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+	<!--
+	SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+	SPDX-License-Identifier: LGPL-2.0-or-later
+	-->
+	<group name="General">
+		<entry name="TodoFilePath" type="String">
+			<label>todo.txt filepath</label>
+		</entry>
+	</group>
+</kcfg>
