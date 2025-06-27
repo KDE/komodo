@@ -1,8 +1,11 @@
 # KomoDo
 
+**work in progress!**
+
 Kirigami GUI frontend for [todo.txt](http://todotxt.org/) files
 
 ![screenshot.png](screenshot.png)
+
 
 ## todo
 
