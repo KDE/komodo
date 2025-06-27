@@ -1,11 +1,12 @@
-#include <QApplication>
-#include <QQmlApplicationEngine>
-#include <QtQml>
-#include <QUrl>
-#include <QQuickStyle>
+#include "TodoModel.h"
+#include <KIconTheme>
 #include <KLocalizedContext>
 #include <KLocalizedString>
-#include <KIconTheme>
+#include <QApplication>
+#include <QQmlApplicationEngine>
+#include <QQuickStyle>
+#include <QUrl>
+#include <QtQml>
 
 int main(int argc, char *argv[])
 {
@@ -16,6 +17,7 @@ int main(int argc, char *argv[])
     QApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QApplication::setApplicationName(QStringLiteral("Todo App"));
     QApplication::setDesktopFileName(QStringLiteral("org.kde.todoapp"));
+    qmlRegisterType<TodoModel>("TodoModel", 1, 0, "TodoModel");
 
     QApplication::setStyle(QStringLiteral("breeze"));
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {

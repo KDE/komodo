@@ -3,12 +3,12 @@
     "target_sets": [
         {
             "cmake_config": "",
-            "directory": "",
+            "directory": "/home/akseli/Repositories/kde/src/todoapp/",
             "loaded_via_cmake": false,
             "name": "todoapp",
             "targets": [
                 {
-                    "build_cmd": "kde-builder todoapp --no-src",
+                    "build_cmd": "kde-builder todoapp --no-src --refresh-build",
                     "name": "build",
                     "run_cmd": "kde-builder --run todoapp"
                 }
