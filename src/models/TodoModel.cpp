@@ -1,5 +1,7 @@
 #include "TodoModel.h"
 #include "Todo.h"
+#include "komodo_config.h"
+#include <QAbstractItemModel>
 #include <QDateTime>
 #include <QDebug>
 #include <QDir>
@@ -8,7 +10,6 @@
 #include <QRegularExpression>
 #include <QString>
 #include <QUrl>
-#include <qabstractitemmodel.h>
 
 // Regexp for the whole todo line, with grouped items
 const static QRegularExpression s_todoRegexp =
@@ -34,7 +35,12 @@ TodoModel::TodoModel(QObject *parent)
     }
     connect(this, &TodoModel::filePathChanged, this, &TodoModel::loadFile);
     connect(this, &TodoModel::dataChanged, this, &TodoModel::saveFile);
-    loadFile();
+    m_config = KomodoConfig::self();
+    m_config->load();
+    if (!m_config->todoFilePath().isEmpty()) {
+        m_filePath = QUrl::fromLocalFile(m_config->todoFilePath());
+        loadFile();
+    }
 }
 
 Todo TodoModel::parseTodoFromDescription(const QString &description)
@@ -263,6 +269,8 @@ void TodoModel::setFilePath(const QUrl &newFilePath)
 {
     if (m_filePath != newFilePath) {
         m_filePath = newFilePath;
+        m_config->setTodoFilePath(m_filePath.toLocalFile());
+        m_config->save();
         Q_EMIT filePathChanged();
     }
 }

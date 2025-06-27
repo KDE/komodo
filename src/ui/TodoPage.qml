@@ -12,12 +12,16 @@ Kirigami.ScrollablePage {
 	Dialogs.FileDialog {
 		id: openDialog
 		onAccepted: { TodoModel.filePath = selectedFile; }
+		modality: Qt.ApplicationModal
+		nameFilters: ["Text files (*.txt)"]
 	}
 
 	Dialogs.FileDialog {
 		id: createNewDialog
 		onAccepted: { TodoModel.filePath = selectedFile; }
 		fileMode: Qt.SaveFile
+		modality: Qt.ApplicationModal
+		nameFilters: ["Text files (*.txt)"]
 	}
 
 	QQC2.Dialog {

@@ -3,14 +3,14 @@
     "target_sets": [
         {
             "cmake_config": "",
-            "directory": "/home/akseli/Repositories/kde/src/todoapp/",
+            "directory": "/home/akseli/Repositories/kde/src/komodo/",
             "loaded_via_cmake": false,
-            "name": "todoapp",
+            "name": "komodo",
             "targets": [
                 {
-                    "build_cmd": "kde-builder todoapp --no-src --refresh-build",
+                    "build_cmd": "kde-builder komodo --no-src --refresh-build",
                     "name": "build",
-                    "run_cmd": "kde-builder --run todoapp"
+                    "run_cmd": "kde-builder --run komodo"
                 }
             ]
         }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Todo.h"
+#include "komodo_config.h"
 #include <QAbstractListModel>
 #include <QDebug>
 #include <QMap>
@@ -58,4 +59,5 @@ private:
 
     QUrl m_filePath;
     QList<Todo> m_todos;
+    KomodoConfig *m_config;
 };
