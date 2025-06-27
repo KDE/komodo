@@ -79,6 +79,7 @@ Kirigami.ApplicationWindow {
     pageStack.initialPage: Kirigami.ScrollablePage {
         id: page
 
+
         header: Kirigami.SearchField {
             id: searchField
             visible: true
@@ -87,14 +88,15 @@ Kirigami.ApplicationWindow {
         actions: [
             Kirigami.Action {
                 icon.name: "document-open"
-                text: "Open File"
+                text: "Open File…"
                 onTriggered: {
                     fileDialog.open();
                 }
             },
             Kirigami.Action {
                 icon.name: "add"
-                text: "Add New Todo"
+                text: "Add New Todo…"
+                enabled: todoModel.filePath != ""
                 onTriggered: {
                     addPrompt.open();
                 }
@@ -102,6 +104,26 @@ Kirigami.ApplicationWindow {
         ]
         Kirigami.CardsListView {
             id: cardsListView
+
+            Kirigami.PlaceholderMessage {
+                id: noTodosLoaded
+                width: parent.width - (Kirigami.Units.largeSpacing * 4)
+                anchors.centerIn: parent
+                visible: todoModel.filePath == ""
+                icon.name: "korg-todo-symbolic"
+                text: i18nc("@info:placeholder", "No todo.txt file is loaded.")
+                explanation: xi18nc("@info:placeholder", "Click <interface>Open File…</interface> to start")
+            }
+
+            Kirigami.PlaceholderMessage {
+                id: noTodosFound
+                width: parent.width - (Kirigami.Units.largeSpacing * 4)
+                anchors.centerIn: parent
+                visible: !noTodosLoaded.visible && filteredModel.count === 0
+                icon.name: "korg-todo-symbolic"
+                text: i18nc("@info:placeholder", "No todos found.")
+            }
+
             model: KSortFilterProxyModel {
                 id: filteredModel
                 sourceModel: todoModel

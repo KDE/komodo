@@ -229,7 +229,7 @@ void TodoModel::addTodo(const QString &description)
     m_todos.append(parseTodoFromDescription(description));
     endInsertRows();
 
-    // TODO: save todo file
+    saveFile();
 }
 
 void TodoModel::deleteTodo(const QModelIndex &index)
@@ -243,7 +243,7 @@ void TodoModel::deleteTodo(const QModelIndex &index)
     m_todos.removeAt(row);
     endRemoveRows();
 
-    // TODO: save todo file
+    saveFile();
 }
 
 QList<Todo> TodoModel::todos()
@@ -286,7 +286,6 @@ bool TodoModel::saveFile() {
 
     QFileInfo fileInfo(filePath().toLocalFile());
     const QString backupFileName = fileInfo.absolutePath() + QDir::separator() + QStringLiteral(".%1.bak").arg(fileInfo.fileName());
-    qWarning() << backupFileName;
     QFile saveFile(filePath().toLocalFile());
     QTextStream stream(&saveFile);
     QFile backupFile(backupFileName);
