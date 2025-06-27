@@ -4,7 +4,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Dialogs as Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels
-import org.kde.todoapp.models
+import org.kde.komodo.models
 
 Kirigami.ScrollablePage {
 	id: page

@@ -1,8 +1,8 @@
-# todoapp
+# KomoDo
 
 Kirigami GUI frontend for [todo.txt](http://todotxt.org/) files
 
 
 ## todo
-- [ ] cool name
+- [x] cool name
 - [ ] the app

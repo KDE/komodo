@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(todoapp VERSION 0.1)
+project(komodo VERSION 0.1)
 
 string(TOUPPER ${CMAKE_PROJECT_NAME} CMAKE_PROJECT_NAME_UPPERCASE)
 include(FeatureSummary)

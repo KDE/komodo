@@ -4,8 +4,7 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.config as KConfig
 import org.kde.coreaddons
 
-import org.kde.todoapp.ui
-
+import org.kde.komodo.ui
 
 // Provides basic features needed for all kirigami applications
 Kirigami.ApplicationWindow {
@@ -14,10 +13,10 @@ Kirigami.ApplicationWindow {
 
     title: i18n("KomoDo")
 
-    width: Kirigami.Units.gridUnit * 26
+    width: Kirigami.Units.gridUnit * 48
     height: Kirigami.Units.gridUnit * 36
-    minimumWidth: Kirigami.Units.gridUnit * 20
-    minimumHeight: Kirigami.Units.gridUnit * 20
+    minimumWidth: Kirigami.Units.gridUnit * 30
+    minimumHeight: Kirigami.Units.gridUnit * 36
 
     KConfig.WindowStateSaver {
         configGroupName: "MainWindow"

@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Todo App
-Name[x-test]=xxTodo Appxx
-Exec=todoapp
+Name=KomoDo
+Name[x-test]=xxKomoDoxx
+Exec=komodo
 Icon=kde
 Type=Application
 Terminal=false
