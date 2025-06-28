@@ -87,18 +87,26 @@ Kirigami.ScrollablePage {
 	actions: [
 		Kirigami.Action {
 			icon.name: "document-open"
-			text: i18nc("@button", "Open File…")
+			text: i18nc("@action:button", "Open File…")
 			onTriggered: {
 				openDialog.open();
 			}
 		},
 		Kirigami.Action {
 			icon.name: "add"
-			text: i18nc("@button","Add New Todo…")
+			text: i18nc("@action:button","Add New Todo…")
 			enabled: TodoModel.filePath != ""
 			onTriggered: {
 				addPrompt.open();
 			}
+		},
+		Kirigami.Action {
+			text: i18nc("@action:inmenu", "About KomoDo")
+			icon.name: "help-about"
+			shortcut: StandardKey.HelpContents
+			displayHint: Kirigami.DisplayHint.AlwaysHide
+			onTriggered: pageStack.layers.push(aboutPage)
+			enabled: pageStack.layers.depth <= 1
 		}
 	]
 	Kirigami.CardsListView {

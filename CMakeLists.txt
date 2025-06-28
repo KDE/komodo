@@ -35,6 +35,7 @@ ecm_setup_version(${PROJECT_VERSION}
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Widgets)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami CoreAddons Config I18n ItemModels WindowSystem QQC2DesktopStyle)
+find_package(KF6KirigamiAddons 1.0 REQUIRED)
 set_package_properties(KF6QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 
 add_subdirectory(src)
