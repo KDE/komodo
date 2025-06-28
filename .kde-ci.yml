@@ -14,3 +14,4 @@ Dependencies:
     'frameworks/kitemmodels': '@latest-kf6'
     'frameworks/kconfig': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
+    'frameworks/kwindowsystem': '@latest-kf6'
