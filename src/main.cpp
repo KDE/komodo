@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 #include "version-komodo.h"
 #include <KAboutData>
 #include <KLocalizedQmlContext>

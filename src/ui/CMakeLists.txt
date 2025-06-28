@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+# SPDX-License-Identifier: BSD-2-Clause
+
 add_library(ui)
 
 ecm_add_qml_module(ui
