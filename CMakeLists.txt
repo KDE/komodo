@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+# SPDX-License-Identifier: BSD-2-Clause
+
 cmake_minimum_required(VERSION 3.20)
 project(komodo VERSION 0.1)
 
