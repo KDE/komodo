@@ -17,9 +17,9 @@
 // Regexp for the whole todo line, with grouped items
 const static QRegularExpression s_todoRegexp =
     QRegularExpression(QStringLiteral("(?:^[ "
-                                      "\\t]*(?P<Completion>x))|(?P<Priority>\\([A-Z]\\))|(?:(?P<CompletionDate>"
+                                      "\\t]*(?P<Completion>x))|(?P<Priority>\\([A-Z]\\))|(?:(?P<FirstDate>"
                                       "\\d{4}-\\d\\d-\\d\\d)[ "
-                                      "\\t]*(?P<CreationDate>\\d{4}-\\d\\d-\\d\\d)?)|(?P<Projects>\\+\\w+)|(?P<"
+                                      "\\t]*(?P<SecondDate>\\d{4}-\\d\\d-\\d\\d)?)|(?P<Projects>\\+\\w+)|(?P<"
                                       "Contexts>(?<=\\s)@[^\\s]+)|(?P<KeyValuePairs>[a-zA-Z]+:[\\w:/.%-]*)"));
 
 // Regexp for the completion status: x
@@ -63,12 +63,19 @@ Todo TodoModel::parseTodoFromDescription(const QString &description)
             todo.setPriority(match.captured("Priority"));
         }
 
-        if (!match.captured("CompletionDate").isEmpty()) {
-            todo.setCompletionDate(match.captured("CompletionDate"));
+        if (!match.captured("FirstDate").isEmpty()) {
+            // Set the first date as creation date if the item is not completed
+            if (completionStatus) {
+                todo.setCompletionDate(match.captured("FirstDate"));
+            } else {
+                todo.setCreationDate(match.captured("FirstDate"));
+            }
         }
 
-        if (!match.captured("CreationDate").isEmpty()) {
-            todo.setCreationDate(match.captured("CreationDate"));
+        if (!match.captured("SecondDate").isEmpty()) {
+            if (completionStatus) {
+                todo.setCreationDate(match.captured("SecondDate"));
+            }
         }
 
         if (!match.captured("Projects").isEmpty()) {

@@ -10,28 +10,28 @@ Kirigami.AbstractCard {
 	id: todoDelegate
 	clip: true
 
+	property var todoModel
 	property var projects: model.projects
 	property var contexts: model.contexts
 	property var keyValuePairs: model.keyValuePairs
 
+
 	header: RowLayout {
 		width: parent.width
 
-		Kirigami.Chip {
-			visible: model.priority
-			text: model.priority
-			font.bold: true
-			closable: false
-			checkable: false
-			//TODO Set color by priority status?
+		QQC2.CheckBox {
+			id: completionStatus
+			Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+			checked: model.completion
+			onToggled: model.completion = !model.completion
 		}
 
-		Kirigami.Heading {
+		Kirigami.SelectableLabel {
 			Layout.fillWidth: true
 			wrapMode: Text.WordWrap
 			text: model.prettyDescription
-			level: 1
-			// TODO: we could parse this description and then colorize/chip-ify any + and @
+			font.strikeout: model.completion
+			font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.35
 		}
 	}
 
@@ -48,59 +48,105 @@ Kirigami.AbstractCard {
 			}
 
 			RowLayout {
-				Kirigami.Chip {
-					visible: model.creationDate
-					text: i18nc("Task creation date", "Created: ") +  model.creationDate
-					font.bold: false
-					closable: false
-					checkable: false
+				QQC2.Label {
+					visible: model.priority
+					text: i18nc("Task priority", "Priority: ")
+					font.bold: true
 				}
 
 				Kirigami.Chip {
-					visible: model.completionDate
-					text: i18nc("Task completion date", "Completed: ") +  model.completionDate
+					visible: model.priority
+					text: model.priority
+					font.bold: true
+					closable: false
+					checkable: false
+					//TODO Set color by priority status?
+				}
+			}
+
+			RowLayout {
+				QQC2.Label {
+					visible: model.creationDate
+					text: i18nc("Task creation date", "Created: ")
+					font.bold: true
+				}
+				Kirigami.Chip {
+					visible: model.creationDate
+					text: model.creationDate
 					font.bold: false
 					closable: false
 					checkable: false
-					// TODO: allow changing these dates?
+					// TODO clicking this will add the date to search
+				}
+			}
+
+			RowLayout {
+
+				Kirigami.SelectableLabel {
+					visible: model.completionDate
+					text: i18nc("Task completion date", "Completed: ")
+					font.bold: true
+				}
+				Kirigami.Chip {
+					visible: model.completionDate
+					text: model.completionDate
+					font.bold: false
+					closable: false
+					checkable: false
 				}
 			}
 
 			Repeater {
 				model: keyValuePairs
-				Kirigami.SelectableLabel {
-					Layout.fillWidth: true
-					Layout.alignment: Qt.AlignLeft
-					onLinkActivated: Qt.openUrlExternally(link)
-					text: {
-						const textData = modelData.split(":");
-						const key = textData[0];
-						let value = textData[1]
+				RowLayout {
+					id: keyValPair
+					property var textData: modelData.split(":")
+					property var textUrl: {
+						let value = ""
 						// Split the value like this in case its URL
 						if (textData[1].startsWith("http")){
 							const url = modelData.split(":").slice(1).join(":");
-							value = "<a href='" + url +"'>" + url + "</a>";
+							value = url;
 						}
-						return key + ": " + value;
+						return value;
+					}
+
+					Kirigami.SelectableLabel {
+						id: keyLabel
+						text: parent.textData[0] + ": "
+						font.bold: true
+						Layout.alignment: Qt.AlignLeft
+					}
+
+					Kirigami.SelectableLabel {
+						text: parent.textData[1]
+						wrapMode: Qt.TextWrapAnywhere
+						visible: !textUrl
+						Layout.alignment: Qt.AlignLeft
+					}
+
+					Kirigami.UrlButton {
+						Layout.maximumWidth: delegateLayout.width - keyLabel.width - Kirigami.Units.smallSpacing
+						Layout.alignment: Qt.AlignLeft
+						visible: textUrl
+						wrapMode: Qt.TextWrapAnywhere
+						elide: Text.ElideRight
+						text: textUrl
+						url: textUrl
 					}
 				}
+			}
+
+			Kirigami.Separator {
+				Layout.fillWidth: true
 			}
 		}
 	}
 
 	footer: Kirigami.ActionToolBar {
 		id: actionsToolBar
+		alignment: Qt.AlignRight
 		actions: [
-			Kirigami.Action {
-				checkable: true
-				checked: model.completion
-				text: ""
-				icon.name: model.completion ? "emblem-checked" : "emblem-unavailable"
-				onTriggered: {
-					model.completion = !model.completion
-				}
-			},
-
 			Kirigami.Action {
 				text: i18nc("@button","Edit")
 				icon.name: "edit-entry"
@@ -115,10 +161,11 @@ Kirigami.AbstractCard {
 				icon.name: "delete"
 				onTriggered: {
 					const originalIndex = filteredModel.index(index, 0);
-					TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
+					todoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
 				}
 			}
 		]
 		position: QQC2.ToolBar.Footer
 	}
+
 }

@@ -151,6 +151,6 @@ Kirigami.ScrollablePage {
 			filterCaseSensitivity: Qt.CaseInsensitive
 		}
 
-		delegate: TodoDelegate { }
+		delegate: TodoDelegate { todoModel: TodoModel }
 	}
 }
