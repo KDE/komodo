@@ -122,7 +122,7 @@ Kirigami.ScrollablePage {
 			visible: TodoModel.filePath == ""
 			icon.name: "korg-todo-symbolic"
 			text: i18nc("@info:placeholder", "No todo.txt file is loaded.")
-			explanation: xi18nc("@info:placeholder", "Click <interface>Open File…</interface> to start or create new one")
+			explanation: xi18nc("@info:placeholder", "Click <interface>Open File…</interface> to use an existing file or <interface>Create New…</interface> to start a new file.")
 			helpfulAction: Kirigami.Action {
 				icon.name: "add"
 				text: i18nc("@button", "Create new…")
