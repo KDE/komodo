@@ -50,6 +50,11 @@ QString Todo::prettyDescription() const
     return m_prettyDescription;
 }
 
+QString Todo::dueDate() const
+{
+    return m_dueDate;
+}
+
 void Todo::setCompleted(bool completed)
 {
     m_completed = completed;
@@ -86,4 +91,9 @@ void Todo::addKeyValuePair(const QString &keyValuePair)
 void Todo::setPrettyDescription(const QString &prettyDescription)
 {
     m_prettyDescription = prettyDescription;
+}
+
+void Todo::setDueDate(const QString &dueDate)
+{
+    m_dueDate = dueDate;
 }

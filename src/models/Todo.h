@@ -31,6 +31,7 @@ public:
     QStringList projects() const;
     QStringList keyValuePairs() const;
     QString prettyDescription() const;
+    QString dueDate() const;
 
     void setCompleted(bool completed);
     void setPriority(const QString &priority);
@@ -41,6 +42,7 @@ public:
     void addProject(const QString &project);
     void addKeyValuePair(const QString &keyValuePair);
     void setPrettyDescription(const QString &prettyDescription);
+    void setDueDate(const QString &dueDate);
 
 private:
     bool m_completed;
@@ -52,4 +54,5 @@ private:
     QStringList m_projects;
     QStringList m_keyValuePairs;
     QString m_prettyDescription;
+    QString m_dueDate;
 };

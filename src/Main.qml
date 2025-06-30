@@ -33,6 +33,4 @@ Kirigami.ApplicationWindow {
     }
 
     pageStack.initialPage: TodoPage {}
-
-
 }

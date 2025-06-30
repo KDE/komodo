@@ -93,6 +93,11 @@ Todo TodoModel::parseTodoFromDescription(const QString &description)
 
     todo.setCompleted(completionStatus);
     todo.setPrettyDescription(prettyPrintDescription(todo));
+    for (const QString &keyval : todo.keyValuePairs()) {
+        if (keyval.startsWith(QStringLiteral("due:"))) {
+            todo.setDueDate(keyval.split(QStringLiteral(":")).last());
+        }
+    }
     return todo;
 }
 
@@ -124,7 +129,8 @@ QHash<int, QByteArray> TodoModel::roleNames() const
             {ContextsRole, "contexts"},
             {ProjectsRole, "projects"},
             {KeyValuePairsRole, "keyValuePairs"},
-            {PrettyDescriptionRole, "prettyDescription"}};
+            {PrettyDescriptionRole, "prettyDescription"},
+            {DueDateRole, "dueDate"}};
 }
 
 QVariant TodoModel::data(const QModelIndex &index, int role) const
@@ -154,6 +160,8 @@ QVariant TodoModel::data(const QModelIndex &index, int role) const
         return todo.keyValuePairs();
     case PrettyDescriptionRole:
         return todo.prettyDescription();
+    case DueDateRole:
+        return todo.dueDate();
     default:
         return {};
     }
@@ -233,6 +241,8 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
         break;
     case PrettyDescriptionRole:
         todo.setPrettyDescription(value.toString());
+    case DueDateRole:
+        todo.setDueDate(value.toString());
     default:
         return false;
     }

@@ -30,7 +30,8 @@ public:
         ContextsRole,
         ProjectsRole,
         KeyValuePairsRole,
-        PrettyDescriptionRole
+        PrettyDescriptionRole,
+        DueDateRole
     };
 
     explicit TodoModel(QObject *parent = nullptr);
