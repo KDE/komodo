@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.DestructiveRole
                 onClicked: {
                     const originalIndex = filteredModel.index(deletePrompt.index, 0);
-                    model.deleteTodo(filteredModel.mapToSource(originalIndex));
+                    TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
                 }
             }
         }
@@ -197,8 +197,6 @@ Kirigami.ScrollablePage {
             filterCaseSensitivity: Qt.CaseInsensitive
         }
 
-        delegate: TodoDelegate {
-            todoModel: TodoModel
-        }
+        delegate: TodoDelegate {}
     }
 }

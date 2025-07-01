@@ -18,8 +18,8 @@ Kirigami.ApplicationWindow {
 
     width: Kirigami.Units.gridUnit * 48
     height: Kirigami.Units.gridUnit * 36
-    minimumWidth: Kirigami.Units.gridUnit * 30
-    minimumHeight: Kirigami.Units.gridUnit * 36
+    minimumWidth: Kirigami.Units.gridUnit * 32
+    minimumHeight: Kirigami.Units.gridUnit * 20
 
     KConfig.WindowStateSaver {
         configGroupName: "MainWindow"
