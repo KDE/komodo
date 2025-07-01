@@ -17,52 +17,25 @@ Kirigami.AbstractCard {
 
     header: RowLayout {
         width: parent.width
-
         QQC2.CheckBox {
             id: completionStatus
-            Layout.alignment: Qt.AlignLeft
+            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             checked: model.completion
             onToggled: model.completion = !model.completion
             QQC2.ToolTip.visible: hovered
             QQC2.ToolTip.text: i18n("Task completion status")
         }
 
-        Kirigami.Chip {
-            Layout.alignment: Qt.AlignLeft
-            visible: model.priority
-            text: model.priority
-            font.bold: false
-            closable: false
-            checkable: false
-            icon.name: "dialog-layers-symbolic"
-            QQC2.ToolTip.visible: down
-            QQC2.ToolTip.text: i18n("Task priority")
-        }
-
-        Kirigami.Chip {
-            visible: model.dueDate
-            text: model.dueDate
-            font.bold: false
-            closable: false
-            checkable: false
-            icon.name: "notification-active-symbolic"
-            QQC2.ToolTip.visible: down
-            QQC2.ToolTip.text: i18n("Task due date")
-        }
-
-        Item {
+        Kirigami.SelectableLabel {
             Layout.fillWidth: true
-        }
-
-        Kirigami.Chip {
-            visible: model.completionDate
-            text: model.completionDate
-            font.bold: false
-            closable: false
-            checkable: false
-            icon.name: "task-complete-symbolic"
-            QQC2.ToolTip.visible: down
-            QQC2.ToolTip.text: i18n("Task completion date")
+            wrapMode: Text.Wrap
+            text: model.prettyDescription
+            font.strikeout: model.completion
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.35
+            topPadding: Kirigami.Units.largeSpacing
+            leftPadding: Kirigami.Units.smallSpacing
+            rightPadding: Kirigami.Units.smallSpacing
+            bottomPadding: Kirigami.Units.smallSpacing
         }
     }
 
@@ -76,18 +49,6 @@ Kirigami.AbstractCard {
                 left: parent.left
                 top: parent.top
                 right: parent.right
-            }
-
-            Kirigami.SelectableLabel {
-                Layout.fillWidth: true
-                wrapMode: Text.Wrap
-                text: model.prettyDescription
-                font.strikeout: model.completion
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.35
-                topPadding: Kirigami.Units.largeSpacing
-                leftPadding: Kirigami.Units.smallSpacing
-                rightPadding: Kirigami.Units.smallSpacing
-                bottomPadding: Kirigami.Units.smallSpacing
             }
 
             Repeater {
@@ -142,29 +103,40 @@ Kirigami.AbstractCard {
         }
     }
 
-    footer: Kirigami.ActionToolBar {
-        id: actionsToolBar
-        alignment: Qt.AlignRight
-        actions: [
-            Kirigami.Action {
-                text: i18nc("@button", "Edit")
-                icon.name: "edit-entry"
-                onTriggered: {
-                    editPrompt.text = model.description;
-                    editPrompt.model = model;
-                    editPrompt.open();
-                }
-            },
-            Kirigami.Action {
-                text: i18nc("@button", "Delete")
-                icon.name: "delete"
-                onTriggered: {
-                    const originalIndex = filteredModel.index(index, 0);
-                    todoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
-                }
-            }
-        ]
-        position: QQC2.ToolBar.Footer
+    footer: RowLayout {
+        Kirigami.Chip {
+            Layout.alignment: Qt.AlignLeft
+            visible: model.priority
+            text: model.priority
+            font.bold: false
+            closable: false
+            checkable: false
+            icon.name: "dialog-layers-symbolic"
+            QQC2.ToolTip.visible: down
+            QQC2.ToolTip.text: i18n("Task priority")
+        }
+
+        Kirigami.Chip {
+            visible: model.completionDate
+            text: model.completionDate
+            font.bold: false
+            closable: false
+            checkable: false
+            icon.name: "task-complete-symbolic"
+            QQC2.ToolTip.visible: down
+            QQC2.ToolTip.text: i18n("Task completion date")
+        }
+
+        Kirigami.Chip {
+            visible: model.dueDate
+            text: model.dueDate
+            font.bold: false
+            closable: false
+            checkable: false
+            icon.name: "notification-active-symbolic"
+            QQC2.ToolTip.visible: down
+            QQC2.ToolTip.text: i18n("Task due date")
+        }
 
         Kirigami.Chip {
             Layout.alignment: Qt.AlignRight
@@ -176,6 +148,39 @@ Kirigami.AbstractCard {
             icon.name: "clock-symbolic"
             QQC2.ToolTip.visible: down
             QQC2.ToolTip.text: i18n("Task creation date")
+        }
+
+        Item {
+            Layout.fillWidth: true
+        }
+
+        QQC2.Button {
+            Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+            Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+            text: i18nc("@button", "Delete")
+            display: QQC2.AbstractButton.IconOnly
+            flat: true
+            icon.name: "entry-delete"
+            onClicked: {
+                deletePrompt.model = model;
+                deletePrompt.index = index;
+                deletePrompt.open();
+            }
+        }
+
+        QQC2.Button {
+            Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+            Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+            text: i18nc("@button", "Edit")
+            display: QQC2.AbstractButton.IconOnly
+            flat: true
+            icon.name: "edit-entry"
+            onClicked: {
+                editPrompt.text = model.description;
+                editPrompt.model = model;
+                editPrompt.index = index;
+                editPrompt.open();
+            }
         }
     }
 }

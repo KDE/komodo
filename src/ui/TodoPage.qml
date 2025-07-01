@@ -32,16 +32,60 @@ Kirigami.ScrollablePage {
     }
 
     QQC2.Dialog {
-        id: editPrompt
-        title: "Edit Todo"
-        padding: 10
+        id: deletePrompt
+        title: "Delete Todo"
         anchors.centerIn: parent
         modal: true
         property var model
+        property var index
+        standardButtons: QQC2.DialogButtonBox.Cancel
+        contentItem.height: textLayout.height
+        ColumnLayout {
+            id: textLayout
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            QQC2.Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                text: i18n("Are you sure you wish to delete this todo?")
+            }
+            QQC2.Label {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                elide: Text.ElideRight
+                text: deletePrompt.model.description
+            }
+        }
+        footer: QQC2.DialogButtonBox {
+            standardButtons: QQC2.DialogButtonBox.Cancel
+            QQC2.Button {
+                text: i18nc("@button", "Delete")
+                icon.name: "delete"
+                QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.DestructiveRole
+                onClicked: {
+                    const originalIndex = filteredModel.index(deletePrompt.index, 0);
+                    model.deleteTodo(filteredModel.mapToSource(originalIndex));
+                }
+            }
+        }
+    }
+
+    QQC2.Dialog {
+        id: editPrompt
+        title: "Edit Todo"
+        anchors.centerIn: parent
+        modal: true
+        property var model
+        property var index
         property alias text: editPromptText.text
+        width: parent.width - Kirigami.Units.largeSpacing * 2
+        height: parent.height - Kirigami.Units.largeSpacing * 2
 
         ColumnLayout {
-            anchors.fill: parent
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
             QQC2.Label {
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
@@ -55,7 +99,7 @@ Kirigami.ScrollablePage {
             }
         }
         footer: QQC2.DialogButtonBox {
-            standardButtons: QQC2.DialogButtonBox.Ok
+            standardButtons: QQC2.DialogButtonBox.Ok | QQC2.DialogButtonBox.Cancel
             onAccepted: {
                 const model = editPrompt.model;
                 model.description = editPromptText.text;
