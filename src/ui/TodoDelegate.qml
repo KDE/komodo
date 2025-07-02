@@ -61,6 +61,7 @@ Kirigami.AbstractCard {
                     Layout.alignment: Qt.AlignTop
                     wrapMode: Text.Wrap
                     text: model.prettyDescription
+                    // Looks like colors work with markdownText, but it also resolves urls etc.
                     textFormat: Qt.MarkdownText
                     font.strikeout: model.completion
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.35

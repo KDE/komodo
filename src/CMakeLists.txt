@@ -31,6 +31,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     KF6::CoreAddons
     KF6::ConfigCore
     KF6::ConfigGui
+    KF6::GuiAddons
     logging
 )
 

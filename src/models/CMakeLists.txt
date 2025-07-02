@@ -22,8 +22,10 @@ target_sources(models
 target_link_libraries(models
     PRIVATE
     Qt6::Core
+    Qt6::Gui
     KF6::ConfigCore
     KF6::ConfigGui
+    KF6::GuiAddons
     logging
 )
 

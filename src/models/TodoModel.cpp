@@ -4,12 +4,15 @@
 #include "TodoModel.h"
 #include "Todo.h"
 #include "komodo_config.h"
+#include <KColorUtils>
 #include <QAbstractItemModel>
 #include <QDateTime>
 #include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QGuiApplication>
+#include <QPalette>
 #include <QRegularExpression>
 #include <QString>
 #include <QUrl>
@@ -110,13 +113,18 @@ QString TodoModel::prettyPrintDescription(const Todo &todo)
     for (const auto &pair : todo.keyValuePairs()) {
         prettyDescr.replace(pair, QStringLiteral(""));
     }
+
+    // There's probably better way to do this but hey as long as it works.
+    const auto textColor = qApp->palette().text().color().name();
+    const auto projectColor = KColorUtils::mix(qApp->palette().accent().color().name(), textColor, 0.25);
+    const auto contextColor = KColorUtils::mix(qApp->palette().linkVisited().color().name(), textColor, 0.25);
     for (const auto &project : todo.projects()) {
         const auto re = QRegularExpression(QStringLiteral("\\B\\%1\\b").arg(project));
-        prettyDescr.replace(re, QStringLiteral("**%1**").arg(project));
+        prettyDescr.replace(re, QStringLiteral("<b><span style='color:%2'>%1</span></b>").arg(project, projectColor.name()));
     }
     for (const auto &context : todo.contexts()) {
         const auto re = QRegularExpression(QStringLiteral("\\B\\%1\\b").arg(context));
-        prettyDescr.replace(re, QStringLiteral("*%1*").arg(context));
+        prettyDescr.replace(re, QStringLiteral("<i><span style='color:%2'>%1</span></i>").arg(context, contextColor.name()));
     }
 
     prettyDescr.replace(s_priorityRegexp, QStringLiteral(""));

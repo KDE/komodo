@@ -15,3 +15,4 @@ Dependencies:
     'frameworks/kconfig': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
     'frameworks/kwindowsystem': '@latest-kf6'
+    'frameworks/kguiaddons': '@latest-kf6'
