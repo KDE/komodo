@@ -26,6 +26,7 @@ target_link_libraries(models
     KF6::ConfigCore
     KF6::ConfigGui
     KF6::GuiAddons
+    KF6::ColorScheme
     logging
 )
 
