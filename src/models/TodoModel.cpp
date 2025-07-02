@@ -107,9 +107,18 @@ QString TodoModel::prettyPrintDescription(const Todo &todo)
     prettyDescr.replace(s_completionRegexp, QStringLiteral(""));
     prettyDescr.replace(todo.creationDate(), QStringLiteral(""));
     prettyDescr.replace(todo.completionDate(), QStringLiteral(""));
-    for (auto pair : todo.keyValuePairs()) {
+    for (const auto &pair : todo.keyValuePairs()) {
         prettyDescr.replace(pair, QStringLiteral(""));
     }
+    for (const auto &project : todo.projects()) {
+        const auto re = QRegularExpression(QStringLiteral("\\B\\%1\\b").arg(project));
+        prettyDescr.replace(re, QStringLiteral("**%1**").arg(project));
+    }
+    for (const auto &context : todo.contexts()) {
+        const auto re = QRegularExpression(QStringLiteral("\\B\\%1\\b").arg(context));
+        prettyDescr.replace(re, QStringLiteral("*%1*").arg(context));
+    }
+
     prettyDescr.replace(s_priorityRegexp, QStringLiteral(""));
     return prettyDescr.simplified();
 }
