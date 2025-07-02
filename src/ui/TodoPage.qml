@@ -39,6 +39,7 @@ Kirigami.ScrollablePage {
         property var model
         property var index
         standardButtons: QQC2.DialogButtonBox.Cancel
+        width: parent.width - Kirigami.Units.gridUnit * 4
         contentItem.height: textLayout.height
         ColumnLayout {
             id: textLayout
@@ -79,10 +80,10 @@ Kirigami.ScrollablePage {
         property var model
         property var index
         property alias text: editPromptText.text
-        width: parent.width - Kirigami.Units.largeSpacing * 2
-        height: parent.height - Kirigami.Units.largeSpacing * 2
-
+        width: parent.width - Kirigami.Units.gridUnit * 4
+        contentItem.height: editLayout.height
         ColumnLayout {
+            id: editLayout
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: parent.right
@@ -95,6 +96,7 @@ Kirigami.ScrollablePage {
             QQC2.TextField {
                 id: editPromptText
                 Layout.fillWidth: true
+                Layout.fillHeight: true
                 placeholderText: editPrompt.model.description
             }
         }
