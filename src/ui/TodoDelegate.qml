@@ -190,4 +190,85 @@ Kirigami.AbstractCard {
             }
         }
     }
+
+    footer: RowLayout {
+        Kirigami.Chip {
+            Layout.alignment: Qt.AlignLeft
+            visible: model.priority
+            text: model.priority
+            font.bold: false
+            closable: false
+            checkable: false
+            icon.name: "dialog-layers-symbolic"
+            QQC2.ToolTip.visible: down
+            QQC2.ToolTip.text: i18n("Task priority")
+        }
+
+        Kirigami.Chip {
+            visible: model.completionDate
+            text: model.completionDate
+            font.bold: false
+            closable: false
+            checkable: false
+            icon.name: "task-complete-symbolic"
+            QQC2.ToolTip.visible: down
+            QQC2.ToolTip.text: i18n("Task completion date")
+        }
+
+        Kirigami.Chip {
+            visible: model.dueDate
+            text: model.dueDate
+            font.bold: false
+            closable: false
+            checkable: false
+            icon.name: "notification-active-symbolic"
+            QQC2.ToolTip.visible: down
+            QQC2.ToolTip.text: i18n("Task due date")
+        }
+
+        Kirigami.Chip {
+            Layout.alignment: Qt.AlignRight
+            visible: model.creationDate
+            text: model.creationDate
+            font.bold: false
+            closable: false
+            checkable: false
+            icon.name: "clock-symbolic"
+            QQC2.ToolTip.visible: down
+            QQC2.ToolTip.text: i18n("Task creation date")
+        }
+
+        Item {
+            Layout.fillWidth: true
+        }
+
+        QQC2.Button {
+            Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+            Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+            text: i18nc("@button", "Edit")
+            display: QQC2.AbstractButton.IconOnly
+            flat: true
+            icon.name: "edit-entry"
+            onClicked: {
+                editPrompt.text = model.description;
+                editPrompt.model = model;
+                editPrompt.index = index;
+                editPrompt.open();
+            }
+        }
+
+        QQC2.Button {
+            Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+            Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+            text: i18nc("@button", "Delete")
+            display: QQC2.AbstractButton.IconOnly
+            flat: true
+            icon.name: "entry-delete"
+            onClicked: {
+                deletePrompt.model = model;
+                deletePrompt.index = index;
+                deletePrompt.open();
+            }
+        }
+    }
 }
