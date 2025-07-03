@@ -10,6 +10,7 @@ Kirigami.AbstractCard {
     id: todoDelegate
     clip: true
 
+    property bool editMode: false
     property var keyValuePairs: model ? model.keyValuePairs : [""]
     property bool completion: model ? model.completion : false
     property var priority: model ? model.priority : ""
@@ -23,7 +24,7 @@ Kirigami.AbstractCard {
         implicitWidth: delegateLayout.implicitWidth
         implicitHeight: delegateLayout.implicitHeight
 
-        RowLayout {
+        ColumnLayout {
             id: delegateLayout
             anchors {
                 left: parent.left
@@ -31,135 +32,201 @@ Kirigami.AbstractCard {
                 right: parent.right
             }
 
-            ColumnLayout {
-                id: completionColumn
-                Layout.minimumWidth: Kirigami.Units.gridUnit * 2
-                Layout.maximumWidth: Kirigami.Units.gridUnit * 2
-                QQC2.CheckBox {
-                    id: completionStatus
-                    Layout.alignment: Qt.AlignHCenter
-                    checked: todoDelegate.completion
-                    onToggled: todoDelegate.completion = !todoDelegate.completion
-                    QQC2.ToolTip.visible: hovered
-                    QQC2.ToolTip.text: i18n("Task completion status")
+            RowLayout {
+                id: dataLayout
+                visible: !todoDelegate.editMode
+
+                ColumnLayout {
+                    id: completionColumn
+                    Layout.minimumWidth: Kirigami.Units.gridUnit * 2
+                    Layout.maximumWidth: Kirigami.Units.gridUnit * 2
+                    QQC2.CheckBox {
+                        id: completionStatus
+                        Layout.alignment: Qt.AlignHCenter
+                        checked: todoDelegate.completion
+                        onToggled: todoDelegate.completion = !todoDelegate.completion
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.text: i18n("Task completion status")
+                    }
+
+                    Item {
+                        Layout.fillHeight: true
+                    }
+
+                    QQC2.Label {
+                        id: priorityLabel
+                        Layout.alignment: Qt.AlignHCenter
+                        visible: todoDelegate.priority
+                        text: todoDelegate.priority.replace(/\(|\)/g, "")
+                    }
                 }
 
-                Item {
+                Kirigami.Separator {
                     Layout.fillHeight: true
+                    Layout.alignment: Qt.AlignCenter
                 }
 
-                QQC2.Label {
-                    id: priorityLabel
-                    Layout.alignment: Qt.AlignHCenter
-                    visible: todoDelegate.priority
-                    text: todoDelegate.priority.replace(/\(|\)/g, "")
+                ColumnLayout {
+                    id: viewLayout
+                    Layout.fillWidth: true
+                    Kirigami.SelectableLabel {
+                        font.family: "monospace"
+                        Layout.fillWidth: true
+                        Layout.alignment: Qt.AlignTop
+                        wrapMode: Text.Wrap
+                        text: todoDelegate.prettyDescription
+                        // Looks like colors work with markdownText, but it also resolves urls etc.
+                        textFormat: Qt.MarkdownText
+                        font.strikeout: todoDelegate.completion
+                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.35
+                        bottomPadding: Kirigami.Units.smallSpacing
+                    }
+
+                    Repeater {
+                        id: keyValuePairRepeater
+                        model: todoDelegate.keyValuePairs
+                        RowLayout {
+                            property var textData: modelData.split(":")
+                            property var textUrl: {
+                                let value = "";
+                                // Split the value like this in case its URL
+                                if (textData[1].startsWith("http") || textData[1].startsWith("file://")) {
+                                    const url = modelData.split(":").slice(1).join(":");
+                                    value = url;
+                                }
+                                return value;
+                            }
+
+                            visible: textData[0] == "due" ? false : true
+
+                            QQC2.Label {
+                                id: keyLabel
+                                text: parent.textData[0] + ":"
+                                font.italic: true
+                                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                            }
+
+                            // Show this if the value has no url
+                            Kirigami.SelectableLabel {
+                                Layout.maximumWidth: delegateLayout.width - keyLabel.width - completionColumn.width - Kirigami.Units.smallSpacing * 4
+                                text: parent.textData[1]
+                                visible: !textUrl
+                                wrapMode: Text.Wrap
+                                Layout.alignment: Qt.AlignLeft
+                                rightPadding: Kirigami.Units.smallSpacing
+                            }
+
+                            // Otherwise, we give a clickable url
+                            Kirigami.UrlButton {
+                                // Make sure the external url icon does not go outside the view
+                                Layout.maximumWidth: delegateLayout.width - keyLabel.width - completionColumn.width - Kirigami.Units.smallSpacing * 4
+                                Layout.alignment: Qt.AlignLeft
+                                visible: textUrl
+                                elide: Text.ElideRight
+                                text: textUrl
+                                url: textUrl
+                            }
+                        }
+                    }
+
+                    RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+                        Layout.maximumWidth: delegateLayout.width - completionColumn.width - Kirigami.Units.smallSpacing
+                        Kirigami.Chip {
+                            Layout.alignment: Qt.AlignLeft
+                            visible: todoDelegate.completionDate
+                            text: todoDelegate.completionDate
+                            font.bold: false
+                            closable: false
+                            checkable: false
+                            icon.name: "task-complete-symbolic"
+                            QQC2.ToolTip.visible: down
+                            QQC2.ToolTip.text: i18n("Task completion date")
+                        }
+
+                        Kirigami.Chip {
+                            Layout.alignment: Qt.AlignLeft
+                            visible: todoDelegate.dueDate
+                            text: todoDelegate.dueDate
+                            font.bold: false
+                            closable: false
+                            checkable: false
+                            icon.name: "notification-active-symbolic"
+                            QQC2.ToolTip.visible: down
+                            QQC2.ToolTip.text: i18n("Task due date")
+                        }
+
+                        Kirigami.Chip {
+                            Layout.alignment: Qt.AlignLeft
+                            visible: todoDelegate.creationDate
+                            text: todoDelegate.creationDate
+                            font.bold: false
+                            closable: false
+                            checkable: false
+                            icon.name: "clock-symbolic"
+                            QQC2.ToolTip.visible: down
+                            QQC2.ToolTip.text: i18n("Task creation date")
+                        }
+
+                        Item {
+                            Layout.fillWidth: true
+                        }
+
+                        QQC2.Button {
+                            Layout.alignment: Qt.AlignRight
+                            Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+                            Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+                            text: i18nc("@button", "Edit")
+                            display: QQC2.AbstractButton.IconOnly
+                            flat: true
+                            icon.name: "edit-entry"
+                            onClicked: {
+                                todoDelegate.editMode = true;
+                            }
+                        }
+
+                        QQC2.Button {
+                            Layout.alignment: Qt.AlignRight
+                            Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+                            Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+                            text: i18nc("@button", "Delete")
+                            display: QQC2.AbstractButton.IconOnly
+                            flat: true
+                            icon.name: "entry-delete"
+                            onClicked: {
+                                deletePrompt.model = model;
+                                deletePrompt.index = index;
+                                deletePrompt.open();
+                            }
+                        }
+                    }
                 }
             }
-
-            Kirigami.Separator {
-                Layout.fillHeight: true
-                Layout.alignment: Qt.AlignCenter
-            }
-
             ColumnLayout {
-                Layout.fillWidth: true
-                Kirigami.SelectableLabel {
+                id: editLayout
+                visible: todoDelegate.editMode
+                QQC2.TextField {
+                    id: addNewPromptText
                     font.family: "monospace"
                     Layout.fillWidth: true
-                    Layout.alignment: Qt.AlignTop
+                    Layout.fillHeight: true
+                    Layout.maximumWidth: delegateLayout.width - Kirigami.Units.smallSpacing
                     wrapMode: Text.Wrap
-                    text: todoDelegate.prettyDescription
-                    // Looks like colors work with markdownText, but it also resolves urls etc.
-                    textFormat: Qt.MarkdownText
-                    font.strikeout: todoDelegate.completion
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.35
-                    bottomPadding: Kirigami.Units.smallSpacing
+                    placeholderText: model.description
+                    text: model.description
                 }
-
-                Repeater {
-                    id: keyValuePairRepeater
-                    model: todoDelegate.keyValuePairs
-                    RowLayout {
-                        property var textData: modelData.split(":")
-                        property var textUrl: {
-                            let value = "";
-                            // Split the value like this in case its URL
-                            if (textData[1].startsWith("http") || textData[1].startsWith("file://")) {
-                                const url = modelData.split(":").slice(1).join(":");
-                                value = url;
-                            }
-                            return value;
-                        }
-
-                        visible: textData[0] == "due" ? false : true
-
-                        QQC2.Label {
-                            id: keyLabel
-                            text: parent.textData[0] + ":"
-                            font.italic: true
-                            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                        }
-
-                        // Show this if the value has no url
-                        Kirigami.SelectableLabel {
-                            Layout.maximumWidth: delegateLayout.width - keyLabel.width - completionColumn.width - Kirigami.Units.smallSpacing * 4
-                            text: parent.textData[1]
-                            visible: !textUrl
-                            wrapMode: Text.Wrap
-                            Layout.alignment: Qt.AlignLeft
-                            rightPadding: Kirigami.Units.smallSpacing
-                        }
-
-                        // Otherwise, we give a clickable url
-                        Kirigami.UrlButton {
-                            // Make sure the external url icon does not go outside the view
-                            Layout.maximumWidth: delegateLayout.width - keyLabel.width - completionColumn.width - Kirigami.Units.smallSpacing * 4
-                            Layout.alignment: Qt.AlignLeft
-                            visible: textUrl
-                            elide: Text.ElideRight
-                            text: textUrl
-                            url: textUrl
-                        }
-                    }
-                }
-
                 RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-                    Layout.maximumWidth: delegateLayout.width - completionColumn.width - Kirigami.Units.smallSpacing
-                    Kirigami.Chip {
-                        Layout.alignment: Qt.AlignLeft
-                        visible: todoDelegate.completionDate
-                        text: todoDelegate.completionDate
-                        font.bold: false
-                        closable: false
-                        checkable: false
-                        icon.name: "task-complete-symbolic"
-                        QQC2.ToolTip.visible: down
-                        QQC2.ToolTip.text: i18n("Task completion date")
+                    QQC2.Button {
+                        text: i18nc("@button", "Date")
+                        icon.name: "view-calendar"
+                        onClicked: {
+                            addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
+                        }
                     }
 
-                    Kirigami.Chip {
-                        Layout.alignment: Qt.AlignLeft
-                        visible: todoDelegate.dueDate
-                        text: todoDelegate.dueDate
-                        font.bold: false
-                        closable: false
-                        checkable: false
-                        icon.name: "notification-active-symbolic"
-                        QQC2.ToolTip.visible: down
-                        QQC2.ToolTip.text: i18n("Task due date")
-                    }
-
-                    Kirigami.Chip {
-                        Layout.alignment: Qt.AlignLeft
-                        visible: todoDelegate.creationDate
-                        text: todoDelegate.creationDate
-                        font.bold: false
-                        closable: false
-                        checkable: false
-                        icon.name: "clock-symbolic"
-                        QQC2.ToolTip.visible: down
-                        QQC2.ToolTip.text: i18n("Task creation date")
+                    Kirigami.UrlButton {
+                        text: i18nc("@info", "Syntax Help")
+                        url: "https://github.com/todotxt/todo.txt/blob/master/README.md"
                     }
 
                     Item {
@@ -167,34 +234,23 @@ Kirigami.AbstractCard {
                     }
 
                     QQC2.Button {
-                        Layout.alignment: Qt.AlignRight
-                        Layout.preferredWidth: Kirigami.Units.iconSizes.medium
-                        Layout.preferredHeight: Kirigami.Units.iconSizes.medium
-                        text: i18nc("@button", "Edit")
+                        text: i18nc("@button", "Save")
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
-                        icon.name: "edit-entry"
+                        icon.name: "document-save"
                         onClicked: {
-                            editPrompt.addNew = false;
-                            editPrompt.text = todoDelegate.description;
-                            editPrompt.model = model;
-                            editPrompt.index = index;
-                            editPrompt.open();
+                            model.description = addNewPromptText.text;
+                            todoDelegate.editMode = false;
                         }
                     }
-
                     QQC2.Button {
-                        Layout.alignment: Qt.AlignRight
-                        Layout.preferredWidth: Kirigami.Units.iconSizes.medium
-                        Layout.preferredHeight: Kirigami.Units.iconSizes.medium
-                        text: i18nc("@button", "Delete")
+                        text: i18nc("@button", "Cancel")
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
-                        icon.name: "entry-delete"
+                        icon.name: "dialog-cancel"
                         onClicked: {
-                            deletePrompt.model = model;
-                            deletePrompt.index = index;
-                            deletePrompt.open();
+                            addNewPromptText.text = model.description;
+                            todoDelegate.editMode = false;
                         }
                     }
                 }

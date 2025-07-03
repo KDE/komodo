@@ -12,6 +12,13 @@ import org.kde.komodo.models
 Kirigami.ScrollablePage {
     id: page
 
+    function getDate() {
+        let today = new Date();
+        const tz = today.getTimezoneOffset();
+        today = new Date(today.getTime() - (tz * 60 * 1000));
+        return addNewPromptText.cursorPosition, today.toISOString().substring(0, 10);
+    }
+
     Dialogs.FileDialog {
         id: openDialog
         onAccepted: {
@@ -72,39 +79,36 @@ Kirigami.ScrollablePage {
     }
 
     QQC2.Dialog {
-        id: editPrompt
+        id: addNewPrompt
         property var model
         property var index
-        property alias text: editPromptText.text
-        property bool addNew: true
-        title: addNew ? i18n("Add New Todo") : i18n("Edit Todo")
+        property alias text: addNewPromptText.text
+        title: i18n("Add New Todo")
         anchors.centerIn: parent
         modal: true
         width: parent.width - Kirigami.Units.gridUnit * 4
 
         contentItem: ColumnLayout {
             QQC2.TextField {
-                id: editPromptText
+                id: addNewPromptText
                 font.family: "monospace"
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 wrapMode: Text.Wrap
-                placeholderText: editPrompt.addNew ? "(A) 2024-01-01 description +project @context key:value" : editPrompt.model.description
+                placeholderText: "(A) 2024-01-01 description +project @context key:value"
             }
             RowLayout {
                 QQC2.Button {
-                    text: i18n("Date")
+                    text: i18nc("@button", "Date")
+                    icon.name: "view-calendar"
                     onClicked: {
-                        let today = new Date();
-                        const tz = today.getTimezoneOffset();
-                        today = new Date(today.getTime() - (tz * 60 * 1000));
-                        editPromptText.insert(editPromptText.cursorPosition, today.toISOString().substring(0, 10));
+                        addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
                     }
                 }
 
                 Kirigami.UrlButton {
-                    text: i18n("Syntax Help")
+                    text: i18nc("@info", "Syntax Help")
                     url: "https://github.com/todotxt/todo.txt/blob/master/README.md"
                 }
             }
@@ -113,18 +117,13 @@ Kirigami.ScrollablePage {
         footer: QQC2.DialogButtonBox {
             standardButtons: QQC2.DialogButtonBox.Ok | QQC2.DialogButtonBox.Cancel
             onAccepted: {
-                if (editPrompt.addNew) {
-                    TodoModel.addTodo(editPrompt.text);
-                } else {
-                    const model = editPrompt.model;
-                    model.description = editPromptText.text;
-                }
-                editPrompt.text = ""; // Clear TextField every time it's done
-                editPrompt.close();
+                TodoModel.addTodo(addNewPrompt.text);
+                addNewPrompt.text = ""; // Clear TextField every time it's done
+                addNewPrompt.close();
             }
             onRejected: {
-                editPrompt.text = "";
-                editPrompt.close();
+                addNewPrompt.text = "";
+                addNewPrompt.close();
             }
         }
     }
@@ -140,9 +139,8 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:button", "Add New Todo…")
             enabled: TodoModel.filePath != ""
             onTriggered: {
-                editPrompt.addNew = true;
-                editPrompt.text = "";
-                editPrompt.open();
+                addNewPrompt.text = "";
+                addNewPrompt.open();
             }
         },
         Kirigami.Action {
