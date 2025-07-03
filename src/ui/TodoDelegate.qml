@@ -10,7 +10,14 @@ Kirigami.AbstractCard {
     id: todoDelegate
     clip: true
 
-    property var keyValuePairs: model.keyValuePairs
+    property var keyValuePairs: model ? model.keyValuePairs : [""]
+    property bool completion: model ? model.completion : false
+    property var priority: model ? model.priority : ""
+    property var prettyDescription: model ? model.prettyDescription : ""
+    property var completionDate: model ? model.completionDate : ""
+    property var dueDate: model ? model.dueDate : ""
+    property var creationDate: model ? model.creationDate : ""
+    property var description: model ? model.description : ""
 
     contentItem: Item {
         implicitWidth: delegateLayout.implicitWidth
@@ -31,8 +38,8 @@ Kirigami.AbstractCard {
                 QQC2.CheckBox {
                     id: completionStatus
                     Layout.alignment: Qt.AlignHCenter
-                    checked: model.completion
-                    onToggled: model.completion = !model.completion
+                    checked: todoDelegate.completion
+                    onToggled: todoDelegate.completion = !todoDelegate.completion
                     QQC2.ToolTip.visible: hovered
                     QQC2.ToolTip.text: i18n("Task completion status")
                 }
@@ -44,8 +51,8 @@ Kirigami.AbstractCard {
                 QQC2.Label {
                     id: priorityLabel
                     Layout.alignment: Qt.AlignHCenter
-                    visible: model.priority
-                    text: model.priority.replace(/\(|\)/g, "")
+                    visible: todoDelegate.priority
+                    text: todoDelegate.priority.replace(/\(|\)/g, "")
                 }
             }
 
@@ -60,10 +67,10 @@ Kirigami.AbstractCard {
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignTop
                     wrapMode: Text.Wrap
-                    text: model.prettyDescription
+                    text: todoDelegate.prettyDescription
                     // Looks like colors work with markdownText, but it also resolves urls etc.
                     textFormat: Qt.MarkdownText
-                    font.strikeout: model.completion
+                    font.strikeout: todoDelegate.completion
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.35
                     bottomPadding: Kirigami.Units.smallSpacing
                 }
@@ -120,8 +127,8 @@ Kirigami.AbstractCard {
                     Layout.maximumWidth: delegateLayout.width - completionColumn.width - Kirigami.Units.smallSpacing
                     Kirigami.Chip {
                         Layout.alignment: Qt.AlignLeft
-                        visible: model.completionDate
-                        text: model.completionDate
+                        visible: todoDelegate.completionDate
+                        text: todoDelegate.completionDate
                         font.bold: false
                         closable: false
                         checkable: false
@@ -132,8 +139,8 @@ Kirigami.AbstractCard {
 
                     Kirigami.Chip {
                         Layout.alignment: Qt.AlignLeft
-                        visible: model.dueDate
-                        text: model.dueDate
+                        visible: todoDelegate.dueDate
+                        text: todoDelegate.dueDate
                         font.bold: false
                         closable: false
                         checkable: false
@@ -144,8 +151,8 @@ Kirigami.AbstractCard {
 
                     Kirigami.Chip {
                         Layout.alignment: Qt.AlignLeft
-                        visible: model.creationDate
-                        text: model.creationDate
+                        visible: todoDelegate.creationDate
+                        text: todoDelegate.creationDate
                         font.bold: false
                         closable: false
                         checkable: false
@@ -167,7 +174,7 @@ Kirigami.AbstractCard {
                         flat: true
                         icon.name: "edit-entry"
                         onClicked: {
-                            editPrompt.text = model.description;
+                            editPrompt.text = todoDelegate.description;
                             editPrompt.model = model;
                             editPrompt.index = index;
                             editPrompt.open();
