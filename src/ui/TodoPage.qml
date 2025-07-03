@@ -122,6 +122,10 @@ Kirigami.ScrollablePage {
                 editPrompt.text = ""; // Clear TextField every time it's done
                 editPrompt.close();
             }
+            onRejected: {
+                editPrompt.text = "";
+                editPrompt.close();
+            }
         }
     }
 
@@ -137,6 +141,7 @@ Kirigami.ScrollablePage {
             enabled: TodoModel.filePath != ""
             onTriggered: {
                 editPrompt.addNew = true;
+                editPrompt.text = "";
                 editPrompt.open();
             }
         },
