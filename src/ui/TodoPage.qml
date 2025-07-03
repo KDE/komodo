@@ -90,7 +90,7 @@ Kirigami.ScrollablePage {
                 Layout.fillHeight: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 wrapMode: Text.Wrap
-                placeholderText: editPrompt.addNew ? "" : editPrompt.model.description
+                placeholderText: editPrompt.addNew ? "(A) 2024-01-01 description +project @context key:value" : editPrompt.model.description
             }
             RowLayout {
                 QQC2.Button {
