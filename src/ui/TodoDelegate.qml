@@ -64,6 +64,7 @@ Kirigami.AbstractCard {
             ColumnLayout {
                 Layout.fillWidth: true
                 Kirigami.SelectableLabel {
+                    font.family: "monospace"
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignTop
                     wrapMode: Text.Wrap
@@ -174,6 +175,7 @@ Kirigami.AbstractCard {
                         flat: true
                         icon.name: "edit-entry"
                         onClicked: {
+                            editPrompt.addNew = false;
                             editPrompt.text = todoDelegate.description;
                             editPrompt.model = model;
                             editPrompt.index = index;

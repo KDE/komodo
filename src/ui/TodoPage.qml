@@ -33,29 +33,28 @@ Kirigami.ScrollablePage {
 
     QQC2.Dialog {
         id: deletePrompt
-        title: "Delete Todo"
+        title: i18n("Delete Todo")
         anchors.centerIn: parent
         modal: true
         property var model
         property var index
         standardButtons: QQC2.DialogButtonBox.Cancel
         width: parent.width - Kirigami.Units.gridUnit * 4
-        contentItem.height: textLayout.height
-        ColumnLayout {
+        contentItem: ColumnLayout {
             id: textLayout
-            anchors.top: parent.top
-            anchors.left: parent.left
-            anchors.right: parent.right
             QQC2.Label {
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
                 text: i18n("Are you sure you wish to delete this todo?")
             }
-            QQC2.Label {
+            QQC2.TextField {
+                font.family: "monospace"
+                readOnly: true
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                elide: Text.ElideRight
-                text: deletePrompt.model.description
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                wrapMode: Text.Wrap
+                text: deletePrompt.model ? deletePrompt.model.description : ""
             }
         }
         footer: QQC2.DialogButtonBox {
@@ -74,59 +73,54 @@ Kirigami.ScrollablePage {
 
     QQC2.Dialog {
         id: editPrompt
-        title: "Edit Todo"
-        anchors.centerIn: parent
-        modal: true
         property var model
         property var index
         property alias text: editPromptText.text
+        property bool addNew: true
+        title: addNew ? i18n("Add New Todo") : i18n("Edit Todo")
+        anchors.centerIn: parent
+        modal: true
         width: parent.width - Kirigami.Units.gridUnit * 4
-        contentItem.height: editLayout.height
-        ColumnLayout {
-            id: editLayout
-            anchors.top: parent.top
-            anchors.left: parent.left
-            anchors.right: parent.right
-            QQC2.Label {
-                Layout.fillWidth: true
-                wrapMode: Text.WordWrap
-                text: editPrompt.model.description
-            }
 
+        contentItem: ColumnLayout {
             QQC2.TextField {
                 id: editPromptText
+                font.family: "monospace"
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                placeholderText: editPrompt.model.description
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                wrapMode: Text.Wrap
+                placeholderText: editPrompt.addNew ? "" : editPrompt.model.description
+            }
+            RowLayout {
+                QQC2.Button {
+                    text: i18n("Date")
+                    onClicked: {
+                        let today = new Date();
+                        const tz = today.getTimezoneOffset();
+                        today = new Date(today.getTime() - (tz * 60 * 1000));
+                        editPromptText.insert(editPromptText.cursorPosition, today.toISOString().substring(0, 10));
+                    }
+                }
+
+                Kirigami.UrlButton {
+                    text: i18n("Syntax Help")
+                    url: "https://github.com/todotxt/todo.txt/blob/master/README.md"
+                }
             }
         }
+
         footer: QQC2.DialogButtonBox {
             standardButtons: QQC2.DialogButtonBox.Ok | QQC2.DialogButtonBox.Cancel
             onAccepted: {
-                const model = editPrompt.model;
-                model.description = editPromptText.text;
+                if (editPrompt.addNew) {
+                    TodoModel.addTodo(editPrompt.text);
+                } else {
+                    const model = editPrompt.model;
+                    model.description = editPromptText.text;
+                }
+                editPrompt.text = ""; // Clear TextField every time it's done
                 editPrompt.close();
-            }
-        }
-    }
-
-    QQC2.Dialog {
-        id: addPrompt
-        anchors.centerIn: parent
-        title: "Add New Todo"
-        modal: true
-        QQC2.TextField {
-            id: addPromptText
-            anchors.fill: parent
-            placeholderText: "(A) 2024-01-01 description +project @context key:value"
-        }
-
-        footer: QQC2.DialogButtonBox {
-            standardButtons: QQC2.DialogButtonBox.Ok
-            onAccepted: {
-                TodoModel.addTodo(addPromptText.text);
-                addPromptText.text = ""; // Clear TextField every time it's done
-                addPrompt.close();
             }
         }
     }
@@ -138,6 +132,15 @@ Kirigami.ScrollablePage {
 
     actions: [
         Kirigami.Action {
+            icon.name: "list-add"
+            text: i18nc("@action:button", "Add New Todo…")
+            enabled: TodoModel.filePath != ""
+            onTriggered: {
+                editPrompt.addNew = true;
+                editPrompt.open();
+            }
+        },
+        Kirigami.Action {
             icon.name: "document-open"
             text: i18nc("@action:button", "Open File…")
             onTriggered: {
@@ -145,19 +148,11 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            icon.name: "add"
-            text: i18nc("@action:button", "Add New Todo…")
-            enabled: TodoModel.filePath != ""
-            onTriggered: {
-                addPrompt.open();
-            }
-        },
-        Kirigami.Action {
             text: i18nc("@action:inmenu", "About KomoDo")
             icon.name: "help-about"
             shortcut: StandardKey.HelpContents
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            onTriggered: pageStack.layers.push(aboutPage)
+            onTriggered: pageStack.layers.push(root.aboutPage)
             enabled: pageStack.layers.depth <= 1
         }
     ]
