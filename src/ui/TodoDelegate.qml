@@ -70,6 +70,18 @@ Kirigami.AbstractCard {
                         Layout.alignment: Qt.AlignHCenter
                         visible: todoDelegate.priority
                         text: todoDelegate.priority.replace(/\(|\)/g, "")
+                        color: {
+                            switch (text) {
+                            case "A":
+                                return Kirigami.Theme.negativeTextColor;
+                            case "B":
+                                return Kirigami.Theme.neutralTextColor;
+                            case "C":
+                                return Kirigami.Theme.positiveTextColor;
+                            default:
+                                return Kirigami.Theme.textColor;
+                            }
+                        }
                     }
                 }
 
