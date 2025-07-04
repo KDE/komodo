@@ -109,6 +109,7 @@ Kirigami.AbstractCard {
                         font.strikeout: todoDelegate.completion
                         font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
                         bottomPadding: Kirigami.Units.smallSpacing
+                        color: todoDelegate.completion ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                     }
 
                     Repeater {
