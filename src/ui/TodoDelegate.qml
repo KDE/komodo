@@ -10,6 +10,17 @@ Kirigami.AbstractCard {
     id: todoDelegate
     clip: true
 
+    // Create custom shadowed rectangle for the focus coloring
+    background: Kirigami.ShadowedRectangle {
+        color: Kirigami.Theme.backgroundColor
+        shadow.color: Qt.rgba(0, 0, 0, 0.6)
+        shadow.yOffset: 1
+        shadow.size: Kirigami.Units.gridUnit / 2
+        radius: Kirigami.Units.cornerRadius
+        border.width: 1
+        border.color: todoDelegate.focus ? Kirigami.Theme.activeTextColor : Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, Kirigami.Theme.frameContrast)
+    }
+
     property bool editMode: false
     property var keyValuePairs: model ? model.keyValuePairs : [""]
     property bool completion: model ? model.completion : false
@@ -42,7 +53,8 @@ Kirigami.AbstractCard {
                     Layout.maximumWidth: Kirigami.Units.gridUnit * 2
                     QQC2.CheckBox {
                         id: completionStatus
-                        Layout.alignment: Qt.AlignHCenter
+                        spacing: 0
+                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                         checked: todoDelegate.completion
                         onToggled: todoDelegate.completion = !todoDelegate.completion
                         QQC2.ToolTip.visible: hovered
@@ -78,7 +90,7 @@ Kirigami.AbstractCard {
                         // Looks like colors work with markdownText, but it also resolves urls etc.
                         textFormat: Qt.MarkdownText
                         font.strikeout: todoDelegate.completion
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.35
+                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
                         bottomPadding: Kirigami.Units.smallSpacing
                     }
 

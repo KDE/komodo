@@ -128,9 +128,28 @@ Kirigami.ScrollablePage {
         }
     }
 
+    titleDelegate: Kirigami.Heading {
+        text: TodoModel.filePath
+        elide: Text.ElideMiddle
+    }
+
     header: Kirigami.SearchField {
         id: searchField
+        Layout.fillWidth: true
         visible: true
+        onTextChanged: {
+            cardsListView.currentIndex = -1;
+        }
+        background: ColumnLayout {
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                color: Kirigami.Theme.backgroundColor
+            }
+            Kirigami.Separator {
+                Layout.fillWidth: true
+            }
+        }
     }
 
     actions: [
@@ -155,12 +174,16 @@ Kirigami.ScrollablePage {
             icon.name: "help-about"
             shortcut: StandardKey.HelpContents
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            onTriggered: pageStack.layers.push(root.aboutPage)
+            onTriggered: pageStack.layers.push(aboutPage)
             enabled: pageStack.layers.depth <= 1
         }
     ]
+
     Kirigami.CardsListView {
         id: cardsListView
+        keyNavigationWraps: true
+        highlightFollowsCurrentItem: true
+        currentIndex: -1
 
         Kirigami.PlaceholderMessage {
             id: noTodosLoaded

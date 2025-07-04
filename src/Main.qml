@@ -9,9 +9,7 @@ import org.kde.coreaddons
 
 import org.kde.komodo.ui
 
-// Provides basic features needed for all kirigami applications
 Kirigami.ApplicationWindow {
-    // Unique identifier to reference this object
     id: root
 
     title: i18n("KomoDo")
