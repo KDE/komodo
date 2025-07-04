@@ -90,6 +90,11 @@ Kirigami.AbstractCard {
                     Layout.alignment: Qt.AlignCenter
                 }
 
+                Item {
+                    Layout.minimumWidth: Kirigami.Units.smallSpacing
+                    implicitWidth: Kirigami.Units.smallSpacing
+                }
+
                 ColumnLayout {
                     id: viewLayout
                     Layout.fillWidth: true
