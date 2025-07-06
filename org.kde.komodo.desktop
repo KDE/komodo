@@ -2,7 +2,7 @@
 Name=KomoDo
 Name[x-test]=xxKomoDoxx
 Exec=komodo
-Icon=kde
+Icon=korg-todo
 Type=Application
 Terminal=false
 Categories=Utility
