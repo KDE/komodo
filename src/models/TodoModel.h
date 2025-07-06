@@ -7,6 +7,7 @@
 #include "komodo_config.h"
 #include <QAbstractListModel>
 #include <QDebug>
+#include <QFileSystemWatcher>
 #include <QMap>
 #include <QQmlEngine>
 #include <QRegularExpression>
@@ -53,6 +54,7 @@ public:
     QUrl filePath();
     void setFilePath(const QUrl &newFilePath);
     Q_SIGNAL void filePathChanged();
+    Q_SIGNAL void fileChanged();
 
     Q_INVOKABLE bool loadFile();
     Q_INVOKABLE bool saveFile();
@@ -64,4 +66,5 @@ private:
     QUrl m_filePath;
     QList<Todo> m_todos;
     KomodoConfig *m_config;
+    QFileSystemWatcher *m_fileWatcher;
 };

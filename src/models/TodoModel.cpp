@@ -12,6 +12,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QFileSystemWatcher>
 #include <QGuiApplication>
 #include <QRegularExpression>
 #include <QString>
@@ -47,6 +48,11 @@ TodoModel::TodoModel(QObject *parent)
         m_filePath = QUrl::fromLocalFile(m_config->todoFilePath());
         loadFile();
     }
+    m_fileWatcher = new QFileSystemWatcher(this);
+    m_fileWatcher->addPath(m_filePath.toLocalFile());
+    connect(m_fileWatcher, &QFileSystemWatcher::fileChanged, this, [this]() {
+        Q_EMIT fileChanged();
+    });
 }
 
 Todo TodoModel::parseTodoFromDescription(const QString &description)

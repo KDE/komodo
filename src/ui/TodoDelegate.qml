@@ -203,7 +203,7 @@ Kirigami.AbstractCard {
                             font.bold: false
                             closable: false
                             checkable: false
-                            icon.name: "clock-symbolic"
+                            icon.name: "clock"
                             QQC2.ToolTip.visible: down
                             QQC2.ToolTip.text: i18n("Task creation date")
                         }
@@ -220,7 +220,7 @@ Kirigami.AbstractCard {
                             text: i18nc("@button", "Edit")
                             display: QQC2.AbstractButton.IconOnly
                             flat: true
-                            icon.name: "edit-entry"
+                            icon.name: "edit-entry-symbolic"
                             onClicked: {
                                 todoDelegate.editMode = true;
                                 addNewPromptText.focus = true;
@@ -236,7 +236,7 @@ Kirigami.AbstractCard {
                             text: i18nc("@button", "Delete")
                             display: QQC2.AbstractButton.IconOnly
                             flat: true
-                            icon.name: "entry-delete"
+                            icon.name: "entry-delete-symbolic"
                             onClicked: {
                                 deletePrompt.model = model;
                                 deletePrompt.index = index;
@@ -265,7 +265,7 @@ Kirigami.AbstractCard {
                 RowLayout {
                     QQC2.Button {
                         text: i18nc("@button", "Insert Date")
-                        icon.name: "view-calendar"
+                        icon.name: "view-calendar-symbolic"
                         onClicked: {
                             addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
                         }
@@ -284,9 +284,10 @@ Kirigami.AbstractCard {
                         text: i18nc("@button", "Save")
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
-                        icon.name: "document-save"
+                        icon.name: "document-save-symbolic"
                         enabled: addNewPromptText.length > 0
                         onClicked: {
+                            page.fileChangedFromApp = true;
                             model.description = addNewPromptText.text;
                             todoDelegate.editMode = false;
                             completionStatus.focus = true;
@@ -297,7 +298,7 @@ Kirigami.AbstractCard {
                         text: i18nc("@button", "Cancel")
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
-                        icon.name: "dialog-cancel"
+                        icon.name: "dialog-cancel-symbolic"
                         onClicked: {
                             addNewPromptText.text = model.description;
                             todoDelegate.editMode = false;

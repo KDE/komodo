@@ -17,6 +17,19 @@ Kirigami.ScrollablePage {
     horizontalScrollBarPolicy: QQC2.ScrollBar.AlwaysOff
     horizontalScrollBarInteractive: false
 
+    property bool fileChangedFromApp: false
+
+    Connections {
+        target: TodoModel
+        function onFileChanged() {
+            if (page.fileChangedFromApp) {
+                page.fileChangedFromApp = false;
+                return;
+            }
+            fileChangedMessage.visible = true;
+        }
+    }
+
     function getDate() {
         let today = new Date();
         const tz = today.getTimezoneOffset();
@@ -76,6 +89,7 @@ Kirigami.ScrollablePage {
                 icon.name: "delete"
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.DestructiveRole
                 onClicked: {
+                    page.fileChangedFromApp = true;
                     const originalIndex = filteredModel.index(deletePrompt.index, 0);
                     TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
                 }
@@ -111,7 +125,7 @@ Kirigami.ScrollablePage {
             RowLayout {
                 QQC2.Button {
                     text: i18nc("@button", "Insert Date")
-                    icon.name: "view-calendar"
+                    icon.name: "view-calendar-symbolic"
                     QQC2.ToolTip.visible: hovered
                     QQC2.ToolTip.text: i18n("Inserts timestamp, such as 2025-12-31")
                     onClicked: {
@@ -130,6 +144,7 @@ Kirigami.ScrollablePage {
             id: buttonBox
             standardButtons: QQC2.DialogButtonBox.Ok | QQC2.DialogButtonBox.Cancel
             onAccepted: {
+                page.fileChangedFromApp = true;
                 TodoModel.addTodo(addNewPrompt.text);
                 addNewPrompt.close();
             }
@@ -144,24 +159,44 @@ Kirigami.ScrollablePage {
         elide: Text.ElideMiddle
     }
 
-    header: Kirigami.SearchField {
-        id: searchField
-        Layout.fillWidth: true
-        KeyNavigation.backtab: page.globalToolBarItem
-        KeyNavigation.tab: page.globalToolBarItem
-        visible: true
-        onTextChanged: {
-            cardsListView.currentIndex = -1;
+    header: ColumnLayout {
+        Kirigami.SearchField {
+            id: searchField
+            Layout.fillWidth: true
+            KeyNavigation.backtab: page.globalToolBarItem
+            KeyNavigation.tab: page.globalToolBarItem
+            visible: true
+            onTextChanged: {
+                cardsListView.currentIndex = -1;
+            }
+            background: ColumnLayout {
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    color: Kirigami.Theme.backgroundColor
+                }
+                Kirigami.Separator {
+                    Layout.fillWidth: true
+                }
+            }
         }
-        background: ColumnLayout {
-            Rectangle {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                color: Kirigami.Theme.backgroundColor
-            }
-            Kirigami.Separator {
-                Layout.fillWidth: true
-            }
+        Kirigami.InlineMessage {
+            id: fileChangedMessage
+            Layout.fillWidth: true
+            visible: false
+            text: i18n("This file has been changed externally. Reloading it is strongly advised!")
+            type: Kirigami.MessageType.Warning
+            showCloseButton: true
+            actions: [
+                Kirigami.Action {
+                    icon.name: "view-refresh-symbolic"
+                    text: i18nc("@action:button", "Reload")
+                    onTriggered: source => {
+                        TodoModel.loadFile();
+                        fileChangedMessage.visible = false;
+                    }
+                }
+            ]
         }
     }
 
@@ -207,7 +242,7 @@ Kirigami.ScrollablePage {
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
             anchors.centerIn: parent
             visible: TodoModel.filePath == ""
-            icon.name: "korg-todo-symbolic"
+            icon.name: "korg-todo"
             text: i18nc("@info:placeholder", "No todo.txt file is loaded.")
             explanation: xi18nc("@info:placeholder", "Click <interface>Open File…</interface> to use an existing file or <interface>Create New…</interface> to start a new file.")
             helpfulAction: Kirigami.Action {
@@ -224,7 +259,7 @@ Kirigami.ScrollablePage {
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
             anchors.centerIn: parent
             visible: !noTodosLoaded.visible && filteredModel.count === 0
-            icon.name: "korg-todo-symbolic"
+            icon.name: "korg-todo"
             text: i18nc("@info:placeholder", "No todos found.")
         }
 
