@@ -242,6 +242,7 @@ Kirigami.AbstractCard {
                                 deletePrompt.index = index;
                                 deletePrompt.open();
                             }
+                            KeyNavigation.tab: completionStatus
                         }
                     }
                 }
@@ -258,10 +259,12 @@ Kirigami.AbstractCard {
                     wrapMode: Text.Wrap
                     placeholderText: model.description
                     text: model.description
+                    Accessible.role: Accessible.EditableText
+                    KeyNavigation.backtab: cancelEditButton
                 }
                 RowLayout {
                     QQC2.Button {
-                        text: i18nc("@button", "Date")
+                        text: i18nc("@button", "Insert Date")
                         icon.name: "view-calendar"
                         onClicked: {
                             addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
@@ -282,12 +285,15 @@ Kirigami.AbstractCard {
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
                         icon.name: "document-save"
+                        enabled: addNewPromptText.length > 0
                         onClicked: {
                             model.description = addNewPromptText.text;
                             todoDelegate.editMode = false;
+                            completionStatus.focus = true;
                         }
                     }
                     QQC2.Button {
+                        id: cancelEditButton
                         text: i18nc("@button", "Cancel")
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
@@ -295,7 +301,9 @@ Kirigami.AbstractCard {
                         onClicked: {
                             addNewPromptText.text = model.description;
                             todoDelegate.editMode = false;
+                            completionStatus.focus = true;
                         }
+                        KeyNavigation.tab: addNewPromptText
                     }
                 }
             }

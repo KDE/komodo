@@ -96,17 +96,24 @@ Kirigami.ScrollablePage {
         contentItem: ColumnLayout {
             QQC2.TextField {
                 id: addNewPromptText
+                focus: true
                 font.family: "monospace"
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 wrapMode: Text.Wrap
-                placeholderText: "(A) 2024-01-01 description +project @context key:value"
+                placeholderText: "(A) YYYY-MM-DD description +project @context key:value"
+                Accessible.role: Accessible.EditableText
+                onTextEdited: {
+                    buttonBox.standardButton(QQC2.DialogButtonBox.Ok).enabled = text.length > 0;
+                }
             }
             RowLayout {
                 QQC2.Button {
-                    text: i18nc("@button", "Date")
+                    text: i18nc("@button", "Insert Date")
                     icon.name: "view-calendar"
+                    QQC2.ToolTip.visible: hovered
+                    QQC2.ToolTip.text: i18n("Inserts timestamp, such as 2025-12-31")
                     onClicked: {
                         addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
                     }
@@ -120,14 +127,13 @@ Kirigami.ScrollablePage {
         }
 
         footer: QQC2.DialogButtonBox {
+            id: buttonBox
             standardButtons: QQC2.DialogButtonBox.Ok | QQC2.DialogButtonBox.Cancel
             onAccepted: {
                 TodoModel.addTodo(addNewPrompt.text);
-                addNewPrompt.text = ""; // Clear TextField every time it's done
                 addNewPrompt.close();
             }
             onRejected: {
-                addNewPrompt.text = "";
                 addNewPrompt.close();
             }
         }
@@ -165,7 +171,7 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:button", "Add New Todo…")
             enabled: TodoModel.filePath != ""
             onTriggered: {
-                addNewPrompt.text = "";
+                addNewPrompt.text = "(A) " + getDate() + " ";
                 addNewPrompt.open();
             }
         },
