@@ -209,6 +209,7 @@ Kirigami.ScrollablePage {
                 addNewPrompt.text = "(A) " + getDate() + " ";
                 addNewPrompt.open();
             }
+            shortcut: "Ctrl+N"
         },
         Kirigami.Action {
             icon.name: "document-open"
@@ -216,6 +217,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 openDialog.open();
             }
+            shortcut: "Ctrl+O"
         },
         Kirigami.Action {
             text: i18nc("@action:inmenu", "About KomoDo")
