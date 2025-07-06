@@ -134,7 +134,7 @@ Kirigami.ScrollablePage {
     }
 
     titleDelegate: Kirigami.Heading {
-        text: TodoModel.filePath
+        text: TodoModel.filePath.toString().replace("file://", "").split('/').pop()
         elide: Text.ElideMiddle
     }
 
@@ -249,13 +249,13 @@ Kirigami.ScrollablePage {
 
         Keys.onPressed: event => {
             if (event.key == Qt.Key_PageDown) {
-                for (let i = 0; i < 3; i++){
+                for (let i = 0; i < 3; i++) {
                     incrementCurrentIndex();
                 }
                 event.accepted = true;
             }
             if (event.key == Qt.Key_PageUp) {
-                for (let i = 0; i < 3; i++){
+                for (let i = 0; i < 3; i++) {
                     decrementCurrentIndex();
                 }
                 event.accepted = true;
