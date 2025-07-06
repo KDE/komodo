@@ -12,6 +12,11 @@ import org.kde.komodo.models
 Kirigami.ScrollablePage {
     id: page
 
+    KeyNavigation.backtab: searchField
+
+    horizontalScrollBarPolicy: QQC2.ScrollBar.AlwaysOff
+    horizontalScrollBarInteractive: false
+
     function getDate() {
         let today = new Date();
         const tz = today.getTimezoneOffset();
@@ -136,6 +141,8 @@ Kirigami.ScrollablePage {
     header: Kirigami.SearchField {
         id: searchField
         Layout.fillWidth: true
+        KeyNavigation.backtab: page.globalToolBarItem
+        KeyNavigation.tab: page.globalToolBarItem
         visible: true
         onTextChanged: {
             cardsListView.currentIndex = -1;
@@ -181,9 +188,13 @@ Kirigami.ScrollablePage {
 
     Kirigami.CardsListView {
         id: cardsListView
-        keyNavigationWraps: true
         highlightFollowsCurrentItem: true
         currentIndex: -1
+        highlightMoveDuration: 1
+        highlightMoveVelocity: 1
+        focusPolicy: Qt.NoFocus
+        KeyNavigation.tab: cardsListView.itemAtIndex(0)
+        KeyNavigation.backtab: page.globalToolBarItem
 
         Kirigami.PlaceholderMessage {
             id: noTodosLoaded
@@ -220,6 +231,35 @@ Kirigami.ScrollablePage {
             filterCaseSensitivity: Qt.CaseInsensitive
         }
 
-        delegate: TodoDelegate {}
+        delegate: TodoDelegate {
+            currentItem: cardsListView.currentItem == this
+        }
+
+        Keys.onEscapePressed: {
+            cardsListView.currentIndex = -1;
+        }
+
+        Keys.onLeftPressed: {
+            decrementCurrentIndex();
+        }
+
+        Keys.onRightPressed: {
+            incrementCurrentIndex();
+        }
+
+        Keys.onPressed: event => {
+            if (event.key == Qt.Key_PageDown) {
+                for (let i = 0; i < 3; i++){
+                    incrementCurrentIndex();
+                }
+                event.accepted = true;
+            }
+            if (event.key == Qt.Key_PageUp) {
+                for (let i = 0; i < 3; i++){
+                    decrementCurrentIndex();
+                }
+                event.accepted = true;
+            }
+        }
     }
 }

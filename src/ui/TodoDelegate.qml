@@ -10,17 +10,6 @@ Kirigami.AbstractCard {
     id: todoDelegate
     clip: true
 
-    // Create custom shadowed rectangle for the focus coloring
-    background: Kirigami.ShadowedRectangle {
-        color: Kirigami.Theme.backgroundColor
-        shadow.color: Qt.rgba(0, 0, 0, 0.6)
-        shadow.yOffset: 1
-        shadow.size: Kirigami.Units.gridUnit / 2
-        radius: Kirigami.Units.cornerRadius
-        border.width: 1
-        border.color: todoDelegate.focus ? Kirigami.Theme.activeTextColor : Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, Kirigami.Theme.frameContrast)
-    }
-
     property bool editMode: false
     property var keyValuePairs: model ? model.keyValuePairs : [""]
     property bool completion: model ? model.completion : false
@@ -30,6 +19,20 @@ Kirigami.AbstractCard {
     property var dueDate: model ? model.dueDate : ""
     property var creationDate: model ? model.creationDate : ""
     property var description: model ? model.description : ""
+    property var currentItem: false
+
+    KeyNavigation.tab: completionStatus
+
+    // Create custom shadowed rectangle for the focus coloring
+    background: Kirigami.ShadowedRectangle {
+        color: Kirigami.Theme.backgroundColor
+        shadow.color: Qt.rgba(0, 0, 0, 0.6)
+        shadow.yOffset: 1
+        shadow.size: Kirigami.Units.gridUnit / 2
+        radius: Kirigami.Units.cornerRadius
+        border.width: 1
+        border.color: todoDelegate.currentItem ? Kirigami.Theme.activeTextColor : Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, Kirigami.Theme.frameContrast)
+    }
 
     contentItem: Item {
         implicitWidth: delegateLayout.implicitWidth
@@ -59,6 +62,12 @@ Kirigami.AbstractCard {
                         onToggled: todoDelegate.completion = !todoDelegate.completion
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.text: i18n("Task completion status")
+                        KeyNavigation.tab: editButton
+                        background: Rectangle {
+                            visible: completionStatus.visualFocus
+                            color: Kirigami.Theme.highlightColor
+                            radius: Kirigami.Units.cornerRadius
+                        }
                     }
 
                     Item {
@@ -99,6 +108,7 @@ Kirigami.AbstractCard {
                     id: viewLayout
                     Layout.fillWidth: true
                     Kirigami.SelectableLabel {
+                        id: prettyDescriptionLabel
                         font.family: "monospace"
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignTop
@@ -203,6 +213,7 @@ Kirigami.AbstractCard {
                         }
 
                         QQC2.Button {
+                            id: editButton
                             Layout.alignment: Qt.AlignRight
                             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
@@ -212,10 +223,13 @@ Kirigami.AbstractCard {
                             icon.name: "edit-entry"
                             onClicked: {
                                 todoDelegate.editMode = true;
+                                addNewPromptText.focus = true;
                             }
+                            KeyNavigation.tab: deleteButton
                         }
 
                         QQC2.Button {
+                            id: deleteButton
                             Layout.alignment: Qt.AlignRight
                             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
