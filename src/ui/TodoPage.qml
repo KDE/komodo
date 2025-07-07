@@ -28,7 +28,6 @@ Kirigami.ScrollablePage {
                 return;
             }
             if (TodoModel.fileExists()) {
-                console.warn("file changed lol");
                 fileDeletedMessage.visible = false;
                 fileChangedMessage.visible = true;
             } else {
@@ -215,7 +214,8 @@ Kirigami.ScrollablePage {
                         },
                     ]
                     onCurrentValueChanged: {
-                        filteredModel.filterString = filterComboBox.currentValue;
+                        filteredModel.secondaryFilter = filterComboBox.currentValue;
+                        TodoModel.loadFile();
                     }
                 }
             }
@@ -338,19 +338,19 @@ Kirigami.ScrollablePage {
 
         model: KSortFilterProxyModel {
             id: filteredModel
-            sourceModel: KSortFilterProxyModel {
-                id: nestedModel
-                sourceModel: TodoModel
-                filterRoleName: "description"
-                sortRoleName: "description"
-                filterRegularExpression: RegExp(searchField.text.replace("+", "\\+").replace("(", "\\(").replace(")", "\\)"), "gi")
-                filterCaseSensitivity: Qt.CaseInsensitive
-            }
-            filterString: "default"
+            property var secondaryFilter: "default"
+            sourceModel: TodoModel
             filterRoleName: "description"
             sortRoleName: "description"
+            filterRegularExpression: RegExp(searchField.text.replace("+", "\\+").replace("(", "\\(").replace(")", "\\)"), "gi")
             filterRowCallback: function (source_row, source_parent) {
-                switch (filterString) {
+                if (searchField.text.length > 0) {
+                    if (!sourceModel.data(sourceModel.index(source_row, 0, source_parent), TodoModel.DescriptionRole).match(filterRegularExpression)) {
+                        return false;
+                    }
+                }
+
+                switch (secondaryFilter) {
                 case "default":
                     return true;
                 case "hasDueDate":
@@ -360,8 +360,7 @@ Kirigami.ScrollablePage {
                 case "isCompleted":
                     return sourceModel.data(sourceModel.index(source_row, 0, source_parent), TodoModel.CompletionRole);
                 default:
-                    console.warn("This filter is not handled yet!", filterString);
-                    return true;
+                    return false;
                 }
             }
         }

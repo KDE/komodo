@@ -11,15 +11,8 @@ Kirigami.AbstractCard {
     clip: true
 
     property bool editMode: false
-    property var keyValuePairs: model ? model.keyValuePairs : [""]
-    property bool completion: model ? model.completion : false
-    property var priority: model ? model.priority : ""
-    property var prettyDescription: model ? model.prettyDescription : ""
-    property var completionDate: model ? model.completionDate : ""
-    property var dueDate: model ? model.dueDate : ""
-    property var creationDate: model ? model.creationDate : ""
-    property var description: model ? model.description : ""
     property var currentItem: false
+    property var keyValuePairs: model.keyValuePairs
 
     KeyNavigation.tab: completionStatus
 
@@ -58,8 +51,11 @@ Kirigami.AbstractCard {
                         id: completionStatus
                         spacing: 0
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                        checked: todoDelegate.completion
-                        onToggled: todoDelegate.completion = !todoDelegate.completion
+                        checked: model.completion
+                        onToggled: {
+                            page.fileChangedFromApp = true;
+                            model.completion = !model.completion;
+                        }
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.text: i18n("Task completion status")
                         KeyNavigation.tab: editButton
@@ -78,8 +74,8 @@ Kirigami.AbstractCard {
                     QQC2.Label {
                         id: priorityLabel
                         Layout.alignment: Qt.AlignHCenter
-                        visible: todoDelegate.priority
-                        text: todoDelegate.priority.replace(/\(|\)/g, "")
+                        visible: model.priority
+                        text: model.priority.replace(/\(|\)/g, "")
                         color: {
                             switch (text) {
                             case "A":
@@ -114,13 +110,13 @@ Kirigami.AbstractCard {
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignTop
                         wrapMode: Text.Wrap
-                        text: todoDelegate.prettyDescription
+                        text: model.prettyDescription
                         // Looks like colors work with markdownText, but it also resolves urls etc.
                         textFormat: Qt.MarkdownText
-                        font.strikeout: todoDelegate.completion
+                        font.strikeout: model.completion
                         font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
                         bottomPadding: Kirigami.Units.smallSpacing
-                        color: todoDelegate.completion ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                        color: model.completion ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                     }
 
                     Repeater {
@@ -175,8 +171,8 @@ Kirigami.AbstractCard {
                         Layout.maximumWidth: delegateLayout.width - completionColumn.width - Kirigami.Units.smallSpacing
                         Kirigami.Chip {
                             Layout.alignment: Qt.AlignLeft
-                            visible: todoDelegate.completionDate
-                            text: todoDelegate.completionDate
+                            visible: model.completionDate
+                            text: model.completionDate
                             font.bold: false
                             closable: false
                             checkable: false
@@ -187,8 +183,8 @@ Kirigami.AbstractCard {
 
                         Kirigami.Chip {
                             Layout.alignment: Qt.AlignLeft
-                            visible: todoDelegate.dueDate
-                            text: todoDelegate.dueDate
+                            visible: model.dueDate
+                            text: model.dueDate
                             font.bold: false
                             closable: false
                             checkable: false
@@ -199,8 +195,8 @@ Kirigami.AbstractCard {
 
                         Kirigami.Chip {
                             Layout.alignment: Qt.AlignLeft
-                            visible: todoDelegate.creationDate
-                            text: todoDelegate.creationDate
+                            visible: model.creationDate
+                            text: model.creationDate
                             font.bold: false
                             closable: false
                             checkable: false
