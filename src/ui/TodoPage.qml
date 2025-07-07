@@ -28,7 +28,15 @@ Kirigami.ScrollablePage {
                 page.fileChangedFromApp = false;
                 return;
             }
-            fileChangedMessage.visible = true;
+            if (TodoModel.fileExists()){
+                console.warn("file changed lol");
+                fileDeletedMessage.visible = false;
+                fileChangedMessage.visible = true;
+            } else {
+                fileChangedMessage.visible = false;
+                fileDeletedMessage.visible = true;
+                cardsListView.enabled = false;
+            }
         }
     }
 
@@ -43,6 +51,8 @@ Kirigami.ScrollablePage {
         id: openDialog
         onAccepted: {
             TodoModel.filePath = selectedFile;
+            fileDeletedMessage.visible = false;
+            cardsListView.enabled = true;
         }
         modality: Qt.ApplicationModal
         nameFilters: ["Text files (*.txt)"]
@@ -52,6 +62,8 @@ Kirigami.ScrollablePage {
         id: createNewDialog
         onAccepted: {
             TodoModel.filePath = selectedFile;
+            fileDeletedMessage.visible = false;
+            cardsListView.enabled = true;
         }
         fileMode: Qt.SaveFile
         modality: Qt.ApplicationModal
@@ -237,6 +249,30 @@ Kirigami.ScrollablePage {
                 }
             ]
         }
+        Kirigami.InlineMessage {
+            id: fileDeletedMessage
+            Layout.fillWidth: true
+            visible: false
+            text: i18n("This file has been deleted! Open another file or create new one.")
+            type: Kirigami.MessageType.Error
+            showCloseButton: false
+            actions: [
+                Kirigami.Action {
+                    icon.name: "add"
+                    text: i18nc("@button", "Create New…")
+                    onTriggered: {
+                        createNewDialog.open();
+                    }
+                },
+                Kirigami.Action {
+                    icon.name: "document-open"
+                    text: i18nc("@action:button", "Open File…")
+                    onTriggered: {
+                        openDialog.open();
+                    }
+                }
+            ]
+        }
     }
 
     actions: [
@@ -285,7 +321,7 @@ Kirigami.ScrollablePage {
             explanation: xi18nc("@info:placeholder", "Click <interface>Open File…</interface> to use an existing file or <interface>Create New…</interface> to start a new file.")
             helpfulAction: Kirigami.Action {
                 icon.name: "add"
-                text: i18nc("@button", "Create new…")
+                text: i18nc("@button", "Create New…")
                 onTriggered: {
                     createNewDialog.open();
                 }

@@ -40,6 +40,7 @@ TodoModel::TodoModel(QObject *parent)
         qWarning() << "Regular expression pattern for parsing is not valid!";
         return;
     }
+    m_fileWatcher = new QFileSystemWatcher(this);
     connect(this, &TodoModel::filePathChanged, this, &TodoModel::loadFile);
     connect(this, &TodoModel::dataChanged, this, &TodoModel::saveFile);
     m_config = KomodoConfig::self();
@@ -48,8 +49,6 @@ TodoModel::TodoModel(QObject *parent)
         m_filePath = QUrl::fromLocalFile(m_config->todoFilePath());
         loadFile();
     }
-    m_fileWatcher = new QFileSystemWatcher(this);
-    m_fileWatcher->addPath(m_filePath.toLocalFile());
     connect(m_fileWatcher, &QFileSystemWatcher::fileChanged, this, [this]() {
         Q_EMIT fileChanged();
     });
@@ -309,12 +308,10 @@ QUrl TodoModel::filePath()
 
 void TodoModel::setFilePath(const QUrl &newFilePath)
 {
-    if (m_filePath != newFilePath) {
-        m_filePath = newFilePath;
-        m_config->setTodoFilePath(m_filePath.toLocalFile());
-        m_config->save();
-        Q_EMIT filePathChanged();
-    }
+    m_filePath = newFilePath;
+    m_config->setTodoFilePath(m_filePath.toLocalFile());
+    m_config->save();
+    Q_EMIT filePathChanged();
 }
 
 bool TodoModel::loadFile()
@@ -336,6 +333,7 @@ bool TodoModel::loadFile()
         }
     }
     endResetModel();
+    m_fileWatcher->addPath(m_filePath.toLocalFile());
     return true;
 }
 
@@ -365,4 +363,10 @@ bool TodoModel::saveFile()
     saveFile.close();
 
     return true;
+}
+
+bool TodoModel::fileExists()
+{
+    QFileInfo fi(m_filePath.toLocalFile());
+    return fi.exists();
 }

@@ -59,6 +59,7 @@ public:
 
     Q_INVOKABLE bool loadFile();
     Q_INVOKABLE bool saveFile();
+    Q_INVOKABLE bool fileExists();
 
 private:
     void updateCompletionStatus(Todo &todo, const bool completed);
