@@ -33,6 +33,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     KF6::ConfigGui
     KF6::GuiAddons
     KF6::ColorScheme
+    KF6::DBusAddons
     logging
 )
 

@@ -3,6 +3,7 @@
 
 #include "version-komodo.h"
 #include <KAboutData>
+#include <KDBusService>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <QApplication>
@@ -43,6 +44,8 @@ int main(int argc, char *argv[])
     aboutData.setProgramLogo(QIcon(QStringLiteral(":/komodo.png")));
     KAboutData::setApplicationData(aboutData);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.komodo")));
+
+    KDBusService service(KDBusService::Unique);
 
     QApplication::setStyle(QStringLiteral("breeze"));
     QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));

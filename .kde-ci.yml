@@ -17,3 +17,4 @@ Dependencies:
       'frameworks/kwindowsystem': '@latest-kf6'
       'frameworks/kguiaddons': '@latest-kf6'
       'frameworks/kcolorscheme': '@latest-kf6'
+      'frameworks/kdbusaddons': '@latest-kf6'
