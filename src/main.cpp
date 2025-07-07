@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
                         i18nc("@info:credit", "Author"),
                         QStringLiteral("komodo@akselmo.dev"),
                         QStringLiteral("https://akselmo.dev"));
-    aboutData.setBugAddress("https://invent.kde.org/akselmo/todoapp/-/issues/new");
+    aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=KomoDo");
     aboutData.setProgramLogo(QIcon(QStringLiteral(":/komodo.png")));
     KAboutData::setApplicationData(aboutData);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.komodo")));
