@@ -18,7 +18,6 @@ Kirigami.ScrollablePage {
     horizontalScrollBarPolicy: QQC2.ScrollBar.AlwaysOff
     horizontalScrollBarInteractive: false
 
-
     property bool fileChangedFromApp: false
 
     Connections {
@@ -28,7 +27,7 @@ Kirigami.ScrollablePage {
                 page.fileChangedFromApp = false;
                 return;
             }
-            if (TodoModel.fileExists()){
+            if (TodoModel.fileExists()) {
                 console.warn("file changed lol");
                 fileDeletedMessage.visible = false;
                 fileChangedMessage.visible = true;
@@ -339,11 +338,17 @@ Kirigami.ScrollablePage {
 
         model: KSortFilterProxyModel {
             id: filteredModel
-            sourceModel: TodoModel
+            sourceModel: KSortFilterProxyModel {
+                id: nestedModel
+                sourceModel: TodoModel
+                filterRoleName: "description"
+                sortRoleName: "description"
+                filterRegularExpression: RegExp(searchField.text.replace("+", "\\+").replace("(", "\\(").replace(")", "\\)"), "gi")
+                filterCaseSensitivity: Qt.CaseInsensitive
+            }
             filterString: "default"
+            filterRoleName: "description"
             sortRoleName: "description"
-            filterRegularExpression: RegExp(searchField.text.replace("+", "\\+"), "gi")
-            filterCaseSensitivity: Qt.CaseInsensitive
             filterRowCallback: function (source_row, source_parent) {
                 switch (filterString) {
                 case "default":
