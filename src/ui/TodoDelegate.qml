@@ -63,6 +63,7 @@ Kirigami.AbstractCard {
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.text: i18n("Task completion status")
                         KeyNavigation.tab: editButton
+                        KeyNavigation.backtab: searchField
                         background: Rectangle {
                             visible: completionStatus.visualFocus
                             color: Kirigami.Theme.highlightColor
@@ -242,7 +243,7 @@ Kirigami.AbstractCard {
                                 deletePrompt.index = index;
                                 deletePrompt.open();
                             }
-                            KeyNavigation.tab: completionStatus
+                            KeyNavigation.tab: searchField
                         }
                     }
                 }
@@ -304,7 +305,7 @@ Kirigami.AbstractCard {
                             todoDelegate.editMode = false;
                             completionStatus.focus = true;
                         }
-                        KeyNavigation.tab: addNewPromptText
+                        KeyNavigation.tab: searchField
                     }
                 }
             }

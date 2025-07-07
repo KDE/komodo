@@ -12,10 +12,12 @@ import org.kde.komodo.models
 Kirigami.ScrollablePage {
     id: page
 
-    KeyNavigation.backtab: searchField
+    KeyNavigation.tab: searchField
+    KeyNavigation.backtab: cardsListView.currentItem
 
     horizontalScrollBarPolicy: QQC2.ScrollBar.AlwaysOff
     horizontalScrollBarInteractive: false
+
 
     property bool fileChangedFromApp: false
 
@@ -160,14 +162,51 @@ Kirigami.ScrollablePage {
     }
 
     header: ColumnLayout {
-        Kirigami.SearchField {
-            id: searchField
+        QQC2.Pane {
             Layout.fillWidth: true
-            KeyNavigation.backtab: page.globalToolBarItem
-            KeyNavigation.tab: page.globalToolBarItem
-            visible: true
-            onTextChanged: {
-                cardsListView.currentIndex = -1;
+            RowLayout {
+                anchors.fill: parent
+                Layout.fillWidth: true
+                Kirigami.SearchField {
+                    id: searchField
+                    Layout.fillWidth: true
+                    KeyNavigation.backtab: page.globalToolBarItem
+                    KeyNavigation.tab: filterComboBox
+                    visible: true
+                    onTextChanged: {
+                        cardsListView.currentIndex = -1;
+                    }
+                }
+                QQC2.Label {
+                    text: i18n("Filter:")
+                }
+                QQC2.ComboBox {
+                    id: filterComboBox
+                    editable: false
+                    textRole: "text"
+                    valueRole: "value"
+                    model: [
+                        {
+                            value: "default",
+                            text: i18n("Show All")
+                        },
+                        {
+                            value: "hasDueDate",
+                            text: i18n("Due Date")
+                        },
+                        {
+                            value: "isNotCompleted",
+                            text: i18n("Incomplete")
+                        },
+                        {
+                            value: "isCompleted",
+                            text: i18n("Completed")
+                        },
+                    ]
+                    onCurrentValueChanged: {
+                        filteredModel.filterString = filterComboBox.currentValue;
+                    }
+                }
             }
             background: ColumnLayout {
                 Rectangle {
@@ -209,7 +248,7 @@ Kirigami.ScrollablePage {
                 addNewPrompt.text = "(A) " + getDate() + " ";
                 addNewPrompt.open();
             }
-            shortcut: "Ctrl+N"
+            shortcut: StandardKey.New
         },
         Kirigami.Action {
             icon.name: "document-open"
@@ -217,13 +256,12 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 openDialog.open();
             }
-            shortcut: "Ctrl+O"
+            shortcut: StandardKey.Open
         },
         Kirigami.Action {
             text: i18nc("@action:inmenu", "About KomoDo")
             icon.name: "help-about"
             shortcut: StandardKey.HelpContents
-            displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: pageStack.layers.push(aboutPage)
             enabled: pageStack.layers.depth <= 1
         }
@@ -236,8 +274,6 @@ Kirigami.ScrollablePage {
         highlightMoveDuration: 1
         highlightMoveVelocity: 1
         focusPolicy: Qt.NoFocus
-        KeyNavigation.tab: cardsListView.itemAtIndex(0)
-        KeyNavigation.backtab: page.globalToolBarItem
 
         Kirigami.PlaceholderMessage {
             id: noTodosLoaded
@@ -268,10 +304,25 @@ Kirigami.ScrollablePage {
         model: KSortFilterProxyModel {
             id: filteredModel
             sourceModel: TodoModel
-            filterRoleName: "description"
+            filterString: "default"
             sortRoleName: "description"
-            filterString: searchField.text
+            filterRegularExpression: RegExp(searchField.text.replace("+", "\\+"), "gi")
             filterCaseSensitivity: Qt.CaseInsensitive
+            filterRowCallback: function (source_row, source_parent) {
+                switch (filterString) {
+                case "default":
+                    return true;
+                case "hasDueDate":
+                    return sourceModel.data(sourceModel.index(source_row, 0, source_parent), TodoModel.DueDateRole) != "";
+                case "isNotCompleted":
+                    return !sourceModel.data(sourceModel.index(source_row, 0, source_parent), TodoModel.CompletionRole);
+                case "isCompleted":
+                    return sourceModel.data(sourceModel.index(source_row, 0, source_parent), TodoModel.CompletionRole);
+                default:
+                    console.warn("This filter is not handled yet!", filterString);
+                    return true;
+                }
+            }
         }
 
         delegate: TodoDelegate {

@@ -34,6 +34,7 @@ public:
         PrettyDescriptionRole,
         DueDateRole
     };
+    Q_ENUMS(Roles)
 
     explicit TodoModel(QObject *parent = nullptr);
 
