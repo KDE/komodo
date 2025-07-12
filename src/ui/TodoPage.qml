@@ -309,6 +309,10 @@ Kirigami.ScrollablePage {
         highlightMoveDuration: 1
         highlightMoveVelocity: 1
         focusPolicy: Qt.NoFocus
+        // For some reason the content width is too wide and this causes issues
+        // that allows us to scroll with arrow keys from side to side???
+        // IDK why this fixes it but whatever
+        contentWidth: contentItem.childrenRect.width
 
         Kirigami.PlaceholderMessage {
             id: noTodosLoaded
