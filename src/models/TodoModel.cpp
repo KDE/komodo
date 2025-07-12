@@ -45,6 +45,7 @@ TodoModel::TodoModel(QObject *parent)
     connect(this, &TodoModel::dataChanged, this, &TodoModel::saveFile);
     m_config = KomodoConfig::self();
     m_config->load();
+    m_filterIndex = m_config->filterIndex();
     if (!m_config->todoFilePath().isEmpty()) {
         m_filePath = QUrl::fromLocalFile(m_config->todoFilePath());
         loadFile();
@@ -312,6 +313,19 @@ void TodoModel::setFilePath(const QUrl &newFilePath)
     m_config->setTodoFilePath(m_filePath.toLocalFile());
     m_config->save();
     Q_EMIT filePathChanged();
+}
+
+int TodoModel::filterIndex()
+{
+    return m_filterIndex;
+}
+
+void TodoModel::setFilterIndex(const int &newFilterIndex)
+{
+    m_filterIndex = newFilterIndex;
+    m_config->setFilterIndex(m_filterIndex);
+    m_config->save();
+    Q_EMIT filterIndexChanged();
 }
 
 bool TodoModel::loadFile()

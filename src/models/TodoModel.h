@@ -20,6 +20,7 @@ class TodoModel : public QAbstractListModel
     QML_ELEMENT
     QML_SINGLETON
     Q_PROPERTY(QUrl filePath READ filePath WRITE setFilePath NOTIFY filePathChanged)
+    Q_PROPERTY(int filterIndex READ filterIndex WRITE setFilterIndex NOTIFY filterIndexChanged)
 public:
     // https://github.com/todotxt/todo.txt/blob/master/description.svg
     enum Roles {
@@ -55,7 +56,12 @@ public:
     QUrl filePath();
     void setFilePath(const QUrl &newFilePath);
     Q_SIGNAL void filePathChanged();
+
     Q_SIGNAL void fileChanged();
+
+    int filterIndex();
+    void setFilterIndex(const int &newFilterIndex);
+    Q_SIGNAL void filterIndexChanged();
 
     Q_INVOKABLE bool loadFile();
     Q_INVOKABLE bool saveFile();
@@ -69,4 +75,5 @@ private:
     QList<Todo> m_todos;
     KomodoConfig *m_config;
     QFileSystemWatcher *m_fileWatcher;
+    int m_filterIndex;
 };

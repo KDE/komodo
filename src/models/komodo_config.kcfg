@@ -11,5 +11,8 @@
 		<entry name="TodoFilePath" type="String">
 			<label>todo.txt filepath</label>
 		</entry>
+		<entry name="FilterIndex" type="Int">
+			<label>index of the current filter</label>
+		</entry>
 	</group>
 </kcfg>

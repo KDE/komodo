@@ -195,6 +195,7 @@ Kirigami.ScrollablePage {
                     editable: false
                     textRole: "text"
                     valueRole: "value"
+                    currentIndex: TodoModel.filterIndex
                     model: [
                         {
                             value: "default",
@@ -213,6 +214,9 @@ Kirigami.ScrollablePage {
                             text: i18n("Completed")
                         },
                     ]
+                    onCurrentIndexChanged: {
+                        TodoModel.filterIndex = currentIndex;
+                    }
                     onCurrentValueChanged: {
                         cardsListView.currentIndex = -1;
                         filteredModel.secondaryFilter = filterComboBox.currentValue;
