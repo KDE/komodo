@@ -214,6 +214,7 @@ Kirigami.ScrollablePage {
                         },
                     ]
                     onCurrentValueChanged: {
+                        cardsListView.currentIndex = -1;
                         filteredModel.secondaryFilter = filterComboBox.currentValue;
                         TodoModel.loadFile();
                     }
