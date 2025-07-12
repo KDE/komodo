@@ -373,14 +373,6 @@ Kirigami.ScrollablePage {
             cardsListView.currentIndex = -1;
         }
 
-        Keys.onLeftPressed: {
-            decrementCurrentIndex();
-        }
-
-        Keys.onRightPressed: {
-            incrementCurrentIndex();
-        }
-
         Keys.onPressed: event => {
             if (event.key == Qt.Key_PageDown) {
                 for (let i = 0; i < 3; i++) {
