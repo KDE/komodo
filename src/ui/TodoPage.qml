@@ -290,6 +290,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 addNewPrompt.text = "(A) " + getDate() + " ";
                 addNewPrompt.open();
+                addNewPromptText.focus = true;
             }
             shortcut: StandardKey.New
         },
