@@ -10,12 +10,19 @@ Kirigami.AbstractCard {
     id: todoDelegate
     clip: true
 
+    required property var keyValuePairs
+    required property bool completion
+    required property string priority
+    required property string prettyDescription
+    required property string completionDate
+    required property string dueDate
+    required property string creationDate
+    required property string description
+
+    property bool currentItem: Kirigami.CardsListView.isCurrentItem
     property bool editMode: false
-    property var currentItem: false
-    property var keyValuePairs: model.keyValuePairs
 
     KeyNavigation.tab: completionStatus
-
     // Create custom shadowed rectangle for the focus coloring
     background: Kirigami.ShadowedRectangle {
         color: Kirigami.Theme.backgroundColor
@@ -51,12 +58,13 @@ Kirigami.AbstractCard {
                         id: completionStatus
                         spacing: 0
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                        checked: model.completion
+                        checked: todoDelegate.completion
                         onToggled: {
                             page.fileChangedFromApp = true;
-                            model.completion = !model.completion;
+                            todoDelegate.completion = !todoDelegate.completion;
                         }
                         QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                         QQC2.ToolTip.text: i18n("Task completion status")
                         KeyNavigation.tab: editButton
                         KeyNavigation.backtab: searchField
@@ -74,8 +82,8 @@ Kirigami.AbstractCard {
                     QQC2.Label {
                         id: priorityLabel
                         Layout.alignment: Qt.AlignHCenter
-                        visible: model.priority
-                        text: model.priority.replace(/\(|\)/g, "")
+                        visible: todoDelegate.priority
+                        text: todoDelegate.priority.replace(/\(|\)/g, "")
                         color: {
                             switch (text) {
                             case "A":
@@ -110,13 +118,13 @@ Kirigami.AbstractCard {
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignTop
                         wrapMode: Text.Wrap
-                        text: model.prettyDescription
+                        text: todoDelegate.prettyDescription
                         // Looks like colors work with markdownText, but it also resolves urls etc.
                         textFormat: Qt.MarkdownText
-                        font.strikeout: model.completion
+                        font.strikeout: todoDelegate.completion
                         font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
                         bottomPadding: Kirigami.Units.smallSpacing
-                        color: model.completion ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                        color: todoDelegate.completion ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                     }
 
                     Repeater {
@@ -171,37 +179,40 @@ Kirigami.AbstractCard {
                         Layout.maximumWidth: delegateLayout.width - completionColumn.width - Kirigami.Units.smallSpacing
                         Kirigami.Chip {
                             Layout.alignment: Qt.AlignLeft
-                            visible: model.completionDate
-                            text: model.completionDate
+                            visible: todoDelegate.completionDate
+                            text: todoDelegate.completionDate
                             font.bold: false
                             closable: false
                             checkable: false
                             icon.name: "task-complete-symbolic"
-                            QQC2.ToolTip.visible: down
+                            QQC2.ToolTip.visible: hovered
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.text: i18n("Task completion date")
                         }
 
                         Kirigami.Chip {
                             Layout.alignment: Qt.AlignLeft
-                            visible: model.dueDate
-                            text: model.dueDate
+                            visible: todoDelegate.dueDate
+                            text: todoDelegate.dueDate
                             font.bold: false
                             closable: false
                             checkable: false
                             icon.name: "notification-active-symbolic"
-                            QQC2.ToolTip.visible: down
+                            QQC2.ToolTip.visible: hovered
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.text: i18n("Task due date")
                         }
 
                         Kirigami.Chip {
                             Layout.alignment: Qt.AlignLeft
-                            visible: model.creationDate
-                            text: model.creationDate
+                            visible: todoDelegate.creationDate
+                            text: todoDelegate.creationDate
                             font.bold: false
                             closable: false
                             checkable: false
                             icon.name: "clock"
-                            QQC2.ToolTip.visible: down
+                            QQC2.ToolTip.visible: hovered
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.text: i18n("Task creation date")
                         }
 
@@ -214,13 +225,17 @@ Kirigami.AbstractCard {
                             Layout.alignment: Qt.AlignRight
                             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
-                            text: i18nc("@button", "Edit")
-                            display: QQC2.AbstractButton.IconOnly
                             flat: true
-                            icon.name: "edit-entry-symbolic"
-                            onClicked: {
-                                todoDelegate.editMode = true;
-                                addNewPromptText.focus = true;
+                            display: QQC2.AbstractButton.IconOnly
+                            action: Kirigami.Action {
+                                text: i18nc("@button", "Edit")
+                                tooltip: i18n("Edit this todo item")
+                                icon.name: "edit-entry-symbolic"
+                                onTriggered: {
+                                    todoDelegate.editMode = true;
+                                    addNewPromptText.focus = true;
+                                }
+                                shortcut: todoDelegate.currentItem ? "Ctrl+E" : ""
                             }
                             KeyNavigation.tab: deleteButton
                         }
@@ -230,14 +245,17 @@ Kirigami.AbstractCard {
                             Layout.alignment: Qt.AlignRight
                             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
-                            text: i18nc("@button", "Delete")
                             display: QQC2.AbstractButton.IconOnly
                             flat: true
-                            icon.name: "entry-delete-symbolic"
-                            onClicked: {
-                                deletePrompt.model = model;
-                                deletePrompt.index = index;
-                                deletePrompt.open();
+                            action: Kirigami.Action {
+                                text: i18nc("@button", "Delete")
+                                icon.name: "entry-delete-symbolic"
+                                onTriggered: {
+                                    deletePrompt.model = model;
+                                    deletePrompt.index = index;
+                                    deletePrompt.open();
+                                }
+                                shortcut: todoDelegate.currentItem ? "Ctrl+D" : ""
                             }
                             KeyNavigation.tab: searchField
                         }
@@ -254,17 +272,20 @@ Kirigami.AbstractCard {
                     Layout.fillHeight: true
                     Layout.maximumWidth: delegateLayout.width - Kirigami.Units.smallSpacing
                     wrapMode: Text.Wrap
-                    placeholderText: model.description
-                    text: model.description
+                    placeholderText: todoDelegate.description
+                    text: todoDelegate.description
                     Accessible.role: Accessible.EditableText
                     KeyNavigation.backtab: cancelEditButton
                 }
                 RowLayout {
                     QQC2.Button {
-                        text: i18nc("@button", "Insert Date")
-                        icon.name: "view-calendar-symbolic"
-                        onClicked: {
-                            addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
+                        action: Kirigami.Action {
+                            text: i18nc("@button", "Insert Date")
+                            icon.name: "view-calendar-symbolic"
+                            tooltip: i18n("Inserts timestamp, such as 2025-12-31")
+                            onTriggered: {
+                                addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
+                            }
                         }
                     }
 
@@ -278,28 +299,34 @@ Kirigami.AbstractCard {
                     }
 
                     QQC2.Button {
-                        text: i18nc("@button", "Save")
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
-                        icon.name: "document-save-symbolic"
                         enabled: addNewPromptText.length > 0
-                        onClicked: {
-                            page.fileChangedFromApp = true;
-                            model.description = addNewPromptText.text;
-                            todoDelegate.editMode = false;
-                            completionStatus.focus = true;
+                        action: Kirigami.Action {
+                            text: i18nc("@button", "Save")
+                            icon.name: "document-save-symbolic"
+                            onTriggered: {
+                                page.fileChangedFromApp = true;
+                                todoDelegate.description = addNewPromptText.text;
+                                todoDelegate.editMode = false;
+                                completionStatus.focus = true;
+                            }
+                            shortcut: todoDelegate.currentItem ? "Ctrl+S" : ""
                         }
                     }
                     QQC2.Button {
                         id: cancelEditButton
-                        text: i18nc("@button", "Cancel")
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
-                        icon.name: "dialog-cancel-symbolic"
-                        onClicked: {
-                            addNewPromptText.text = model.description;
-                            todoDelegate.editMode = false;
-                            completionStatus.focus = true;
+                        action: Kirigami.Action {
+                            text: i18nc("@button", "Cancel")
+                            icon.name: "dialog-cancel-symbolic"
+                            onTriggered: {
+                                addNewPromptText.text = todoDelegate.description;
+                                todoDelegate.editMode = false;
+                                completionStatus.focus = true;
+                            }
+                            shortcut: todoDelegate.currentItem ? StandardKey.Cancel : ""
                         }
                         KeyNavigation.tab: searchField
                     }

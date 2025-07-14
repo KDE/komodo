@@ -97,13 +97,16 @@ Kirigami.ScrollablePage {
         footer: QQC2.DialogButtonBox {
             standardButtons: QQC2.DialogButtonBox.Cancel
             QQC2.Button {
-                text: i18nc("@button", "Delete")
-                icon.name: "delete"
-                QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.DestructiveRole
-                onClicked: {
-                    page.fileChangedFromApp = true;
-                    const originalIndex = filteredModel.index(deletePrompt.index, 0);
-                    TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
+                action: Kirigami.Action {
+                    text: i18nc("@button", "Delete")
+                    icon.name: "delete"
+                    QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.DestructiveRole
+                    onTriggered: {
+                        page.fileChangedFromApp = true;
+                        const originalIndex = filteredModel.index(deletePrompt.index, 0);
+                        TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
+                        deletePrompt.close();
+                    }
                 }
             }
         }
@@ -136,12 +139,13 @@ Kirigami.ScrollablePage {
             }
             RowLayout {
                 QQC2.Button {
-                    text: i18nc("@button", "Insert Date")
-                    icon.name: "view-calendar-symbolic"
-                    QQC2.ToolTip.visible: hovered
-                    QQC2.ToolTip.text: i18n("Inserts timestamp, such as 2025-12-31")
-                    onClicked: {
-                        addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
+                    action: Kirigami.Action {
+                        text: i18nc("@button", "Insert Date")
+                        icon.name: "view-calendar-symbolic"
+                        tooltip: i18n("Inserts timestamp, such as 2025-12-31")
+                        onTriggered: {
+                            addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
+                        }
                     }
                 }
 
@@ -374,9 +378,7 @@ Kirigami.ScrollablePage {
             }
         }
 
-        delegate: TodoDelegate {
-            currentItem: cardsListView.currentItem == this
-        }
+        delegate: TodoDelegate {}
 
         Keys.onEscapePressed: {
             cardsListView.currentIndex = -1;
