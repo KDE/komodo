@@ -45,6 +45,32 @@ Kirigami.ScrollablePage {
         return addNewPromptText.cursorPosition, today.toISOString().substring(0, 10);
     }
 
+    Kirigami.OverlaySheet {
+        id: helpSheet
+        visible: false
+        title: i18n("KomoDo Help")
+        ColumnLayout {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.margins: Kirigami.Units.smallSpacing
+            KomoDoHelp {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.minimumWidth: Kirigami.Units.gridUnit * 20
+                wrapMode: Text.Wrap
+            }
+
+            Kirigami.UrlButton {
+                text: i18nc("@info", "Syntax Source Material")
+                url: "https://github.com/todotxt/todo.txt/blob/master/README.md"
+            }
+
+            Item {
+                implicitHeight: Kirigami.Units.gridUnit * 2
+            }
+        }
+    }
+
     Dialogs.FileDialog {
         id: openDialog
         onAccepted: {
@@ -287,8 +313,8 @@ Kirigami.ScrollablePage {
 
     actions: [
         Kirigami.Action {
-            icon.name: "list-add"
-            text: i18nc("@action:button", "Add New Todo…")
+            icon.name: "list-add-symbolic"
+            text: i18nc("@action:inmenu", "Add New Todo…")
             enabled: TodoModel.filePath != ""
             onTriggered: {
                 addNewPrompt.text = "(A) " + getDate() + " ";
@@ -298,17 +324,24 @@ Kirigami.ScrollablePage {
             shortcut: StandardKey.New
         },
         Kirigami.Action {
-            icon.name: "document-open"
-            text: i18nc("@action:button", "Open File…")
+            icon.name: "document-open-symbolic"
+            text: i18nc("@action:inmenu", "Open File…")
             onTriggered: {
                 openDialog.open();
             }
             shortcut: StandardKey.Open
         },
         Kirigami.Action {
-            text: i18nc("@action:inmenu", "About KomoDo")
-            icon.name: "help-about"
+            text: i18nc("@action:inmenu", "Help…")
+            icon.name: "help-contents-symbolic"
+            onTriggered: {
+                helpSheet.open();
+            }
             shortcut: StandardKey.HelpContents
+        },
+        Kirigami.Action {
+            text: i18nc("@action:inmenu", "About KomoDo")
+            icon.name: "help-about-symbolic"
             onTriggered: pageStack.layers.push(aboutPage)
             enabled: pageStack.layers.depth <= 1
         }

@@ -16,6 +16,7 @@ ecm_target_qml_sources(ui
     SOURCES
     TodoPage.qml
     TodoDelegate.qml
+    KomoDoHelp.qml
 )
 
 ecm_finalize_qml_module(ui)
