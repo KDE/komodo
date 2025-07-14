@@ -11,14 +11,7 @@ Kirigami.AbstractCard {
     clip: true
 
     required property int index
-    required property var keyValuePairs
-    required property bool completion
-    required property string priority
-    required property string prettyDescription
-    required property string completionDate
-    required property string dueDate
-    required property string creationDate
-    required property string description
+    required property var model
 
     property bool currentItem: Kirigami.CardsListView.isCurrentItem
     property bool editMode: false
@@ -59,10 +52,10 @@ Kirigami.AbstractCard {
                         id: completionStatus
                         spacing: 0
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                        checked: todoDelegate.completion
+                        checked: todoDelegate.model.completion
                         onToggled: {
                             page.fileChangedFromApp = true;
-                            todoDelegate.completion = !todoDelegate.completion;
+                            todoDelegate.model.completion = !todoDelegate.model.completion;
                         }
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -83,8 +76,8 @@ Kirigami.AbstractCard {
                     QQC2.Label {
                         id: priorityLabel
                         Layout.alignment: Qt.AlignHCenter
-                        visible: todoDelegate.priority
-                        text: todoDelegate.priority.replace(/\(|\)/g, "")
+                        visible: todoDelegate.model.priority
+                        text: todoDelegate.model.priority.replace(/\(|\)/g, "")
                         color: {
                             switch (text) {
                             case "A":
@@ -119,18 +112,18 @@ Kirigami.AbstractCard {
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignTop
                         wrapMode: Text.Wrap
-                        text: todoDelegate.prettyDescription
+                        text: todoDelegate.model.prettyDescription
                         // Looks like colors work with markdownText, but it also resolves urls etc.
                         textFormat: Qt.MarkdownText
-                        font.strikeout: todoDelegate.completion
+                        font.strikeout: todoDelegate.model.completion
                         font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
                         bottomPadding: Kirigami.Units.smallSpacing
-                        color: todoDelegate.completion ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                        color: todoDelegate.model.completion ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                     }
 
                     Repeater {
                         id: keyValuePairRepeater
-                        model: todoDelegate.keyValuePairs
+                        model: todoDelegate.model.keyValuePairs
                         RowLayout {
                             property var textData: modelData.split(":")
                             property var textUrl: {
@@ -180,8 +173,8 @@ Kirigami.AbstractCard {
                         Layout.maximumWidth: delegateLayout.width - completionColumn.width - Kirigami.Units.smallSpacing
                         Kirigami.Chip {
                             Layout.alignment: Qt.AlignLeft
-                            visible: todoDelegate.completionDate
-                            text: todoDelegate.completionDate
+                            visible: todoDelegate.model.completionDate
+                            text: todoDelegate.model.completionDate
                             font.bold: false
                             closable: false
                             checkable: false
@@ -193,8 +186,8 @@ Kirigami.AbstractCard {
 
                         Kirigami.Chip {
                             Layout.alignment: Qt.AlignLeft
-                            visible: todoDelegate.dueDate
-                            text: todoDelegate.dueDate
+                            visible: todoDelegate.model.dueDate
+                            text: todoDelegate.model.dueDate
                             font.bold: false
                             closable: false
                             checkable: false
@@ -206,8 +199,8 @@ Kirigami.AbstractCard {
 
                         Kirigami.Chip {
                             Layout.alignment: Qt.AlignLeft
-                            visible: todoDelegate.creationDate
-                            text: todoDelegate.creationDate
+                            visible: todoDelegate.model.creationDate
+                            text: todoDelegate.model.creationDate
                             font.bold: false
                             closable: false
                             checkable: false
@@ -234,7 +227,7 @@ Kirigami.AbstractCard {
                                 icon.name: "edit-entry-symbolic"
                                 onTriggered: {
                                     todoDelegate.editMode = true;
-                                    addNewPromptText.focus = true;
+                                    editTodoItemText.focus = true;
                                 }
                                 shortcut: todoDelegate.currentItem ? "Ctrl+E" : ""
                             }
@@ -252,7 +245,7 @@ Kirigami.AbstractCard {
                                 text: i18nc("@button", "Delete")
                                 icon.name: "entry-delete-symbolic"
                                 onTriggered: {
-                                    deletePrompt.description = todoDelegate.description;
+                                    deletePrompt.description = todoDelegate.model.description;
                                     deletePrompt.index = todoDelegate.index;
                                     deletePrompt.open();
                                 }
@@ -267,16 +260,19 @@ Kirigami.AbstractCard {
                 id: editLayout
                 visible: todoDelegate.editMode
                 QQC2.TextField {
-                    id: addNewPromptText
+                    id: editTodoItemText
                     font.family: "monospace"
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.maximumWidth: delegateLayout.width - Kirigami.Units.smallSpacing
                     wrapMode: Text.Wrap
-                    placeholderText: todoDelegate.description
-                    text: todoDelegate.description
+                    placeholderText: todoDelegate.model.description
+                    text: todoDelegate.model.description
                     Accessible.role: Accessible.EditableText
                     KeyNavigation.backtab: cancelEditButton
+                    Keys.onReturnPressed: {
+                        saveEditButton.click();
+                    }
                 }
                 RowLayout {
                     QQC2.Button {
@@ -286,7 +282,7 @@ Kirigami.AbstractCard {
                             icon.name: "view-calendar-symbolic"
                             tooltip: i18n("Inserts timestamp, such as 2025-12-31")
                             onTriggered: {
-                                addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
+                                editTodoItemText.insert(editTodoItemText.cursorPosition, getDate());
                             }
                         }
                         QQC2.ToolTip.visible: hovered
@@ -304,19 +300,20 @@ Kirigami.AbstractCard {
                     }
 
                     QQC2.Button {
+                        id: saveEditButton
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
-                        enabled: addNewPromptText.length > 0
+                        enabled: editTodoItemText.length > 0
                         action: Kirigami.Action {
                             text: i18nc("@button", "Save")
                             icon.name: "document-save-symbolic"
                             onTriggered: {
                                 page.fileChangedFromApp = true;
-                                todoDelegate.description = addNewPromptText.text;
+                                todoDelegate.model.description = editTodoItemText.text;
                                 todoDelegate.editMode = false;
                                 completionStatus.focus = true;
                             }
-                            shortcut: todoDelegate.currentItem ? "Ctrl+S" : ""
+                            shortcut: todoDelegate.currentItem ? StandardKey.Save : ""
                         }
                     }
                     QQC2.Button {
@@ -327,7 +324,7 @@ Kirigami.AbstractCard {
                             text: i18nc("@button", "Cancel")
                             icon.name: "dialog-cancel-symbolic"
                             onTriggered: {
-                                addNewPromptText.text = todoDelegate.description;
+                                editTodoItemText.text = todoDelegate.model.description;
                                 todoDelegate.editMode = false;
                                 completionStatus.focus = true;
                             }

@@ -132,7 +132,10 @@ Kirigami.ScrollablePage {
                 placeholderText: "(A) YYYY-MM-DD description +project @context key:value"
                 Accessible.role: Accessible.EditableText
                 onTextEdited: {
-                    addNewPrompt.standardButton(QQC2.DialogButtonBox.Ok).enabled = text.length > 0;
+                    addNewPrompt.standardButton(Kirigami.Dialog.Ok).enabled = text.length > 0;
+                }
+                Keys.onReturnPressed: {
+                    addNewPrompt.standardButton(Kirigami.Dialog.Ok).click();
                 }
             }
             RowLayout {
