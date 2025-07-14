@@ -68,16 +68,18 @@ Kirigami.ScrollablePage {
         nameFilters: ["Text files (*.txt)"]
     }
 
-    QQC2.Dialog {
+    Kirigami.Dialog {
         id: deletePrompt
         property string description
         property var index
-
-        title: i18n("Delete Todo")
         anchors.centerIn: parent
+        title: i18n("Delete Todo")
         modal: true
-        standardButtons: QQC2.DialogButtonBox.Cancel
-        width: parent.width - Kirigami.Units.gridUnit * 4
+        width: parent.width - Kirigami.Units.largeSpacing * 8
+        maximumHeight: parent.height - Kirigami.Units.largeSpacing * 4
+        padding: Kirigami.Units.largeSpacing
+        showCloseButton: false
+
         contentItem: ColumnLayout {
             id: textLayout
             QQC2.Label {
@@ -95,34 +97,29 @@ Kirigami.ScrollablePage {
                 text: deletePrompt.description
             }
         }
-        footer: QQC2.DialogButtonBox {
-            standardButtons: QQC2.DialogButtonBox.Cancel
-            QQC2.Button {
-                action: Kirigami.Action {
-                    text: i18nc("@button", "Delete")
-                    icon.name: "delete"
-                    QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.DestructiveRole
-                    onTriggered: {
-                        page.fileChangedFromApp = true;
-                        const originalIndex = filteredModel.index(deletePrompt.index, 0);
-                        TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
-                        deletePrompt.close();
-                    }
-                }
-            }
+
+        standardButtons: Kirigami.Dialog.Discard | Kirigami.Dialog.Cancel
+
+        onDiscarded: {
+            page.fileChangedFromApp = true;
+            const originalIndex = filteredModel.index(deletePrompt.index, 0);
+            TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
+            deletePrompt.close();
         }
     }
 
-    QQC2.Dialog {
+    Kirigami.Dialog {
         id: addNewPrompt
         property var model
         property var index
         property alias text: addNewPromptText.text
-        title: i18n("Add New Todo")
         anchors.centerIn: parent
+        title: i18n("Add New Todo")
         modal: true
-        width: parent.width - Kirigami.Units.gridUnit * 4
-
+        width: parent.width - Kirigami.Units.largeSpacing * 8
+        maximumHeight: parent.height - Kirigami.Units.largeSpacing * 4
+        padding: Kirigami.Units.largeSpacing
+        showCloseButton: false
         contentItem: ColumnLayout {
             QQC2.TextField {
                 id: addNewPromptText
@@ -135,7 +132,7 @@ Kirigami.ScrollablePage {
                 placeholderText: "(A) YYYY-MM-DD description +project @context key:value"
                 Accessible.role: Accessible.EditableText
                 onTextEdited: {
-                    buttonBox.standardButton(QQC2.DialogButtonBox.Ok).enabled = text.length > 0;
+                    addNewPrompt.standardButton(QQC2.DialogButtonBox.Ok).enabled = text.length > 0;
                 }
             }
             RowLayout {
@@ -157,17 +154,14 @@ Kirigami.ScrollablePage {
             }
         }
 
-        footer: QQC2.DialogButtonBox {
-            id: buttonBox
-            standardButtons: QQC2.DialogButtonBox.Ok | QQC2.DialogButtonBox.Cancel
-            onAccepted: {
-                page.fileChangedFromApp = true;
-                TodoModel.addTodo(addNewPrompt.text);
-                addNewPrompt.close();
-            }
-            onRejected: {
-                addNewPrompt.close();
-            }
+        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+        onAccepted: {
+            page.fileChangedFromApp = true;
+            TodoModel.addTodo(addNewPrompt.text);
+            addNewPrompt.close();
+        }
+        onRejected: {
+            addNewPrompt.close();
         }
     }
 
