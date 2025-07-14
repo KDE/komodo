@@ -70,11 +70,12 @@ Kirigami.ScrollablePage {
 
     QQC2.Dialog {
         id: deletePrompt
+        property string description
+        property var index
+
         title: i18n("Delete Todo")
         anchors.centerIn: parent
         modal: true
-        property var model
-        property var index
         standardButtons: QQC2.DialogButtonBox.Cancel
         width: parent.width - Kirigami.Units.gridUnit * 4
         contentItem: ColumnLayout {
@@ -91,7 +92,7 @@ Kirigami.ScrollablePage {
                 Layout.fillHeight: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 wrapMode: Text.Wrap
-                text: deletePrompt.model ? deletePrompt.model.description : ""
+                text: deletePrompt.description
             }
         }
         footer: QQC2.DialogButtonBox {
@@ -378,7 +379,13 @@ Kirigami.ScrollablePage {
             }
         }
 
-        delegate: TodoDelegate {}
+        delegate: TodoDelegate {
+            onEditModeChanged: {
+                if (editMode) {
+                    cardsListView.currentIndex = index;
+                }
+            }
+        }
 
         Keys.onEscapePressed: {
             cardsListView.currentIndex = -1;

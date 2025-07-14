@@ -10,6 +10,7 @@ Kirigami.AbstractCard {
     id: todoDelegate
     clip: true
 
+    required property int index
     required property var keyValuePairs
     required property bool completion
     required property string priority
@@ -251,8 +252,8 @@ Kirigami.AbstractCard {
                                 text: i18nc("@button", "Delete")
                                 icon.name: "entry-delete-symbolic"
                                 onTriggered: {
-                                    deletePrompt.model = model;
-                                    deletePrompt.index = index;
+                                    deletePrompt.description = todoDelegate.description;
+                                    deletePrompt.index = todoDelegate.index;
                                     deletePrompt.open();
                                 }
                                 shortcut: todoDelegate.currentItem ? "Ctrl+D" : ""
