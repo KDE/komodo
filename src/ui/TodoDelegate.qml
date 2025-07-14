@@ -281,6 +281,7 @@ Kirigami.AbstractCard {
                 RowLayout {
                     QQC2.Button {
                         action: Kirigami.Action {
+                            id: insertDateAction
                             text: i18nc("@button", "Insert Date")
                             icon.name: "view-calendar-symbolic"
                             tooltip: i18n("Inserts timestamp, such as 2025-12-31")
@@ -288,6 +289,9 @@ Kirigami.AbstractCard {
                                 addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
                             }
                         }
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                        QQC2.ToolTip.text: insertDateAction.tooltip
                     }
 
                     Kirigami.UrlButton {
