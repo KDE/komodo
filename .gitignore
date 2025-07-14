@@ -7,3 +7,4 @@ build
 .cache
 .vscode
 .todo.txt.bak
+.kateproject.build
