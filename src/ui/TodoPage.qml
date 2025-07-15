@@ -18,15 +18,9 @@ Kirigami.ScrollablePage {
     horizontalScrollBarPolicy: QQC2.ScrollBar.AlwaysOff
     horizontalScrollBarInteractive: false
 
-    property bool fileChangedFromApp: false
-
     Connections {
         target: TodoModel
         function onFileChanged() {
-            if (page.fileChangedFromApp) {
-                page.fileChangedFromApp = false;
-                return;
-            }
             if (TodoModel.fileExists()) {
                 fileDeletedMessage.visible = false;
                 fileChangedMessage.visible = true;
@@ -37,7 +31,6 @@ Kirigami.ScrollablePage {
             }
         }
     }
-
     function getDate() {
         let today = new Date();
         const tz = today.getTimezoneOffset();
@@ -127,7 +120,6 @@ Kirigami.ScrollablePage {
         standardButtons: Kirigami.Dialog.Discard | Kirigami.Dialog.Cancel
 
         onDiscarded: {
-            page.fileChangedFromApp = true;
             const originalIndex = filteredModel.index(deletePrompt.index, 0);
             TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
             deletePrompt.close();
@@ -189,7 +181,6 @@ Kirigami.ScrollablePage {
 
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
         onAccepted: {
-            page.fileChangedFromApp = true;
             TodoModel.addTodo(addNewPrompt.text);
             addNewPrompt.close();
         }

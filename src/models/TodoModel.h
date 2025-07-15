@@ -76,4 +76,5 @@ private:
     KomodoConfig *m_config;
     QFileSystemWatcher *m_fileWatcher;
     int m_filterIndex;
+    bool fileModifiedFromApp = false;
 };

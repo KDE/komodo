@@ -51,6 +51,10 @@ TodoModel::TodoModel(QObject *parent)
         loadFile();
     }
     connect(m_fileWatcher, &QFileSystemWatcher::fileChanged, this, [this]() {
+        if (fileModifiedFromApp) {
+            fileModifiedFromApp = false;
+            return;
+        }
         Q_EMIT fileChanged();
     });
 }
@@ -353,6 +357,7 @@ bool TodoModel::loadFile()
 
 bool TodoModel::saveFile()
 {
+    fileModifiedFromApp = true;
     QFileInfo fileInfo(filePath().toLocalFile());
     const QString backupFileName = fileInfo.absolutePath() + QDir::separator() + QStringLiteral(".%1.bak").arg(fileInfo.fileName());
     QFile saveFile(filePath().toLocalFile());
@@ -364,6 +369,7 @@ bool TodoModel::saveFile()
     saveFile.copy(backupFileName);
     if (!saveFile.open(QIODevice::WriteOnly)) {
         qWarning() << "Failed to write todo list to disk";
+        fileModifiedFromApp = true;
         return false;
     }
     QStringList sortedList;

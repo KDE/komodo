@@ -54,7 +54,6 @@ Kirigami.AbstractCard {
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                         checked: todoDelegate.model.completion
                         onToggled: {
-                            page.fileChangedFromApp = true;
                             todoDelegate.model.completion = !todoDelegate.model.completion;
                         }
                         QQC2.ToolTip.visible: hovered
@@ -308,7 +307,6 @@ Kirigami.AbstractCard {
                             text: i18nc("@button", "Save")
                             icon.name: "document-save-symbolic"
                             onTriggered: {
-                                page.fileChangedFromApp = true;
                                 todoDelegate.model.description = editTodoItemText.text;
                                 todoDelegate.editMode = false;
                                 completionStatus.focus = true;
