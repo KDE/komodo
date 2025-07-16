@@ -21,14 +21,10 @@ Kirigami.ScrollablePage {
     Connections {
         target: TodoModel
         function onFileChanged() {
-            if (TodoModel.fileExists()) {
-                fileDeletedMessage.visible = false;
-                fileChangedMessage.visible = true;
-            } else {
-                fileChangedMessage.visible = false;
-                fileDeletedMessage.visible = true;
-                cardsListView.enabled = false;
-            }
+            const fileExists = TodoModel.fileExists();
+            fileDeletedMessage.visible = !fileExists;
+            fileChangedMessage.visible = fileExists;
+            cardsListView.enabled = fileExists;
         }
     }
     function getDate() {

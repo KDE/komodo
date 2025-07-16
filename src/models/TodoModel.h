@@ -5,9 +5,9 @@
 
 #include "Todo.h"
 #include "komodo_config.h"
+#include <KDirWatch>
 #include <QAbstractListModel>
 #include <QDebug>
-#include <QFileSystemWatcher>
 #include <QMap>
 #include <QQmlEngine>
 #include <QRegularExpression>
@@ -67,6 +67,8 @@ public:
     Q_INVOKABLE bool saveFile();
     Q_INVOKABLE bool fileExists();
 
+    Q_SLOT void fileModified();
+
 private:
     void updateCompletionStatus(Todo &todo, const bool completed);
     QString prettyPrintDescription(const Todo &todo);
@@ -74,7 +76,7 @@ private:
     QUrl m_filePath;
     QList<Todo> m_todos;
     KomodoConfig *m_config;
-    QFileSystemWatcher *m_fileWatcher;
+    KDirWatch *m_fileWatcher;
     int m_filterIndex;
     bool fileModifiedFromApp = false;
 };

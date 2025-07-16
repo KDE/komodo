@@ -6,13 +6,13 @@
 #include "komodo_config.h"
 #include <KColorScheme>
 #include <KColorUtils>
+#include <KDirWatch>
 #include <QAbstractItemModel>
 #include <QDateTime>
 #include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <QFileSystemWatcher>
 #include <QGuiApplication>
 #include <QRegularExpression>
 #include <QString>
@@ -40,7 +40,7 @@ TodoModel::TodoModel(QObject *parent)
         qWarning() << "Regular expression pattern for parsing is not valid!";
         return;
     }
-    m_fileWatcher = new QFileSystemWatcher(this);
+    m_fileWatcher = new KDirWatch(this);
     connect(this, &TodoModel::filePathChanged, this, &TodoModel::loadFile);
     connect(this, &TodoModel::dataChanged, this, &TodoModel::saveFile);
     m_config = KomodoConfig::self();
@@ -50,13 +50,9 @@ TodoModel::TodoModel(QObject *parent)
         m_filePath = QUrl::fromLocalFile(m_config->todoFilePath());
         loadFile();
     }
-    connect(m_fileWatcher, &QFileSystemWatcher::fileChanged, this, [this]() {
-        if (fileModifiedFromApp) {
-            fileModifiedFromApp = false;
-            return;
-        }
-        Q_EMIT fileChanged();
-    });
+    connect(m_fileWatcher, &KDirWatch::dirty, this, &TodoModel::fileModified);
+    connect(m_fileWatcher, &KDirWatch::deleted, this, &TodoModel::fileModified);
+    connect(m_fileWatcher, &KDirWatch::created, this, &TodoModel::fileModified);
 }
 
 Todo TodoModel::parseTodoFromDescription(const QString &description)
@@ -351,7 +347,7 @@ bool TodoModel::loadFile()
         }
     }
     endResetModel();
-    m_fileWatcher->addPath(m_filePath.toLocalFile());
+    m_fileWatcher->addFile(m_filePath.toLocalFile());
     return true;
 }
 
@@ -389,4 +385,13 @@ bool TodoModel::fileExists()
 {
     QFileInfo fi(m_filePath.toLocalFile());
     return fi.exists();
+}
+
+void TodoModel::fileModified()
+{
+    if (fileModifiedFromApp) {
+        fileModifiedFromApp = false;
+        return;
+    }
+    Q_EMIT fileChanged();
 }
