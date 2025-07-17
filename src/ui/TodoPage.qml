@@ -304,7 +304,7 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:inmenu", "Add New Todo…")
             enabled: TodoModel.filePath != ""
             onTriggered: {
-                addNewPrompt.text = "(A) " + getDate() + " ";
+                addNewPrompt.text = "";
                 addNewPrompt.open();
                 addNewPromptText.focus = true;
             }
