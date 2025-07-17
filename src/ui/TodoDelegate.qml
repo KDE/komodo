@@ -89,6 +89,13 @@ Kirigami.AbstractCard {
                                 return Kirigami.Theme.textColor;
                             }
                         }
+                        MouseArea {
+                            hoverEnabled: true
+                            anchors.fill: parent
+                            QQC2.ToolTip.visible: containsMouse
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.text: i18n("Priority")
+                        }
                     }
                 }
 
@@ -221,8 +228,9 @@ Kirigami.AbstractCard {
                             flat: true
                             display: QQC2.AbstractButton.IconOnly
                             action: Kirigami.Action {
+                                id: editItemAction
                                 text: i18nc("@button", "Edit")
-                                tooltip: i18n("Edit this todo item")
+                                tooltip: text
                                 icon.name: "edit-entry-symbolic"
                                 onTriggered: {
                                     todoDelegate.editMode = true;
@@ -230,17 +238,21 @@ Kirigami.AbstractCard {
                                 }
                                 shortcut: todoDelegate.currentItem ? "Ctrl+E" : ""
                             }
-                            KeyNavigation.tab: deleteButton
+                            KeyNavigation.tab: deleteItemButton
+                            QQC2.ToolTip.visible: hovered
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.text: editItemAction.tooltip
                         }
 
                         QQC2.Button {
-                            id: deleteButton
+                            id: deleteItemButton
                             Layout.alignment: Qt.AlignRight
                             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
                             display: QQC2.AbstractButton.IconOnly
                             flat: true
                             action: Kirigami.Action {
+                                id: deleteItemAction
                                 text: i18nc("@button", "Delete")
                                 icon.name: "entry-delete-symbolic"
                                 onTriggered: {
@@ -249,8 +261,12 @@ Kirigami.AbstractCard {
                                     deletePrompt.open();
                                 }
                                 shortcut: todoDelegate.currentItem ? "Ctrl+D" : ""
+                                tooltip: text
                             }
                             KeyNavigation.tab: searchField
+                            QQC2.ToolTip.visible: hovered
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.text: deleteItemAction.tooltip
                         }
                     }
                 }
@@ -304,6 +320,7 @@ Kirigami.AbstractCard {
                         flat: true
                         enabled: editTodoItemText.length > 0
                         action: Kirigami.Action {
+                            id: saveEditAction
                             text: i18nc("@button", "Save")
                             icon.name: "document-save-symbolic"
                             onTriggered: {
@@ -311,14 +328,19 @@ Kirigami.AbstractCard {
                                 todoDelegate.editMode = false;
                                 completionStatus.focus = true;
                             }
+                            tooltip: text
                             shortcut: todoDelegate.currentItem ? StandardKey.Save : ""
                         }
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                        QQC2.ToolTip.text: saveEditAction.tooltip
                     }
                     QQC2.Button {
                         id: cancelEditButton
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
                         action: Kirigami.Action {
+                            id: cancelEditAction
                             text: i18nc("@button", "Cancel")
                             icon.name: "dialog-cancel-symbolic"
                             onTriggered: {
@@ -326,8 +348,12 @@ Kirigami.AbstractCard {
                                 todoDelegate.editMode = false;
                                 completionStatus.focus = true;
                             }
+                            tooltip: text
                             shortcut: todoDelegate.currentItem ? StandardKey.Cancel : ""
                         }
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                        QQC2.ToolTip.text: cancelEditAction.tooltip
                         KeyNavigation.tab: searchField
                     }
                 }
