@@ -15,6 +15,7 @@ Kirigami.AbstractCard {
 
     property bool currentItem: Kirigami.CardsListView.isCurrentItem
     property bool editMode: false
+    property alias textEditField: editTodoItemText
 
     KeyNavigation.tab: completionStatus
     // Create custom shadowed rectangle for the focus coloring

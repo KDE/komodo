@@ -409,6 +409,12 @@ Kirigami.ScrollablePage {
         }
 
         delegate: TodoDelegate {
+            // Focus automatically on an item being edited, in case
+            // there is multiple edited items and user moves between them with keys
+            onFocusChanged: {
+                cardsListView.keyNavigationEnabled = !editMode;
+                textEditField.focus = editMode;
+            }
             onEditModeChanged: {
                 if (editMode) {
                     cardsListView.currentIndex = index;
