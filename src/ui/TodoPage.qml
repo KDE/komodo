@@ -188,6 +188,13 @@ Kirigami.ScrollablePage {
     titleDelegate: Kirigami.Heading {
         text: TodoModel.filePath.toString().replace("file://", "").split('/').pop()
         elide: Text.ElideMiddle
+        MouseArea {
+            hoverEnabled: true
+            anchors.fill: parent
+            QQC2.ToolTip.visible: containsMouse
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+            QQC2.ToolTip.text: TodoModel.filePath.toString().replace("file://", "")
+        }
     }
 
     header: ColumnLayout {
