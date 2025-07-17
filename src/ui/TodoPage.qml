@@ -301,7 +301,7 @@ Kirigami.ScrollablePage {
     actions: [
         Kirigami.Action {
             icon.name: "list-add-symbolic"
-            text: i18nc("@action:inmenu", "Add New Todo…")
+            text: i18nc("@action:inmenu", "New Todo…")
             enabled: TodoModel.filePath != ""
             onTriggered: {
                 addNewPrompt.text = "";
