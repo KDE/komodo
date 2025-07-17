@@ -413,6 +413,7 @@ Kirigami.ScrollablePage {
                 if (editMode) {
                     cardsListView.currentIndex = index;
                 }
+                cardsListView.keyNavigationEnabled = !editMode;
             }
         }
 
