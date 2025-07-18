@@ -11,7 +11,6 @@
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
 #include <QUrl>
-#include <QtQml>
 
 constexpr auto APPLICATION_ID = "org.kde.komodo";
 int main(int argc, char *argv[])

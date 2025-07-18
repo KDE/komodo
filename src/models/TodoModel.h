@@ -35,7 +35,7 @@ public:
         PrettyDescriptionRole,
         DueDateRole
     };
-    Q_ENUMS(Roles)
+    Q_ENUM(Roles)
 
     explicit TodoModel(QObject *parent = nullptr);
 
@@ -82,4 +82,11 @@ private:
     KDirWatch *m_fileWatcher;
     int m_filterIndex;
     bool fileModifiedFromApp = false;
+
+    // Regexp for the completion status: x
+    QRegularExpression m_completionRegexp;
+    // Regexp for the priority: (A-Z)
+    QRegularExpression m_priorityRegexp;
+    // Regexp for priority keyval pair: pri:A
+    QRegularExpression m_keyValuePriority;
 };

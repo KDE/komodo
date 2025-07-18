@@ -18,28 +18,25 @@
 #include <QString>
 #include <QUrl>
 
-// Regexp for the whole todo line, with grouped items
-const static QRegularExpression s_todoRegexp =
-    QRegularExpression(QStringLiteral("(?:^[ "
-                                      "\\t]*(?P<Completion>x))|(?P<Priority>\\([A-Z]\\))|(?:(?P<FirstDate>"
-                                      "\\d{4}-\\d\\d-\\d\\d)[ "
-                                      "\\t]*(?P<SecondDate>\\d{4}-\\d\\d-\\d\\d)?)|(?P<Projects>\\+\\w+)|(?P<"
-                                      "Contexts>(?<=\\s)@[^\\s]+)|(?P<KeyValuePairs>[a-zA-Z]+:[\\w:/.%-]*)"));
-
-// Regexp for the completion status: x
-const static QRegularExpression s_completionRegexp = QRegularExpression(QStringLiteral("^[ \\t]*x"));
-
-// Regexp for the priority: (A-Z)
-const static QRegularExpression s_priorityRegexp = QRegularExpression(QStringLiteral("^[ x\\t]*\\(([A-Z])\\)"));
-
 TodoModel::TodoModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    parserPattern = QRegularExpression(s_todoRegexp);
+    // Regexp for the whole todo line, with grouped items
+    parserPattern =
+        QRegularExpression(QStringLiteral("(?:^[ "
+                                          "\\t]*(?P<Completion>x))|(?P<Priority>\\([A-Z]\\))|(?:(?P<FirstDate>"
+                                          "\\d{4}-\\d\\d-\\d\\d)[ "
+                                          "\\t]*(?P<SecondDate>\\d{4}-\\d\\d-\\d\\d)?)|(?P<Projects>\\+\\w+)|(?P<"
+                                          "Contexts>(?<=\\s)@[^\\s]+)|(?P<KeyValuePairs>[a-zA-Z]+:[\\w:/.%-]*)"));
     if (!parserPattern.isValid()) {
         qWarning() << "Regular expression pattern for parsing is not valid!";
         return;
     }
+
+    m_completionRegexp = QRegularExpression(QStringLiteral("^[ \\t]*x"));
+    m_priorityRegexp = QRegularExpression(QStringLiteral("^[ x\\t]*\\(([A-Z])\\)"));
+    m_keyValuePriority = QRegularExpression(QStringLiteral("pri:([A-Z])"));
+
     m_fileWatcher = new KDirWatch(this);
     connect(this, &TodoModel::filePathChanged, this, &TodoModel::loadFile);
     connect(this, &TodoModel::dataChanged, this, &TodoModel::saveFile);
@@ -60,7 +57,6 @@ Todo TodoModel::parseTodoFromDescription(const QString &description)
     // read description from the file and turn it into task
     QRegularExpressionMatchIterator iter = parserPattern.globalMatch(description);
     Todo todo(description);
-    QStringList keyVals;
     bool completionStatus = false;
     while (iter.hasNext()) {
         const auto match = iter.next();
@@ -102,7 +98,8 @@ Todo TodoModel::parseTodoFromDescription(const QString &description)
 
     todo.setCompleted(completionStatus);
     todo.setPrettyDescription(prettyPrintDescription(todo));
-    for (const QString &keyval : todo.keyValuePairs()) {
+    const auto pairs = todo.keyValuePairs();
+    for (const QString &keyval : pairs) {
         if (keyval.startsWith(QStringLiteral("due:"))) {
             todo.setDueDate(keyval.split(QStringLiteral(":")).last());
         }
@@ -113,26 +110,29 @@ Todo TodoModel::parseTodoFromDescription(const QString &description)
 QString TodoModel::prettyPrintDescription(const Todo &todo)
 {
     auto prettyDescr = todo.description();
-    prettyDescr.replace(s_completionRegexp, QStringLiteral(""));
-    prettyDescr.replace(todo.creationDate(), QStringLiteral(""));
-    prettyDescr.replace(todo.completionDate(), QStringLiteral(""));
-    for (const auto &pair : todo.keyValuePairs()) {
-        prettyDescr.replace(pair, QStringLiteral(""));
+    prettyDescr.replace(m_completionRegexp, QString());
+    prettyDescr.replace(todo.creationDate(), QString());
+    prettyDescr.replace(todo.completionDate(), QString());
+    const auto keyValuePairs = todo.keyValuePairs();
+    const auto projects = todo.projects();
+    const auto contexts = todo.contexts();
+    for (const auto &pair : keyValuePairs) {
+        prettyDescr.replace(pair, QString());
     }
     // There's probably better way to do this but hey as long as it works.
     const auto textColor = KColorScheme().foreground().color();
     const auto projectColor = KColorUtils::mix(KColorScheme().foreground(KColorScheme::ActiveText).color(), textColor);
     const auto contextColor = KColorUtils::mix(KColorScheme().foreground(KColorScheme::PositiveText).color(), textColor);
-    for (const auto &project : todo.projects()) {
+    for (const auto &project : projects) {
         const auto re = QRegularExpression(QStringLiteral("\\B\\%1\\b").arg(project));
         prettyDescr.replace(re, QStringLiteral("<b><span style='color:%2'>%1</span></b>").arg(project, projectColor.name()));
     }
-    for (const auto &context : todo.contexts()) {
+    for (const auto &context : contexts) {
         const auto re = QRegularExpression(QStringLiteral("\\B\\%1\\b").arg(context));
         prettyDescr.replace(re, QStringLiteral("<i><span style='color:%2'>%1</span></i>").arg(context, contextColor.name()));
     }
 
-    prettyDescr.replace(s_priorityRegexp, QStringLiteral(""));
+    prettyDescr.replace(m_priorityRegexp, QString());
     return prettyDescr.simplified();
 }
 
@@ -195,10 +195,10 @@ void TodoModel::updateCompletionStatus(Todo &todo, const bool completed)
     todo.setCompleted(completed);
     if (todo.completed()) {
         // When todo is set completed, remove the priority and add it as pri:A in the end
-        auto prio = s_priorityRegexp.match(newDescription);
+        auto prio = m_priorityRegexp.match(newDescription);
         if (prio.hasCaptured(1)) {
             newDescription.append(QStringLiteral(" pri:%1").arg(prio.captured(1)));
-            newDescription.replace(s_priorityRegexp, QStringLiteral(""));
+            newDescription.replace(m_priorityRegexp, QString());
         }
 
         // Add completion date
@@ -207,13 +207,13 @@ void TodoModel::updateCompletionStatus(Todo &todo, const bool completed)
         todo = parseTodoFromDescription(newDescription.simplified().prepend(QStringLiteral("x %1 ").arg(today)));
     } else {
         // When todo is set uncompleted, check for pri:A and set that as the priority (A) at the start
-        newDescription.replace(s_completionRegexp, QStringLiteral(""));
+        newDescription.replace(m_completionRegexp, QString());
         // Remove completion date
-        newDescription.replace(todo.completionDate(), QStringLiteral(""));
+        newDescription.replace(todo.completionDate(), QString());
 
-        auto prio = QRegularExpression(QStringLiteral("pri:([A-Z])")).match(newDescription);
+        auto prio = m_keyValuePriority.match(newDescription);
         if (prio.hasCaptured(1)) {
-            newDescription.replace(QStringLiteral("pri:%1").arg(prio.captured(1)), QStringLiteral(""));
+            newDescription.replace(QStringLiteral("pri:%1").arg(prio.captured(1)), QString());
             newDescription.prepend(QStringLiteral("(%1)").arg(prio.captured(1)));
         }
 
@@ -228,7 +228,6 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
     }
 
     auto &todo = m_todos[index.row()];
-    auto descr = todo.description();
 
     switch (role) {
     case CompletionRole:
@@ -369,7 +368,8 @@ bool TodoModel::saveFile()
         return false;
     }
     QStringList sortedList;
-    for (const auto &todo : m_todos) {
+    const auto todos = m_todos;
+    for (const auto &todo : todos) {
         sortedList.append(todo.description());
     }
     std::sort(sortedList.begin(), sortedList.end());
