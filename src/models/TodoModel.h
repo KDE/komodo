@@ -69,6 +69,9 @@ public:
 
     Q_SLOT void fileModified();
 
+    // Used for testing for now
+    QModelIndex indexFromDescription(const QString &description);
+
 private:
     void updateCompletionStatus(Todo &todo, const bool completed);
     QString prettyPrintDescription(const Todo &todo);

@@ -395,3 +395,14 @@ void TodoModel::fileModified()
     }
     Q_EMIT fileChanged();
 }
+
+QModelIndex TodoModel::indexFromDescription(const QString &description)
+{
+    for (int i = 0; i < todos().count(); i++) {
+        auto indexDescription = data(index(i, 0), DescriptionRole).toString();
+        if (indexDescription == description) {
+            return index(i, 0);
+        }
+    }
+    return QModelIndex();
+}

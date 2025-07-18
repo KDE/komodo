@@ -13,24 +13,24 @@ ecm_add_qml_module(models
 
 target_sources(models
     PRIVATE
-    Todo.h
     Todo.cpp
-    TodoModel.h
     TodoModel.cpp
+    Todo.h
+    TodoModel.h
 )
 
 target_link_libraries(models
-    PRIVATE
+    PUBLIC
+    KF6::ConfigGui
+    KF6::ConfigCore
     Qt6::Core
     Qt6::Gui
-    KF6::ConfigCore
-    KF6::ConfigGui
+    Qt6::Qml
     KF6::GuiAddons
     KF6::ColorScheme
     KF6::CoreAddons
     logging
 )
-
 
 ecm_finalize_qml_module(models)
 

@@ -64,3 +64,7 @@ install(TARGETS ${CMAKE_PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 add_subdirectory(models)
 add_subdirectory(ui)
+
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
