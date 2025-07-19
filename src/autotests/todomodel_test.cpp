@@ -87,8 +87,7 @@ void TodoModelTest::testParseTodo_data()
 
     QTest::addRow("Task with URL inside description") << u"(C) 2025-06-21 Add cover sheets https://example.com/lo%20l/ @Office +TPSReports"_s << false
                                                       << u"(C)"_s << QString() << u"2025-06-21"_s << QStringList{u"@Office"_s} << QStringList{u"+TPSReports"_s}
-                                                      << QStringList{u"https://example.com/lo%20l/"_s} << u"Add cover sheets @Office +TPSReports"_s
-                                                      << QString();
+                                                      << QStringList{} << u"Add cover sheets https://example.com/lo%20l/ @Office +TPSReports"_s << QString();
 }
 void TodoModelTest::testParseTodo()
 {

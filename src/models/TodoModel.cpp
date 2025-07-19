@@ -92,7 +92,11 @@ Todo TodoModel::parseTodoFromDescription(const QString &description)
         }
 
         if (!match.captured("KeyValuePairs").isEmpty()) {
-            todo.addKeyValuePair(match.captured("KeyValuePairs"));
+            auto pair = match.captured("KeyValuePairs");
+            // Ignore web URLs
+            if (!pair.startsWith(QStringLiteral("http"))) {
+                todo.addKeyValuePair(match.captured("KeyValuePairs"));
+            }
         }
     }
 
