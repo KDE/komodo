@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>org.kde.komodo</id>
+	<name>KomoDo</name>
+	<summary>Task application for todo.txt format</summary>
+	<metadata_license>MIT</metadata_license>
+	<project_license>GPL-2.0-or-later</project_license>
+	<developer id="org.kde">
+		<name translate="no">KDE</name>
+	</developer>
+	<description>
+		<p>Kirigami GUI frontend for [todo.txt](http://todotxt.org/) files.</p>
+		<p>KomoDo can be used to:
+		<ul>
+			<li>Add, delete and edit tasks</li>
+			<li>Create new todo.txt files</li>
+			<li>Filter and search tasks</li>
+		</ul>
+		<p>KomoDo follows the rules of [todo.txt](https://github.com/todotxt/todo.txt/blob/master/README.md) specification.</p>
+	</description>
+	<url type="homepage">https://www.kde.org</url>
+	<url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=KomoDo</url>
+	<url type="donation">https://www.kde.org/community/donations/?app=komodo</url>
+	<project_group>KDE</project_group>
+	<launchable type="desktop-id">org.kde.komodo.desktop</launchable>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://cdn.kde.org/screenshots/komodo/screenshot.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+	<binary>komodo</binary>
+	</provides>
+	<project_group>KDE</project_group>
+</component>
