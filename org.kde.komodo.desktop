@@ -2,9 +2,9 @@
 Name=KomoDo
 Name[x-test]=xxKomoDoxx
 Name[fi]=KomoDo
-GenericName=Task Application for todo.txt format
+GenericName=Task application for todo.txt format
 GenericName[fi]=Sovellus todo.txt formaattia noudattaville tehtäville
-GenericName[x-test]=xxTask Application for todo.txt formatxx
+GenericName[x-test]=xxTask application for todo.txt formatxx
 Exec=komodo
 Icon=korg-todo
 Type=Application
