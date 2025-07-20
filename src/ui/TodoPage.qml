@@ -34,32 +34,6 @@ Kirigami.ScrollablePage {
         return addNewPromptText.cursorPosition, today.toISOString().substring(0, 10);
     }
 
-    Kirigami.OverlaySheet {
-        id: helpSheet
-        visible: false
-        title: i18n("KomoDo Help")
-        ColumnLayout {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.margins: Kirigami.Units.smallSpacing
-            KomoDoHelp {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.minimumWidth: Kirigami.Units.gridUnit * 20
-                wrapMode: Text.Wrap
-            }
-
-            Kirigami.UrlButton {
-                text: i18nc("@info", "Syntax Source Material")
-                url: "https://github.com/todotxt/todo.txt/blob/master/README.md"
-            }
-
-            Item {
-                implicitHeight: Kirigami.Units.gridUnit * 2
-            }
-        }
-    }
-
     Dialogs.FileDialog {
         id: openDialog
         onAccepted: {
@@ -328,9 +302,8 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             text: i18nc("@action:inmenu", "Help…")
             icon.name: "help-contents-symbolic"
-            onTriggered: {
-                helpSheet.open();
-            }
+            onTriggered: pageStack.layers.push(helpPage)
+            enabled: pageStack.layers.depth <= 1
             shortcut: StandardKey.HelpContents
         },
         Kirigami.Action {
