@@ -331,7 +331,7 @@ Kirigami.ScrollablePage {
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
             anchors.centerIn: parent
             visible: TodoModel.filePath == ""
-            icon.name: "korg-todo"
+            icon.name: "org.kde.komodo"
             text: i18nc("@info:placeholder", "No todo.txt file is loaded.")
             explanation: xi18nc("@info:placeholder", "Click <interface>Open File…</interface> to use an existing file or <interface>Create New…</interface> to start a new file.")
             helpfulAction: Kirigami.Action {
@@ -348,7 +348,7 @@ Kirigami.ScrollablePage {
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
             anchors.centerIn: parent
             visible: !noTodosLoaded.visible && filteredModel.count === 0
-            icon.name: "korg-todo"
+            icon.name: "org.kde.komodo"
             text: i18nc("@info:placeholder", "No todos found.")
         }
 
