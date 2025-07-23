@@ -25,6 +25,7 @@ include(ECMSetupVersion)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMQmlModule)
+include(ECMCheckOutboundLicense)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 
@@ -58,3 +59,6 @@ ecm_qt_install_logging_categories(
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES src/*.cpp src/*.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+
+file(GLOB_RECURSE ALL_SOURCE_FILES *.cpp *.h *.qml)
+ecm_check_outbound_license(LICENSES GPL-2.0-or-later FILES ${ALL_SOURCE_FILES})
