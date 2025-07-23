@@ -6,13 +6,8 @@
 #include "Todo.h"
 #include "komodo_config.h"
 #include <KDirWatch>
-#include <QAbstractListModel>
-#include <QDebug>
-#include <QMap>
-#include <QQmlEngine>
+#include <QAbstractItemModel>
 #include <QRegularExpression>
-#include <QString>
-#include <QUrl>
 
 class TodoModel : public QAbstractListModel
 {
@@ -39,11 +34,10 @@ public:
 
     explicit TodoModel(QObject *parent = nullptr);
 
-    Todo parseTodoFromDescription(const QString &description);
-
     QRegularExpression parserPattern;
 
-    QList<Todo> todos();
+    Todo parseTodoFromDescription(const QString &description) const;
+    QList<Todo> todos() const;
 
     int rowCount(const QModelIndex &) const override;
     QHash<int, QByteArray> roleNames() const override;
@@ -53,28 +47,28 @@ public:
     Q_INVOKABLE void addTodo(const QString &description);
     Q_INVOKABLE void deleteTodo(const QModelIndex &index);
 
-    QUrl filePath();
+    QUrl filePath() const;
     void setFilePath(const QUrl &newFilePath);
     Q_SIGNAL void filePathChanged();
 
     Q_SIGNAL void fileChanged();
 
-    int filterIndex();
+    int filterIndex() const;
     void setFilterIndex(const int &newFilterIndex);
     Q_SIGNAL void filterIndexChanged();
 
     Q_INVOKABLE bool loadFile();
     Q_INVOKABLE bool saveFile();
-    Q_INVOKABLE bool fileExists();
+    Q_INVOKABLE bool fileExists() const;
 
     Q_SLOT void fileModified();
 
     // Used for testing for now
-    QModelIndex indexFromDescription(const QString &description);
+    QModelIndex indexFromDescription(const QString &description) const;
 
 private:
     void updateCompletionStatus(Todo &todo, const bool completed);
-    QString prettyPrintDescription(const Todo &todo);
+    QString prettyPrintDescription(const Todo &todo) const;
 
     QUrl m_filePath;
     QList<Todo> m_todos;

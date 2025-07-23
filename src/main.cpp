@@ -10,7 +10,6 @@
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
-#include <QUrl>
 
 constexpr auto APPLICATION_ID = "org.kde.komodo";
 int main(int argc, char *argv[])

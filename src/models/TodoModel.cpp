@@ -2,19 +2,12 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "TodoModel.h"
-#include "Todo.h"
-#include "komodo_config.h"
 #include <KColorScheme>
 #include <KColorUtils>
-#include <KDirWatch>
-#include <QAbstractItemModel>
 #include <QDateTime>
-#include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <QGuiApplication>
-#include <QRegularExpression>
 #include <QString>
 #include <QUrl>
 
@@ -52,7 +45,7 @@ TodoModel::TodoModel(QObject *parent)
     connect(m_fileWatcher, &KDirWatch::created, this, &TodoModel::fileModified);
 }
 
-Todo TodoModel::parseTodoFromDescription(const QString &description)
+Todo TodoModel::parseTodoFromDescription(const QString &description) const
 {
     // read description from the file and turn it into task
     QRegularExpressionMatchIterator iter = parserPattern.globalMatch(description);
@@ -111,7 +104,7 @@ Todo TodoModel::parseTodoFromDescription(const QString &description)
     return todo;
 }
 
-QString TodoModel::prettyPrintDescription(const Todo &todo)
+QString TodoModel::prettyPrintDescription(const Todo &todo) const
 {
     auto prettyDescr = todo.description();
     prettyDescr.replace(m_completionRegexp, QString());
@@ -301,12 +294,12 @@ void TodoModel::deleteTodo(const QModelIndex &index)
     saveFile();
 }
 
-QList<Todo> TodoModel::todos()
+QList<Todo> TodoModel::todos() const
 {
     return m_todos;
 }
 
-QUrl TodoModel::filePath()
+QUrl TodoModel::filePath() const
 {
     return m_filePath;
 }
@@ -319,7 +312,7 @@ void TodoModel::setFilePath(const QUrl &newFilePath)
     Q_EMIT filePathChanged();
 }
 
-int TodoModel::filterIndex()
+int TodoModel::filterIndex() const
 {
     return m_filterIndex;
 }
@@ -386,7 +379,7 @@ bool TodoModel::saveFile()
     return true;
 }
 
-bool TodoModel::fileExists()
+bool TodoModel::fileExists() const
 {
     QFileInfo fi(m_filePath.toLocalFile());
     return fi.exists();
@@ -401,7 +394,7 @@ void TodoModel::fileModified()
     Q_EMIT fileChanged();
 }
 
-QModelIndex TodoModel::indexFromDescription(const QString &description)
+QModelIndex TodoModel::indexFromDescription(const QString &description) const
 {
     for (int i = 0; i < todos().count(); i++) {
         auto indexDescription = data(index(i, 0), DescriptionRole).toString();

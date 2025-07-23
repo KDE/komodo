@@ -2,10 +2,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "Todo.h"
-#include <QDebug>
-#include <QFile>
-#include <QRegularExpression>
-#include <QString>
 
 Todo::Todo(const QString &description)
 {

@@ -3,11 +3,8 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QDebug>
-#include <QMap>
-#include <QRegularExpression>
 #include <QString>
+#include <QStringList>
 
 class Todo
 {
