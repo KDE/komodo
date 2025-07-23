@@ -29,7 +29,6 @@ target_link_libraries(models
     KF6::GuiAddons
     KF6::ColorScheme
     KF6::CoreAddons
-    logging
 )
 
 ecm_finalize_qml_module(models)

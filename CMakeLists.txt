@@ -50,5 +50,11 @@ kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
 ki18n_install(po)
 
+ecm_qt_install_logging_categories(
+    EXPORT ${CMAKE_PROJECT_NAME}_EXPORT
+    FILE ${CMAKE_PROJECT_NAME}.categories
+    DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+)
+
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES src/*.cpp src/*.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})

@@ -15,7 +15,6 @@ target_link_libraries(models_test
     KF6::GuiAddons
     KF6::ColorScheme
     KF6::CoreAddons
-    logging
 )
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})

@@ -5,6 +5,14 @@ add_executable(${CMAKE_PROJECT_NAME}
     main.cpp
 )
 
+ecm_qt_declare_logging_category(${CMAKE_PROJECT_NAME}
+    HEADER ${CMAKE_PROJECT_NAME}_debug.h
+    IDENTIFIER ${CMAKE_PROJECT_NAME_UPPERCASE}_LOG
+    CATEGORY_NAME org.kde.${CMAKE_PROJECT_NAME}
+    DESCRIPTION "komodo"
+    EXPORT ${CMAKE_PROJECT_NAME}_EXPORT
+)
+
 ecm_add_qml_module(${CMAKE_PROJECT_NAME}
     URI
     org.kde.${CMAKE_PROJECT_NAME}
@@ -34,31 +42,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     KF6::GuiAddons
     KF6::ColorScheme
     KF6::DBusAddons
-    logging
 )
-
-add_library(logging STATIC)
-set_target_properties(logging PROPERTIES POSITION_INDEPENDENT_CODE ON)
-
-ecm_qt_declare_logging_category(logging
-    HEADER ${CMAKE_PROJECT_NAME}_debug.h
-    IDENTIFIER ${CMAKE_PROJECT_NAME_UPPERCASE}_LOG
-    CATEGORY_NAME org.kde.${CMAKE_PROJECT_NAME}
-    DESCRIPTION "komodo"
-    EXPORT ${CMAKE_PROJECT_NAME}_EXPORT
-)
-
-target_link_libraries(logging
-    PRIVATE
-    Qt6::Core
-)
-
-ecm_qt_install_logging_categories(
-    EXPORT ${CMAKE_PROJECT_NAME}_EXPORT
-    FILE ${CMAKE_PROJECT_NAME}.categories
-    DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
-)
-
 
 install(TARGETS ${CMAKE_PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
