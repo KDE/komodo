@@ -155,9 +155,6 @@ QHash<int, QByteArray> TodoModel::roleNames() const
 QVariant TodoModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, CheckIndexOption::IndexIsValid));
-    if (index.row() < 0 || index.row() >= m_todos.count()) {
-        return {};
-    }
 
     auto todo = m_todos.at(index.row());
 
