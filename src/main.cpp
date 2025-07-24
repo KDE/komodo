@@ -17,10 +17,6 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("komodo");
-    QApplication::setOrganizationName(QStringLiteral("KDE"));
-    QApplication::setOrganizationDomain(QStringLiteral("kde.org"));
-    QApplication::setApplicationName(QStringLiteral("KomoDo"));
-    QApplication::setDesktopFileName(QStringLiteral("org.kde.komodo"));
 
     KAboutData aboutData(
         // The program name used internally.
