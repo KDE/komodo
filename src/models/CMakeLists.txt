@@ -1,17 +1,17 @@
 # SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(models)
+add_library(${CMAKE_PROJECT_NAME}_models)
 
-kconfig_target_kcfg_file(models FILE komodo_config.kcfg CLASS_NAME KomodoConfig MUTATORS GENERATE_PROPERTIES GENERATE_MOC DEFAULT_VALUE_GETTERS QML_REGISTRATION SINGLETON)
+kconfig_target_kcfg_file(${CMAKE_PROJECT_NAME}_models FILE komodo_config.kcfg CLASS_NAME KomodoConfig MUTATORS GENERATE_PROPERTIES GENERATE_MOC DEFAULT_VALUE_GETTERS QML_REGISTRATION SINGLETON)
 
-ecm_add_qml_module(models
+ecm_add_qml_module(${CMAKE_PROJECT_NAME}_models
     URI
     org.kde.${CMAKE_PROJECT_NAME}.models
     GENERATE_PLUGIN_SOURCE
 )
 
-target_sources(models
+target_sources(${CMAKE_PROJECT_NAME}_models
     PRIVATE
     Todo.cpp
     TodoModel.cpp
@@ -19,7 +19,7 @@ target_sources(models
     TodoModel.h
 )
 
-target_link_libraries(models
+target_link_libraries(${CMAKE_PROJECT_NAME}_models
     PUBLIC
     KF6::ConfigGui
     KF6::ConfigCore
@@ -31,6 +31,6 @@ target_link_libraries(models
     KF6::CoreAddons
 )
 
-ecm_finalize_qml_module(models)
+ecm_finalize_qml_module(${CMAKE_PROJECT_NAME}_models)
 
-install(TARGETS models ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS ${CMAKE_PROJECT_NAME}_models ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
