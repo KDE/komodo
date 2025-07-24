@@ -5,7 +5,12 @@
 
 # KomoDo
 
-Kirigami GUI frontend for [todo.txt](http://todotxt.org/) files.
+Work on [todo.txt](http://todotxt.org/) files!
+
+KomoDo is a todo manager that uses [todo.txt specification](https://github.com/todotxt/todo.txt/blob/master/README.md). 
+It parses any compliant todo.txt files and turns them into easy to use list of tasks.
+
+KomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!
 
 ![Screenshot of KomoDo](https://cdn.kde.org/screenshots/komodo/screenshot.png)
 
@@ -13,8 +18,6 @@ KomoDo can be used to:
 - Add, delete and edit tasks
 - Create new todo.txt files
 - Filter and search tasks
-
-KomoDo follows the rules of [todo.txt](https://github.com/todotxt/todo.txt/blob/master/README.md) specification.
 
 For example, a task is declared like this:
 ```
@@ -36,11 +39,4 @@ Flathub link hopefully coming soon.
 
 You can use [kde-builder](https://kde-builder.kde.org/en/) to build KomoDo.
 
-For now, you will need to add this in your `kde-builder.yaml` configuration file:
-
-```yaml
-project komodo:
-  repository: git@invent.kde.org:akselmo/komodo.git
-```
-
-Then you can run `kde-builder komodo`.
+Install it, and then in terminal just run `kde-builder komodo`.
