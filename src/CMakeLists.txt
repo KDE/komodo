@@ -42,6 +42,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     KF6::GuiAddons
     KF6::ColorScheme
     KF6::DBusAddons
+    ${CMAKE_PROJECT_NAME}_uiplugin
+    ${CMAKE_PROJECT_NAME}_modelsplugin
 )
 
 install(TARGETS ${CMAKE_PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
