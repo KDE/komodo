@@ -6,34 +6,53 @@
 	-->
 	<id>org.kde.komodo</id>
 	<name>KomoDo</name>
-	<summary>Task application for todo.txt format</summary>
+	<summary>Work on todo.txt files</summary>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-2.0-or-later</project_license>
+	<project_group>KDE</project_group>
 	<developer id="org.kde">
 		<name translate="no">KDE</name>
 	</developer>
+	<categories>
+		<category>Office</category>
+		<category>Utility</category>
+	</categories>
+	<keywords>
+		<keyword>todo.txt</keyword>
+		<keyword>tasks</keyword>
+		<keyword>todo</keyword>
+	</keywords>
+	<content_rating type="oars-1.1"/>
 	<description>
-		<p>Kirigami GUI frontend for [todo.txt](http://todotxt.org/) files.</p>
-		<p>KomoDo can be used to:
+		<p>KomoDo is a todo manager that uses todo.txt specification. It parses any compliant todo.txt files and turns them into easy to use list of tasks.</p>
+		<p>KomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!</p>
+		<p>Features</p>
 		<ul>
+			<li>Open and create new todo.txt files</li>
 			<li>Add, delete and edit tasks</li>
-			<li>Create new todo.txt files</li>
 			<li>Filter and search tasks</li>
 		</ul>
-		<p>KomoDo follows the rules of [todo.txt](https://github.com/todotxt/todo.txt/blob/master/README.md) specification.</p>
 	</description>
 	<url type="homepage">https://www.kde.org</url>
 	<url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=KomoDo</url>
 	<url type="donation">https://www.kde.org/community/donations/?app=komodo</url>
-	<project_group>KDE</project_group>
 	<launchable type="desktop-id">org.kde.komodo.desktop</launchable>
 	<screenshots>
-		<screenshot type="default">
+		<screenshot type="default" environment="plasma">
+			<caption>Example of KomoDo being used with light colorscheme.</caption>
 			<image>https://cdn.kde.org/screenshots/komodo/screenshot.png</image>
+		</screenshot>
+		<screenshot environment="plasma:dark">
+			<caption>Example of KomoDo being used with dark colorscheme.</caption>
+			<image>https://cdn.kde.org/screenshots/komodo/screenshot-dark.png</image>
 		</screenshot>
 	</screenshots>
 	<provides>
-	<binary>komodo</binary>
+		<binary>komodo</binary>
 	</provides>
-	<project_group>KDE</project_group>
+	<icon type="stock">org.kde.komodo</icon>
+	<branding>
+		<color type="primary" scheme_preference="light">#cbffbe</color>
+		<color type="primary" scheme_preference="dark">#364133</color>
+	</branding>
 </component>
