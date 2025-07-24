@@ -8,7 +8,6 @@ Dependencies:
       'frameworks/kirigami': '@latest-kf6'
       'frameworks/ki18n': '@latest-kf6'
       'frameworks/kcoreaddons': '@latest-kf6'
-      'frameworks/kqqc2desktopstyle': '@latest-kf6'
       'frameworks/kiconthemes': '@latest-kf6'
       'frameworks/qqc2-desktop-style': '@latest-kf6'
       'frameworks/kitemmodels': '@latest-kf6'
