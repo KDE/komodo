@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs as Dialogs
+import org.kde.kirigamiaddons.dateandtime as DateTime
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels
 import org.kde.komodo.models
@@ -27,11 +28,8 @@ Kirigami.ScrollablePage {
             cardsListView.enabled = fileExists;
         }
     }
-    function getDate() {
-        let today = new Date();
-        const tz = today.getTimezoneOffset();
-        today = new Date(today.getTime() - (tz * 60 * 1000));
-        return addNewPromptText.cursorPosition, today.toISOString().substring(0, 10);
+    function getDate(dateString) {
+        return descriptionText.cursorPosition, dateString.toISOString().substring(0, 10);
     }
 
     Dialogs.FileDialog {
@@ -96,51 +94,74 @@ Kirigami.ScrollablePage {
         id: addNewPrompt
         property var model
         property var index
-        property alias text: addNewPromptText.text
+        property alias text: descriptionText.text
         anchors.centerIn: parent
         title: i18n("Add New Todo")
         modal: true
         width: parent.width - Kirigami.Units.largeSpacing * 8
         maximumHeight: parent.height - Kirigami.Units.largeSpacing * 4
+        maximumWidth: parent.width - Kirigami.Units.largeSpacing * 8
         padding: Kirigami.Units.largeSpacing
         showCloseButton: false
-        contentItem: ColumnLayout {
-            QQC2.TextField {
-                id: addNewPromptText
-                focus: true
-                font.family: "monospace"
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                wrapMode: Text.Wrap
-                placeholderText: "(A) YYYY-MM-DD description +project @context key:value"
-                Accessible.role: Accessible.EditableText
-                onTextEdited: {
-                    addNewPrompt.standardButton(Kirigami.Dialog.Ok).enabled = text.length > 0;
-                }
-                Keys.onReturnPressed: {
-                    addNewPrompt.standardButton(Kirigami.Dialog.Ok).click();
+        contentItem: Kirigami.FormLayout {
+            DateTime.DatePopup {
+                id: datePopup
+                onAccepted: {
+                    var timezoneOffset = (new Date()).getTimezoneOffset() * 60 * 1000;
+                    var ISOTimeWithLocale = (new Date(datePopup.value - timezoneOffset)).toISOString().slice(0, 10);
+                    creationDateText.text = ISOTimeWithLocale;
                 }
             }
+            QQC2.ComboBox {
+                id: priorityComboBox
+                Kirigami.FormData.label: i18n("Priority:")
+                model: '-ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+            }
+
             RowLayout {
+                id: creationDateLayout
+                Kirigami.FormData.label: i18n("Creation Date:")
+
+                QQC2.TextField {
+                    id: creationDateText
+                    placeholderText: "YYYY-MM-DD"
+                    validator: RegularExpressionValidator {
+                        regularExpression: /\d\d\d\d-\d\d\-\d\d/
+                    }
+                }
+
                 QQC2.Button {
                     action: Kirigami.Action {
                         id: insertDateAction
-                        text: i18nc("@button", "Insert Date")
+                        text: i18nc("@button", "Pick Date…")
                         icon.name: "view-calendar-symbolic"
-                        tooltip: i18n("Inserts timestamp, such as 2025-12-31")
+                        tooltip: i18n("Opens date picker dialog")
                         onTriggered: {
-                            addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
+                            datePopup.open();
                         }
                     }
                     QQC2.ToolTip.visible: hovered
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     QQC2.ToolTip.text: insertDateAction.tooltip
                 }
+            }
 
-                Kirigami.UrlButton {
-                    text: i18nc("@info", "Syntax Help")
-                    url: "https://github.com/todotxt/todo.txt/blob/master/README.md"
+            QQC2.TextField {
+                id: descriptionText
+                Kirigami.FormData.label: i18n("Description:")
+                focus: true
+                font.family: "monospace"
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                wrapMode: Text.Wrap
+                placeholderText: "Description +Project @Context key:value"
+                Accessible.role: Accessible.EditableText
+                onTextEdited: {
+                    addNewPrompt.standardButton(Kirigami.Dialog.Ok).enabled = text.length > 0;
+                }
+                Keys.onReturnPressed: {
+                    addNewPrompt.standardButton(Kirigami.Dialog.Ok).click();
                 }
             }
         }
@@ -283,7 +304,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 addNewPrompt.text = "";
                 addNewPrompt.open();
-                addNewPromptText.focus = true;
+                descriptionText.focus = true;
             }
             shortcut: StandardKey.New
         },
