@@ -59,7 +59,7 @@ Kirigami.ScrollablePage {
 
     Kirigami.Dialog {
         id: deletePrompt
-        property string description
+        property var model
         property var index
         anchors.centerIn: parent
         title: i18n("Delete Todo")
@@ -76,14 +76,10 @@ Kirigami.ScrollablePage {
                 wrapMode: Text.WordWrap
                 text: i18n("Are you sure you wish to delete this todo?")
             }
-            QQC2.TextField {
-                font.family: "monospace"
+            TodoDelegate {
+                index: deletePrompt.index
+                model: deletePrompt.model
                 readOnly: true
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                wrapMode: Text.Wrap
-                text: deletePrompt.description
             }
         }
 

@@ -13,6 +13,7 @@ Kirigami.AbstractCard {
     required property int index
     required property var model
 
+    property bool readOnly: false
     property bool currentItem: Kirigami.CardsListView.isCurrentItem
     property bool editMode: false
     property alias textEditField: editTodoItemText
@@ -51,6 +52,7 @@ Kirigami.AbstractCard {
                     Layout.maximumWidth: Kirigami.Units.gridUnit * 2
                     QQC2.CheckBox {
                         id: completionStatus
+                        enabled: !todoDelegate.readOnly
                         spacing: 0
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                         checked: todoDelegate.model.completion
@@ -223,6 +225,7 @@ Kirigami.AbstractCard {
 
                         QQC2.Button {
                             id: editButton
+                            visible: !todoDelegate.readOnly
                             Layout.alignment: Qt.AlignRight
                             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
@@ -247,6 +250,7 @@ Kirigami.AbstractCard {
 
                         QQC2.Button {
                             id: deleteItemButton
+                            visible: !todoDelegate.readOnly
                             Layout.alignment: Qt.AlignRight
                             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
@@ -257,7 +261,7 @@ Kirigami.AbstractCard {
                                 text: i18nc("@button", "Delete")
                                 icon.name: "entry-delete-symbolic"
                                 onTriggered: {
-                                    deletePrompt.description = todoDelegate.model.description;
+                                    deletePrompt.model = todoDelegate.model;
                                     deletePrompt.index = todoDelegate.index;
                                     deletePrompt.open();
                                 }
@@ -274,7 +278,7 @@ Kirigami.AbstractCard {
             }
             ColumnLayout {
                 id: editLayout
-                visible: todoDelegate.editMode
+                visible: todoDelegate.editMode && !todoDelegate.readOnly
                 QQC2.TextField {
                     id: editTodoItemText
                     font.family: "monospace"
