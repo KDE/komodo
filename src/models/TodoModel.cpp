@@ -38,7 +38,13 @@ TodoModel::TodoModel(QObject *parent)
     m_filterIndex = m_config->filterIndex();
     if (!m_config->todoFilePath().isEmpty()) {
         m_filePath = QUrl::fromLocalFile(m_config->todoFilePath());
-        loadFile();
+        if (!fileExists()) {
+            m_filePath = QUrl();
+            m_config->setTodoFilePath(QString());
+            m_config->save();
+        } else {
+            loadFile();
+        }
     }
     connect(m_fileWatcher, &KDirWatch::dirty, this, &TodoModel::fileModified);
     connect(m_fileWatcher, &KDirWatch::deleted, this, &TodoModel::fileModified);
