@@ -206,14 +206,14 @@ Kirigami.ScrollablePage {
             showCloseButton: false
             actions: [
                 Kirigami.Action {
-                    icon.name: "add"
+                    icon.name: "document-new-symbolic"
                     text: i18nc("@button", "Create New…")
                     onTriggered: {
                         createNewDialog.open();
                     }
                 },
                 Kirigami.Action {
-                    icon.name: "document-open"
+                    icon.name: "document-open-symbolic"
                     text: i18nc("@action:button", "Open File…")
                     onTriggered: {
                         openDialog.open();
@@ -280,7 +280,7 @@ Kirigami.ScrollablePage {
             text: i18nc("@info:placeholder", "No todo.txt file is loaded.")
             explanation: xi18nc("@info:placeholder", "Click <interface>Open File…</interface> to use an existing file or <interface>Create New…</interface> to start a new file.")
             helpfulAction: Kirigami.Action {
-                icon.name: "add"
+                icon.name: "document-new-symbolic"
                 text: i18nc("@button", "Create New…")
                 onTriggered: {
                     createNewDialog.open();

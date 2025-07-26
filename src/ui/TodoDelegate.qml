@@ -212,7 +212,7 @@ Kirigami.AbstractCard {
                             font.bold: false
                             closable: false
                             checkable: false
-                            icon.name: "clock"
+                            icon.name: "clock-symbolic"
                             QQC2.ToolTip.visible: hovered
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.text: i18n("Task creation date")
