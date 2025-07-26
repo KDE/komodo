@@ -68,7 +68,7 @@ Kirigami.ScrollablePage {
         property string description
         property var index
         anchors.centerIn: parent
-        title: i18n("Delete Todo")
+        title: i18n("Delete To-Do")
         modal: true
         width: parent.width - Kirigami.Units.largeSpacing * 8
         maximumHeight: parent.height - Kirigami.Units.largeSpacing * 4
@@ -80,7 +80,7 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
-                text: i18n("Are you sure you wish to delete this todo?")
+                text: i18n("Are you sure you wish to delete this To-Do?")
             }
             QQC2.TextField {
                 font.family: "monospace"
@@ -183,7 +183,7 @@ Kirigami.ScrollablePage {
             id: fileChangedMessage
             Layout.fillWidth: true
             visible: false
-            text: i18n("This file has been changed externally. Reloading it is strongly advised!")
+            text: i18n("This To-Do list has been changed externally. Reloading it is strongly advised!")
             type: Kirigami.MessageType.Warning
             showCloseButton: true
             actions: [
@@ -201,20 +201,20 @@ Kirigami.ScrollablePage {
             id: fileDeletedMessage
             Layout.fillWidth: true
             visible: false
-            text: i18n("This file has been deleted! Open another file or create new one.")
+            text: i18n("This To-Do list  has been deleted! Open another To-Do list or create new one.")
             type: Kirigami.MessageType.Error
             showCloseButton: false
             actions: [
                 Kirigami.Action {
                     icon.name: "document-new-symbolic"
-                    text: i18nc("@button", "Create New…")
+                    text: i18nc("@button", "Create New To-Do List…")
                     onTriggered: {
                         createNewDialog.open();
                     }
                 },
                 Kirigami.Action {
                     icon.name: "document-open-symbolic"
-                    text: i18nc("@action:button", "Open File…")
+                    text: i18nc("@action:button", "Open To-Do List…")
                     onTriggered: {
                         openDialog.open();
                     }
@@ -226,7 +226,7 @@ Kirigami.ScrollablePage {
     actions: [
         Kirigami.Action {
             icon.name: "list-add-symbolic"
-            text: i18nc("@action:inmenu", "New Todo…")
+            text: i18nc("@action:inmenu", "New To-Do…")
             enabled: TodoModel.filePath != ""
             onTriggered: {
                 filterComboBox.currentIndex = 0;
@@ -238,7 +238,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             icon.name: "document-open-symbolic"
-            text: i18nc("@action:inmenu", "Open File…")
+            text: i18nc("@action:inmenu", "Open To-Do List…")
             onTriggered: {
                 openDialog.open();
             }
@@ -277,11 +277,11 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             visible: TodoModel.filePath == ""
             icon.name: "org.kde.komodo"
-            text: i18nc("@info:placeholder", "No todo.txt file is loaded.")
-            explanation: xi18nc("@info:placeholder", "Click <interface>Open File…</interface> to use an existing file or <interface>Create New…</interface> to start a new file.")
+            text: i18nc("@info:placeholder", "No To-Do list is loaded.")
+            explanation: xi18nc("@info:placeholder", "Click <interface>Open To-Do list…</interface> to use an existing list or <interface>Create New To-Do list…</interface> to start a new list.")
             helpfulAction: Kirigami.Action {
                 icon.name: "document-new-symbolic"
-                text: i18nc("@button", "Create New…")
+                text: i18nc("@button", "Create New To-Do List…")
                 onTriggered: {
                     createNewDialog.open();
                 }
@@ -294,7 +294,7 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             visible: !noTodosLoaded.visible && filteredModel.count === 0
             icon.name: "org.kde.komodo"
-            text: i18nc("@info:placeholder", "No todos found.")
+            text: i18nc("@info:placeholder", "No To-Dos found.")
         }
 
         model: KSortFilterProxyModel {
