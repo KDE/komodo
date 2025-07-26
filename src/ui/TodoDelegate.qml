@@ -282,103 +282,79 @@ Kirigami.AbstractCard {
             ColumnLayout {
                 id: editLayout
                 visible: todoDelegate.editMode
-                property var priorityArray: '-ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
-                onVisibleChanged: {
-                    if (visible) {
-                        priorityComboBox.currentIndex = todoDelegate.model.priority == "" ? 0 : priorityArray.indexOf(todoDelegate.model.priority.replace(/[{()}]/g, ''));
-                        creationDateText.text = todoDelegate.model.creationDate;
-                        descriptionText.text = todoDelegate.model.description;
-                        dueDateText.text = todoDelegate.model.dueDate;
-                    }
-                }
-                DateTime.DatePopup {
-                    id: datePopup
-                    property var target
-                    onAccepted: {
-                        var timezoneOffset = (new Date()).getTimezoneOffset() * 60 * 1000;
-                        var ISOTimeWithLocale = (new Date(datePopup.value - timezoneOffset)).toISOString().slice(0, 10);
-                        target = ISOTimeWithLocale;
-                    }
-                }
-                QQC2.ComboBox {
-                    id: priorityComboBox
-                    Kirigami.FormData.label: i18n("Priority:")
-                    model: editLayout.priorityArray
-                }
 
-                RowLayout {
-                    id: creationDateLayout
-
-                    QQC2.TextField {
-                        id: creationDateText
-                        placeholderText: "YYYY-MM-DD"
-                        validator: RegularExpressionValidator {
-                            regularExpression: /\d\d\d\d-\d\d\-\d\d/
-                        }
-                    }
-
-                    QQC2.Button {
-                        action: Kirigami.Action {
-                            id: insertCreationDateAction
-                            text: i18nc("@button", "Pick Date…")
-                            icon.name: "view-calendar-symbolic"
-                            tooltip: i18n("Opens date picker dialog")
-                            onTriggered: {
-                                datePopup.target = creationDateText.text;
-                                datePopup.open();
-                            }
-                        }
-                        QQC2.ToolTip.visible: hovered
-                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                        QQC2.ToolTip.text: insertCreationDateAction.tooltip
-                    }
-                }
-
-                QQC2.TextField {
-                    id: descriptionText
-                    focus: true
-                    font.family: "monospace"
+                Kirigami.FormLayout {
+                    id: editForm
+                    readonly property var priorityArray: '-ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
                     Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                    wrapMode: Text.Wrap
-                    placeholderText: todoDelegate.model.description
-                    Accessible.role: Accessible.EditableText
-                    KeyNavigation.backtab: cancelEditButton
-                    onTextEdited: {
-                        saveEditButton.enabled = text.length > 0;
-                    }
-                    Keys.onReturnPressed: {
-                        saveEditButton.click();
-                    }
-                }
-
-                RowLayout {
-                    id: dueDateLayout
-                    QQC2.TextField {
-                        id: dueDateText
-                        placeholderText: "YYYY-MM-DD"
-                        validator: RegularExpressionValidator {
-                            regularExpression: /\d\d\d\d-\d\d\-\d\d/
+                    DateTime.DatePopup {
+                        id: datePopup
+                        property var target
+                        onAccepted: {
+                            var timezoneOffset = (new Date()).getTimezoneOffset() * 60 * 1000;
+                            var ISOTimeWithLocale = (new Date(datePopup.value - timezoneOffset)).toISOString().slice(0, 10);
+                            target = ISOTimeWithLocale;
                         }
                     }
+                    QQC2.ComboBox {
+                        id: priorityComboBox
+                        Kirigami.FormData.label: i18n("Priority:")
+                        model: editForm.priorityArray
+                        currentIndex: todoDelegate.model.priority == "" ? 0 : editForm.priorityArray.indexOf(todoDelegate.model.priority.replace(/[{()}]/g, ''))
+                    }
 
-                    QQC2.Button {
-                        action: Kirigami.Action {
-                            id: insertDueDateAction
-                            text: i18nc("@button", "Pick Date…")
-                            icon.name: "view-calendar-symbolic"
-                            tooltip: i18n("Opens date picker dialog")
-                            onTriggered: {
-                                datePopup.target = dueDateText.text;
-                                datePopup.open();
+                    RowLayout {
+                        id: creationDateLayout
+                        Kirigami.FormData.label: i18n("Creation Date:")
+
+                        QQC2.TextField {
+                            id: creationDateText
+                            placeholderText: "YYYY-MM-DD"
+                            validator: RegularExpressionValidator {
+                                regularExpression: /\d\d\d\d-\d\d\-\d\d/
                             }
+                            text: todoDelegate.model.creationDate
                         }
-                        QQC2.ToolTip.visible: hovered
-                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                        QQC2.ToolTip.text: insertDueDateAction.tooltip
+
+                        QQC2.Button {
+                            action: Kirigami.Action {
+                                id: insertCreationDateAction
+                                text: i18nc("@button", "Pick Date…")
+                                icon.name: "view-calendar-symbolic"
+                                tooltip: i18n("Opens date picker dialog")
+                                onTriggered: {
+                                    datePopup.target = creationDateText.text;
+                                    datePopup.open();
+                                }
+                            }
+                            QQC2.ToolTip.visible: hovered
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.text: insertCreationDateAction.tooltip
+                        }
+                    }
+
+                    QQC2.TextField {
+                        id: descriptionText
+                        Kirigami.FormData.label: i18n("Description:")
+                        focus: true
+                        font.family: "monospace"
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                        Layout.maximumWidth: parent.width
+                        wrapMode: Text.Wrap
+                        text: todoDelegate.model.description
+                        Accessible.role: Accessible.EditableText
+                        KeyNavigation.backtab: cancelEditButton
+                        onTextEdited: {
+                            saveEditButton.enabled = text.length > 0;
+                        }
+                        Keys.onReturnPressed: {
+                            saveEditButton.click();
+                        }
                     }
                 }
+
                 RowLayout {
                     Kirigami.UrlButton {
                         text: i18nc("@info", "Syntax Help")
