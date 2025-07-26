@@ -324,7 +324,9 @@ Kirigami.AbstractCard {
 
                     Kirigami.ContextualHelpButton {
                         id: helpText
-                        toolTipText: i18nc("@info", "<p>Syntax information:<ul><li>Description: General task description. Mandatory.</li><li>+Project: Projects this task is relevant to. Optional.</li><li>@Context: In which contexts this task is relevant in. Optional.</li><li>key:value: Various key-value pairs of information. Optional.</li></ul></p><p>These values can be mixed with each other. Example:</p> <p>2025-05-03 Do some +Cleaning and +Coding when @Home @Office due:2025-05-05</p><br><p>Please read the Help section for more details.</p>")
+                        text: i18n("Syntax information")
+                        display: QQC2.AbstractButton.TextBesideIcon
+                        toolTipText: i18nc("@info", "<p>Syntax information:<br><br>Description: General task description. Mandatory.<br><br>+Project: Projects this task is relevant to. Optional.<br><br>@Context: In which contexts this task is relevant in. Optional.<br><br>key:value: Various key-value pairs of information. Optional.<br></p><p>These values can be mixed with each other. Example:</p> <p>2025-05-03 Do some +Cleaning and +Coding when @Home @Office due:2025-05-05</p><br><p>Please read the Help section for more details.</p>")
                     }
 
                     Item {
