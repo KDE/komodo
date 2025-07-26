@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
 // SPDX-License-Identifier: GPL-2.0-or-later
-
+pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -28,8 +28,10 @@ Kirigami.ScrollablePage {
             cardsListView.enabled = fileExists;
         }
     }
-    function getDate(dateString) {
-        return descriptionText.cursorPosition, dateString.toISOString().substring(0, 10);
+
+    function deleteTodo(index) {
+        const originalIndex = filteredModel.index(index, 0);
+        TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
     }
 
     Dialogs.FileDialog {
@@ -57,7 +59,7 @@ Kirigami.ScrollablePage {
 
     Kirigami.Dialog {
         id: deletePrompt
-        property var model
+        property string description
         property var index
         anchors.centerIn: parent
         title: i18n("Delete Todo")
@@ -74,114 +76,22 @@ Kirigami.ScrollablePage {
                 wrapMode: Text.WordWrap
                 text: i18n("Are you sure you wish to delete this todo?")
             }
-            TodoDelegate {
-                index: deletePrompt.index
-                model: deletePrompt.model
+            QQC2.TextField {
+                font.family: "monospace"
                 readOnly: true
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                wrapMode: Text.Wrap
+                text: deletePrompt.description
             }
         }
 
         standardButtons: Kirigami.Dialog.Discard | Kirigami.Dialog.Cancel
 
         onDiscarded: {
-            const originalIndex = filteredModel.index(deletePrompt.index, 0);
-            TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
+            page.deleteTodo(deletePrompt.index);
             deletePrompt.close();
-        }
-    }
-
-    Kirigami.Dialog {
-        id: addNewPrompt
-        property var model
-        property var index
-        property alias text: descriptionText.text
-        anchors.centerIn: parent
-        title: i18n("Add New Todo")
-        modal: true
-        width: parent.width - Kirigami.Units.largeSpacing * 8
-        maximumHeight: parent.height - Kirigami.Units.largeSpacing * 4
-        maximumWidth: parent.width - Kirigami.Units.largeSpacing * 8
-        padding: Kirigami.Units.largeSpacing
-        showCloseButton: false
-        contentItem: Kirigami.FormLayout {
-            DateTime.DatePopup {
-                id: datePopup
-                onAccepted: {
-                    var timezoneOffset = (new Date()).getTimezoneOffset() * 60 * 1000;
-                    var ISOTimeWithLocale = (new Date(datePopup.value - timezoneOffset)).toISOString().slice(0, 10);
-                    creationDateText.text = ISOTimeWithLocale;
-                }
-            }
-            QQC2.ComboBox {
-                id: priorityComboBox
-                Kirigami.FormData.label: i18n("Priority:")
-                model: '-ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
-            }
-
-            RowLayout {
-                id: creationDateLayout
-                Kirigami.FormData.label: i18n("Creation Date:")
-
-                QQC2.TextField {
-                    id: creationDateText
-                    placeholderText: "YYYY-MM-DD"
-                    validator: RegularExpressionValidator {
-                        regularExpression: /\d\d\d\d-\d\d\-\d\d/
-                    }
-                }
-
-                QQC2.Button {
-                    action: Kirigami.Action {
-                        id: insertDateAction
-                        text: i18nc("@button", "Pick Date…")
-                        icon.name: "view-calendar-symbolic"
-                        tooltip: i18n("Opens date picker dialog")
-                        onTriggered: {
-                            datePopup.open();
-                        }
-                    }
-                    QQC2.ToolTip.visible: hovered
-                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                    QQC2.ToolTip.text: insertDateAction.tooltip
-                }
-            }
-
-            QQC2.TextField {
-                id: descriptionText
-                Kirigami.FormData.label: i18n("Description:")
-                focus: true
-                font.family: "monospace"
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                wrapMode: Text.Wrap
-                placeholderText: "Description +Project @Context key:value"
-                Accessible.role: Accessible.EditableText
-                onTextEdited: {
-                    addNewPrompt.standardButton(Kirigami.Dialog.Ok).enabled = text.length > 0;
-                }
-                Keys.onReturnPressed: {
-                    addNewPrompt.standardButton(Kirigami.Dialog.Ok).click();
-                }
-            }
-        }
-
-        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-        onAccepted: {
-            let priority = priorityComboBox.currentText == "-" ? "" : "(" + priorityComboBox.currentText + ") ";
-            let creationDate = creationDateText.text != "" ? creationDateText.text + " " : "";
-            let newTodoText = priority + creationDate + addNewPrompt.text;
-            TodoModel.addTodo(newTodoText);
-            priorityComboBox.currentIndex = 0;
-            creationDateText.text = "";
-            descriptionText.text = "";
-            addNewPrompt.close();
-        }
-        onRejected: {
-            addNewPrompt.close();
-        }
-        Component.onCompleted: {
-            addNewPrompt.standardButton(Kirigami.Dialog.Ok).enabled = false;
         }
     }
 
@@ -221,7 +131,6 @@ Kirigami.ScrollablePage {
                     editable: false
                     textRole: "text"
                     valueRole: "value"
-                    currentIndex: TodoModel.filterIndex
                     model: [
                         {
                             value: "default",
@@ -247,6 +156,10 @@ Kirigami.ScrollablePage {
                         cardsListView.currentIndex = -1;
                         filteredModel.secondaryFilter = filterComboBox.currentValue;
                         TodoModel.loadFile();
+                    }
+
+                    Component.onCompleted: {
+                        currentIndex = TodoModel.filterIndex;
                     }
                 }
             }
@@ -311,9 +224,9 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:inmenu", "New Todo…")
             enabled: TodoModel.filePath != ""
             onTriggered: {
-                addNewPrompt.text = "";
-                addNewPrompt.open();
-                descriptionText.focus = true;
+                filterComboBox.currentIndex = 0;
+                cardsListView.currentIndex = TodoModel.createNewEmptyTodo();
+                cardsListView.currentItem.editMode = true;
             }
             shortcut: StandardKey.New
         },
@@ -412,7 +325,6 @@ Kirigami.ScrollablePage {
             // there is multiple edited items and user moves between them with keys
             onFocusChanged: {
                 cardsListView.keyNavigationEnabled = !editMode;
-                textEditField.focus = editMode;
             }
             onEditModeChanged: {
                 if (editMode) {

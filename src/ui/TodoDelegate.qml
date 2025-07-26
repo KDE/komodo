@@ -1,10 +1,11 @@
 // SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
 // SPDX-License-Identifier: GPL-2.0-or-later
-
+pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.dateandtime as DateTime
 
 Kirigami.AbstractCard {
     id: todoDelegate
@@ -13,12 +14,17 @@ Kirigami.AbstractCard {
     required property int index
     required property var model
 
-    property bool readOnly: false
     property bool currentItem: Kirigami.CardsListView.isCurrentItem
     property bool editMode: false
-    property alias textEditField: editTodoItemText
 
     KeyNavigation.tab: completionStatus
+
+    onEditModeChanged: {
+        if (editMode) {
+            descriptionText.focus = true;
+        }
+    }
+
     // Create custom shadowed rectangle for the focus coloring
     background: Kirigami.ShadowedRectangle {
         color: Kirigami.Theme.backgroundColor
@@ -52,7 +58,6 @@ Kirigami.AbstractCard {
                     Layout.maximumWidth: Kirigami.Units.gridUnit * 2
                     QQC2.CheckBox {
                         id: completionStatus
-                        enabled: !todoDelegate.readOnly
                         spacing: 0
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                         checked: todoDelegate.model.completion
@@ -225,7 +230,6 @@ Kirigami.AbstractCard {
 
                         QQC2.Button {
                             id: editButton
-                            visible: !todoDelegate.readOnly
                             Layout.alignment: Qt.AlignRight
                             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
@@ -238,7 +242,7 @@ Kirigami.AbstractCard {
                                 icon.name: "edit-entry-symbolic"
                                 onTriggered: {
                                     todoDelegate.editMode = true;
-                                    editTodoItemText.focus = true;
+                                    descriptionText.focus = true;
                                 }
                                 shortcut: todoDelegate.currentItem ? "Ctrl+E" : ""
                             }
@@ -250,7 +254,6 @@ Kirigami.AbstractCard {
 
                         QQC2.Button {
                             id: deleteItemButton
-                            visible: !todoDelegate.readOnly
                             Layout.alignment: Qt.AlignRight
                             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
@@ -261,7 +264,7 @@ Kirigami.AbstractCard {
                                 text: i18nc("@button", "Delete")
                                 icon.name: "entry-delete-symbolic"
                                 onTriggered: {
-                                    deletePrompt.model = todoDelegate.model;
+                                    deletePrompt.description = todoDelegate.model.description;
                                     deletePrompt.index = todoDelegate.index;
                                     deletePrompt.open();
                                 }
@@ -276,40 +279,108 @@ Kirigami.AbstractCard {
                     }
                 }
             }
+
             ColumnLayout {
                 id: editLayout
-                visible: todoDelegate.editMode && !todoDelegate.readOnly
-                QQC2.TextField {
-                    id: editTodoItemText
-                    font.family: "monospace"
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    Layout.maximumWidth: delegateLayout.width - Kirigami.Units.smallSpacing
-                    wrapMode: Text.Wrap
-                    placeholderText: todoDelegate.model.description
-                    text: todoDelegate.model.description
-                    Accessible.role: Accessible.EditableText
-                    KeyNavigation.backtab: cancelEditButton
-                    Keys.onReturnPressed: {
-                        saveEditButton.click();
+                visible: todoDelegate.editMode
+                property var priorityArray: '-ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+                onVisibleChanged: {
+                    if (visible) {
+                        priorityComboBox.currentIndex = todoDelegate.model.priority == "" ? 0 : priorityArray.indexOf(todoDelegate.model.priority.replace(/[{()}]/g, ''));
+                        creationDateText.text = todoDelegate.model.creationDate;
+                        descriptionText.text = todoDelegate.model.description;
+                        dueDateText.text = todoDelegate.model.dueDate;
                     }
                 }
+                DateTime.DatePopup {
+                    id: datePopup
+                    property var target
+                    onAccepted: {
+                        var timezoneOffset = (new Date()).getTimezoneOffset() * 60 * 1000;
+                        var ISOTimeWithLocale = (new Date(datePopup.value - timezoneOffset)).toISOString().slice(0, 10);
+                        target = ISOTimeWithLocale;
+                    }
+                }
+                QQC2.ComboBox {
+                    id: priorityComboBox
+                    Kirigami.FormData.label: i18n("Priority:")
+                    model: editLayout.priorityArray
+                }
+
                 RowLayout {
+                    id: creationDateLayout
+
+                    QQC2.TextField {
+                        id: creationDateText
+                        placeholderText: "YYYY-MM-DD"
+                        validator: RegularExpressionValidator {
+                            regularExpression: /\d\d\d\d-\d\d\-\d\d/
+                        }
+                    }
+
                     QQC2.Button {
                         action: Kirigami.Action {
-                            id: insertDateAction
-                            text: i18nc("@button", "Insert Date")
+                            id: insertCreationDateAction
+                            text: i18nc("@button", "Pick Date…")
                             icon.name: "view-calendar-symbolic"
-                            tooltip: i18n("Inserts timestamp, such as 2025-12-31")
+                            tooltip: i18n("Opens date picker dialog")
                             onTriggered: {
-                                editTodoItemText.insert(editTodoItemText.cursorPosition, getDate());
+                                datePopup.target = creationDateText.text;
+                                datePopup.open();
                             }
                         }
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                        QQC2.ToolTip.text: insertDateAction.tooltip
+                        QQC2.ToolTip.text: insertCreationDateAction.tooltip
+                    }
+                }
+
+                QQC2.TextField {
+                    id: descriptionText
+                    focus: true
+                    font.family: "monospace"
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                    wrapMode: Text.Wrap
+                    placeholderText: todoDelegate.model.description
+                    Accessible.role: Accessible.EditableText
+                    KeyNavigation.backtab: cancelEditButton
+                    onTextEdited: {
+                        saveEditButton.enabled = text.length > 0;
+                    }
+                    Keys.onReturnPressed: {
+                        saveEditButton.click();
+                    }
+                }
+
+                RowLayout {
+                    id: dueDateLayout
+                    QQC2.TextField {
+                        id: dueDateText
+                        placeholderText: "YYYY-MM-DD"
+                        validator: RegularExpressionValidator {
+                            regularExpression: /\d\d\d\d-\d\d\-\d\d/
+                        }
                     }
 
+                    QQC2.Button {
+                        action: Kirigami.Action {
+                            id: insertDueDateAction
+                            text: i18nc("@button", "Pick Date…")
+                            icon.name: "view-calendar-symbolic"
+                            tooltip: i18n("Opens date picker dialog")
+                            onTriggered: {
+                                datePopup.target = dueDateText.text;
+                                datePopup.open();
+                            }
+                        }
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                        QQC2.ToolTip.text: insertDueDateAction.tooltip
+                    }
+                }
+                RowLayout {
                     Kirigami.UrlButton {
                         text: i18nc("@info", "Syntax Help")
                         url: "https://github.com/todotxt/todo.txt/blob/master/README.md"
@@ -323,13 +394,13 @@ Kirigami.AbstractCard {
                         id: saveEditButton
                         display: QQC2.AbstractButton.IconOnly
                         flat: true
-                        enabled: editTodoItemText.length > 0
+                        enabled: descriptionText.length > 0
                         action: Kirigami.Action {
                             id: saveEditAction
                             text: i18nc("@button", "Save")
                             icon.name: "document-save-symbolic"
                             onTriggered: {
-                                todoDelegate.model.description = editTodoItemText.text;
+                                todoDelegate.model.description = descriptionText.text;
                                 todoDelegate.editMode = false;
                                 completionStatus.focus = true;
                             }
@@ -349,9 +420,12 @@ Kirigami.AbstractCard {
                             text: i18nc("@button", "Cancel")
                             icon.name: "dialog-cancel-symbolic"
                             onTriggered: {
-                                editTodoItemText.text = todoDelegate.model.description;
+                                descriptionText.text = todoDelegate.model.description;
                                 todoDelegate.editMode = false;
                                 completionStatus.focus = true;
+                                if (todoDelegate.model.description === "") {
+                                    deleteTodo(todoDelegate.index);
+                                }
                             }
                             tooltip: text
                             shortcut: todoDelegate.currentItem ? StandardKey.Cancel : ""

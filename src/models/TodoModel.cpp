@@ -268,6 +268,17 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
     return true;
 }
 
+int TodoModel::createNewEmptyTodo()
+{
+    beginInsertRows(QModelIndex(), m_todos.count(), m_todos.count());
+    auto newTodo = Todo(QString());
+    m_todos.append(newTodo);
+    endInsertRows();
+
+    // New todos are always added on top of list before saving.
+    return 0;
+}
+
 void TodoModel::addTodo(const QString &description)
 {
     beginInsertRows(QModelIndex(), m_todos.count(), m_todos.count());
