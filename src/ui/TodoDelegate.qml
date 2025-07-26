@@ -323,11 +323,51 @@ Kirigami.AbstractCard {
                         QQC2.ToolTip.text: insertDateAction.tooltip
                     }
 
-                    Kirigami.ContextualHelpButton {
-                        id: helpText
-                        text: i18n("Syntax Information")
-                        display: QQC2.AbstractButton.TextBesideIcon
-                        toolTipText: i18nc("@info", "<p>Syntax information in order of the items:<br><br>(A): Priority. Can be from A to Z. Optional.<br><br>Creation date:. Date in Year-Month-Day format. Optional, but recommended.<br><br>Description: General task description. Mandatory.<br><br>+Project: Projects this task is relevant to. Optional.<br><br>@Context: In which contexts this task is relevant in. Optional.<br><br>key:value: Various key-value pairs of information. Optional.<br></p><p>Description, contexts and projects can be mixed with each other. Example:</p> <p>(B) 2025-05-03 Do some +Cleaning and +Coding when @Home @Office due:2025-05-05</p><br><p>Please read the Help section for more details.</p>")
+                    Kirigami.Dialog {
+                        id: cheatSheetDialog
+                        title: i18n("Syntax Information")
+                        modal: true
+                        contentItem: Kirigami.SelectableLabel {
+                            id: helpText
+                            padding: Kirigami.Units.largeSpacing
+                            textFormat: Qt.MarkdownText
+                            text: i18nc("Syntax quick guide, keep the markdown formatting", `
+
+Order of items matters:
+
+    Completion Priority Creation-Date Description
+
+- x : Completion status. Remove to set task incompleted.
+- (A) : Priority. Can be from A to Z. Optional.
+- Completion Date: Date in Year-Month-Day format. Add only if there is creation date and task is completed.
+- Creation date: Date in Year-Month-Day format. Optional, but recommended.
+- Description: General task description. Mandatory.
+  - +Project: Projects this task is relevant to. Optional.
+  - @Context: In which contexts this task is relevant in. Optional.
+  - key:value: Various key-value pairs of information. Optional.
+
+Description, contexts, key:value-pairs and projects can be mixed with each other.
+
+Example To-Dos:
+
+    (B) 2025-05-03 Do some +Cleaning and +Coding when @Home @Office due:2025-05-05
+    x 2025-05-05 2025-05-03 Do some +Cleaning and +Coding when @Home @Office due:2025-05-05 pri:B
+
+For more detailed information on the syntax, click on the Help button.
+`)
+                        }
+                    }
+
+                    QQC2.Button {
+                        text: i18n("Syntax Information…")
+                        flat: true
+                        icon.name: "documentinfo-symbolic"
+                        onClicked: {
+                            cheatSheetDialog.open();
+                        }
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                        QQC2.ToolTip.text: i18n("Show todo.txt syntax reference")
                     }
 
                     Item {

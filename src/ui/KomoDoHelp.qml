@@ -8,7 +8,7 @@ import org.kde.kirigami as Kirigami
 Kirigami.SelectableLabel {
     id: helpText
     textFormat: Text.MarkdownText
-    text: i18nc("KomoDo help text", `
+    text: i18nc("KomoDo help text, keep the markdown formatting", `
 
 # KomoDo and Todo.txt
 
