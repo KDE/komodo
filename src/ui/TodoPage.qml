@@ -168,11 +168,20 @@ Kirigami.ScrollablePage {
 
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
         onAccepted: {
-            TodoModel.addTodo(addNewPrompt.text);
+            let priority = priorityComboBox.currentText == "-" ? "" : "(" + priorityComboBox.currentText + ") ";
+            let creationDate = creationDateText.text != "" ? creationDateText.text + " " : "";
+            let newTodoText = priority + creationDate + addNewPrompt.text;
+            TodoModel.addTodo(newTodoText);
+            priorityComboBox.currentIndex = 0;
+            creationDateText.text = "";
+            descriptionText.text = "";
             addNewPrompt.close();
         }
         onRejected: {
             addNewPrompt.close();
+        }
+        Component.onCompleted: {
+            addNewPrompt.standardButton(Kirigami.Dialog.Ok).enabled = false;
         }
     }
 
