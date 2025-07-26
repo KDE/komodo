@@ -324,7 +324,9 @@ Kirigami.ScrollablePage {
             // there is multiple edited items and user moves between them with keys
             onFocusChanged: {
                 cardsListView.keyNavigationEnabled = !editMode;
-                textEditField.focus = editMode;
+                if (editMode) {
+                    textEditField.forceActiveFocus();
+                }
             }
             onEditModeChanged: {
                 if (editMode) {

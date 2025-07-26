@@ -276,6 +276,9 @@ Kirigami.AbstractCard {
             ColumnLayout {
                 id: editLayout
                 visible: todoDelegate.editMode
+                onVisibleChanged: {
+                    editTodoItemText.forceActiveFocus();
+                }
                 QQC2.TextField {
                     id: editTodoItemText
                     font.family: "monospace"
