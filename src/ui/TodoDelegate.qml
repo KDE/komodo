@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.dateandtime as DateTime
 
 Kirigami.AbstractCard {
     id: todoDelegate
@@ -282,7 +283,7 @@ Kirigami.AbstractCard {
                     Layout.fillHeight: true
                     Layout.maximumWidth: delegateLayout.width - Kirigami.Units.smallSpacing
                     wrapMode: Text.Wrap
-                    placeholderText: todoDelegate.model.description
+                    placeholderText: todoDelegate.model.description == "" ? i18nc("Placeholder text for creating new tasks", "Description +Project @Context key:value") : todoDelegate.model.description
                     text: todoDelegate.model.description
                     Accessible.role: Accessible.EditableText
                     KeyNavigation.backtab: cancelEditButton
@@ -290,15 +291,30 @@ Kirigami.AbstractCard {
                         saveEditButton.click();
                     }
                 }
+
                 RowLayout {
+
+                    DateTime.DatePopup {
+                        id: datePopup
+                        modal: true
+                        onAccepted: {
+                            var timezoneOffset = (new Date()).getTimezoneOffset() * 60 * 1000;
+                            var ISOTimeWithLocale = (new Date(datePopup.value - timezoneOffset)).toISOString().slice(0, 10);
+                            editTodoItemText.insert(editTodoItemText.cursorPosition, ISOTimeWithLocale);
+                        }
+                        onClosed: {
+                            editTodoItemText.focus = true;
+                        }
+                    }
+
                     QQC2.Button {
                         action: Kirigami.Action {
                             id: insertDateAction
-                            text: i18nc("@button", "Insert Date")
+                            text: i18nc("@button", "Insert Date…")
                             icon.name: "view-calendar-symbolic"
-                            tooltip: i18n("Inserts timestamp, such as 2025-12-31")
+                            tooltip: i18n("Open a date picker and insert it at cursor position")
                             onTriggered: {
-                                editTodoItemText.insert(editTodoItemText.cursorPosition, getDate());
+                                datePopup.open();
                             }
                         }
                         QQC2.ToolTip.visible: hovered
@@ -306,9 +322,9 @@ Kirigami.AbstractCard {
                         QQC2.ToolTip.text: insertDateAction.tooltip
                     }
 
-                    Kirigami.UrlButton {
-                        text: i18nc("@info", "Syntax Help")
-                        url: "https://github.com/todotxt/todo.txt/blob/master/README.md"
+                    Kirigami.ContextualHelpButton {
+                        id: helpText
+                        toolTipText: i18nc("@info", "<p>Syntax information:<ul><li>Description: General task description. Mandatory.</li><li>+Project: Projects this task is relevant to. Optional.</li><li>@Context: In which contexts this task is relevant in. Optional.</li><li>key:value: Various key-value pairs of information. Optional.</li></ul></p><p>These values can be mixed with each other. Example:</p> <p>2025-05-03 Do some +Cleaning and +Coding when @Home @Office due:2025-05-05</p><br><p>Please read the Help section for more details.</p>")
                     }
 
                     Item {
@@ -336,6 +352,7 @@ Kirigami.AbstractCard {
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                         QQC2.ToolTip.text: saveEditAction.tooltip
                     }
+                    //TODO: we should ask confirm from the user if theyre cancelling a field that has been edited!
                     QQC2.Button {
                         id: cancelEditButton
                         display: QQC2.AbstractButton.IconOnly
@@ -348,6 +365,10 @@ Kirigami.AbstractCard {
                                 editTodoItemText.text = todoDelegate.model.description;
                                 todoDelegate.editMode = false;
                                 completionStatus.focus = true;
+                                // Delete empty todos
+                                if (todoDelegate.model.description == "") {
+                                    deleteTodo(index);
+                                }
                             }
                             tooltip: text
                             shortcut: todoDelegate.currentItem ? StandardKey.Cancel : ""

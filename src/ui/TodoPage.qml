@@ -27,6 +27,12 @@ Kirigami.ScrollablePage {
             cardsListView.enabled = fileExists;
         }
     }
+
+    function deleteTodo(index) {
+        const originalIndex = filteredModel.index(index, 0);
+        TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
+    }
+
     function getDate() {
         let today = new Date();
         const tz = today.getTimezoneOffset();
@@ -90,72 +96,8 @@ Kirigami.ScrollablePage {
         standardButtons: Kirigami.Dialog.Discard | Kirigami.Dialog.Cancel
 
         onDiscarded: {
-            const originalIndex = filteredModel.index(deletePrompt.index, 0);
-            TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
+            page.deleteTodo(deletePrompt.index);
             deletePrompt.close();
-        }
-    }
-
-    Kirigami.Dialog {
-        id: addNewPrompt
-        property var model
-        property var index
-        property alias text: addNewPromptText.text
-        anchors.centerIn: parent
-        title: i18n("Add New Todo")
-        modal: true
-        width: parent.width - Kirigami.Units.largeSpacing * 8
-        maximumHeight: parent.height - Kirigami.Units.largeSpacing * 4
-        padding: Kirigami.Units.largeSpacing
-        showCloseButton: false
-        contentItem: ColumnLayout {
-            QQC2.TextField {
-                id: addNewPromptText
-                focus: true
-                font.family: "monospace"
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                wrapMode: Text.Wrap
-                placeholderText: "(A) YYYY-MM-DD description +project @context key:value"
-                Accessible.role: Accessible.EditableText
-                onTextEdited: {
-                    addNewPrompt.standardButton(Kirigami.Dialog.Ok).enabled = text.length > 0;
-                }
-                Keys.onReturnPressed: {
-                    addNewPrompt.standardButton(Kirigami.Dialog.Ok).click();
-                }
-            }
-            RowLayout {
-                QQC2.Button {
-                    action: Kirigami.Action {
-                        id: insertDateAction
-                        text: i18nc("@button", "Insert Date")
-                        icon.name: "view-calendar-symbolic"
-                        tooltip: i18n("Inserts timestamp, such as 2025-12-31")
-                        onTriggered: {
-                            addNewPromptText.insert(addNewPromptText.cursorPosition, getDate());
-                        }
-                    }
-                    QQC2.ToolTip.visible: hovered
-                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                    QQC2.ToolTip.text: insertDateAction.tooltip
-                }
-
-                Kirigami.UrlButton {
-                    text: i18nc("@info", "Syntax Help")
-                    url: "https://github.com/todotxt/todo.txt/blob/master/README.md"
-                }
-            }
-        }
-
-        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-        onAccepted: {
-            TodoModel.addTodo(addNewPrompt.text);
-            addNewPrompt.close();
-        }
-        onRejected: {
-            addNewPrompt.close();
         }
     }
 
@@ -195,7 +137,6 @@ Kirigami.ScrollablePage {
                     editable: false
                     textRole: "text"
                     valueRole: "value"
-                    currentIndex: TodoModel.filterIndex
                     model: [
                         {
                             value: "default",
@@ -221,6 +162,9 @@ Kirigami.ScrollablePage {
                         cardsListView.currentIndex = -1;
                         filteredModel.secondaryFilter = filterComboBox.currentValue;
                         TodoModel.loadFile();
+                    }
+                    Component.onCompleted: {
+                        currentIndex = TodoModel.filterIndex;
                     }
                 }
             }
@@ -285,9 +229,10 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:inmenu", "New Todo…")
             enabled: TodoModel.filePath != ""
             onTriggered: {
-                addNewPrompt.text = "";
-                addNewPrompt.open();
-                addNewPromptText.focus = true;
+                filterComboBox.currentIndex = 0;
+                TodoModel.addTodo("");
+                cardsListView.currentIndex = 0;
+                cardsListView.currentItem.editMode = true;
             }
             shortcut: StandardKey.New
         },
