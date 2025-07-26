@@ -5,7 +5,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs as Dialogs
-import org.kde.kirigamiaddons.dateandtime as DateTime
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels
 import org.kde.komodo.models

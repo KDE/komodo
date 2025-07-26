@@ -1,6 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
 // SPDX-License-Identifier: GPL-2.0-or-later
-pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -163,7 +162,7 @@ Kirigami.AbstractCard {
                             Kirigami.SelectableLabel {
                                 Layout.maximumWidth: delegateLayout.width - keyLabel.width - completionColumn.width - Kirigami.Units.smallSpacing * 4
                                 text: parent.textData[1]
-                                visible: !textUrl
+                                visible: !parent.textUrl
                                 wrapMode: Text.Wrap
                                 Layout.alignment: Qt.AlignLeft
                                 rightPadding: Kirigami.Units.smallSpacing
@@ -174,10 +173,10 @@ Kirigami.AbstractCard {
                                 // Make sure the external url icon does not go outside the view
                                 Layout.maximumWidth: delegateLayout.width - keyLabel.width - completionColumn.width - Kirigami.Units.smallSpacing * 4
                                 Layout.alignment: Qt.AlignLeft
-                                visible: textUrl
+                                visible: parent.textUrl
                                 elide: Text.ElideRight
-                                text: textUrl
-                                url: textUrl
+                                text: parent.textUrl
+                                url: parent.textUrl
                             }
                         }
                     }
