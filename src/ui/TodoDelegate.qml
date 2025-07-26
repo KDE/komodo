@@ -283,7 +283,7 @@ Kirigami.AbstractCard {
                     Layout.fillHeight: true
                     Layout.maximumWidth: delegateLayout.width - Kirigami.Units.smallSpacing
                     wrapMode: Text.Wrap
-                    placeholderText: todoDelegate.model.description == "" ? i18nc("Placeholder text for creating new tasks", "Description +Project @Context key:value") : todoDelegate.model.description
+                    placeholderText: todoDelegate.model.description == "" ? i18nc("Placeholder text for creating new tasks", "(A) YYYY-MM-DD Description +Project @Context key:value") : todoDelegate.model.description
                     text: todoDelegate.model.description
                     Accessible.role: Accessible.EditableText
                     KeyNavigation.backtab: cancelEditButton
@@ -297,12 +297,13 @@ Kirigami.AbstractCard {
                     DateTime.DatePopup {
                         id: datePopup
                         modal: true
-                        onAccepted: {
-                            var timezoneOffset = (new Date()).getTimezoneOffset() * 60 * 1000;
-                            var ISOTimeWithLocale = (new Date(datePopup.value - timezoneOffset)).toISOString().slice(0, 10);
-                            editTodoItemText.insert(editTodoItemText.cursorPosition, ISOTimeWithLocale);
-                        }
                         onClosed: {
+                            // NOTE: DatePopup returned twice in onAccepted for some reason. This is a workaround.
+                            if (accepted) {
+                                var timezoneOffset = (new Date()).getTimezoneOffset() * 60 * 1000;
+                                var ISOTimeWithLocale = (new Date(datePopup.value - timezoneOffset)).toISOString().slice(0, 10);
+                                editTodoItemText.insert(editTodoItemText.cursorPosition, ISOTimeWithLocale);
+                            }
                             editTodoItemText.focus = true;
                         }
                     }
@@ -326,7 +327,7 @@ Kirigami.AbstractCard {
                         id: helpText
                         text: i18n("Syntax Information")
                         display: QQC2.AbstractButton.TextBesideIcon
-                        toolTipText: i18nc("@info", "<p>Syntax information:<br><br>Description: General task description. Mandatory.<br><br>+Project: Projects this task is relevant to. Optional.<br><br>@Context: In which contexts this task is relevant in. Optional.<br><br>key:value: Various key-value pairs of information. Optional.<br></p><p>These values can be mixed with each other. Example:</p> <p>2025-05-03 Do some +Cleaning and +Coding when @Home @Office due:2025-05-05</p><br><p>Please read the Help section for more details.</p>")
+                        toolTipText: i18nc("@info", "<p>Syntax information in order of the items:<br><br>(A): Priority. Can be from A to Z. Optional.<br><br>Creation date:. Date in Year-Month-Day format. Optional, but recommended.<br><br>Description: General task description. Mandatory.<br><br>+Project: Projects this task is relevant to. Optional.<br><br>@Context: In which contexts this task is relevant in. Optional.<br><br>key:value: Various key-value pairs of information. Optional.<br></p><p>Description, contexts and projects can be mixed with each other. Example:</p> <p>(B) 2025-05-03 Do some +Cleaning and +Coding when @Home @Office due:2025-05-05</p><br><p>Please read the Help section for more details.</p>")
                     }
 
                     Item {

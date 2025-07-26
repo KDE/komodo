@@ -33,13 +33,6 @@ Kirigami.ScrollablePage {
         TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
     }
 
-    function getDate() {
-        let today = new Date();
-        const tz = today.getTimezoneOffset();
-        today = new Date(today.getTime() - (tz * 60 * 1000));
-        return addNewPromptText.cursorPosition, today.toISOString().substring(0, 10);
-    }
-
     Dialogs.FileDialog {
         id: openDialog
         onAccepted: {
