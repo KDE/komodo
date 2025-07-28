@@ -351,12 +351,8 @@ Order of items matters:
 
 Description, contexts, key:value-pairs and projects can be mixed with each other.
 
-Example To-Dos:
+For more detailed information and examples, click on the Help button.
 
-    (B) 2025-05-03 Do some +Cleaning and +Coding when @Home @Office due:2025-05-05
-    x 2025-05-05 2025-05-03 Do some +Cleaning and +Coding when @Home @Office due:2025-05-05 pri:B
-
-For more detailed information on the syntax, click on the Help button.
 `)
                         }
                     }
