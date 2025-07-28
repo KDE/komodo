@@ -19,7 +19,7 @@ TodoModel::TodoModel(QObject *parent)
         QRegularExpression(QStringLiteral("(?:^[ "
                                           "\\t]*(?P<Completion>x))|(?P<Priority>\\([A-Z]\\))|(?:(?P<FirstDate>"
                                           "\\d{4}-\\d\\d-\\d\\d)[ "
-                                          "\\t]*(?P<SecondDate>\\d{4}-\\d\\d-\\d\\d)?)|(?P<Projects>\\+\\w+)|(?P<"
+                                          "\\t]*(?P<SecondDate>\\d{4}-\\d\\d-\\d\\d)?)|(?P<Projects>\\B\\+[\\w\\d\\S]+)|(?P<"
                                           "Contexts>(?<=\\s)@[^\\s]+)|(?P<KeyValuePairs>[a-zA-Z]+:[\\S]*)"));
     if (!parserPattern.isValid()) {
         qWarning() << "Regular expression pattern for parsing is not valid!";
@@ -112,7 +112,9 @@ Todo TodoModel::parseTodoFromDescription(const QString &description) const
 
 QString TodoModel::prettyPrintDescription(const Todo &todo) const
 {
-    auto prettyDescr = todo.description();
+    // For some reason the string replacer does not work for the last item?
+    // This just adds extra character at the end so we replace the last item.
+    auto prettyDescr = QStringLiteral("%1 ").arg(todo.description());
     prettyDescr.replace(m_completionRegexp, QString());
     prettyDescr.replace(todo.creationDate(), QString());
     prettyDescr.replace(todo.completionDate(), QString());
@@ -122,20 +124,22 @@ QString TodoModel::prettyPrintDescription(const Todo &todo) const
     for (const auto &pair : keyValuePairs) {
         prettyDescr.replace(pair, QString());
     }
+    prettyDescr.replace(m_priorityRegexp, QString());
+
     // There's probably better way to do this but hey as long as it works.
+    // TODO: look into making custom theme for KSyntaxHighlighting at runtime and use that instead.
     const auto textColor = KColorScheme().foreground().color();
     const auto projectColor = KColorUtils::mix(KColorScheme().foreground(KColorScheme::ActiveText).color(), textColor);
     const auto contextColor = KColorUtils::mix(KColorScheme().foreground(KColorScheme::PositiveText).color(), textColor);
     for (const auto &project : projects) {
-        const auto re = QRegularExpression(QStringLiteral("\\B\\%1\\b").arg(project));
+        const auto re = QRegularExpression(QStringLiteral("%1(?=\\s)").arg(QRegularExpression::escape(project)));
         prettyDescr.replace(re, QStringLiteral("<b><span style='color:%2'>%1</span></b>").arg(project, projectColor.name()));
     }
     for (const auto &context : contexts) {
-        const auto re = QRegularExpression(QStringLiteral("\\B\\%1\\b").arg(context));
+        const auto re = QRegularExpression(QStringLiteral("%1(?=\\s)").arg(QRegularExpression::escape(context)));
         prettyDescr.replace(re, QStringLiteral("<i><span style='color:%2'>%1</span></i>").arg(context, contextColor.name()));
     }
 
-    prettyDescr.replace(m_priorityRegexp, QString());
     return prettyDescr.simplified();
 }
 
