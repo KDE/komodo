@@ -5,6 +5,7 @@
 
 #include <QString>
 #include <QStringList>
+#include <QUuid>
 
 class Todo
 {
@@ -29,6 +30,7 @@ public:
     QStringList keyValuePairs() const;
     QString prettyDescription() const;
     QString dueDate() const;
+    QUuid uuid() const;
 
     void setCompleted(bool completed);
     void setPriority(const QString &priority);
@@ -42,6 +44,7 @@ public:
     void setDueDate(const QString &dueDate);
 
 private:
+    QUuid m_uuid;
     bool m_completed;
     QString m_priority;
     QString m_completionDate;

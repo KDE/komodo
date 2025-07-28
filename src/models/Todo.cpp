@@ -5,7 +5,13 @@
 
 Todo::Todo(const QString &description)
 {
+    m_uuid = QUuid::createUuid();
     m_description = description;
+}
+
+QUuid Todo::uuid() const
+{
+    return m_uuid;
 }
 
 bool Todo::completed() const

@@ -223,8 +223,8 @@ Kirigami.ScrollablePage {
             enabled: TodoModel.filePath != ""
             onTriggered: {
                 filterComboBox.currentIndex = 0;
-                TodoModel.addTodo("");
-                cardsListView.currentIndex = 0;
+                cardsListView.currentIndex = filteredModel.mapFromSource(TodoModel.indexFromQUuid(TodoModel.addTodo(""))).row;
+                cardsListView.currentItem.textEditField.text = "";
                 cardsListView.currentItem.editMode = true;
             }
             shortcut: StandardKey.New

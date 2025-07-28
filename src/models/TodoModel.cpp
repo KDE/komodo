@@ -155,7 +155,8 @@ QHash<int, QByteArray> TodoModel::roleNames() const
             {ProjectsRole, "projects"},
             {KeyValuePairsRole, "keyValuePairs"},
             {PrettyDescriptionRole, "prettyDescription"},
-            {DueDateRole, "dueDate"}};
+            {DueDateRole, "dueDate"},
+            {UUIDRole, "uuidRole"}};
 }
 
 QVariant TodoModel::data(const QModelIndex &index, int role) const
@@ -185,6 +186,8 @@ QVariant TodoModel::data(const QModelIndex &index, int role) const
         return todo.prettyDescription();
     case DueDateRole:
         return todo.dueDate();
+    case UUIDRole:
+        return todo.uuid();
     default:
         return {};
     }
@@ -274,13 +277,15 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
     return true;
 }
 
-void TodoModel::addTodo(const QString &description)
+QUuid TodoModel::addTodo(const QString &description)
 {
     beginInsertRows(QModelIndex(), m_todos.count(), m_todos.count());
-    m_todos.append(parseTodoFromDescription(description));
+    const auto newTodo = parseTodoFromDescription(description);
+    m_todos.append(newTodo);
     endInsertRows();
 
     saveFile();
+    return newTodo.uuid();
 }
 
 void TodoModel::deleteTodo(const QModelIndex &index)
@@ -397,12 +402,13 @@ void TodoModel::fileModified()
     Q_EMIT fileChanged();
 }
 
-QModelIndex TodoModel::indexFromDescription(const QString &description) const
+QModelIndex TodoModel::indexFromQUuid(const QUuid &uuid) const
 {
     for (int i = 0; i < todos().count(); i++) {
-        auto indexDescription = data(index(i, 0), DescriptionRole).toString();
-        if (indexDescription == description) {
-            return index(i, 0);
+        const auto id = index(i, 0);
+        const auto indexUuid = data(id, UUIDRole).toUuid();
+        if (indexUuid == uuid) {
+            return id;
         }
     }
     return QModelIndex();

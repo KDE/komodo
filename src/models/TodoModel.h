@@ -28,7 +28,8 @@ public:
         ProjectsRole,
         KeyValuePairsRole,
         PrettyDescriptionRole,
-        DueDateRole
+        DueDateRole,
+        UUIDRole
     };
     Q_ENUM(Roles)
 
@@ -44,7 +45,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;
 
-    Q_INVOKABLE void addTodo(const QString &description);
+    Q_INVOKABLE QUuid addTodo(const QString &description);
     Q_INVOKABLE void deleteTodo(const QModelIndex &index);
 
     QUrl filePath() const;
@@ -63,8 +64,7 @@ public:
 
     Q_SLOT void fileModified();
 
-    // Used for testing for now
-    QModelIndex indexFromDescription(const QString &description) const;
+    Q_INVOKABLE QModelIndex indexFromQUuid(const QUuid &uuid) const;
 
 private:
     void updateCompletionStatus(Todo &todo, const bool completed);

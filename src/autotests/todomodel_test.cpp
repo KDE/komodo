@@ -152,8 +152,8 @@ void TodoModelTest::testEditTodo()
 {
     QString newTodo = u"(C) 2025-07-10 This is another new todo created during +TESTING @QTestingAgain yee:haw"_s;
     QString editedTodo = u"x (A) 2025-07-15 2025-07-13 This is now an edited todo which was created during +TESTING @QTestingAgain"_s;
-    todoModel->addTodo(newTodo);
-    auto index = todoModel->indexFromDescription(newTodo);
+    const auto newUuid = todoModel->addTodo(newTodo);
+    const auto index = todoModel->indexFromQUuid(newUuid);
 
     todoModel->setData(index, editedTodo, TodoModel::DescriptionRole);
 
@@ -181,10 +181,10 @@ void TodoModelTest::testEditTodo()
 void TodoModelTest::testDeleteTodo()
 {
     QString newTodo = u"This todo should be deleted!"_s;
-    todoModel->addTodo(newTodo);
-    auto index = todoModel->indexFromDescription(newTodo);
+    const auto uuid = todoModel->addTodo(newTodo);
+    const auto index = todoModel->indexFromQUuid(uuid);
     todoModel->deleteTodo(index);
-    auto found = todoModel->indexFromDescription(newTodo);
+    const auto found = todoModel->indexFromQUuid(uuid);
     QVERIFY(!found.isValid());
 }
 void TodoModelTest::testSaveFile()
