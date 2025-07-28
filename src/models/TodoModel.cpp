@@ -20,7 +20,7 @@ TodoModel::TodoModel(QObject *parent)
                                           "\\t]*(?P<Completion>x))|(?P<Priority>\\([A-Z]\\))|(?:(?P<FirstDate>"
                                           "\\d{4}-\\d\\d-\\d\\d)[ "
                                           "\\t]*(?P<SecondDate>\\d{4}-\\d\\d-\\d\\d)?)|(?P<Projects>\\+\\w+)|(?P<"
-                                          "Contexts>(?<=\\s)@[^\\s]+)|(?P<KeyValuePairs>[a-zA-Z]+:[\\w:/.%-]*)"));
+                                          "Contexts>(?<=\\s)@[^\\s]+)|(?P<KeyValuePairs>[a-zA-Z]+:[\\S]*)"));
     if (!parserPattern.isValid()) {
         qWarning() << "Regular expression pattern for parsing is not valid!";
         return;

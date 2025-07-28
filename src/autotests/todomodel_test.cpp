@@ -80,14 +80,15 @@ void TodoModelTest::testParseTodo_data()
         << u"(F) 2025-06-25 2025-06-21 Broken task!"_s << false << u"(F)"_s << QString() << u"2025-06-25"_s << QStringList{} << QStringList{} << QStringList{}
         << u"2025-06-21 Broken task!"_s << QString();
 
-    QTest::addRow("Task with URL in keyval pair") << u"(C) 2025-06-21 Add cover sheets link:https://example.com/lo%20l/ @Office +TPSReports"_s << false
-                                                  << u"(C)"_s << QString() << u"2025-06-21"_s << QStringList{u"@Office"_s} << QStringList{u"+TPSReports"_s}
-                                                  << QStringList{u"link:https://example.com/lo%20l/"_s} << u"Add cover sheets @Office +TPSReports"_s
-                                                  << QString();
+    QTest::addRow("Task with URL in keyval pair") << u"(C) 2025-06-21 Add cover sheets link:https://example.com/lo%20l/#context?id=123 @Office +TPSReports"_s
+                                                  << false << u"(C)"_s << QString() << u"2025-06-21"_s << QStringList{u"@Office"_s}
+                                                  << QStringList{u"+TPSReports"_s} << QStringList{u"link:https://example.com/lo%20l/#context?id=123"_s}
+                                                  << u"Add cover sheets @Office +TPSReports"_s << QString();
 
-    QTest::addRow("Task with URL inside description") << u"(C) 2025-06-21 Add cover sheets https://example.com/lo%20l/ @Office +TPSReports"_s << false
-                                                      << u"(C)"_s << QString() << u"2025-06-21"_s << QStringList{u"@Office"_s} << QStringList{u"+TPSReports"_s}
-                                                      << QStringList{} << u"Add cover sheets https://example.com/lo%20l/ @Office +TPSReports"_s << QString();
+    QTest::addRow("Task with URL inside description") << u"(C) 2025-06-21 Add cover sheets https://example.com/lo%20l/#context?id=123 @Office +TPSReports"_s
+                                                      << false << u"(C)"_s << QString() << u"2025-06-21"_s << QStringList{u"@Office"_s}
+                                                      << QStringList{u"+TPSReports"_s} << QStringList{}
+                                                      << u"Add cover sheets https://example.com/lo%20l/#context?id=123 @Office +TPSReports"_s << QString();
 }
 void TodoModelTest::testParseTodo()
 {
