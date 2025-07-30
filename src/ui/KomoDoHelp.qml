@@ -73,4 +73,7 @@ You can then also open this same file in any text editor or other todo.txt appli
 Please see the link below for more information and the official todo.txt specification.
 
 `)
+    onLinkActivated: link => {
+        Qt.openUrlExternally(link);
+    }
 }

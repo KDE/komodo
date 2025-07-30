@@ -194,7 +194,7 @@ Kirigami.ScrollablePage {
             id: fileDeletedMessage
             Layout.fillWidth: true
             visible: false
-            text: i18n("This To-Do list  has been deleted! Open another To-Do list or create new one.")
+            text: i18n("This To-Do list has been deleted! Open another To-Do list or create new one.")
             type: Kirigami.MessageType.Error
             showCloseButton: false
             actions: [
@@ -238,6 +238,13 @@ Kirigami.ScrollablePage {
             shortcut: StandardKey.Open
         },
         Kirigami.Action {
+            icon.name: "document-new-symbolic"
+            text: i18nc("@button", "Create New To-Do List…")
+            onTriggered: {
+                createNewDialog.open();
+            }
+        },
+        Kirigami.Action {
             text: i18nc("@action:inmenu", "Help…")
             icon.name: "help-contents-symbolic"
             onTriggered: pageStack.layers.push(helpPage)
@@ -269,15 +276,12 @@ Kirigami.ScrollablePage {
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
             anchors.centerIn: parent
             visible: TodoModel.filePath == ""
+            type: Kirigami.PlaceholderMessage.Actionable
             icon.name: "org.kde.komodo"
-            text: i18nc("@info:placeholder", "No To-Do list is loaded.")
-            explanation: xi18nc("@info:placeholder", "Click <interface>Open To-Do list…</interface> to use an existing list or <interface>Create New To-Do list…</interface> to start a new list.")
-            helpfulAction: Kirigami.Action {
-                icon.name: "document-new-symbolic"
-                text: i18nc("@button", "Create New To-Do List…")
-                onTriggered: {
-                    createNewDialog.open();
-                }
+            text: i18nc("@info:placeholder", "Welcome to KomoDo!")
+            explanation: i18nc("Welcome introduction text", "<p>KomoDo is a To-Do list application that uses <a href='https://github.com/todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to learn and KomoDo has help sections for it: <br>On the toolbar, click the <i><interface>Help…</interface></i> button.<br>While editing a task, click the <i><interface>Syntax Information…</interface></i> button.</p><p>You can follow the rules as much or as little as you wish.<br> Feel free to experiment to find out your ideal way of managing tasks.</p><p>Click <i><interface>Open To-Do list…</interface></i> to use an existing list or <i><interface>Create New To-Do list…</interface></i> to start a new list.</p>")
+            onLinkActivated: link => {
+                Qt.openUrlExternally(link);
             }
         }
 
@@ -289,7 +293,6 @@ Kirigami.ScrollablePage {
             icon.name: "org.kde.komodo"
             text: i18nc("@info:placeholder", "No To-Dos found.")
         }
-
         model: KSortFilterProxyModel {
             id: filteredModel
             property var secondaryFilter: "default"
