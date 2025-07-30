@@ -241,7 +241,7 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
     case CompletionRole:
         // We change the whole todo during this operation, so return early
         updateCompletionStatus(todo, value.toBool());
-        Q_EMIT dataChanged(index, index);
+        Q_EMIT dataChanged(index, index, {CompletionRole});
         return true;
         break;
     case PriorityRole:
@@ -276,7 +276,7 @@ bool TodoModel::setData(const QModelIndex &index, const QVariant &value, int rol
         return false;
     }
 
-    Q_EMIT dataChanged(index, index);
+    Q_EMIT dataChanged(index, index, {role});
 
     return true;
 }
