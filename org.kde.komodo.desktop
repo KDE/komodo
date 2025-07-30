@@ -3,14 +3,8 @@
 
 [Desktop Entry]
 Name=KomoDo
-Name[x-test]=xxKomoDoxx
-Name[fi]=KomoDo
 GenericName=todo.txt Application
-GenericName[fi]=todo.txt Sovellus
-GenericName[x-test]=xxtodo.txt Applicationxx
 Comment=Create and manage todo.txt task lists
-Comment[fi]=Luo ja hallinnoi todo.txt tehtävälistoja
-Comment[x-test]=xxCreate and manage todo.txt task listsxx
 Exec=komodo
 Icon=org.kde.komodo
 Type=Application
