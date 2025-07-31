@@ -1,58 +1,68 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <component type="desktop-application">
-	<!--
+  <!--
 	SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
 	SPDX-License-Identifier: CC0-1.0
 	-->
-	<id>org.kde.komodo</id>
-	<name>KomoDo</name>
-	<summary>Work on todo.txt files</summary>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>GPL-2.0-or-later</project_license>
-	<project_group>KDE</project_group>
-	<developer id="org.kde">
-		<name translate="no">KDE</name>
-	</developer>
-	<categories>
-		<category>Office</category>
-		<category>Utility</category>
-	</categories>
-	<keywords>
-		<keyword>todo.txt</keyword>
-		<keyword>tasks</keyword>
-		<keyword>todo</keyword>
-	</keywords>
-	<content_rating type="oars-1.1"/>
-	<description>
-		<p>KomoDo is a todo manager that uses todo.txt specification. It parses any compliant todo.txt files and turns them into easy to use list of tasks.</p>
-		<p>KomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!</p>
-		<p>Features</p>
-		<ul>
-			<li>Open and create new todo.txt files</li>
-			<li>Add, delete and edit tasks</li>
-			<li>Filter and search tasks</li>
-		</ul>
-	</description>
-	<url type="homepage">https://www.kde.org</url>
-	<url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=KomoDo</url>
-	<url type="donation">https://www.kde.org/community/donations/?app=komodo</url>
-	<launchable type="desktop-id">org.kde.komodo.desktop</launchable>
-	<screenshots>
-		<screenshot type="default" environment="plasma">
-			<caption>Example of KomoDo being used with light colorscheme.</caption>
-			<image>https://cdn.kde.org/screenshots/komodo/screenshot.png</image>
-		</screenshot>
-		<screenshot environment="plasma:dark">
-			<caption>Example of KomoDo being used with dark colorscheme.</caption>
-			<image>https://cdn.kde.org/screenshots/komodo/screenshot-dark.png</image>
-		</screenshot>
-	</screenshots>
-	<provides>
-		<binary>komodo</binary>
-	</provides>
-	<icon type="stock">org.kde.komodo</icon>
-	<branding>
-		<color type="primary" scheme_preference="light">#cbffbe</color>
-		<color type="primary" scheme_preference="dark">#364133</color>
-	</branding>
+  <id>org.kde.komodo</id>
+  <name>KomoDo</name>
+  <name xml:lang="x-test">xxKomoDoxx</name>
+  <summary>Work on todo.txt files</summary>
+  <summary xml:lang="x-test">xxWork on todo.txt filesxx</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <project_group>KDE</project_group>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
+  <categories>
+    <category>Office</category>
+    <category>Utility</category>
+  </categories>
+  <keywords>
+    <keyword>todo.txt</keyword>
+    <keyword>tasks</keyword>
+    <keyword>todo</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <description>
+    <p>KomoDo is a todo manager that uses todo.txt specification. It parses any compliant todo.txt files and turns them into easy to use list of tasks.</p>
+    <p xml:lang="x-test">xxKomoDo is a todo manager that uses todo.txt specification. It parses any compliant todo.txt files and turns them into easy to use list of tasks.xx</p>
+    <p>KomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!</p>
+    <p xml:lang="x-test">xxKomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!xx</p>
+    <p>Features</p>
+    <p xml:lang="x-test">xxFeaturesxx</p>
+    <ul>
+      <li>Open and create new todo.txt files</li>
+      <li xml:lang="x-test">xxOpen and create new todo.txt filesxx</li>
+      <li>Add, delete and edit tasks</li>
+      <li xml:lang="x-test">xxAdd, delete and edit tasksxx</li>
+      <li>Filter and search tasks</li>
+      <li xml:lang="x-test">xxFilter and search tasksxx</li>
+    </ul>
+  </description>
+  <url type="homepage">https://www.kde.org</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=KomoDo</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=komodo</url>
+  <launchable type="desktop-id">org.kde.komodo.desktop</launchable>
+  <screenshots>
+    <screenshot type="default" environment="plasma">
+      <caption>Example of KomoDo being used with light colorscheme.</caption>
+      <caption xml:lang="x-test">xxExample of KomoDo being used with light colorscheme.xx</caption>
+      <image>https://cdn.kde.org/screenshots/komodo/screenshot.png</image>
+    </screenshot>
+    <screenshot environment="plasma:dark">
+      <caption>Example of KomoDo being used with dark colorscheme.</caption>
+      <caption xml:lang="x-test">xxExample of KomoDo being used with dark colorscheme.xx</caption>
+      <image>https://cdn.kde.org/screenshots/komodo/screenshot-dark.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>komodo</binary>
+  </provides>
+  <icon type="stock">org.kde.komodo</icon>
+  <branding>
+    <color type="primary" scheme_preference="light">#cbffbe</color>
+    <color type="primary" scheme_preference="dark">#364133</color>
+  </branding>
 </component>
