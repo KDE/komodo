@@ -1,0 +1,270 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-07-31 00:45+0000\n"
+"PO-Revision-Date: 2025-07-30 21:27\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf6-trunk/messages/komodo/komodo.pot\n"
+"X-Crowdin-File-ID: 58326\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/main.cpp:24
+#, kde-format
+msgctxt "@title"
+msgid "KomoDo"
+msgstr ""
+
+#: src/main.cpp:28
+#, kde-format
+msgid "todo.txt GUI application"
+msgstr ""
+
+#: src/main.cpp:32
+#, kde-format
+msgid "© 2025 Akseli Lahtinen"
+msgstr ""
+
+#: src/main.cpp:33
+#, kde-format
+msgctxt "@info:credit"
+msgid "Akseli Lahtinen"
+msgstr ""
+
+#: src/main.cpp:34
+#, kde-format
+msgctxt "@info:credit"
+msgid "Author"
+msgstr ""
+
+#: src/Main.qml:17
+#, kde-format
+msgid "KomoDo"
+msgstr ""
+
+#: src/Main.qml:41
+#, kde-format
+msgid "KomoDo Help"
+msgstr ""
+
+#: src/Main.qml:54
+#, kde-format
+msgctxt "@info"
+msgid "Syntax Source Material"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:63
+#, kde-format
+msgid "Task completion status"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:99
+#, kde-format
+msgid "Priority"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:192
+#, kde-format
+msgid "Task completion date"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:205
+#, kde-format
+msgid "Task due date"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:218
+#, kde-format
+msgid "Task creation date"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:234
+#, kde-format
+msgctxt "@button"
+msgid "Edit"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:258
+#, kde-format
+msgctxt "@button"
+msgid "Delete"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:289
+#, kde-format
+msgctxt "Placeholder text for creating new tasks"
+msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:317
+#, kde-format
+msgctxt "@button"
+msgid "Insert Date…"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:319
+#, kde-format
+msgid "Open a date picker and insert it at cursor position"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:331
+#, kde-format
+msgid "Syntax Information"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:361
+#, kde-format
+msgid "Syntax Information…"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:369
+#, kde-format
+msgid "Show todo.txt syntax reference"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:383
+#, kde-format
+msgctxt "@button"
+msgid "Save"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:404
+#, kde-format
+msgctxt "@button"
+msgid "Cancel"
+msgstr ""
+
+#: src/ui/TodoPage.qml:64
+#, kde-format
+msgid "Delete To-Do"
+msgstr ""
+
+#: src/ui/TodoPage.qml:76
+#, kde-format
+msgid "Are you sure you wish to delete this To-Do?"
+msgstr ""
+
+#: src/ui/TodoPage.qml:126
+#, kde-format
+msgid "Filter:"
+msgstr ""
+
+#: src/ui/TodoPage.qml:136
+#, kde-format
+msgid "Show All"
+msgstr ""
+
+#: src/ui/TodoPage.qml:140
+#, kde-format
+msgid "Due Date"
+msgstr ""
+
+#: src/ui/TodoPage.qml:144
+#, kde-format
+msgid "Incomplete"
+msgstr ""
+
+#: src/ui/TodoPage.qml:148
+#, kde-format
+msgid "Completed"
+msgstr ""
+
+#: src/ui/TodoPage.qml:179
+#, kde-format
+msgid ""
+"This To-Do list has been changed externally. Reloading it is strongly "
+"advised!"
+msgstr ""
+
+#: src/ui/TodoPage.qml:185
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr ""
+
+#: src/ui/TodoPage.qml:197
+#, kde-format
+msgid ""
+"This To-Do list has been deleted! Open another To-Do list or create new one."
+msgstr ""
+
+#: src/ui/TodoPage.qml:203 src/ui/TodoPage.qml:242
+#, kde-format
+msgctxt "@button"
+msgid "Create New To-Do List…"
+msgstr ""
+
+#: src/ui/TodoPage.qml:210
+#, kde-format
+msgctxt "@action:button"
+msgid "Open To-Do List…"
+msgstr ""
+
+#: src/ui/TodoPage.qml:222
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New To-Do…"
+msgstr ""
+
+#: src/ui/TodoPage.qml:234
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open To-Do List…"
+msgstr ""
+
+#: src/ui/TodoPage.qml:248
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Help…"
+msgstr ""
+
+#: src/ui/TodoPage.qml:255
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About KomoDo"
+msgstr ""
+
+#: src/ui/TodoPage.qml:281
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Welcome to KomoDo!"
+msgstr ""
+
+#: src/ui/TodoPage.qml:282
+#, kde-format
+msgctxt "Welcome introduction text"
+msgid ""
+"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
+"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
+"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
+"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
+"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
+"follow the rules as much or as little as you wish.<br> Feel free to "
+"experiment to find out your ideal way of managing tasks.</p><p>Click "
+"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
+"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
+msgstr ""
+
+#: src/ui/TodoPage.qml:294
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No To-Dos found."
+msgstr ""

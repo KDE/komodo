@@ -1,0 +1,292 @@
+# Spanish translations for komodo.po package.
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the komodo package.
+# Automatically generated, 2025.
+#
+# SPDX-FileCopyrightText: 2025 Eloy Cuadra <ecuadra@eloihr.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: komodo\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-07-31 00:45+0000\n"
+"PO-Revision-Date: 2025-07-30 18:34+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.04.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Eloy Cuadra"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ecuadra@eloihr.net"
+
+#: src/main.cpp:24
+#, kde-format
+msgctxt "@title"
+msgid "KomoDo"
+msgstr "KomoDo"
+
+#: src/main.cpp:28
+#, kde-format
+msgid "todo.txt GUI application"
+msgstr "Aplicación de interfaz para todo.txt"
+
+#: src/main.cpp:32
+#, kde-format
+msgid "© 2025 Akseli Lahtinen"
+msgstr "© 2025 Akseli Lahtinen"
+
+#: src/main.cpp:33
+#, kde-format
+msgctxt "@info:credit"
+msgid "Akseli Lahtinen"
+msgstr "Akseli Lahtinen"
+
+#: src/main.cpp:34
+#, kde-format
+msgctxt "@info:credit"
+msgid "Author"
+msgstr "Autor"
+
+#: src/Main.qml:17
+#, kde-format
+msgid "KomoDo"
+msgstr "KomoDo"
+
+#: src/Main.qml:41
+#, kde-format
+msgid "KomoDo Help"
+msgstr "Ayuda de KomoDo"
+
+#: src/Main.qml:54
+#, kde-format
+msgctxt "@info"
+msgid "Syntax Source Material"
+msgstr "Material fuente de sintaxis"
+
+#: src/ui/TodoDelegate.qml:63
+#, kde-format
+msgid "Task completion status"
+msgstr "Estado de compleción de la tarea"
+
+#: src/ui/TodoDelegate.qml:99
+#, kde-format
+msgid "Priority"
+msgstr "Prioridad"
+
+#: src/ui/TodoDelegate.qml:192
+#, kde-format
+msgid "Task completion date"
+msgstr "Fecha de terminación de la tarea"
+
+#: src/ui/TodoDelegate.qml:205
+#, kde-format
+msgid "Task due date"
+msgstr "Fecha de vencimiento de la tarea"
+
+#: src/ui/TodoDelegate.qml:218
+#, kde-format
+msgid "Task creation date"
+msgstr "Fecha de creación de la tarea"
+
+#: src/ui/TodoDelegate.qml:234
+#, kde-format
+msgctxt "@button"
+msgid "Edit"
+msgstr "Editar"
+
+#: src/ui/TodoDelegate.qml:258
+#, kde-format
+msgctxt "@button"
+msgid "Delete"
+msgstr "Borrar"
+
+#: src/ui/TodoDelegate.qml:289
+#, kde-format
+msgctxt "Placeholder text for creating new tasks"
+msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
+msgstr "(A) AAAA-MM-DD Descripción+Proyecto @Contexto clave:valor"
+
+#: src/ui/TodoDelegate.qml:317
+#, kde-format
+msgctxt "@button"
+msgid "Insert Date…"
+msgstr "Insertar fecha…"
+
+#: src/ui/TodoDelegate.qml:319
+#, kde-format
+msgid "Open a date picker and insert it at cursor position"
+msgstr "Abrir un selector de fecha e insertarla en la posición del cursor"
+
+#: src/ui/TodoDelegate.qml:331
+#, kde-format
+msgid "Syntax Information"
+msgstr "Información de sintaxis"
+
+#: src/ui/TodoDelegate.qml:361
+#, kde-format
+msgid "Syntax Information…"
+msgstr "Información de sintaxis…"
+
+#: src/ui/TodoDelegate.qml:369
+#, kde-format
+msgid "Show todo.txt syntax reference"
+msgstr "Mostrar referencia de la sintaxis de todo.txt"
+
+#: src/ui/TodoDelegate.qml:383
+#, kde-format
+msgctxt "@button"
+msgid "Save"
+msgstr "Guardar"
+
+#: src/ui/TodoDelegate.qml:404
+#, kde-format
+msgctxt "@button"
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/ui/TodoPage.qml:64
+#, kde-format
+msgid "Delete To-Do"
+msgstr "Borrar tarea pendiente"
+
+#: src/ui/TodoPage.qml:76
+#, kde-format
+msgid "Are you sure you wish to delete this To-Do?"
+msgstr "¿Seguro que quiere borrar esta tarea pendiente?"
+
+#: src/ui/TodoPage.qml:126
+#, kde-format
+msgid "Filter:"
+msgstr "Filtro:"
+
+#: src/ui/TodoPage.qml:136
+#, kde-format
+msgid "Show All"
+msgstr "Mostrar todas"
+
+#: src/ui/TodoPage.qml:140
+#, kde-format
+msgid "Due Date"
+msgstr "Fecha de vencimiento"
+
+#: src/ui/TodoPage.qml:144
+#, kde-format
+msgid "Incomplete"
+msgstr "Incompletas"
+
+#: src/ui/TodoPage.qml:148
+#, kde-format
+msgid "Completed"
+msgstr "Completadas"
+
+#: src/ui/TodoPage.qml:179
+#, kde-format
+msgid ""
+"This To-Do list has been changed externally. Reloading it is strongly "
+"advised!"
+msgstr ""
+"Esta lista de tareas pendientes ha sido cambiada externamente. Se le "
+"recomienda que vuelva a cargarla."
+
+#: src/ui/TodoPage.qml:185
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr "Volver a cargar"
+
+#: src/ui/TodoPage.qml:197
+#, fuzzy, kde-format
+#| msgid ""
+#| "This To-Do list  has been deleted! Open another To-Do list or create new "
+#| "one."
+msgid ""
+"This To-Do list has been deleted! Open another To-Do list or create new one."
+msgstr ""
+"Esta lista de tareas pendientes ha sido borrada. Abra otra lista de tareas o "
+"cree una nueva."
+
+#: src/ui/TodoPage.qml:203 src/ui/TodoPage.qml:242
+#, kde-format
+msgctxt "@button"
+msgid "Create New To-Do List…"
+msgstr "Crear nueva lista de tareas pendientes…"
+
+#: src/ui/TodoPage.qml:210
+#, kde-format
+msgctxt "@action:button"
+msgid "Open To-Do List…"
+msgstr "Abrir lista de tareas pendientes…"
+
+#: src/ui/TodoPage.qml:222
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New To-Do…"
+msgstr "Nueva lista de tareas pendientes…"
+
+#: src/ui/TodoPage.qml:234
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open To-Do List…"
+msgstr "Abrir lista de tareas pendientes…"
+
+#: src/ui/TodoPage.qml:248
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Help…"
+msgstr "Ayuda…"
+
+#: src/ui/TodoPage.qml:255
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About KomoDo"
+msgstr "Acerca de KomoDo"
+
+#: src/ui/TodoPage.qml:281
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Welcome to KomoDo!"
+msgstr ""
+
+#: src/ui/TodoPage.qml:282
+#, kde-format
+msgctxt "Welcome introduction text"
+msgid ""
+"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
+"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
+"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
+"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
+"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
+"follow the rules as much or as little as you wish.<br> Feel free to "
+"experiment to find out your ideal way of managing tasks.</p><p>Click "
+"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
+"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
+msgstr ""
+
+#: src/ui/TodoPage.qml:294
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No To-Dos found."
+msgstr "No se ha encontrado ninguna lista de tareas pendientes."
+
+#~ msgctxt "@info:placeholder"
+#~ msgid "No To-Do list is loaded."
+#~ msgstr "No se ha cargado ninguna lista de tareas pendientes."
+
+#~ msgctxt "@info:placeholder"
+#~ msgid ""
+#~ "Click <interface>Open To-Do list…</interface> to use an existing list or "
+#~ "<interface>Create New To-Do list…</interface> to start a new list."
+#~ msgstr ""
+#~ "Pulse <interface>Abrir lista de tareas pendientes…</interface> para usar "
+#~ "una lista existente o <interface>Crear nueva lista de tareas pendientes</"
+#~ "interface> para empezar una nueva lista."
