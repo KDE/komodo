@@ -16,7 +16,7 @@
   <name xml:lang="sv">Komodo</name>
   <name xml:lang="uk">KomoDo</name>
   <name xml:lang="x-test">xxKomoDoxx</name>
-  <summary>Work on todo.txt files</summary>
+  <summary>Work on To-Do lists/summary>
   <summary xml:lang="ca">Funciona en fitxers «todo.txt»</summary>
   <summary xml:lang="ca-valencia">Funciona en fitxers «todo.txt»</summary>
   <summary xml:lang="es">Trabajar con archivos de todo.txt</summary>
@@ -26,7 +26,7 @@
   <summary xml:lang="sl">Delo na datotekah todo.txt</summary>
   <summary xml:lang="sv">Arbeta med todo.txt-filer</summary>
   <summary xml:lang="uk">Робота над файлами todo.txt</summary>
-  <summary xml:lang="x-test">xxWork on todo.txt filesxx</summary>
+  <summary xml:lang="x-test">xxWork on To-Do listsxx</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
   <project_group>KDE</project_group>
