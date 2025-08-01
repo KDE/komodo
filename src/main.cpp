@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
         // The program version string.
         QStringLiteral(KOMODO_VERSION_STRING),
         // Short description of what the app does.
-        i18n("todo.txt GUI application"),
+        i18n("Work on To-Do lists"),
         // The license this code is released under.
         KAboutLicense::GPL_V2,
         // Copyright Statement.
@@ -36,6 +36,9 @@ int main(int argc, char *argv[])
                         QStringLiteral("https://akselmo.dev"));
     aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=KomoDo");
     aboutData.setProgramLogo(QIcon(QStringLiteral(":/komodo.png")));
+    aboutData.setOtherText(i18nc("Longer description in about page",
+                                 "<p>KomoDo is a todo manager that uses todo.txt specification. It parses any compliant todo.txt files and turns them into "
+                                 "easy to use list of tasks.</p>"));
     KAboutData::setApplicationData(aboutData);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.komodo")));
 
