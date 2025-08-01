@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-31 00:45+0000\n"
-"PO-Revision-Date: 2025-07-30 18:34+0100\n"
+"PO-Revision-Date: 2025-08-01 00:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -205,10 +205,7 @@ msgid "Reload"
 msgstr "Volver a cargar"
 
 #: src/ui/TodoPage.qml:197
-#, fuzzy, kde-format
-#| msgid ""
-#| "This To-Do list  has been deleted! Open another To-Do list or create new "
-#| "one."
+#, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
 msgstr ""
@@ -255,7 +252,7 @@ msgstr "Acerca de KomoDo"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
-msgstr ""
+msgstr "Bienvenido a KomoDo"
 
 #: src/ui/TodoPage.qml:282
 #, kde-format
@@ -271,22 +268,20 @@ msgid ""
 "<i><interface>Open To-Do list…</interface></i> to use an existing list or "
 "<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
 msgstr ""
+"<p>KomoDo es una aplicación de lista de tareas pendientes que usa las reglas "
+"de <a href='https://github.com/todotxt/todo.txt'>todo.txt</a>.</p><p>Las "
+"reglas son bastante fáciles de aprender y KomoDo tiene secciones de ayuda "
+"para ello:<br>En la barra de herramientas, pulse el botón "
+"<i><interface>Ayuda…</interface></i>.<br>Cuando modifique una tarea, pulse "
+"el botón <i><interface>Información de sintaxis…</interface></i>.</p><p>Puede "
+"seguir las reglas hasta el punto que quiera.<br>Siéntase libre de "
+"experimentar para encontrar la forma ideal para realizar la gestión de las "
+"tareas.</p><p>Pulse <i><interface>Abrir lista de tareas pendientes…</"
+"interface></i> para usar una lista existente o <i><interface>Crear nueva "
+"lista de tareas pendientes…</interface></i> para empezar una nueva lista.</p>"
 
 #: src/ui/TodoPage.qml:294
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
 msgstr "No se ha encontrado ninguna lista de tareas pendientes."
-
-#~ msgctxt "@info:placeholder"
-#~ msgid "No To-Do list is loaded."
-#~ msgstr "No se ha cargado ninguna lista de tareas pendientes."
-
-#~ msgctxt "@info:placeholder"
-#~ msgid ""
-#~ "Click <interface>Open To-Do list…</interface> to use an existing list or "
-#~ "<interface>Create New To-Do list…</interface> to start a new list."
-#~ msgstr ""
-#~ "Pulse <interface>Abrir lista de tareas pendientes…</interface> para usar "
-#~ "una lista existente o <interface>Crear nueva lista de tareas pendientes</"
-#~ "interface> para empezar una nueva lista."

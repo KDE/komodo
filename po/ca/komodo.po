@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-31 00:45+0000\n"
-"PO-Revision-Date: 2025-07-30 12:26+0200\n"
+"PO-Revision-Date: 2025-07-31 17:24+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -205,21 +205,19 @@ msgid "Reload"
 msgstr "Torna a carregar"
 
 #: src/ui/TodoPage.qml:197
-#, fuzzy, kde-format
-#| msgid ""
-#| "This To-Do list  has been deleted! Open another To-Do list or create new "
-#| "one."
+#, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
 msgstr ""
 "Aquesta llista de tasques pendents s'ha suprimit! Obriu una altra llista de "
 "tasques pendents o creeu-ne una de nova."
 
+# skip-rule: kct-todo-list
 #: src/ui/TodoPage.qml:203 src/ui/TodoPage.qml:242
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
-msgstr "Crea una llista de tasques pendents nova…"
+msgstr "Crea una llista nova de tasques pendents…"
 
 #: src/ui/TodoPage.qml:210
 #, kde-format
@@ -255,7 +253,7 @@ msgstr "Quant al KomoDo"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
-msgstr ""
+msgstr "Us donem la benvinguda al KomoDo!"
 
 #: src/ui/TodoPage.qml:282
 #, kde-format
@@ -271,22 +269,20 @@ msgid ""
 "<i><interface>Open To-Do list…</interface></i> to use an existing list or "
 "<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
 msgstr ""
+"<p>El KomoDo és una aplicació de llista de tasques pendents que fa servir "
+"les regles de <a href='https://github.com/todotxt/todo.txt'>todo.txt</a>.</"
+"p><p>Les regles són força ràpides d'aprendre i el KomoDo té seccions d'ajuda "
+"per a això: <br>A la barra d'eines, feu clic al botó <i><interface>Ajuda…</"
+"interface></i> <br>Mentre esteu editant una tasca, feu clic al botó "
+"<i><interface>Informació de la sintaxi…</interface></i> .</p><p>Podeu seguir "
+"les regles molt o poc segons vulgueu.<br> Experimenteu amb total llibertat "
+"la manera de gestionar les tasques.</p><p>Feu clic a <i><interface>Obre una "
+"llista de tasques pendents…</interface></i> per a fer servir una llista "
+"existent o <i><interface>Crea una llista nova de tasques pendents…</"
+"interface></i> per a començar una llista novas.</p>"
 
 #: src/ui/TodoPage.qml:294
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
 msgstr "No s'ha trobat cap tasca pendent."
-
-#~ msgctxt "@info:placeholder"
-#~ msgid "No To-Do list is loaded."
-#~ msgstr "No s'ha carregat cap llista de tasques pendents."
-
-#~ msgctxt "@info:placeholder"
-#~ msgid ""
-#~ "Click <interface>Open To-Do list…</interface> to use an existing list or "
-#~ "<interface>Create New To-Do list…</interface> to start a new list."
-#~ msgstr ""
-#~ "Feu clic a <interface>Obre una llista de tasques pendents…</interface> "
-#~ "per utilitzar una llista existent o <interface>Crea una llista de tasques "
-#~ "pendents nova…</interface> per iniciar una llista nova."

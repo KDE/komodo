@@ -1,32 +1,31 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the komodo package.
 #
-# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-31 00:45+0000\n"
-"PO-Revision-Date: 2025-07-31 12:01+0300\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: צוות התרגום של KDE ישראל\n"
-"Language: he\n"
+"PO-Revision-Date: 2025-07-31 20:25+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
-"n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.04.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "צוות התרגום של KDE ישראל"
+msgstr "Emir SARI"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-l10n-he@kde.org"
+msgstr "emir_sari@icloud.com"
 
 #: src/main.cpp:24
 #, kde-format
@@ -37,24 +36,24 @@ msgstr "KomoDo"
 #: src/main.cpp:28
 #, kde-format
 msgid "todo.txt GUI application"
-msgstr "יישום גרפי ל־todo.txt"
+msgstr "todo.txt grafik arayüzü uygulaması"
 
 #: src/main.cpp:32
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
-msgstr "© 2025 אקסלי לאהטינן"
+msgstr "© 2025 Akseli Lahtinen"
 
 #: src/main.cpp:33
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
-msgstr "אקסלי לאהטינן"
+msgstr "Akseli Lahtinen"
 
 #: src/main.cpp:34
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
-msgstr "יוצר"
+msgstr "Yazar"
 
 #: src/Main.qml:17
 #, kde-format
@@ -64,190 +63,194 @@ msgstr "KomoDo"
 #: src/Main.qml:41
 #, kde-format
 msgid "KomoDo Help"
-msgstr "העזרה של KomoDo"
+msgstr "KomoDo Yardımı"
 
 #: src/Main.qml:54
 #, kde-format
 msgctxt "@info"
 msgid "Syntax Source Material"
-msgstr "חומר מקור תחביר"
+msgstr "Sözdizim kaynak malzemesi"
 
 #: src/ui/TodoDelegate.qml:63
 #, kde-format
 msgid "Task completion status"
-msgstr "מצב השלמת משימות"
+msgstr "Görevin tamamlanma durumu"
 
 #: src/ui/TodoDelegate.qml:99
 #, kde-format
 msgid "Priority"
-msgstr "עדיפות"
+msgstr "Öncelik"
 
 #: src/ui/TodoDelegate.qml:192
 #, kde-format
 msgid "Task completion date"
-msgstr "תאריך השלמת משימה"
+msgstr "Görevin tamamlanma tarihi"
 
 #: src/ui/TodoDelegate.qml:205
 #, kde-format
 msgid "Task due date"
-msgstr "תאריך יעד למשימה"
+msgstr "Görevin bitiş tarihi"
 
 #: src/ui/TodoDelegate.qml:218
 #, kde-format
 msgid "Task creation date"
-msgstr "תאריך יצירת משימה"
+msgstr "Görevin oluşturulma tarihi"
 
 #: src/ui/TodoDelegate.qml:234
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
-msgstr "עריכה"
+msgstr "Düzenle"
 
 #: src/ui/TodoDelegate.qml:258
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
-msgstr "מחיקה"
+msgstr "Sil"
 
 #: src/ui/TodoDelegate.qml:289
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
-msgstr "‏(A) YYYY-MM-DD תיאור +מיזם @הקשר מפתח:ערך"
+msgstr "(A) YYYY-AA-GG Açıklama +Proje @Bağlam anahtar:değer"
 
 #: src/ui/TodoDelegate.qml:317
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
-msgstr "הוספת תאריך…"
+msgstr "Tarih Gir…"
 
 #: src/ui/TodoDelegate.qml:319
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
-msgstr "פתיחת בורר תאריכים והוספתו במקום של הסמן"
+msgstr "Bir tarih seçicisi aç ve imleç konumunda yerleştir"
 
 #: src/ui/TodoDelegate.qml:331
 #, kde-format
 msgid "Syntax Information"
-msgstr "פרטי תחביר"
+msgstr "Sözdizim Bilgisi"
 
 #: src/ui/TodoDelegate.qml:361
 #, kde-format
 msgid "Syntax Information…"
-msgstr "פרטי תחביר…"
+msgstr "Sözdizim Bilgisi…"
 
 #: src/ui/TodoDelegate.qml:369
 #, kde-format
 msgid "Show todo.txt syntax reference"
-msgstr "הצגת סימוכין לתחביר todo.txt"
+msgstr "todo.txt sözdizim başvurusunu göster"
 
 #: src/ui/TodoDelegate.qml:383
 #, kde-format
 msgctxt "@button"
 msgid "Save"
-msgstr "שמירה"
+msgstr "Kaydet"
 
 #: src/ui/TodoDelegate.qml:404
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"
-msgstr "ביטול"
+msgstr "İptal"
 
 #: src/ui/TodoPage.qml:64
 #, kde-format
 msgid "Delete To-Do"
-msgstr "מחיקת מטלה"
+msgstr "Yapılacağı Sil"
 
 #: src/ui/TodoPage.qml:76
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
-msgstr "למחוק את המטלה הזאת"
+msgstr "Bu yapılacağı silmek istediğinizden emin misiniz?"
 
 #: src/ui/TodoPage.qml:126
 #, kde-format
 msgid "Filter:"
-msgstr "סינון:"
+msgstr "Süz:"
 
 #: src/ui/TodoPage.qml:136
 #, kde-format
 msgid "Show All"
-msgstr "להציג הכול"
+msgstr "Tümünü Göster"
 
 #: src/ui/TodoPage.qml:140
 #, kde-format
 msgid "Due Date"
-msgstr "תאריך יעד"
+msgstr "Bitiş Tarihi"
 
 #: src/ui/TodoPage.qml:144
 #, kde-format
 msgid "Incomplete"
-msgstr "חלקי"
+msgstr "Tamamlanmamış"
 
 #: src/ui/TodoPage.qml:148
 #, kde-format
 msgid "Completed"
-msgstr "הושלם"
+msgstr "Tamamlanmış"
 
 #: src/ui/TodoPage.qml:179
 #, kde-format
 msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
 "advised!"
-msgstr "רשימת המטלות הזאת נערכה חיצונית. מומלץ לטעון אותה מחדש!"
+msgstr ""
+"Bu yapılacak listesi dışarıdan değiştirilmiş. Yeniden yüklemeniz şiddetle "
+"önerilir."
 
 #: src/ui/TodoPage.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr "לטעון מחדש"
+msgstr "Yeniden Yükle"
 
 #: src/ui/TodoPage.qml:197
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
-msgstr "רשימת המטלות הזאת נמחקה! אפשר לפתוח רשימת מטלות אחרת או ליצור חדשה."
+msgstr ""
+"Bu yapılacak listesi silinmiş. Başka bir yapılacak listesi açın veya "
+"yenisini oluşturun."
 
 #: src/ui/TodoPage.qml:203 src/ui/TodoPage.qml:242
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
-msgstr "יצירת רשימת מטלות חדשה…"
+msgstr "Yeni Yapılacak Listesi Oluştur…"
 
 #: src/ui/TodoPage.qml:210
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
-msgstr "פתיחת רשימת מטלות…"
+msgstr "Yapılacak Listesi Aç…"
 
 #: src/ui/TodoPage.qml:222
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
-msgstr "מטלה חדשה…"
+msgstr "Yeni Yapılacak…"
 
 #: src/ui/TodoPage.qml:234
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
-msgstr "פתיחת רשימת מטלות…"
+msgstr "Yapılacak Listesi Aç…"
 
 #: src/ui/TodoPage.qml:248
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
-msgstr "עזרה…"
+msgstr "Yardım…"
 
 #: src/ui/TodoPage.qml:255
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
-msgstr "על KomoDo"
+msgstr "KomoDo Hakkında"
 
 #: src/ui/TodoPage.qml:281
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
-msgstr "ברוך בואך ל־KomoDo!"
+msgstr "KomoDo’ya hoş geldiniz!"
 
 #: src/ui/TodoPage.qml:282
 #, kde-format
@@ -263,30 +266,20 @@ msgid ""
 "<i><interface>Open To-Do list…</interface></i> to use an existing list or "
 "<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
 msgstr ""
-"<p>KomoDo הוא יישום רשימות מטלות שמשתמש בכללי <a href='https://github.com/"
-"todotxt/todo.txt'>todo.txt</a>.</p><p>הכללים די פשוטים ללמידה ול־KomoDo יש "
-"סעיפי עזרה לשם כך: <br>בסרגל הכלים,  ניתן ללחוץ על הכפתור <i><interface>עזרה…"
-"</interface></i>.<br>במהלך עריכת משימה, ניתן ללחוץ על הכפתור "
-"<i><interface>פרטי תחביר…</interface></i>.</p><p>אפשר להיצמד לכללים כראות "
-"עיניך.<br>אפשר להתנסות ולמצוא את הדרך הכי נוחה לך לניהול משימות.</p><p>לחיצה "
-"על <i><interface>פתיחת רשימת מטלות…</interface></i> תאפשר לך להשתמש ברשימה "
-"קיימת לעומת <i><interface>יצירת רשימת מטלות חדשה…</interface></i> שתפתח "
-"רשימה חדשה.</p>"
+"<p>KomoDo, <a href='https://github.com/todotxt/todo.txt'>todo.txt</a> "
+"kurallarını kullanan bir yapılacaklar listesi uygulamasıdır.</"
+"p><p>Kurallarını öğrenmesi pek kolaydır ve KomoDo içinde ilgili yardım "
+"bölümleri bulunur: <br>Araç çubuğunda <i><interface>Yardım…</interface></i> "
+"düğmesine tıklayın.<br>Bir görevi düzenlerken <i><interface>Sözdizim Bilgisi…"
+"</interface></i> düğmesine tıklayın.</p><p>Kuralları ister harfiyen veya "
+"keyfinize göre kullanabilirsiniz.<br>Görevlerinizi yönetmenin ideal yolunu "
+"bulmak için yeni şeyler denemekten çekinmeyin.</p><p>Var olan bir listeyi "
+"açmak için <i><interface>Yapılacak Listesi Aç…</interface></i> düğmesini "
+"veya yeni bir liste başlatmak için <i><interface>Yeni Yapılacak Listesi "
+"Oluştur…</interface></i> düğmesini kullanın.</p>"
 
 #: src/ui/TodoPage.qml:294
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
-msgstr "לא נמצאו מטלות."
-
-#~ msgctxt "@info:placeholder"
-#~ msgid "No To-Do list is loaded."
-#~ msgstr "לא נטענה רשימת מטלות."
-
-#~ msgctxt "@info:placeholder"
-#~ msgid ""
-#~ "Click <interface>Open To-Do list…</interface> to use an existing list or "
-#~ "<interface>Create New To-Do list…</interface> to start a new list."
-#~ msgstr ""
-#~ "אפשר ללחוץ על <interface>פתיחת רשימת מטלות…</interface> כדי להשתמש ברשימה "
-#~ "קיימת <interface>יצירת רשימת מטלות חדשה…</interface> כדי לפתוח רשימה חדשה."
+msgstr "Bulunan yapılacak yok."

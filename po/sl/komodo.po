@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-31 00:45+0000\n"
-"PO-Revision-Date: 2025-07-30 20:02+0200\n"
+"PO-Revision-Date: 2025-07-31 07:53+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -204,10 +204,7 @@ msgid "Reload"
 msgstr "Ponovno naloži"
 
 #: src/ui/TodoPage.qml:197
-#, fuzzy, kde-format
-#| msgid ""
-#| "This To-Do list  has been deleted! Open another To-Do list or create new "
-#| "one."
+#, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
 msgstr ""
@@ -254,7 +251,7 @@ msgstr "O KomoDo"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
-msgstr ""
+msgstr "Dobrodošli v KomoDo!"
 
 #: src/ui/TodoPage.qml:282
 #, kde-format
@@ -270,6 +267,16 @@ msgid ""
 "<i><interface>Open To-Do list…</interface></i> to use an existing list or "
 "<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
 msgstr ""
+"<p>KomoDo je aplikacija za seznam opravil, ki uporablja pravila <a "
+"href='https://github.com/todotxt/todo.txt'>todo.txt</a>.</p><p>Pravila se da "
+"dokaj hitro naučiti in KomoDo ima zanje razdelke s pomočjo: <br>V orodni "
+"vrstici kliknite gumb <i><interface>Pomoč…</interface></i>.<br>Med urejanjem "
+"opravila kliknite gumb <i><interface>Informacije o skladnji…</interface></i>."
+"</p><p>Pravila lahko upoštevate, kolikor malo želite.<br> Prosto "
+"eksperimentirajte in odkrijte svoj idealen način upravljanja opravil.</"
+"p><p>Kliknite <i><interface>Odpri seznam opravil…</interface></i>, če želite "
+"uporabiti obstoječi seznam, ali <i><interface>Ustvari nov seznam opravil…</"
+"interface></i>, če želite začeti nov seznam.</p>"
 
 #: src/ui/TodoPage.qml:294
 #, kde-format
