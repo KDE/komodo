@@ -29,6 +29,11 @@ KomoDo then will parse these task and showcase it in easy-to-read
 
 See the built-in help for more information.
 
+## Matrix chat
+
+We have a [Matrix](https://community.kde.org/Matrix) chat where you can join and 
+chat about contributions and using the app: [#komodo:kde.org](https://matrix.to/#/#komodo:kde.org)
+
 ## How to get it
 
 For now you will have to build it on your own.
