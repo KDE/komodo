@@ -3,13 +3,16 @@
 
 #include "version-komodo.h"
 #include <KAboutData>
-#include <KDBusService>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <QApplication>
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
+
+#ifdef USE_DBUS
+#include <KDBusService>
+#endif
 
 constexpr auto APPLICATION_ID = "org.kde.komodo";
 int main(int argc, char *argv[])
@@ -42,7 +45,9 @@ int main(int argc, char *argv[])
     KAboutData::setApplicationData(aboutData);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.komodo")));
 
+#ifdef USE_DBUS
     KDBusService service(KDBusService::Unique);
+#endif
 
     QApplication::setStyle(QStringLiteral("breeze"));
     QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
