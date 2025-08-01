@@ -12,7 +12,7 @@ It parses any compliant todo.txt files and turns them into easy to use list of t
 
 KomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!
 
-![Screenshot of KomoDo](https://cdn.kde.org/screenshots/komodo/screenshot.png)
+![Screenshot of KomoDo](https://invent.kde.org/websites/product-screenshots/-/raw/master/komodo/screenshot.png?ref_type=heads)
 
 KomoDo can be used to:
 - Add, delete and edit tasks
