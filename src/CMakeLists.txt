@@ -41,10 +41,16 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     KF6::ConfigGui
     KF6::GuiAddons
     KF6::ColorScheme
-    KF6::DBusAddons
     ${CMAKE_PROJECT_NAME}_uiplugin
     ${CMAKE_PROJECT_NAME}_modelsplugin
 )
+
+if (USE_DBUS)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+    PRIVATE
+    KF6::DBusAddons
+)
+endif()
 
 install(TARGETS ${CMAKE_PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
