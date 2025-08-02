@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the komodo package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 00:45+0000\n"
+"POT-Creation-Date: 2025-08-02 00:46+0000\n"
 "PO-Revision-Date: 2025-07-31 03:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -17,6 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -36,8 +36,8 @@ msgstr "KomoDo"
 
 #: src/main.cpp:28
 #, kde-format
-msgid "todo.txt GUI application"
-msgstr "todo.txt GUI აპლიკაცია"
+msgid "Work on To-Do lists"
+msgstr ""
 
 #: src/main.cpp:32
 #, kde-format
@@ -55,6 +55,14 @@ msgstr "Akseli Lahtinen"
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "ავტორი"
+
+#: src/main.cpp:40
+#, kde-format
+msgctxt "Longer description in about page"
+msgid ""
+"<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
+"compliant todo.txt files and turns them into easy to use list of tasks.</p>"
+msgstr ""
 
 #: src/Main.qml:17
 #, kde-format
@@ -281,3 +289,6 @@ msgstr ""
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
 msgstr "გეგმები აღმოჩენილი არაა."
+
+#~ msgid "todo.txt GUI application"
+#~ msgstr "todo.txt GUI აპლიკაცია"

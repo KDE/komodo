@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 00:45+0000\n"
+"POT-Creation-Date: 2025-08-02 00:46+0000\n"
 "PO-Revision-Date: 2025-07-31 20:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -35,8 +35,8 @@ msgstr "KomoDo"
 
 #: src/main.cpp:28
 #, kde-format
-msgid "todo.txt GUI application"
-msgstr "todo.txt grafik arayüzü uygulaması"
+msgid "Work on To-Do lists"
+msgstr ""
 
 #: src/main.cpp:32
 #, kde-format
@@ -54,6 +54,14 @@ msgstr "Akseli Lahtinen"
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "Yazar"
+
+#: src/main.cpp:40
+#, kde-format
+msgctxt "Longer description in about page"
+msgid ""
+"<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
+"compliant todo.txt files and turns them into easy to use list of tasks.</p>"
+msgstr ""
 
 #: src/Main.qml:17
 #, kde-format
@@ -283,3 +291,6 @@ msgstr ""
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
 msgstr "Bulunan yapılacak yok."
+
+#~ msgid "todo.txt GUI application"
+#~ msgstr "todo.txt grafik arayüzü uygulaması"

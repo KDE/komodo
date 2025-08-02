@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 00:45+0000\n"
+"POT-Creation-Date: 2025-08-02 00:46+0000\n"
 "PO-Revision-Date: 2025-08-01 00:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -37,8 +37,8 @@ msgstr "KomoDo"
 
 #: src/main.cpp:28
 #, kde-format
-msgid "todo.txt GUI application"
-msgstr "Aplicación de interfaz para todo.txt"
+msgid "Work on To-Do lists"
+msgstr ""
 
 #: src/main.cpp:32
 #, kde-format
@@ -56,6 +56,14 @@ msgstr "Akseli Lahtinen"
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "Autor"
+
+#: src/main.cpp:40
+#, kde-format
+msgctxt "Longer description in about page"
+msgid ""
+"<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
+"compliant todo.txt files and turns them into easy to use list of tasks.</p>"
+msgstr ""
 
 #: src/Main.qml:17
 #, kde-format
@@ -285,3 +293,6 @@ msgstr ""
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
 msgstr "No se ha encontrado ninguna lista de tareas pendientes."
+
+#~ msgid "todo.txt GUI application"
+#~ msgstr "Aplicación de interfaz para todo.txt"

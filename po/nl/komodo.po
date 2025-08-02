@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 00:45+0000\n"
-"PO-Revision-Date: 2025-07-30 13:51+0200\n"
+"POT-Creation-Date: 2025-08-02 00:46+0000\n"
+"PO-Revision-Date: 2025-07-31 13:48+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -34,9 +34,11 @@ msgid "KomoDo"
 msgstr "KomoDo"
 
 #: src/main.cpp:28
-#, kde-format
-msgid "todo.txt GUI application"
-msgstr "todo.txt GUI-toepassing"
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "No To-Do list is loaded."
+msgid "Work on To-Do lists"
+msgstr "Geen To-Do-lijst geladen."
 
 #: src/main.cpp:32
 #, kde-format
@@ -54,6 +56,14 @@ msgstr "Akseli Lahtinen"
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "Auteur"
+
+#: src/main.cpp:40
+#, kde-format
+msgctxt "Longer description in about page"
+msgid ""
+"<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
+"compliant todo.txt files and turns them into easy to use list of tasks.</p>"
+msgstr ""
 
 #: src/Main.qml:17
 #, kde-format
@@ -202,10 +212,7 @@ msgid "Reload"
 msgstr "Herladen"
 
 #: src/ui/TodoPage.qml:197
-#, fuzzy, kde-format
-#| msgid ""
-#| "This To-Do list  has been deleted! Open another To-Do list or create new "
-#| "one."
+#, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
 msgstr ""
@@ -252,7 +259,7 @@ msgstr "Info over KomoDo"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
-msgstr ""
+msgstr "Welkom bij KomoDo!"
 
 #: src/ui/TodoPage.qml:282
 #, kde-format
@@ -268,6 +275,17 @@ msgid ""
 "<i><interface>Open To-Do list…</interface></i> to use an existing list or "
 "<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
 msgstr ""
+"<p>KomoDo is een toepassing voor een To-Do-lijst die regels van <a "
+"href='https://github.com/todotxt/todo.txt'>todo.txt</a> gebruikt.</p><p>De "
+"regels zijn tamelijk snel te leren en KomoDo heeft er secties met help voor: "
+"<br>Op de werkbalk, klik op de knop <i><interface>Help…</interface></i>."
+"<br>Tijdens het bewerken van een taak, klik op de knop "
+"<i><interface>Syntaxisinformatie…</interface></i>.</p><p>U kunt de regels "
+"volgen zoveel of minder als u wilt.<br> Voel u vrij om te experimenteren om "
+"uit te vinden wat uw ideale manier van beheren van taken is.</p><p>Klik op "
+"<i><interface>Open To-Do-lijst…</interface></i> om een bestaande lijst te "
+"gebruiken of <i><interface>Maak een nieuwe To-Do-lijst…</interface></i> om "
+"een nieuwe lijst te. beginnen</p>"
 
 #: src/ui/TodoPage.qml:294
 #, kde-format
@@ -275,9 +293,8 @@ msgctxt "@info:placeholder"
 msgid "No To-Dos found."
 msgstr "Geen To-do's gevonden."
 
-#~ msgctxt "@info:placeholder"
-#~ msgid "No To-Do list is loaded."
-#~ msgstr "Geen To-Do-lijst geladen."
+#~ msgid "todo.txt GUI application"
+#~ msgstr "todo.txt GUI-toepassing"
 
 #~ msgctxt "@info:placeholder"
 #~ msgid ""

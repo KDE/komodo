@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 00:45+0000\n"
+"POT-Creation-Date: 2025-08-02 00:46+0000\n"
 "PO-Revision-Date: 2025-07-31 07:53+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -35,9 +35,11 @@ msgid "KomoDo"
 msgstr "KomoDo"
 
 #: src/main.cpp:28
-#, kde-format
-msgid "todo.txt GUI application"
-msgstr "Aplikacija z grafičnim vmesnikom za todo.txt"
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "No To-Do list is loaded."
+msgid "Work on To-Do lists"
+msgstr "Nobenega seznama opravil ni naloženega."
 
 #: src/main.cpp:32
 #, kde-format
@@ -55,6 +57,14 @@ msgstr "Akseli Lahtinen"
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "Avtor"
+
+#: src/main.cpp:40
+#, kde-format
+msgctxt "Longer description in about page"
+msgid ""
+"<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
+"compliant todo.txt files and turns them into easy to use list of tasks.</p>"
+msgstr ""
 
 #: src/Main.qml:17
 #, kde-format
@@ -284,9 +294,8 @@ msgctxt "@info:placeholder"
 msgid "No To-Dos found."
 msgstr "NI najdenih seznamov opravil."
 
-#~ msgctxt "@info:placeholder"
-#~ msgid "No To-Do list is loaded."
-#~ msgstr "Nobenega seznama opravil ni naloženega."
+#~ msgid "todo.txt GUI application"
+#~ msgstr "Aplikacija z grafičnim vmesnikom za todo.txt"
 
 #~ msgctxt "@info:placeholder"
 #~ msgid ""
