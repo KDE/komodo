@@ -34,7 +34,7 @@ ecm_setup_version(PROJECT
 )
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Widgets)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS ColorScheme Kirigami CoreAddons Config I18n ItemModels WindowSystem QQC2DesktopStyle GuiAddons)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS ColorScheme Kirigami CoreAddons Config I18n ItemModels QQC2DesktopStyle GuiAddons)
 
 set(USE_DBUS OFF)
 if(UNIX AND NOT APPLE AND NOT ANDROID AND NOT HAIKU)
