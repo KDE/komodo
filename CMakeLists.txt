@@ -28,7 +28,7 @@ include(ECMCheckOutboundLicense)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 
-ecm_setup_version(${PROJECT_VERSION}
+ecm_setup_version(PROJECT
     VARIABLE_PREFIX ${CMAKE_PROJECT_NAME_UPPERCASE}
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/version-${CMAKE_PROJECT_NAME}.h"
 )
