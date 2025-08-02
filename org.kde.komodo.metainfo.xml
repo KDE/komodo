@@ -11,22 +11,14 @@
   <name xml:lang="es">KomoDo</name>
   <name xml:lang="eu">KomoDo</name>
   <name xml:lang="he">KomoDo</name>
+  <name xml:lang="ka">KomoDo</name>
   <name xml:lang="nl">KomoDo</name>
   <name xml:lang="sl">KomoDo</name>
   <name xml:lang="sv">Komodo</name>
+  <name xml:lang="tr">KomoDo</name>
   <name xml:lang="uk">KomoDo</name>
   <name xml:lang="x-test">xxKomoDoxx</name>
   <summary>Work on To-Do lists</summary>
-  <summary xml:lang="ca">Funciona en fitxers «todo.txt»</summary>
-  <summary xml:lang="ca-valencia">Funciona en fitxers «todo.txt»</summary>
-  <summary xml:lang="es">Trabajar con archivos de todo.txt</summary>
-  <summary xml:lang="eu">todo.txt fitxategietan lan egin</summary>
-  <summary xml:lang="he">עבודה על קובצי todo.txt</summary>
-  <summary xml:lang="nl">Werk op todo.txt bestanden</summary>
-  <summary xml:lang="sl">Delo na datotekah todo.txt</summary>
-  <summary xml:lang="sv">Arbeta med todo.txt-filer</summary>
-  <summary xml:lang="uk">Робота над файлами todo.txt</summary>
-  <summary xml:lang="x-test">xxWork on To-Do listsxx</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
   <project_group>KDE</project_group>
@@ -50,9 +42,11 @@
     <p xml:lang="es">KomoDo es un gestor de tareas pendientes que usa la especificación todo.txt. Permite analizar cualquier tipo de archivo compatible con todo.txt y convertirlo en una lista de tareas fácil de usar.</p>
     <p xml:lang="eu">KomoDo todo.txt zehaztapena erabiltzen duen egitekoen kudeatzaile bat da. todo.txt(r)ekin etorkorra den edozein fitxategiren azterketa sintaktikoa egin eta zeregin-zerrenda erabilerraza bihurtzen du.</p>
     <p xml:lang="he">KomoDo הוא מנהל משימות שמשתמש במפרט todo.txt. הוא מפענח קובצי todo.txt תואמים והופך אותם לרשימות מטלות פשוטות לשימוש.</p>
+    <p xml:lang="ka">KomoDo წარმოადგენს გეგმის მმართველს, რომელიც todo.txt სპეციფიკაციას იყენებს. ის დაამუშავებს ნებისმიერ თავსებად todo.txt ფაილებს და მათ იოლად გამოსაყენებელი ამოცანების სიად გადააქცევს.</p>
     <p xml:lang="nl">KomoDo is een todo-beheerder die todo.txt specificaties gebruikt. Het ontleedt elke compliant todo.txt bestanden en zet ze om in een gemakkelijk te gebruiken lijst met taken.</p>
     <p xml:lang="sl">KomoDo je upravljalnik opravil, ki uporablja specifikacijo todo.txt. Razčleni vse skladne datoteke todo.txt in jih pretvori v enostavne sezname opravil.</p>
     <p xml:lang="sv">KomoDo är en uppgiftshanterare som använder todo.txt-specifikationen. Den analyserar alla kompatibla todo.txt-filer och omvandlar dem till lättanvända listor med uppgifter.</p>
+    <p xml:lang="tr">KomoDo, todo.txt belirtimini kullanan bir yapılacaklar yöneticisidir. Uyumlu tüm todo.txt dosyalarını ayrıştırır ve bunları kullanımı kolay görev listelerine dönüştürür.</p>
     <p xml:lang="uk">KomoDo — програма для керування завданнями, яка використовує специфікацію todo.txt. Вона обробляє усі сумісні файли todo.txt і перетворює їх у простий у використанні список завдань.</p>
     <p xml:lang="x-test">xxKomoDo is a todo manager that uses todo.txt specification. It parses any compliant todo.txt files and turns them into easy to use list of tasks.xx</p>
     <p>KomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!</p>
@@ -61,9 +55,11 @@
     <p xml:lang="es">KomoDo dispone de ayuda integrada para la especificación todo.txt, por lo que también es adecuado para principiantes.</p>
     <p xml:lang="eu">KomoDok todo.txt zehaztapenaren laguntza barnean du, beraz, hasiberrientzat ere egokia da!</p>
     <p xml:lang="he">ל־KomoDo יש עזרה מובנית למפרט todo.txt, לכן הוא מתאים גם לחסרי ניסיון!</p>
+    <p xml:lang="ka">KomoDo-ს აქვს ჩაშენებული დახმარება todo.txt სპეციფიკაციისთვის, ასე რომ, ის ახალბედებისთვისაც შესაფერისია!</p>
     <p xml:lang="nl">KomoDo heeft en ingebouwde help voor de todo.txt specificatie, het is dus ook geschikt voor nieuwkomers!</p>
     <p xml:lang="sl">KomoDo ima vgrajeno pomoč za specifikacijo todo.txt, zato je primeren tudi za novince!</p>
     <p xml:lang="sv">KomoDo har inbyggd hjälp för todo.txt-specifikationen, så den passar även för nybörjare.</p>
+    <p xml:lang="tr">KomoDo’nun todo.txt belirtimi için içsel yardımı vardır, bu nedenle yeni başlayanlar için de uygundur!</p>
     <p xml:lang="uk">До KomoDo вбудовано довідку щодо специфікації todo.txt, тому програма може бути використана і початківцями!</p>
     <p xml:lang="x-test">xxKomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!xx</p>
     <p>Features</p>
@@ -72,9 +68,11 @@
     <p xml:lang="es">Funciones</p>
     <p xml:lang="eu">Ezaugarriak</p>
     <p xml:lang="he">יכולות</p>
+    <p xml:lang="ka">თვისებები</p>
     <p xml:lang="nl">Mogelijkheden</p>
     <p xml:lang="sl">Zmožnosti</p>
     <p xml:lang="sv">Funktioner</p>
+    <p xml:lang="tr">Özellikler</p>
     <p xml:lang="uk">Можливості</p>
     <p xml:lang="x-test">xxFeaturesxx</p>
     <ul>
@@ -84,9 +82,11 @@
       <li xml:lang="es">Abrir y crear nuevos archivos todo.txt</li>
       <li xml:lang="eu">todo.txt fitxategiak ireki eta berriak sortu</li>
       <li xml:lang="he">פתיחה ויצירה של קובצי todo.txt</li>
+      <li xml:lang="ka">გახსენით და შექმენით ახალი todo.txt ფაილები</li>
       <li xml:lang="nl">Open en maak nieuwe todo.txt bestanden</li>
       <li xml:lang="sl">Odpirajte in kreirajte nove datoteke todo.txt</li>
       <li xml:lang="sv">Öppna och skapa nya todo.txt-filer</li>
+      <li xml:lang="tr">Yeni todo.txt dosyaları oluşturun ve onları açın</li>
       <li xml:lang="uk">Відкриття і створення файлів todo.txt</li>
       <li xml:lang="x-test">xxOpen and create new todo.txt filesxx</li>
       <li>Add, delete and edit tasks</li>
@@ -95,9 +95,11 @@
       <li xml:lang="es">Añadir, borrar y modificar tareas</li>
       <li xml:lang="eu">Zereginak gehitu, ezabatu eta editatu</li>
       <li xml:lang="he">הוספה, מחיקה ועריכה של משימות</li>
+      <li xml:lang="ka">ამოცანების დამატება, წაშლა და ჩასწორება</li>
       <li xml:lang="nl">Voeg toe, verwijder en bewerkt taken</li>
       <li xml:lang="sl">Dodajajte, brišite in urejajte opravila</li>
       <li xml:lang="sv">Lägg till, ta bort och redigera uppgifter</li>
+      <li xml:lang="tr">Görevler ekleyin, onları düzenleyin veya silin</li>
       <li xml:lang="uk">Додавання, вилучення і редагування записів завдань</li>
       <li xml:lang="x-test">xxAdd, delete and edit tasksxx</li>
       <li>Filter and search tasks</li>
@@ -106,9 +108,11 @@
       <li xml:lang="es">Filtrar y buscar tareas</li>
       <li xml:lang="eu">Zereginak iragazi eta bilatu</li>
       <li xml:lang="he">סינון וחיפוש משימות</li>
+      <li xml:lang="ka">ამოცანების გაფილტვრა და ძებნა</li>
       <li xml:lang="nl">Filter en zoek taken</li>
       <li xml:lang="sl">Filtrirajte in iščite opravila</li>
       <li xml:lang="sv">Filtrera och sök efter uppgifter</li>
+      <li xml:lang="tr">Görevleri süzün ve içlerinde arama yapın</li>
       <li xml:lang="uk">Фільтрування і пошук завдань</li>
       <li xml:lang="x-test">xxFilter and search tasksxx</li>
     </ul>
@@ -125,9 +129,11 @@
       <caption xml:lang="es">Ejemplo de KomoDo con un esquema de color claro.</caption>
       <caption xml:lang="eu">KomoDo kolore-antolaera argiarekin erabiltzearen adibidea.</caption>
       <caption xml:lang="he">דוגמה של שימוש ב־KomoDo עם ערכת עיצוב בהירה.</caption>
+      <caption xml:lang="ka">KomoDo-ის ინტერფეისის მაგალითი ღია ფერის სქემის გამოყენებისას.</caption>
       <caption xml:lang="nl">Voorbeeld van KomoDo die gebruikt wordt met een licht kleurenschema.</caption>
       <caption xml:lang="sl">Primer uporabe KomoDo s svetlo barvno shemo.</caption>
       <caption xml:lang="sv">Exempel på Komodo använt med ett ljust färgschema.</caption>
+      <caption xml:lang="tr">KomoDo’nun açık renk şemasıyla kullanımı örneği</caption>
       <caption xml:lang="uk">Приклад використання KomoDo зі світлою темою кольорів.</caption>
       <caption xml:lang="x-test">xxExample of KomoDo being used with light colorscheme.xx</caption>
       <image>https://cdn.kde.org/screenshots/komodo/screenshot.png</image>
@@ -139,9 +145,11 @@
       <caption xml:lang="es">Ejemplo de KomoDo con un esquema de color oscuro.</caption>
       <caption xml:lang="eu">KomoDo kolore-antolaera ilunarekin erabiltzearen adibidea.</caption>
       <caption xml:lang="he">דוגמה של שימוש ב־KomoDo עם ערכת עיצוב כהה.</caption>
+      <caption xml:lang="ka">KomoDo-ის ინტერფეისის მაგალითი მუქი ფერის სქემის გამოყენებისას.</caption>
       <caption xml:lang="nl">Voorbeeld van KomoDo die gebruikt wordt met een donker kleurenschema.</caption>
       <caption xml:lang="sl">Primer uporabe KomoDo s temno barvno shemo.</caption>
       <caption xml:lang="sv">Exempel på Komodo använt med ett mörkt färgschema.</caption>
+      <caption xml:lang="tr">KomoDo’nun koyu renk şemasıyla kullanımı örneği</caption>
       <caption xml:lang="uk">Приклад використання KomoDo з темною темою кольорів.</caption>
       <caption xml:lang="x-test">xxExample of KomoDo being used with dark colorscheme.xx</caption>
       <image>https://cdn.kde.org/screenshots/komodo/screenshot-dark.png</image>
