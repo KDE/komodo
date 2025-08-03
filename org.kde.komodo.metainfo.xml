@@ -19,6 +19,7 @@
   <name xml:lang="uk">KomoDo</name>
   <name xml:lang="x-test">xxKomoDoxx</name>
   <summary>Work on To-Do lists</summary>
+  <summary xml:lang="x-test">xxWork on To-Do listsxx</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
   <project_group>KDE</project_group>
