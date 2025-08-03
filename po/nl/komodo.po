@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-02 00:46+0000\n"
-"PO-Revision-Date: 2025-07-31 13:48+0200\n"
+"POT-Creation-Date: 2025-08-03 00:45+0000\n"
+"PO-Revision-Date: 2025-08-02 10:40+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -27,43 +27,44 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: src/main.cpp:24
+#: src/main.cpp:27
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
 msgstr "KomoDo"
 
-#: src/main.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "No To-Do list is loaded."
+#: src/main.cpp:31
+#, kde-format
 msgid "Work on To-Do lists"
-msgstr "Geen To-Do-lijst geladen."
+msgstr "Werk op To-Do-lijsten"
 
-#: src/main.cpp:32
+#: src/main.cpp:35
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
 msgstr "© 2025 Akseli Lahtinen"
 
-#: src/main.cpp:33
+#: src/main.cpp:36
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
 msgstr "Akseli Lahtinen"
 
-#: src/main.cpp:34
+#: src/main.cpp:37
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "Auteur"
 
-#: src/main.cpp:40
+#: src/main.cpp:43
 #, kde-format
 msgctxt "Longer description in about page"
 msgid ""
 "<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
 "compliant todo.txt files and turns them into easy to use list of tasks.</p>"
 msgstr ""
+"<p>KomoDo is een todo-beheerder die todo.txt specificaties gebruikt. Het "
+"ontleedt elke compliant todo.txt bestanden en zet ze om in een gemakkelijk "
+"te gebruiken lijst met taken.</p>"
 
 #: src/Main.qml:17
 #, kde-format
