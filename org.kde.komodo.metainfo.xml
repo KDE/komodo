@@ -19,6 +19,17 @@
   <name xml:lang="uk">KomoDo</name>
   <name xml:lang="x-test">xxKomoDoxx</name>
   <summary>Work on To-Do lists</summary>
+  <summary xml:lang="ca">Treballa amb llistes de tasques pendents</summary>
+  <summary xml:lang="ca-valencia">Treballa amb llistes de tasques pendents</summary>
+  <summary xml:lang="es">Trabajar con listas de tareas pendientes</summary>
+  <summary xml:lang="eu">Egitekoen zerrendetan lan egin</summary>
+  <summary xml:lang="he">עבודה על רשימות מטלות</summary>
+  <summary xml:lang="ka">მუშაობა გეგმის სიებზე</summary>
+  <summary xml:lang="nl">Werk op todo.txt bestanden</summary>
+  <summary xml:lang="sl">Delo na seznamih todo.txt</summary>
+  <summary xml:lang="sv">Arbeta med uppgiftslistor</summary>
+  <summary xml:lang="tr">Yapılacaklar listeleri ile çalışın</summary>
+  <summary xml:lang="uk">Робота над списками завдань</summary>
   <summary xml:lang="x-test">xxWork on To-Do listsxx</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
