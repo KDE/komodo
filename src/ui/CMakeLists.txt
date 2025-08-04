@@ -18,5 +18,3 @@ ecm_target_qml_sources(${CMAKE_PROJECT_NAME}_ui
     TodoDelegate.qml
     KomoDoHelp.qml
 )
-
-ecm_finalize_qml_module(${CMAKE_PROJECT_NAME}_ui)

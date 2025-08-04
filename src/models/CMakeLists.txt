@@ -30,5 +30,3 @@ target_link_libraries(${CMAKE_PROJECT_NAME}_models
     KF6::ColorScheme
     KF6::CoreAddons
 )
-
-ecm_finalize_qml_module(${CMAKE_PROJECT_NAME}_models DESTINATION ${KDE_INSTALL_QMLDIR})
