@@ -53,6 +53,7 @@ Kirigami.ScrollablePage {
         }
         fileMode: Qt.SaveFile
         modality: Qt.ApplicationModal
+        defaultSuffix: "txt"
         nameFilters: ["Text files (*.txt)"]
     }
 
