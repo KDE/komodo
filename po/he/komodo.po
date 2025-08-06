@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-03 00:45+0000\n"
+"POT-Creation-Date: 2025-08-06 00:48+0000\n"
 "PO-Revision-Date: 2025-08-02 19:26+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -163,103 +163,103 @@ msgctxt "@button"
 msgid "Cancel"
 msgstr "ביטול"
 
-#: src/ui/TodoPage.qml:64
+#: src/ui/TodoPage.qml:65
 #, kde-format
 msgid "Delete To-Do"
 msgstr "מחיקת מטלה"
 
-#: src/ui/TodoPage.qml:76
+#: src/ui/TodoPage.qml:77
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
 msgstr "למחוק את המטלה הזאת"
 
-#: src/ui/TodoPage.qml:126
+#: src/ui/TodoPage.qml:127
 #, kde-format
 msgid "Filter:"
 msgstr "סינון:"
 
-#: src/ui/TodoPage.qml:136
+#: src/ui/TodoPage.qml:137
 #, kde-format
 msgid "Show All"
 msgstr "להציג הכול"
 
-#: src/ui/TodoPage.qml:140
+#: src/ui/TodoPage.qml:141
 #, kde-format
 msgid "Due Date"
 msgstr "תאריך יעד"
 
-#: src/ui/TodoPage.qml:144
+#: src/ui/TodoPage.qml:145
 #, kde-format
 msgid "Incomplete"
 msgstr "חלקי"
 
-#: src/ui/TodoPage.qml:148
+#: src/ui/TodoPage.qml:149
 #, kde-format
 msgid "Completed"
 msgstr "הושלם"
 
-#: src/ui/TodoPage.qml:179
+#: src/ui/TodoPage.qml:180
 #, kde-format
 msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
 "advised!"
 msgstr "רשימת המטלות הזאת נערכה חיצונית. מומלץ לטעון אותה מחדש!"
 
-#: src/ui/TodoPage.qml:185
+#: src/ui/TodoPage.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
 msgstr "לטעון מחדש"
 
-#: src/ui/TodoPage.qml:197
+#: src/ui/TodoPage.qml:198
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
 msgstr "רשימת המטלות הזאת נמחקה! אפשר לפתוח רשימת מטלות אחרת או ליצור חדשה."
 
-#: src/ui/TodoPage.qml:203 src/ui/TodoPage.qml:242
+#: src/ui/TodoPage.qml:204 src/ui/TodoPage.qml:243
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
 msgstr "יצירת רשימת מטלות חדשה…"
 
-#: src/ui/TodoPage.qml:210
+#: src/ui/TodoPage.qml:211
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
 msgstr "פתיחת רשימת מטלות…"
 
-#: src/ui/TodoPage.qml:222
+#: src/ui/TodoPage.qml:223
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
 msgstr "מטלה חדשה…"
 
-#: src/ui/TodoPage.qml:234
+#: src/ui/TodoPage.qml:235
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
 msgstr "פתיחת רשימת מטלות…"
 
-#: src/ui/TodoPage.qml:248
+#: src/ui/TodoPage.qml:249
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
 msgstr "עזרה…"
 
-#: src/ui/TodoPage.qml:255
+#: src/ui/TodoPage.qml:256
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
 msgstr "על KomoDo"
 
-#: src/ui/TodoPage.qml:281
+#: src/ui/TodoPage.qml:282
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
 msgstr "ברוך בואך ל־KomoDo!"
 
-#: src/ui/TodoPage.qml:282
+#: src/ui/TodoPage.qml:283
 #, kde-format
 msgctxt "Welcome introduction text"
 msgid ""
@@ -283,7 +283,7 @@ msgstr ""
 "קיימת לעומת <i><interface>יצירת רשימת מטלות חדשה…</interface></i> שתפתח "
 "רשימה חדשה.</p>"
 
-#: src/ui/TodoPage.qml:294
+#: src/ui/TodoPage.qml:295
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."

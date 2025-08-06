@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-03 00:45+0000\n"
+"POT-Creation-Date: 2025-08-06 00:48+0000\n"
 "PO-Revision-Date: 2025-08-02 17:55+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -163,42 +163,42 @@ msgctxt "@button"
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/ui/TodoPage.qml:64
+#: src/ui/TodoPage.qml:65
 #, kde-format
 msgid "Delete To-Do"
 msgstr "Yapılacağı Sil"
 
-#: src/ui/TodoPage.qml:76
+#: src/ui/TodoPage.qml:77
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
 msgstr "Bu yapılacağı silmek istediğinizden emin misiniz?"
 
-#: src/ui/TodoPage.qml:126
+#: src/ui/TodoPage.qml:127
 #, kde-format
 msgid "Filter:"
 msgstr "Süz:"
 
-#: src/ui/TodoPage.qml:136
+#: src/ui/TodoPage.qml:137
 #, kde-format
 msgid "Show All"
 msgstr "Tümünü Göster"
 
-#: src/ui/TodoPage.qml:140
+#: src/ui/TodoPage.qml:141
 #, kde-format
 msgid "Due Date"
 msgstr "Bitiş Tarihi"
 
-#: src/ui/TodoPage.qml:144
+#: src/ui/TodoPage.qml:145
 #, kde-format
 msgid "Incomplete"
 msgstr "Tamamlanmamış"
 
-#: src/ui/TodoPage.qml:148
+#: src/ui/TodoPage.qml:149
 #, kde-format
 msgid "Completed"
 msgstr "Tamamlanmış"
 
-#: src/ui/TodoPage.qml:179
+#: src/ui/TodoPage.qml:180
 #, kde-format
 msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
@@ -207,13 +207,13 @@ msgstr ""
 "Bu yapılacak listesi dışarıdan değiştirilmiş. Yeniden yüklemeniz şiddetle "
 "önerilir."
 
-#: src/ui/TodoPage.qml:185
+#: src/ui/TodoPage.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
 msgstr "Yeniden Yükle"
 
-#: src/ui/TodoPage.qml:197
+#: src/ui/TodoPage.qml:198
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
@@ -221,49 +221,49 @@ msgstr ""
 "Bu yapılacak listesi silinmiş. Başka bir yapılacak listesi açın veya "
 "yenisini oluşturun."
 
-#: src/ui/TodoPage.qml:203 src/ui/TodoPage.qml:242
+#: src/ui/TodoPage.qml:204 src/ui/TodoPage.qml:243
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
 msgstr "Yeni Yapılacak Listesi Oluştur…"
 
-#: src/ui/TodoPage.qml:210
+#: src/ui/TodoPage.qml:211
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
 msgstr "Yapılacak Listesi Aç…"
 
-#: src/ui/TodoPage.qml:222
+#: src/ui/TodoPage.qml:223
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
 msgstr "Yeni Yapılacak…"
 
-#: src/ui/TodoPage.qml:234
+#: src/ui/TodoPage.qml:235
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
 msgstr "Yapılacak Listesi Aç…"
 
-#: src/ui/TodoPage.qml:248
+#: src/ui/TodoPage.qml:249
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
 msgstr "Yardım…"
 
-#: src/ui/TodoPage.qml:255
+#: src/ui/TodoPage.qml:256
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
 msgstr "KomoDo Hakkında"
 
-#: src/ui/TodoPage.qml:281
+#: src/ui/TodoPage.qml:282
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
 msgstr "KomoDo’ya hoş geldiniz!"
 
-#: src/ui/TodoPage.qml:282
+#: src/ui/TodoPage.qml:283
 #, kde-format
 msgctxt "Welcome introduction text"
 msgid ""
@@ -289,7 +289,7 @@ msgstr ""
 "veya yeni bir liste başlatmak için <i><interface>Yeni Yapılacak Listesi "
 "Oluştur…</interface></i> düğmesini kullanın.</p>"
 
-#: src/ui/TodoPage.qml:294
+#: src/ui/TodoPage.qml:295
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."

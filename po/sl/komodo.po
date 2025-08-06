@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-03 00:45+0000\n"
+"POT-Creation-Date: 2025-08-06 00:48+0000\n"
 "PO-Revision-Date: 2025-08-02 10:30+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -164,42 +164,42 @@ msgctxt "@button"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: src/ui/TodoPage.qml:64
+#: src/ui/TodoPage.qml:65
 #, kde-format
 msgid "Delete To-Do"
 msgstr "Zbriši zbirka opravil"
 
-#: src/ui/TodoPage.qml:76
+#: src/ui/TodoPage.qml:77
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
 msgstr "Ali ste prepričani, da želite zbrisati to zbirko opravil?"
 
-#: src/ui/TodoPage.qml:126
+#: src/ui/TodoPage.qml:127
 #, kde-format
 msgid "Filter:"
 msgstr "Filter:"
 
-#: src/ui/TodoPage.qml:136
+#: src/ui/TodoPage.qml:137
 #, kde-format
 msgid "Show All"
 msgstr "Pokaži vse"
 
-#: src/ui/TodoPage.qml:140
+#: src/ui/TodoPage.qml:141
 #, kde-format
 msgid "Due Date"
 msgstr "Rok"
 
-#: src/ui/TodoPage.qml:144
+#: src/ui/TodoPage.qml:145
 #, kde-format
 msgid "Incomplete"
 msgstr "Nedokončan"
 
-#: src/ui/TodoPage.qml:148
+#: src/ui/TodoPage.qml:149
 #, kde-format
 msgid "Completed"
 msgstr "Zaključen"
 
-#: src/ui/TodoPage.qml:179
+#: src/ui/TodoPage.qml:180
 #, kde-format
 msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
@@ -208,13 +208,13 @@ msgstr ""
 "Ta seznam opravil je bil spremenjen od zunaj. Priporočljivo je, da ga "
 "ponovno naložite!"
 
-#: src/ui/TodoPage.qml:185
+#: src/ui/TodoPage.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
 msgstr "Ponovno naloži"
 
-#: src/ui/TodoPage.qml:197
+#: src/ui/TodoPage.qml:198
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
@@ -222,49 +222,49 @@ msgstr ""
 "Ta seznam opravil je bil izbrisan! Odprite drug seznam opravil ali ustvarite "
 "novega."
 
-#: src/ui/TodoPage.qml:203 src/ui/TodoPage.qml:242
+#: src/ui/TodoPage.qml:204 src/ui/TodoPage.qml:243
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
 msgstr "Ustvari nov seznam opravil…"
 
-#: src/ui/TodoPage.qml:210
+#: src/ui/TodoPage.qml:211
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
 msgstr "Odpri seznam opravil…"
 
-#: src/ui/TodoPage.qml:222
+#: src/ui/TodoPage.qml:223
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
 msgstr "Novi seznam opravil…"
 
-#: src/ui/TodoPage.qml:234
+#: src/ui/TodoPage.qml:235
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
 msgstr "Odpri seznam opravil…"
 
-#: src/ui/TodoPage.qml:248
+#: src/ui/TodoPage.qml:249
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
 msgstr "Pomoč…"
 
-#: src/ui/TodoPage.qml:255
+#: src/ui/TodoPage.qml:256
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
 msgstr "O KomoDo"
 
-#: src/ui/TodoPage.qml:281
+#: src/ui/TodoPage.qml:282
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
 msgstr "Dobrodošli v KomoDo!"
 
-#: src/ui/TodoPage.qml:282
+#: src/ui/TodoPage.qml:283
 #, kde-format
 msgctxt "Welcome introduction text"
 msgid ""
@@ -289,7 +289,7 @@ msgstr ""
 "uporabiti obstoječi seznam, ali <i><interface>Ustvari nov seznam opravil…</"
 "interface></i>, če želite začeti nov seznam.</p>"
 
-#: src/ui/TodoPage.qml:294
+#: src/ui/TodoPage.qml:295
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
