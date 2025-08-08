@@ -5,6 +5,8 @@
 
 # KomoDo
 
+<a href='https://flathub.org/apps/org.kde.komodo'><img width='240' alt='Get it on Flathub' src='https://flathub.org/api/badge?locale=en&light'/></a>
+
 Work on [todo.txt](http://todotxt.org/) files!
 
 KomoDo is a todo manager that uses [todo.txt specification](https://github.com/todotxt/todo.txt/blob/master/README.md). 
@@ -36,9 +38,7 @@ chat about contributions and using the app: [#komodo:kde.org](https://matrix.to/
 
 ## How to get it
 
-For now you will have to build it on your own.
-
-Flathub link hopefully coming soon.
+You can install KomoDo from [Flathub](https://flathub.org/apps/org.kde.komodo).
 
 ### Building
 
