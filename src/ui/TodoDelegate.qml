@@ -60,7 +60,7 @@ Kirigami.AbstractCard {
                         }
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                        QQC2.ToolTip.text: i18n("Task completion status")
+                        QQC2.ToolTip.text: i18nc("@info:tooltip", "Toggle completion status")
                         KeyNavigation.tab: editButton
                         KeyNavigation.backtab: searchField
                         background: Rectangle {
