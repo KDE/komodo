@@ -1,60 +1,59 @@
-# German translations for komodo package
 # German translation for komodo.
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the komodo package.
-# Automatically generated, 2025.
-#
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n@prly.mozmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-06 00:48+0000\n"
-"PO-Revision-Date: 2025-08-03 10:48+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-08-09 14:26+0200\n"
+"Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Deutsches KDE-Übersetzungsteam"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "kde-i18n-de@kde.org"
 
 #: src/main.cpp:27
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
-msgstr ""
+msgstr "KomoDo"
 
 #: src/main.cpp:31
 #, kde-format
 msgid "Work on To-Do lists"
-msgstr ""
+msgstr "An Todo-Listen arbeiten"
 
 #: src/main.cpp:35
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
-msgstr ""
+msgstr "© 2025 Akseli Lahtinen"
 
 #: src/main.cpp:36
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
-msgstr ""
+msgstr "Akseli Lahtinen"
 
 #: src/main.cpp:37
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: src/main.cpp:43
 #, kde-format
@@ -63,138 +62,142 @@ msgid ""
 "<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
 "compliant todo.txt files and turns them into easy to use list of tasks.</p>"
 msgstr ""
+"<p>KomoDo ist eine Anwendung zur Aufgabenverwaltung, die die „todo.txt“-"
+"Spezifikation verwendet. Jegliche passende „todo.txt“-Datei wird von KomoDo "
+"verarbeitet und in eine einfach zu verwendende Aufgabenliste verwandelt.</p>"
 
 #: src/Main.qml:17
 #, kde-format
 msgid "KomoDo"
-msgstr ""
+msgstr "KomoDo"
 
 #: src/Main.qml:41
 #, kde-format
 msgid "KomoDo Help"
-msgstr ""
+msgstr "KomoDo-Hilfe"
 
 #: src/Main.qml:54
 #, kde-format
 msgctxt "@info"
 msgid "Syntax Source Material"
-msgstr ""
+msgstr "Quellmaterial zur Syntax"
 
 #: src/ui/TodoDelegate.qml:63
 #, kde-format
 msgid "Task completion status"
-msgstr ""
+msgstr "Erledigungsstatus"
 
 #: src/ui/TodoDelegate.qml:99
 #, kde-format
 msgid "Priority"
-msgstr ""
+msgstr "Priorität"
 
 #: src/ui/TodoDelegate.qml:192
 #, kde-format
 msgid "Task completion date"
-msgstr ""
+msgstr "Erledigungsdatum"
 
 #: src/ui/TodoDelegate.qml:205
 #, kde-format
 msgid "Task due date"
-msgstr ""
+msgstr "Fälligkeitsdatum"
 
 #: src/ui/TodoDelegate.qml:218
 #, kde-format
 msgid "Task creation date"
-msgstr ""
+msgstr "Erstellungsdatum"
 
 #: src/ui/TodoDelegate.qml:234
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: src/ui/TodoDelegate.qml:258
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 #: src/ui/TodoDelegate.qml:289
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
-msgstr ""
+msgstr "(A) JJJJ-MM-TT Beschreibung +Projekt @Kontext Schlüssel:Wert"
 
 #: src/ui/TodoDelegate.qml:317
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
-msgstr ""
+msgstr "Datum einfügen …"
 
 #: src/ui/TodoDelegate.qml:319
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
 msgstr ""
+"Öffnet eine Datumsauswahl. Das Datum wird an der Cursorposition eingefügt"
 
 #: src/ui/TodoDelegate.qml:331
 #, kde-format
 msgid "Syntax Information"
-msgstr ""
+msgstr "Syntax-Informationen"
 
 #: src/ui/TodoDelegate.qml:361
 #, kde-format
 msgid "Syntax Information…"
-msgstr ""
+msgstr "Syntax-Informationen …"
 
 #: src/ui/TodoDelegate.qml:369
 #, kde-format
 msgid "Show todo.txt syntax reference"
-msgstr ""
+msgstr "Syntaxreferenz für „todo.txt“ anzeigen"
 
 #: src/ui/TodoDelegate.qml:383
 #, kde-format
 msgctxt "@button"
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: src/ui/TodoDelegate.qml:404
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: src/ui/TodoPage.qml:65
 #, kde-format
 msgid "Delete To-Do"
-msgstr ""
+msgstr "Aufgabe löschen"
 
 #: src/ui/TodoPage.qml:77
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
-msgstr ""
+msgstr "Möchten Sie diese Aufgabe wirklich löschen?"
 
 #: src/ui/TodoPage.qml:127
 #, kde-format
 msgid "Filter:"
-msgstr ""
+msgstr "Filter:"
 
 #: src/ui/TodoPage.qml:137
 #, kde-format
 msgid "Show All"
-msgstr ""
+msgstr "Alle anzeigen"
 
 #: src/ui/TodoPage.qml:141
 #, kde-format
 msgid "Due Date"
-msgstr ""
+msgstr "Fälligkeitsdatum"
 
 #: src/ui/TodoPage.qml:145
 #, kde-format
 msgid "Incomplete"
-msgstr ""
+msgstr "Unvollständig"
 
 #: src/ui/TodoPage.qml:149
 #, kde-format
 msgid "Completed"
-msgstr ""
+msgstr "Erledigt"
 
 #: src/ui/TodoPage.qml:180
 #, kde-format
@@ -202,60 +205,64 @@ msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
 "advised!"
 msgstr ""
+"Diese Aufgabenliste wurde extern geändert. Aktualisieren wird dringend "
+"empfohlen!"
 
 #: src/ui/TodoPage.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr ""
+msgstr "Aktualisieren"
 
 #: src/ui/TodoPage.qml:198
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
 msgstr ""
+"Diese Aufgabenliste wurde gelöscht! Öffnen Sie eine andere Liste oder "
+"erstellen Sie eine neue."
 
 #: src/ui/TodoPage.qml:204 src/ui/TodoPage.qml:243
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
-msgstr ""
+msgstr "Neue Aufgabenliste erstellen …"
 
 #: src/ui/TodoPage.qml:211
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
-msgstr ""
+msgstr "Aufgabenliste öffnen …"
 
 #: src/ui/TodoPage.qml:223
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
-msgstr ""
+msgstr "Neue Aufgabe …"
 
 #: src/ui/TodoPage.qml:235
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
-msgstr ""
+msgstr "Aufgabenliste öffnen …"
 
 #: src/ui/TodoPage.qml:249
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
-msgstr ""
+msgstr "Hilfe …"
 
 #: src/ui/TodoPage.qml:256
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
-msgstr ""
+msgstr "Über KomoDo"
 
 #: src/ui/TodoPage.qml:282
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
-msgstr ""
+msgstr "Willkommen zu KomoDo!"
 
 #: src/ui/TodoPage.qml:283
 #, kde-format
@@ -271,9 +278,21 @@ msgid ""
 "<i><interface>Open To-Do list…</interface></i> to use an existing list or "
 "<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
 msgstr ""
+"<p>KomoDo ist eine Anwendung zur Aufgabenverwaltung, die die Regeln von <a "
+"href='https://github.com/todotxt/todo.txt'>todo.txt</a> verwendet.</"
+"p><p>Diese Regeln sind ziemlich einfach zu lernen und KomoDo bietet auch "
+"Hilfe dazu an: <br>Klicken Sie in der Werkzeugleiste auf "
+"<i><interface>Hilfe …</interface></i>.<br>Klicken Sie während der "
+"Bearbeitung einer Aufgabe auf den Knopf <i><interface>Syntax-Informationen …"
+"</interface></i>.</p><p>Sie können die Regeln mehr oder weniger befolgen, "
+"ganz nach Ihrem Geschmack.<br>Experimentieren Sie gerne herum und finden Sie "
+"die für Sie beste Art, Aufgaben zu verwalten.</p><p>Klicken Sie auf "
+"<i><interface>Aufgabenliste öffnen …</interface></i>, um eine bestehende "
+"Liste zu verwenden, oder auf <i><interface>Neue Aufgabenliste erstellen …</"
+"interface></i>, um mit einer neuen Liste zu beginnen.</p>"
 
 #: src/ui/TodoPage.qml:295
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
-msgstr ""
+msgstr "Keine Aufgaben gefunden."
