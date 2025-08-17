@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:48+0000\n"
+"POT-Creation-Date: 2025-08-17 00:45+0000\n"
 "PO-Revision-Date: 2025-08-02 11:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -86,8 +86,10 @@ msgid "Syntax Source Material"
 msgstr "Documentació del codi font de la sintaxi"
 
 #: src/ui/TodoDelegate.qml:63
-#, kde-format
-msgid "Task completion status"
+#, fuzzy, kde-format
+#| msgid "Task completion status"
+msgctxt "@info:tooltip"
+msgid "Toggle completion status"
 msgstr "Estat de compleció de la tasca"
 
 #: src/ui/TodoDelegate.qml:99

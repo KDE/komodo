@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:48+0000\n"
+"POT-Creation-Date: 2025-08-17 00:45+0000\n"
 "PO-Revision-Date: 2025-08-02 17:04+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -84,8 +84,10 @@ msgid "Syntax Source Material"
 msgstr "Синтаксис початкового матеріалу"
 
 #: src/ui/TodoDelegate.qml:63
-#, kde-format
-msgid "Task completion status"
+#, fuzzy, kde-format
+#| msgid "Task completion status"
+msgctxt "@info:tooltip"
+msgid "Toggle completion status"
 msgstr "Стан завершеності завдання"
 
 #: src/ui/TodoDelegate.qml:99
