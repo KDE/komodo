@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-17 00:45+0000\n"
-"PO-Revision-Date: 2025-08-02 10:40+0200\n"
+"PO-Revision-Date: 2025-08-17 15:04+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -83,11 +83,10 @@ msgid "Syntax Source Material"
 msgstr "Syntaxis Bronmateriaal"
 
 #: src/ui/TodoDelegate.qml:63
-#, fuzzy, kde-format
-#| msgid "Task completion status"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle completion status"
-msgstr "Status taakvoltooiing"
+msgstr "Status voltooiing omschakelen"
 
 #: src/ui/TodoDelegate.qml:99
 #, kde-format
