@@ -3,7 +3,7 @@
     SPDX-License-Identifier: CC0-1.0
 -->
 
-# <img src="org.kde.komodo.svg" width="48"/> Komodo
+# <img src="org.kde.komodo.svg" width="48"/> KomoDo
 
 <a href='https://flathub.org/apps/org.kde.komodo'><img width='240' alt='Get it on Flathub' src='https://flathub.org/api/badge?locale=en&light'/></a>
 
@@ -38,7 +38,7 @@ See the built-in help for more information.
 * Flathub: [Flathub](https://flathub.org/apps/org.kde.komodo).
 * Forum: https://discuss.kde.org/tag/komodo
 
-## Building:
+## Building
 
 You can use [kde-builder](https://kde-builder.kde.org/en/) to build KomoDo.
 
