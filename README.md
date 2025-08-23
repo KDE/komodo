@@ -3,7 +3,7 @@
     SPDX-License-Identifier: CC0-1.0
 -->
 
-# KomoDo
+# <img src="org.kde.komodo.svg" width="48"/> Komodo
 
 <a href='https://flathub.org/apps/org.kde.komodo'><img width='240' alt='Get it on Flathub' src='https://flathub.org/api/badge?locale=en&light'/></a>
 
@@ -31,16 +31,14 @@ KomoDo then will parse these task and showcase it in easy-to-read
 
 See the built-in help for more information.
 
-## Matrix chat
+## Links
+* Project page: https://invent.kde.org/utilities/komodo
+* Issues: https://bugs.kde.org/describecomponents.cgi?product=KomoDo
+* Matrix room: (https://community.kde.org/Matrix) [#komodo:kde.org](https://matrix.to/#/#komodo:kde.org)
+* Flathub: [Flathub](https://flathub.org/apps/org.kde.komodo).
+* Forum: https://discuss.kde.org/tag/komodo
 
-We have a [Matrix](https://community.kde.org/Matrix) chat where you can join and 
-chat about contributions and using the app: [#komodo:kde.org](https://matrix.to/#/#komodo:kde.org)
-
-## How to get it
-
-You can install KomoDo from [Flathub](https://flathub.org/apps/org.kde.komodo).
-
-### Building
+## Building:
 
 You can use [kde-builder](https://kde-builder.kde.org/en/) to build KomoDo.
 
