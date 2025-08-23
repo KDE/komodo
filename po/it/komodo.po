@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-17 00:45+0000\n"
-"PO-Revision-Date: 2025-08-03 07:54+0200\n"
+"PO-Revision-Date: 2025-08-19 09:23+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -83,11 +83,10 @@ msgid "Syntax Source Material"
 msgstr "Materiale sorgente della sintassi"
 
 #: src/ui/TodoDelegate.qml:63
-#, fuzzy, kde-format
-#| msgid "Task completion status"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle completion status"
-msgstr "Stato di completamento dell'attività"
+msgstr "Commuta lo stato di completamento"
 
 #: src/ui/TodoDelegate.qml:99
 #, kde-format
