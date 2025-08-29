@@ -333,27 +333,7 @@ Kirigami.AbstractCard {
                         contentItem: Kirigami.SelectableLabel {
                             id: helpText
                             padding: Kirigami.Units.largeSpacing
-                            textFormat: Qt.MarkdownText
-                            text: i18nc("Syntax quick guide, keep the markdown formatting", `
-
-Order of items matters:
-
-    Completion Priority Creation-Date Description
-
-- x : Completion status. Remove to set task incompleted.
-- (A) : Priority. Can be from A to Z. Optional.
-- Completion Date: Date in Year-Month-Day format. Add only if there is creation date and task is completed.
-- Creation date: Date in Year-Month-Day format. Optional, but recommended.
-- Description: General task description. Mandatory.
-  - +Project: Projects this task is relevant to. Optional.
-  - @Context: In which contexts this task is relevant in. Optional.
-  - key:value: Various key-value pairs of information. Optional.
-
-Description, contexts, key:value-pairs and projects can be mixed with each other.
-
-For more detailed information and examples, click on the Help button.
-
-`)
+                            text: i18nc("Syntax quick guide","<p>Order of items matters:</p><pre>Completion Priority Creation-Date Description</pre><ul><li>x : Completion status. Remove to set task incompleted.</li><li>(A) : Priority. Can be from A to Z. Optional.</li><li>Completion Date: Date in Year-Month-Day format. Add only if there is creation date and task is completed.</li><li>Creation date: Date in Year-Month-Day format. Optional, but recommended.</li><li>Description: General task description. Mandatory.<ul><li>+Project: Projects this task is relevant to. Optional.</li><li>@Context: In which contexts this task is relevant in. Optional.</li><li>key:value: Various key-value pairs of information. Optional.</li></ul></li></ul><p>Description, contexts, key:value-pairs and projects can be mixed with each other.</p><p>For more detailed information and examples, click on the Help button.</p><br>") 
                         }
                     }
 
