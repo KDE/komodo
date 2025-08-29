@@ -40,6 +40,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     KF6::ConfigGui
     KF6::GuiAddons
     KF6::ColorScheme
+    KF6::IconThemes
     ${CMAKE_PROJECT_NAME}_uiplugin
     ${CMAKE_PROJECT_NAME}_modelsplugin
 )

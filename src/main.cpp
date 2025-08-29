@@ -3,6 +3,7 @@
 
 #include "version-komodo.h"
 #include <KAboutData>
+#include <KIconTheme>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <QApplication>
@@ -17,6 +18,8 @@
 constexpr auto APPLICATION_ID = "org.kde.komodo";
 int main(int argc, char *argv[])
 {
+    KIconTheme::initTheme();
+
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("komodo");
 
