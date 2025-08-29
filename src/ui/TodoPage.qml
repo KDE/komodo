@@ -107,6 +107,16 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Timer {
+        id: searchTextTimer
+        interval: 0
+        onTriggered: {
+            filteredModel.filterRegularExpression = RegExp(searchField.text.replace("+", "\\+").replace("(", "\\(").replace(")", "\\)"), "gi");
+            cardsListView.currentIndex = -1;
+            searchField.forceActiveFocus();
+        }
+    }
+
     header: ColumnLayout {
         QQC2.Pane {
             Layout.fillWidth: true
@@ -119,9 +129,12 @@ Kirigami.ScrollablePage {
                     KeyNavigation.backtab: page.globalToolBarItem
                     KeyNavigation.tab: filterComboBox
                     visible: true
-                    onTextChanged: {
-                        cardsListView.currentIndex = -1;
+                    onFocusChanged: {
+                        if (focus) {
+                            cardsListView.currentIndex = -1;
+                        }
                     }
+                    onTextChanged: searchTextTimer.restart()
                 }
                 QQC2.Label {
                     text: i18n("Filter:")
@@ -300,10 +313,11 @@ Kirigami.ScrollablePage {
             sourceModel: TodoModel
             filterRoleName: "description"
             sortRoleName: "description"
-            filterRegularExpression: RegExp(searchField.text.replace("+", "\\+").replace("(", "\\(").replace(")", "\\)"), "gi")
             filterRowCallback: function (source_row, source_parent) {
+                const item = sourceModel.index(source_row, 0, source_parent);
                 if (searchField.text.length > 0) {
-                    if (!sourceModel.data(sourceModel.index(source_row, 0, source_parent), TodoModel.DescriptionRole).match(filterRegularExpression)) {
+                    const itemText = sourceModel.data(item, TodoModel.DescriptionRole);
+                    if (!itemText.match(filterRegularExpression) && itemText.length > 0) {
                         return false;
                     }
                 }
@@ -312,11 +326,11 @@ Kirigami.ScrollablePage {
                 case "default":
                     return true;
                 case "hasDueDate":
-                    return sourceModel.data(sourceModel.index(source_row, 0, source_parent), TodoModel.DueDateRole) != "";
+                    return sourceModel.data(item, TodoModel.DueDateRole) != "";
                 case "isNotCompleted":
-                    return !sourceModel.data(sourceModel.index(source_row, 0, source_parent), TodoModel.CompletionRole);
+                    return !sourceModel.data(item, TodoModel.CompletionRole);
                 case "isCompleted":
-                    return sourceModel.data(sourceModel.index(source_row, 0, source_parent), TodoModel.CompletionRole);
+                    return sourceModel.data(item, TodoModel.CompletionRole);
                 default:
                     return false;
                 }
