@@ -261,7 +261,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             text: i18nc("@action:inmenu", "Help…")
             icon.name: "help-contents-symbolic"
-            onTriggered: pageStack.layers.push(helpPage)
+            onTriggered: Qt.openUrlExternally("help:/komodo")
             enabled: pageStack.layers.depth <= 1
             shortcut: StandardKey.HelpContents
         },

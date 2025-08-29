@@ -34,7 +34,7 @@ ecm_setup_version(PROJECT
 )
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Widgets)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS ColorScheme Kirigami CoreAddons Config I18n ItemModels QQC2DesktopStyle GuiAddons IconThemes)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS ColorScheme Kirigami CoreAddons Config I18n ItemModels QQC2DesktopStyle GuiAddons IconThemes DocTools)
 
 set(USE_DBUS OFF)
 if(UNIX AND NOT APPLE AND NOT ANDROID AND NOT HAIKU)
@@ -58,7 +58,10 @@ feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
+add_subdirectory(doc)
+
 ki18n_install(po)
+kdoctools_install(po)
 
 ecm_qt_install_logging_categories(
     EXPORT ${CMAKE_PROJECT_NAME}_EXPORT

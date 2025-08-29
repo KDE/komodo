@@ -1,0 +1,271 @@
+<?xml version="1.0" ?>
+<!--
+SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+    <!ENTITY komodo "<application>KomoDo</application>">
+    <!ENTITY i18n-translatable-entity "<application>Translatable Entity</application>">
+    <!ENTITY % addindex "IGNORE">
+    <!ENTITY % English "INCLUDE">
+    <!ENTITY Akseli.Lahtinen "<personname><firstname>Akseli</firstname><surname>Lahtinen</surname></personname>">
+    <!ENTITY Akseli.Lahtinen.mail "<email>akselmo@akselmo.dev</email>">
+]>
+<book id="komodo" lang="&language;">
+<bookinfo>
+<title>The &komodo; Handbook</title>
+<authorgroup>
+<author>&Akseli.Lahtinen; &Akseli.Lahtinen.mail;</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+<copyright>
+<year>2025</year>
+<holder>Akseli Lahtinen</holder>
+</copyright>
+<legalnotice>&CCBYSA4Notice;</legalnotice>
+<date>2025-08-29</date>
+<releaseinfo>KomoDo 1.0</releaseinfo>
+<abstract>
+<para>
+KomoDo is a todo manager that uses todo.txt specification. It parses any compliant todo.txt files and turns them into easy to use list of tasks.
+</para>
+</abstract>
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kdeutils</keyword>
+<keyword>kde</keyword>
+<keyword>utilities</keyword>
+<keyword>todos</keyword>
+<keyword>komodo</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title>KomoDo and Todo.txt</title>
+<para>
+<ulink url="http://todotxt.org/">todo.txt</ulink> is a really simple
+task management method, that follows strict but small set of rules.
+</para>
+<para>
+The first and most important rule of todo.txt is: A single line
+in your todo.txt text file represents a single task.
+</para>
+<para>
+KomoDo parses those lines from your todo.txt file, and showcases
+them as their own cards. It aims to show you all the information
+about your tasks.
+</para>
+</chapter>
+
+<chapter id="basic-syntax">
+<title>Basic Syntax</title>
+<para>
+Here is a task with all the items. Items are divided by space and
+symbols. The items must always be in this order.
+</para>
+<sect1 id="task-creation">
+<title>Task Creation</title>
+<para>
+During task creation, syntax will be something like this:
+</para>
+<para>
+<replaceable>(A) 2024-10-23 Do this task for +KomoDoApp @Akademy due:2025-12-10 link:https://kde.org</replaceable>
+</para>
+<para>
+Here is the explanation for the items:
+</para>
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>
+Item
+</entry>
+<entry>
+Description
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>
+(A)
+</entry>
+<entry>
+Priority of the item, from A to Z. Optional. Will be
+removed and turned into pri:A when task is completed.
+</entry>
+</row>
+<row>
+<entry>
+2024-10-23
+</entry>
+<entry>
+Creation date. Optional, but recommended.
+</entry>
+</row>
+<row>
+<entry>
+Do this task for +KomoDoApp @Akademy
+</entry>
+<entry>
+The description of the task. Projects and contexts can be
+marked anywhere within the description.
+</entry>
+</row>
+<row>
+<entry>
++project
+</entry>
+<entry>
+Items starting with + are projects: What project is this
+task related to? For example: +Application, +Linux.
+Optional.
+</entry>
+</row>
+<row>
+<entry>
+@context
+</entry>
+<entry>
+Items starting with @ are contexts: In what context
+(place, situation) should this task be worked with? For
+example: @Home, @Work, @Cafe. Optional.
+</entry>
+</row>
+<row>
+<entry>
+key:value
+</entry>
+<entry>
+Key:Value pairs that will be parsed by KomoDo. Can be used
+for links, such as link:https://kde.org. Optional.
+</entry>
+</row>
+<row>
+<entry>
+due:2025-12-10
+</entry>
+<entry>
+Special Key:Value pair that KomoDo parses as a due date
+for the task. It only supports date, not time. Optional.
+</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+<sect2 id="task-completion">
+<title>Task Completion</title>
+<para>
+When task is marked as completed, KomoDo will format the task like
+this:
+</para>
+<para>
+<replaceable>x 2025-12-30 2024-10-23 Do this task for +KomoDoApp @Akademy due:2025-12-10 link:https://kde.org pri:A</replaceable>
+</para>
+<para>
+Most items stay the same, but there are couple changes:
+</para>
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>
+Item
+</entry>
+<entry>
+Description
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>
+x
+</entry>
+<entry>
+This marks the completion. If there is no x, task is
+incomplete. Must be lowercase.
+</entry>
+</row>
+<row>
+<entry>
+2025-12-30
+</entry>
+<entry>
+First date is completion date, but only if the task is
+marked as completed. Optional, but recommended.
+</entry>
+</row>
+<row>
+<entry>
+2024-10-23
+</entry>
+<entry>
+Second date is the creation date. Must be specified if the
+completion date is!
+</entry>
+</row>
+<row>
+<entry>
+pri:A
+</entry>
+<entry>
+Priorities of completed tasks will be removed from start
+and appended into the end of task as pri:Priority.
+</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="what-komodo-does">
+<title>What KomoDo does</title>
+<para>
+You should not need to worry much about the syntax, except when
+creating tasks. KomoDo will try to take care of the rest for you,
+such as updating the completion dates.
+</para>
+<para>
+You can add as much or as little detail to your tasks, and KomoDo
+will do it’s best to visualize it for you. KomoDo also has filtering
+tools for searching tasks.
+</para>
+<para>
+You can then also open this same file in any text editor or other
+todo.txt applications.
+</para>
+<para>
+Please see the following link for for more information and the official
+todo.txt specification:
+<ulink url="https://github.com/todotxt/todo.txt/blob/master/README.md">Syntax Source Material</ulink>
+</para>
+</chapter>
+
+<chapter id="credits">
+<title>Credits and License</title>
+<para>Documentation Copyright &copy; &Akseli.Lahtinen; &Akseli.Lahtinen.mail;</para>
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+&underCCBYSA4;
+<!-- CC BY-SA 4.0: do not remove -->
+&underGPL;
+<!-- GPL License -->
+</chapter>
+
+&documentation.index;
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-namecase-general: t
+sgml-namecase-entity: nil
+sgml-general-insert-case: lower
+sgml-minimize-attributes: nil
+sgml-omittag: nil
+End:
+-->
+

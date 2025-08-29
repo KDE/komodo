@@ -34,33 +34,5 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Component {
-        id: helpPage
-        Kirigami.ScrollablePage {
-            visible: false
-            title: i18n("KomoDo Help")
-            ColumnLayout {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.margins: Kirigami.Units.smallSpacing
-                KomoDoHelp {
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    Layout.minimumWidth: Kirigami.Units.gridUnit * 20
-                    wrapMode: Text.Wrap
-                }
-
-                Kirigami.UrlButton {
-                    text: i18nc("@info", "Syntax Source Material")
-                    url: "https://github.com/todotxt/todo.txt/blob/master/README.md"
-                }
-
-                Item {
-                    implicitHeight: Kirigami.Units.gridUnit * 2
-                }
-            }
-        }
-    }
-
     pageStack.initialPage: TodoPage {}
 }

@@ -16,5 +16,4 @@ ecm_target_qml_sources(${CMAKE_PROJECT_NAME}_ui
     SOURCES
     TodoPage.qml
     TodoDelegate.qml
-    KomoDoHelp.qml
 )
