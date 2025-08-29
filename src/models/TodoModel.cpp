@@ -14,21 +14,11 @@
 TodoModel::TodoModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    // Regexp for the whole todo line, with grouped items
-    parserPattern =
-        QRegularExpression(QStringLiteral("(?:^[ "
-                                          "\\t]*(?P<Completion>x))|(?P<Priority>\\([A-Z]\\))|(?:(?P<FirstDate>"
-                                          "\\d{4}-\\d\\d-\\d\\d)[ "
-                                          "\\t]*(?P<SecondDate>\\d{4}-\\d\\d-\\d\\d)?)|(?P<Projects>\\B\\+[\\w\\d\\S]+)|(?P<"
-                                          "Contexts>(?<=\\s)@[^\\s]+)|(?P<KeyValuePairs>[a-zA-Z]+:[\\S]*)"));
-    if (!parserPattern.isValid()) {
-        qWarning() << "Regular expression pattern for parsing is not valid!";
-        return;
-    }
-
     m_completionRegexp = QRegularExpression(QStringLiteral("^[ \\t]*x"));
     m_priorityRegexp = QRegularExpression(QStringLiteral("^[ x\\t]*\\(([A-Z])\\)"));
-    m_keyValuePriority = QRegularExpression(QStringLiteral("pri:([A-Z])"));
+    m_keyValuePriorityRegexp = QRegularExpression(QStringLiteral("pri:([A-Z])"));
+    m_dateRegexp = QRegularExpression(QStringLiteral("\\d{4}-\\d\\d-\\d\\d"));
+    m_keyValuePairRegexp = QRegularExpression(QStringLiteral("[a-zA-Z]+:[\\S]+"));
 
     m_fileWatcher = new KDirWatch(this);
     connect(this, &TodoModel::filePathChanged, this, &TodoModel::loadFile);
@@ -54,57 +44,65 @@ TodoModel::TodoModel(QObject *parent)
 Todo TodoModel::parseTodoFromDescription(const QString &description) const
 {
     // read description from the file and turn it into task
-    QRegularExpressionMatchIterator iter = parserPattern.globalMatch(description);
     Todo todo(description);
+    if (description.isEmpty()) {
+        return todo;
+    }
+    auto splitDescription = description.split(QStringLiteral(" "));
     bool completionStatus = false;
-    while (iter.hasNext()) {
-        const auto match = iter.next();
-        if (!match.captured("Completion").isEmpty()) {
-            completionStatus = true;
-        }
+    if (splitDescription.first() == QStringLiteral("x")) {
+        completionStatus = true;
+        splitDescription.removeFirst();
+    }
+    todo.setCompleted(completionStatus);
 
-        if (!match.captured("Priority").isEmpty()) {
-            todo.setPriority(match.captured("Priority"));
-        }
+    if (splitDescription.first().contains(m_priorityRegexp)) {
+        todo.setPriority(splitDescription.first());
+        splitDescription.removeFirst();
+    }
 
-        if (!match.captured("FirstDate").isEmpty()) {
-            // Set the first date as creation date if the item is not completed
-            if (completionStatus) {
-                todo.setCompletionDate(match.captured("FirstDate"));
-            } else {
-                todo.setCreationDate(match.captured("FirstDate"));
-            }
+    if (splitDescription.first().contains(m_dateRegexp)) {
+        if (completionStatus) {
+            todo.setCompletionDate(splitDescription.first());
+        } else {
+            todo.setCreationDate(splitDescription.first());
         }
+        splitDescription.removeFirst();
+    }
 
-        if (!match.captured("SecondDate").isEmpty()) {
-            if (completionStatus) {
-                todo.setCreationDate(match.captured("SecondDate"));
-            }
+    if (completionStatus) {
+        if (splitDescription.first().contains(m_dateRegexp)) {
+            todo.setCreationDate(splitDescription.first());
         }
+        splitDescription.removeFirst();
+    }
 
-        if (!match.captured("Projects").isEmpty()) {
-            todo.addProject(match.captured("Projects"));
-        }
-
-        if (!match.captured("Contexts").isEmpty()) {
-            todo.addContext(match.captured("Contexts"));
-        }
-
-        if (!match.captured("KeyValuePairs").isEmpty()) {
-            auto pair = match.captured("KeyValuePairs");
-            // Ignore web URLs
-            if (!pair.startsWith(QStringLiteral("http"))) {
-                todo.addKeyValuePair(match.captured("KeyValuePairs"));
+    QString descr;
+    for (const auto &item : splitDescription) {
+        descr.append(item);
+        descr.append(QStringLiteral(" "));
+        if (item.length() > 1) {
+            if (item.startsWith(QStringLiteral("+"))) {
+                todo.addProject(item);
+                continue;
+            } else if (item.startsWith(QStringLiteral("@"))) {
+                todo.addContext(item);
+                continue;
+            } else if (item.contains(m_keyValuePairRegexp)) {
+                if (!item.startsWith(QStringLiteral("http"))) {
+                    todo.addKeyValuePair(item);
+                }
+                continue;
             }
         }
     }
 
-    todo.setCompleted(completionStatus);
     todo.setPrettyDescription(prettyPrintDescription(todo));
     const auto pairs = todo.keyValuePairs();
     for (const QString &keyval : pairs) {
         if (keyval.startsWith(QStringLiteral("due:"))) {
             todo.setDueDate(keyval.split(QStringLiteral(":")).last());
+            break;
         }
     }
     return todo;
@@ -219,7 +217,7 @@ void TodoModel::updateCompletionStatus(Todo &todo, const bool completed)
         // Remove completion date
         newDescription.replace(todo.completionDate(), QString());
 
-        auto prio = m_keyValuePriority.match(newDescription);
+        auto prio = m_keyValuePriorityRegexp.match(newDescription);
         if (prio.hasCaptured(1)) {
             newDescription.replace(QStringLiteral("pri:%1").arg(prio.captured(1)), QString());
             newDescription.prepend(QStringLiteral("(%1)").arg(prio.captured(1)));

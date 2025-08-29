@@ -89,6 +89,14 @@ void TodoModelTest::testParseTodo_data()
                                                       << false << u"(C)"_s << QString() << u"2025-06-21"_s << QStringList{u"@Office"_s}
                                                       << QStringList{u"+TPSReports"_s} << QStringList{}
                                                       << u"Add cover sheets https://example.com/lo%20l/#context?id=123 @Office +TPSReports"_s << QString();
+
+    QTest::addRow("Task with multiple dates") << u"2025-08-29 multiple dates where we should pick the first date 2025-08-30"_s << false << QString()
+                                              << QString() << u"2025-08-29"_s << QStringList{} << QStringList{} << QStringList{}
+                                              << u"multiple dates where we should pick the first date 2025-08-30"_s << QString();
+
+    QTest::addRow("Task with empty key:vals") << u"2025-08-29 this task has keys without values like item: and due: and also :val"_s << false << QString()
+                                              << QString() << u"2025-08-29"_s << QStringList{} << QStringList{} << QStringList{}
+                                              << u"this task has keys without values like item: and due: and also :val"_s << QString();
 }
 void TodoModelTest::testParseTodo()
 {

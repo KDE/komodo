@@ -35,8 +35,6 @@ public:
 
     explicit TodoModel(QObject *parent = nullptr);
 
-    QRegularExpression parserPattern;
-
     Todo parseTodoFromDescription(const QString &description) const;
     QList<Todo> todos() const;
 
@@ -82,5 +80,9 @@ private:
     // Regexp for the priority: (A-Z)
     QRegularExpression m_priorityRegexp;
     // Regexp for priority keyval pair: pri:A
-    QRegularExpression m_keyValuePriority;
+    QRegularExpression m_keyValuePriorityRegexp;
+    // Regexp for date yyyy-mm-dd
+    QRegularExpression m_dateRegexp;
+    // Regexp for keyvalue-pair
+    QRegularExpression m_keyValuePairRegexp;
 };
