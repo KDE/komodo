@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-17 00:45+0000\n"
+"POT-Creation-Date: 2025-08-30 00:45+0000\n"
 "PO-Revision-Date: 2025-08-17 10:41+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -27,35 +27,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@gmail.com"
 
-#: src/main.cpp:27
+#: src/main.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
 msgstr "Komodo"
 
-#: src/main.cpp:31
+#: src/main.cpp:34
 #, kde-format
 msgid "Work on To-Do lists"
 msgstr "Arbeta med uppgiftslistor"
 
-#: src/main.cpp:35
+#: src/main.cpp:38
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
 msgstr "© 2025 Akseli Lahtinen"
 
-#: src/main.cpp:36
+#: src/main.cpp:39
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
 msgstr "Akseli Lahtinen"
 
-#: src/main.cpp:37
+#: src/main.cpp:40
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "Upphovsman"
 
-#: src/main.cpp:43
+#: src/main.cpp:46
 #, kde-format
 msgctxt "Longer description in about page"
 msgid ""
@@ -70,17 +70,6 @@ msgstr ""
 #, kde-format
 msgid "KomoDo"
 msgstr "Komodo"
-
-#: src/Main.qml:41
-#, kde-format
-msgid "KomoDo Help"
-msgstr "Komodo hjälp"
-
-#: src/Main.qml:54
-#, kde-format
-msgctxt "@info"
-msgid "Syntax Source Material"
-msgstr "Syntaxkällmaterial"
 
 #: src/ui/TodoDelegate.qml:63
 #, kde-format
@@ -142,23 +131,41 @@ msgstr "Öppna en datumväljare och infoga datumet vid markörens position"
 msgid "Syntax Information"
 msgstr "Syntaxinformation"
 
-#: src/ui/TodoDelegate.qml:361
+#: src/ui/TodoDelegate.qml:336
+#, kde-format
+msgctxt "Syntax quick guide"
+msgid ""
+"<p>Order of items matters:</p><pre>Completion Priority Creation-Date "
+"Description</pre><ul><li>x : Completion status. Remove to set task "
+"incompleted.</li><li>(A) : Priority. Can be from A to Z. Optional.</"
+"li><li>Completion Date: Date in Year-Month-Day format. Add only if there is "
+"creation date and task is completed.</li><li>Creation date: Date in Year-"
+"Month-Day format. Optional, but recommended.</li><li>Description: General "
+"task description. Mandatory.<ul><li>+Project: Projects this task is relevant "
+"to. Optional.</li><li>@Context: In which contexts this task is relevant in. "
+"Optional.</li><li>key:value: Various key-value pairs of information. "
+"Optional.</li></ul></li></ul><p>Description, contexts, key:value-pairs and "
+"projects can be mixed with each other.</p><p>For more detailed information "
+"and examples, click on the Help button.</p><br>"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:341
 #, kde-format
 msgid "Syntax Information…"
 msgstr "Syntaxinformation…"
 
-#: src/ui/TodoDelegate.qml:369
+#: src/ui/TodoDelegate.qml:349
 #, kde-format
 msgid "Show todo.txt syntax reference"
 msgstr "Visa syntaxreferens för todo.txt"
 
-#: src/ui/TodoDelegate.qml:383
+#: src/ui/TodoDelegate.qml:363
 #, kde-format
 msgctxt "@button"
 msgid "Save"
 msgstr "Spara"
 
-#: src/ui/TodoDelegate.qml:404
+#: src/ui/TodoDelegate.qml:384
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"
@@ -174,32 +181,32 @@ msgstr "Ta bort uppgift"
 msgid "Are you sure you wish to delete this To-Do?"
 msgstr "Är du säker på att du vill ta bort uppgiften?"
 
-#: src/ui/TodoPage.qml:127
+#: src/ui/TodoPage.qml:140
 #, kde-format
 msgid "Filter:"
 msgstr "Filter:"
 
-#: src/ui/TodoPage.qml:137
+#: src/ui/TodoPage.qml:150
 #, kde-format
 msgid "Show All"
 msgstr "Visa alla"
 
-#: src/ui/TodoPage.qml:141
+#: src/ui/TodoPage.qml:154
 #, kde-format
 msgid "Due Date"
 msgstr "Färdigdatum"
 
-#: src/ui/TodoPage.qml:145
+#: src/ui/TodoPage.qml:158
 #, kde-format
 msgid "Incomplete"
 msgstr "Ofullständig"
 
-#: src/ui/TodoPage.qml:149
+#: src/ui/TodoPage.qml:162
 #, kde-format
 msgid "Completed"
 msgstr "Färdig"
 
-#: src/ui/TodoPage.qml:180
+#: src/ui/TodoPage.qml:193
 #, kde-format
 msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
@@ -208,13 +215,13 @@ msgstr ""
 "Den här uppgiftslistan har ändrats externt. Det rekommenderas starkt att "
 "läsa in den igen."
 
-#: src/ui/TodoPage.qml:186
+#: src/ui/TodoPage.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
 msgstr "Läs in igen"
 
-#: src/ui/TodoPage.qml:198
+#: src/ui/TodoPage.qml:211
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
@@ -222,49 +229,49 @@ msgstr ""
 "Den här uppgiftslistan har tagits bort. Öppna en annan uppgiftslista eller "
 "skapa en ny."
 
-#: src/ui/TodoPage.qml:204 src/ui/TodoPage.qml:243
+#: src/ui/TodoPage.qml:217 src/ui/TodoPage.qml:256
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
 msgstr "Skapa ny uppgiftslista…"
 
-#: src/ui/TodoPage.qml:211
+#: src/ui/TodoPage.qml:224
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
 msgstr "Öppna uppgiftslista…"
 
-#: src/ui/TodoPage.qml:223
+#: src/ui/TodoPage.qml:236
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
 msgstr "Ny uppgift…"
 
-#: src/ui/TodoPage.qml:235
+#: src/ui/TodoPage.qml:248
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
 msgstr "Öppna uppgiftslista…"
 
-#: src/ui/TodoPage.qml:249
+#: src/ui/TodoPage.qml:262
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
 msgstr "Hjälp…"
 
-#: src/ui/TodoPage.qml:256
+#: src/ui/TodoPage.qml:269
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
 msgstr "Om Komodo"
 
-#: src/ui/TodoPage.qml:282
+#: src/ui/TodoPage.qml:295
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
 msgstr "Välkommen till Komodo."
 
-#: src/ui/TodoPage.qml:283
+#: src/ui/TodoPage.qml:296
 #, kde-format
 msgctxt "Welcome introduction text"
 msgid ""
@@ -289,11 +296,18 @@ msgstr ""
 "i> för att använda en befintlig lista eller <i><interface>Skapa ny "
 "uppgiftslista…</interface></i> för att påbörja en ny lista.</p>"
 
-#: src/ui/TodoPage.qml:295
+#: src/ui/TodoPage.qml:308
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
 msgstr "Inga uppgifter hittades."
+
+#~ msgid "KomoDo Help"
+#~ msgstr "Komodo hjälp"
+
+#~ msgctxt "@info"
+#~ msgid "Syntax Source Material"
+#~ msgstr "Syntaxkällmaterial"
 
 #~ msgid "todo.txt GUI application"
 #~ msgstr "Program med grafiskt användargränssnitt för todo.txt"
