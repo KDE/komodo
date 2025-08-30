@@ -16,6 +16,7 @@
   <name xml:lang="it">KomoDo</name>
   <name xml:lang="ka">KomoDo</name>
   <name xml:lang="nl">KomoDo</name>
+  <name xml:lang="pt-BR">KomoDo</name>
   <name xml:lang="sl">KomoDo</name>
   <name xml:lang="sv">Komodo</name>
   <name xml:lang="tr">KomoDo</name>
@@ -32,6 +33,7 @@
   <summary xml:lang="it">Lavora su elenchi di cose da fare</summary>
   <summary xml:lang="ka">მუშაობა გეგმის სიებზე</summary>
   <summary xml:lang="nl">Werk op todo.txt bestanden</summary>
+  <summary xml:lang="pt-BR">Trabalhar em listas de tarefas</summary>
   <summary xml:lang="sl">Delo na seznamih todo.txt</summary>
   <summary xml:lang="sv">Arbeta med uppgiftslistor</summary>
   <summary xml:lang="tr">Yapılacaklar listeleri ile çalışın</summary>
@@ -65,6 +67,7 @@
     <p xml:lang="it">KomoDo è un gestore di attività che utilizza la specifica todo.txt. Analizza tutti i file todo.txt conformi e li trasforma in elenchi di attività facili da usare.</p>
     <p xml:lang="ka">KomoDo წარმოადგენს გეგმის მმართველს, რომელიც todo.txt სპეციფიკაციას იყენებს. ის დაამუშავებს ნებისმიერ თავსებად todo.txt ფაილებს და მათ იოლად გამოსაყენებელი ამოცანების სიად გადააქცევს.</p>
     <p xml:lang="nl">KomoDo is een todo-beheerder die todo.txt specificaties gebruikt. Het ontleedt elke compliant todo.txt bestanden en zet ze om in een gemakkelijk te gebruiken lijst met taken.</p>
+    <p xml:lang="pt-BR">KomoDo é um gerenciador de tarefas que utiliza a especificação todo.txt. Ele analisa qualquer arquivo todo.txt compatível e os transforma em uma lista de tarefas fácil de usar.</p>
     <p xml:lang="sl">KomoDo je upravljalnik opravil, ki uporablja specifikacijo todo.txt. Razčleni vse skladne datoteke todo.txt in jih pretvori v enostavne sezname opravil.</p>
     <p xml:lang="sv">KomoDo är en uppgiftshanterare som använder todo.txt-specifikationen. Den analyserar alla kompatibla todo.txt-filer och omvandlar dem till lättanvända listor med uppgifter.</p>
     <p xml:lang="tr">KomoDo, todo.txt belirtimini kullanan bir yapılacaklar yöneticisidir. Uyumlu tüm todo.txt dosyalarını ayrıştırır ve bunları kullanımı kolay görev listelerine dönüştürür.</p>
@@ -81,6 +84,7 @@
     <p xml:lang="it">KomoDo ha una guida integrata per le specifiche todo.txt, quindi è adatto anche ai principianti!</p>
     <p xml:lang="ka">KomoDo-ს აქვს ჩაშენებული დახმარება todo.txt სპეციფიკაციისთვის, ასე რომ, ის ახალბედებისთვისაც შესაფერისია!</p>
     <p xml:lang="nl">KomoDo heeft en ingebouwde help voor de todo.txt specificatie, het is dus ook geschikt voor nieuwkomers!</p>
+    <p xml:lang="pt-BR">O KomoDo tem ajuda integrada para a especificação todo.txt, então é adequado também para iniciantes!</p>
     <p xml:lang="sl">KomoDo ima vgrajeno pomoč za specifikacijo todo.txt, zato je primeren tudi za novince!</p>
     <p xml:lang="sv">KomoDo har inbyggd hjälp för todo.txt-specifikationen, så den passar även för nybörjare.</p>
     <p xml:lang="tr">KomoDo’nun todo.txt belirtimi için içsel yardımı vardır, bu nedenle yeni başlayanlar için de uygundur!</p>
@@ -97,6 +101,7 @@
     <p xml:lang="it">Funzionalità</p>
     <p xml:lang="ka">თვისებები</p>
     <p xml:lang="nl">Mogelijkheden</p>
+    <p xml:lang="pt-BR">Funcionalidades</p>
     <p xml:lang="sl">Zmožnosti</p>
     <p xml:lang="sv">Funktioner</p>
     <p xml:lang="tr">Özellikler</p>
@@ -114,6 +119,7 @@
       <li xml:lang="it">Apri e crea nuovi file todo.txt</li>
       <li xml:lang="ka">გახსენით და შექმენით ახალი todo.txt ფაილები</li>
       <li xml:lang="nl">Open en maak nieuwe todo.txt bestanden</li>
+      <li xml:lang="pt-BR">Abrir e criar novos arquivos todo.txt</li>
       <li xml:lang="sl">Odpirajte in kreirajte nove datoteke todo.txt</li>
       <li xml:lang="sv">Öppna och skapa nya todo.txt-filer</li>
       <li xml:lang="tr">Yeni todo.txt dosyaları oluşturun ve onları açın</li>
@@ -130,6 +136,7 @@
       <li xml:lang="it">Aggiungi, elimina e modifica le attività</li>
       <li xml:lang="ka">ამოცანების დამატება, წაშლა და ჩასწორება</li>
       <li xml:lang="nl">Voeg toe, verwijder en bewerkt taken</li>
+      <li xml:lang="pt-BR">Adicionar, excluir e editar tarefas</li>
       <li xml:lang="sl">Dodajajte, brišite in urejajte opravila</li>
       <li xml:lang="sv">Lägg till, ta bort och redigera uppgifter</li>
       <li xml:lang="tr">Görevler ekleyin, onları düzenleyin veya silin</li>
@@ -146,6 +153,7 @@
       <li xml:lang="it">Filtra e ricerca le attività</li>
       <li xml:lang="ka">ამოცანების გაფილტვრა და ძებნა</li>
       <li xml:lang="nl">Filter en zoek taken</li>
+      <li xml:lang="pt-BR">Filtrar e pesquisar tarefas</li>
       <li xml:lang="sl">Filtrirajte in iščite opravila</li>
       <li xml:lang="sv">Filtrera och sök efter uppgifter</li>
       <li xml:lang="tr">Görevleri süzün ve içlerinde arama yapın</li>
@@ -173,6 +181,7 @@
       <caption xml:lang="it">Esempio di utilizzo di KomoDo con uno schema di colori chiaro.</caption>
       <caption xml:lang="ka">KomoDo-ის ინტერფეისის მაგალითი ღია ფერის სქემის გამოყენებისას.</caption>
       <caption xml:lang="nl">Voorbeeld van KomoDo die gebruikt wordt met een licht kleurenschema.</caption>
+      <caption xml:lang="pt-BR">Exemplo de KomoDo sendo usado com esquema de cores claras.</caption>
       <caption xml:lang="sl">Primer uporabe KomoDo s svetlo barvno shemo.</caption>
       <caption xml:lang="sv">Exempel på Komodo använt med ett ljust färgschema.</caption>
       <caption xml:lang="tr">KomoDo’nun açık renk şemasıyla kullanımı örneği</caption>
@@ -192,6 +201,7 @@
       <caption xml:lang="it">Esempio di utilizzo di KomoDo con uno schema di colori scuro.</caption>
       <caption xml:lang="ka">KomoDo-ის ინტერფეისის მაგალითი მუქი ფერის სქემის გამოყენებისას.</caption>
       <caption xml:lang="nl">Voorbeeld van KomoDo die gebruikt wordt met een donker kleurenschema.</caption>
+      <caption xml:lang="pt-BR">Exemplo de KomoDo sendo usado com esquema de cores escuras.</caption>
       <caption xml:lang="sl">Primer uporabe KomoDo s temno barvno shemo.</caption>
       <caption xml:lang="sv">Exempel på Komodo använt med ett mörkt färgschema.</caption>
       <caption xml:lang="tr">KomoDo’nun koyu renk şemasıyla kullanımı örneği</caption>
