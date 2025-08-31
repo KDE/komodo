@@ -1,7 +1,7 @@
 # Translation for komodo.po to Euskara/Basque (eu).
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the komodo package.
-# KDE euskaratzeko arduraduna <xalba@ni.es>.
+# KDE euskaratzeko proiektuaren arduraduna <xalba@ni.es>.
 #
 # Translators:
 # SPDX-FileCopyrightText: 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-30 00:45+0000\n"
-"PO-Revision-Date: 2025-08-17 10:18+0200\n"
+"PO-Revision-Date: 2025-08-30 08:08+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -151,6 +151,19 @@ msgid ""
 "projects can be mixed with each other.</p><p>For more detailed information "
 "and examples, click on the Help button.</p><br>"
 msgstr ""
+"<p>Elementuen ordenak garrantzia du:</p><pre>Osatzea Lehentasuna Sorrera-"
+"data Deskribapena</pre><ul><li>x: Osatze egoera. Kendu zeregina osatu gabe "
+"gisa ezartzeko.</li><li>(A): Lehentasuna. Atik Zra artekoa izan daiteke. "
+"Aukerakoa</li><li>Osatze-data: Data Urtea-Hilabetea-Eguna formatuan. Gehitu "
+"bakarrik sorrera-data badago eta zeregina osatuta badago.</li><li>Sorrera-"
+"data: Data Urtea-Hilabetea-Eguna formatuan.  Aukerakoa, baina gomendatua.</"
+"li><li>Deskribapena: Zeregin deskribapen orokorra. Derrigorrezkoa.<ul><li>"
+"+Proiektua: Zeregin hau zein proiektuetarako garrantzitsua den. Aukerakoa.</"
+"li><li>@Testuingurua: Zeregin hau zein testuingurutan den garrantzitsua. "
+"Aukerakoa.</li><li>gakoa:balioa: Hainbat gako-balio informazio pare. "
+"Aukerakoa.</li></ul></li></ul>Deskribapena, testuingurua, gakoa-balio-pareak "
+"eta proiektuak elkarrekin nahastu  daitezke.<p></p>Informazio zehatzagoa eta "
+"adibideetarako, egin klik Laguntza botoian.<p></p>"
 
 #: src/ui/TodoDelegate.qml:341
 #, kde-format

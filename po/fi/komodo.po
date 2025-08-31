@@ -1,34 +1,31 @@
-# Translation of komodo.po to Catalan
-# Copyright (C) 2025 This_file_is_part_of_KDE
-# This file is distributed under the license LGPL version 2.1 or
-# version 3 or later versions approved by the membership of KDE e.V.
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the komodo package.
+# SPDX-FileCopyrightText: 2025 Tommi Nieminen <translator@legisign.org>
 #
-# SPDX-FileCopyrightText: 2025 Josep M. Ferrer <txemaq@gmail.com>
-# SPDX-FileCopyrightText: 2025 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-30 00:45+0000\n"
-"PO-Revision-Date: 2025-08-30 12:50+0200\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
-"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
-"Language: ca\n"
+"PO-Revision-Date: 2025-07-31 09:42+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Josep M. Ferrer"
+msgstr "Tommi Nieminen"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "txemaq@gmail.com"
+msgstr "translator@legisign.org"
 
 #: src/main.cpp:30
 #, kde-format
@@ -39,7 +36,7 @@ msgstr "KomoDo"
 #: src/main.cpp:34
 #, kde-format
 msgid "Work on To-Do lists"
-msgstr "Treballa amb llistes de tasques pendents"
+msgstr ""
 
 #: src/main.cpp:38
 #, kde-format
@@ -56,7 +53,7 @@ msgstr "Akseli Lahtinen"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
-msgstr "Autor"
+msgstr "Tekijä"
 
 #: src/main.cpp:46
 #, kde-format
@@ -65,9 +62,6 @@ msgid ""
 "<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
 "compliant todo.txt files and turns them into easy to use list of tasks.</p>"
 msgstr ""
-"<p>El KomoDo és un gestor de tasques pendents que utilitza l'especificació "
-"«todo.txt». Analitza qualsevol fitxer que compleixi «todo.txt» i els "
-"converteix en una llista de tasques fàcil d'utilitzar.</p>"
 
 #: src/Main.qml:17
 #, kde-format
@@ -78,61 +72,61 @@ msgstr "KomoDo"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle completion status"
-msgstr "Commuta l'estat de compleció"
+msgstr ""
 
 #: src/ui/TodoDelegate.qml:99
 #, kde-format
 msgid "Priority"
-msgstr "Prioritat"
+msgstr "Etusija"
 
 #: src/ui/TodoDelegate.qml:192
 #, kde-format
 msgid "Task completion date"
-msgstr "Data de finalització de la tasca"
+msgstr "Tehtävän valmistumispäivä"
 
 #: src/ui/TodoDelegate.qml:205
 #, kde-format
 msgid "Task due date"
-msgstr "Data de venciment de la tasca"
+msgstr "Tehtävän määräpäivä"
 
 #: src/ui/TodoDelegate.qml:218
 #, kde-format
 msgid "Task creation date"
-msgstr "Data de creació de la tasca"
+msgstr "Tehtävän luontipäivä"
 
 #: src/ui/TodoDelegate.qml:234
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
-msgstr "Edita"
+msgstr "Muokkaa"
 
 #: src/ui/TodoDelegate.qml:258
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
-msgstr "Suprimeix"
+msgstr "Poista"
 
 #: src/ui/TodoDelegate.qml:289
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
-msgstr "(A) AAAA-MM-DD Descripció +Projecte @Context clau:valor"
+msgstr "(A) VVVV-KK-PP Kuvaus +Projekti @Konteksti avain:arvo"
 
 #: src/ui/TodoDelegate.qml:317
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
-msgstr "Insereix una data…"
+msgstr "Lisää päiväys…"
 
 #: src/ui/TodoDelegate.qml:319
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
-msgstr "Obre un selector de dates i la insereix a la posició del cursor"
+msgstr "Avaa päivämäärävalitsin ja lisää kohdistimen kohdalle päiväys"
 
 #: src/ui/TodoDelegate.qml:331
 #, kde-format
 msgid "Syntax Information"
-msgstr "Informació de la sintaxi"
+msgstr "Syntaksitietoa"
 
 #: src/ui/TodoDelegate.qml:336
 #, kde-format
@@ -151,76 +145,63 @@ msgid ""
 "projects can be mixed with each other.</p><p>For more detailed information "
 "and examples, click on the Help button.</p><br>"
 msgstr ""
-"<p>L'ordre dels elements importa:</p><pre>Compleció Prioritat Data-creació "
-"Descripció</pre><ul><li>x: Estat de compleció. Elimineu par a establir la "
-"tasca com a incompleta.</li><li>(A): Prioritat. Pot ser des d'A a Z. "
-"Opcional.</li><li>Data de compleció: Data en format Any-Mes-Dia. Afegiu "
-"només si hi ha data de creació i la tasca està completada.</li><li>Data de "
-"creació: Data en format Any-Mes-Dia. Opcional, però recomanada.</"
-"li><li>Descripció: Descripció general de la tasca. Obligatòria.<ul><li>"
-"+Projecte: Projectes en els quals és rellevant aquesta tasca. Opcional.</"
-"li><li>@Context: Contexts en els quals es rellevant aquesta tasca. Opcional."
-"</li><li>clau:valor: Diversos parells de clau-valor d'informació. Opcional.</"
-"li></ul></li></ul><p>Descripció, contexts, parells clau:valor i projectes es "
-"poden barrejar entre ells.</p><p>Per a informació més detallada i exemples "
-"feu clic al botó d'ajuda.</p><br>"
 
 #: src/ui/TodoDelegate.qml:341
 #, kde-format
 msgid "Syntax Information…"
-msgstr "Informació de la sintaxi…"
+msgstr "Syntaksitietoa…"
 
 #: src/ui/TodoDelegate.qml:349
 #, kde-format
 msgid "Show todo.txt syntax reference"
-msgstr "Mostra la referència de la sintaxi de «todo.txt»"
+msgstr "Näytä todo.txt:n syntaksiohje"
 
 #: src/ui/TodoDelegate.qml:363
 #, kde-format
 msgctxt "@button"
 msgid "Save"
-msgstr "Desa"
+msgstr "Tallenna"
 
 #: src/ui/TodoDelegate.qml:384
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"
-msgstr "Cancel·la"
+msgstr "Peru"
 
 #: src/ui/TodoPage.qml:65
 #, kde-format
 msgid "Delete To-Do"
-msgstr "Suprimeix la tasca pendent"
+msgstr "Poista tehtävä"
 
 #: src/ui/TodoPage.qml:77
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
-msgstr "Esteu segur que voleu suprimir aquesta tasca pendent?"
+msgstr "Haluatko varmasti poistaa tämän tehtävän?"
 
 #: src/ui/TodoPage.qml:140
 #, kde-format
 msgid "Filter:"
-msgstr "Filtre:"
+msgstr "Suodatin:"
 
 #: src/ui/TodoPage.qml:150
 #, kde-format
 msgid "Show All"
-msgstr "Mostra-ho tot"
+msgstr "Näytä kaikki"
 
 #: src/ui/TodoPage.qml:154
 #, kde-format
 msgid "Due Date"
-msgstr "Data de venciment"
+msgstr "Määräpäivä"
 
 #: src/ui/TodoPage.qml:158
 #, kde-format
 msgid "Incomplete"
-msgstr "Incompleta"
+msgstr "Kesken"
 
 #: src/ui/TodoPage.qml:162
 #, kde-format
 msgid "Completed"
-msgstr "Completada"
+msgstr "Valmis"
 
 #: src/ui/TodoPage.qml:193
 #, kde-format
@@ -228,65 +209,61 @@ msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
 "advised!"
 msgstr ""
-"Aquesta llista de tasques pendents s'ha canviat externament. És molt "
-"recomanable tornar a carregar-la!"
+"Tehtäväluettelo on toisaalla muuttunut. Virkistämistä suositellaan vahvasti!"
 
 #: src/ui/TodoPage.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr "Torna a carregar"
+msgstr "Virkistä"
 
 #: src/ui/TodoPage.qml:211
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
 msgstr ""
-"Aquesta llista de tasques pendents s'ha suprimit! Obriu una altra llista de "
-"tasques pendents o creeu-ne una de nova."
 
-# skip-rule: kct-todo-list
 #: src/ui/TodoPage.qml:217 src/ui/TodoPage.qml:256
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
-msgstr "Crea una llista nova de tasques pendents…"
+msgstr "Luo uusi tehtäväluettelo…"
 
 #: src/ui/TodoPage.qml:224
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
-msgstr "Obre una llista de tasques pendents…"
+msgstr "Avaa tehtäväluettelo…"
 
 #: src/ui/TodoPage.qml:236
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
-msgstr "Tasca pendent nova…"
+msgstr "Uusi tehtävä…"
 
 #: src/ui/TodoPage.qml:248
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
-msgstr "Obre una llista de tasques pendents…"
+msgstr "Avaa tehtäväluettelo…"
 
 #: src/ui/TodoPage.qml:262
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
-msgstr "Ajuda…"
+msgstr "Ohje…"
 
 #: src/ui/TodoPage.qml:269
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
-msgstr "Quant al KomoDo"
+msgstr "Tietoa KomoDosta"
 
 #: src/ui/TodoPage.qml:295
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
-msgstr "Us donem la benvinguda al KomoDo!"
+msgstr ""
 
 #: src/ui/TodoPage.qml:296
 #, kde-format
@@ -302,30 +279,9 @@ msgid ""
 "<i><interface>Open To-Do list…</interface></i> to use an existing list or "
 "<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
 msgstr ""
-"<p>El KomoDo és una aplicació de llista de tasques pendents que fa servir "
-"les regles de <a href='https://github.com/todotxt/todo.txt'>todo.txt</a>.</"
-"p><p>Les regles són força ràpides d'aprendre i el KomoDo té seccions d'ajuda "
-"per a això: <br>A la barra d'eines, feu clic al botó <i><interface>Ajuda…</"
-"interface></i> <br>Mentre esteu editant una tasca, feu clic al botó "
-"<i><interface>Informació de la sintaxi…</interface></i> .</p><p>Podeu seguir "
-"les regles molt o poc segons vulgueu.<br> Experimenteu amb total llibertat "
-"la manera de gestionar les tasques.</p><p>Feu clic a <i><interface>Obre una "
-"llista de tasques pendents…</interface></i> per a fer servir una llista "
-"existent o <i><interface>Crea una llista nova de tasques pendents…</"
-"interface></i> per a començar una llista nova.</p>"
 
 #: src/ui/TodoPage.qml:308
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
-msgstr "No s'ha trobat cap tasca pendent."
-
-#~ msgid "KomoDo Help"
-#~ msgstr "Ajuda del KomoDo"
-
-#~ msgctxt "@info"
-#~ msgid "Syntax Source Material"
-#~ msgstr "Documentació del codi font de la sintaxi"
-
-#~ msgid "todo.txt GUI application"
-#~ msgstr "Aplicació d'IGU de «todo.txt»"
+msgstr "Tehtäviä ei löytynyt."
