@@ -11,6 +11,7 @@
   <name xml:lang="de">KomoDo</name>
   <name xml:lang="es">KomoDo</name>
   <name xml:lang="eu">KomoDo</name>
+  <name xml:lang="fi">KomoDo</name>
   <name xml:lang="fr">KomoDo</name>
   <name xml:lang="he">KomoDo</name>
   <name xml:lang="it">KomoDo</name>
@@ -62,6 +63,7 @@
     <p xml:lang="de">KomoDo ist eine Anwendung zur Aufgabenverwaltung, die die „todo.txt“-Spezifikation verwendet. Jegliche passende „todo.txt“-Datei wird von KomoDo verarbeitet und in einfach zu verwendende Aufgabenlisten verwandelt.</p>
     <p xml:lang="es">KomoDo es un gestor de tareas pendientes que usa la especificación todo.txt. Permite analizar cualquier tipo de archivo compatible con todo.txt y convertirlo en una lista de tareas fácil de usar.</p>
     <p xml:lang="eu">KomoDo todo.txt zehaztapena erabiltzen duen egitekoen kudeatzaile bat da. todo.txt(r)ekin etorkorra den edozein fitxategiren azterketa sintaktikoa egin eta zeregin-zerrenda erabilerraza bihurtzen du.</p>
+    <p xml:lang="fi">KomoDo on todo.txt-määritystä käyttävä tehtävänhallinta. Se jäsentää minkä tahansa yhteensopivan todo.txt-tiedoston ja muuntaa sen helppokäyttöiseksi tehtäväluetteloksi.</p>
     <p xml:lang="fr">KomoDo est un gestionnaire de tâches utilisant la spécification de fichier «todo.txt ». Il analyse tous les fichiers « todo.txt » conformes et les transforme en une liste de tâches facile à utiliser.</p>
     <p xml:lang="he">KomoDo הוא מנהל משימות שמשתמש במפרט todo.txt. הוא מפענח קובצי todo.txt תואמים והופך אותם לרשימות מטלות פשוטות לשימוש.</p>
     <p xml:lang="it">KomoDo è un gestore di attività che utilizza la specifica todo.txt. Analizza tutti i file todo.txt conformi e li trasforma in elenchi di attività facili da usare.</p>
@@ -79,6 +81,7 @@
     <p xml:lang="de">KomoDo bietet eine integrierte Hilfestellung für die „todo.txt“-Spezifikation – ist also auch ideal für Neulinge!</p>
     <p xml:lang="es">KomoDo dispone de ayuda integrada para la especificación todo.txt, por lo que también es adecuado para principiantes.</p>
     <p xml:lang="eu">KomoDok todo.txt zehaztapenaren laguntza barnean du, beraz, hasiberrientzat ere egokia da!</p>
+    <p xml:lang="fi">KomoDossa on sisään rakennettu todo.txt-ohje, joten se sopii myös vasta-alkajille!</p>
     <p xml:lang="fr">KomoDo dispose d'une aide intégrée pour la spécification du fichier « todo.txt ». Elle convient donc également aux nouvelles personnes arrivant sous KomoDo !</p>
     <p xml:lang="he">ל־KomoDo יש עזרה מובנית למפרט todo.txt, לכן הוא מתאים גם לחסרי ניסיון!</p>
     <p xml:lang="it">KomoDo ha una guida integrata per le specifiche todo.txt, quindi è adatto anche ai principianti!</p>
@@ -96,6 +99,7 @@
     <p xml:lang="de">Funktionen</p>
     <p xml:lang="es">Funciones</p>
     <p xml:lang="eu">Ezaugarriak</p>
+    <p xml:lang="fi">Ominaisuuksia</p>
     <p xml:lang="fr">Fonctionnalités</p>
     <p xml:lang="he">יכולות</p>
     <p xml:lang="it">Funzionalità</p>
@@ -114,6 +118,7 @@
       <li xml:lang="de">Neue „todo.txt“-Dateien öffnen und erstellen</li>
       <li xml:lang="es">Abrir y crear nuevos archivos todo.txt</li>
       <li xml:lang="eu">todo.txt fitxategiak ireki eta berriak sortu</li>
+      <li xml:lang="fi">Avaa ja luo uusia todo.txt-tiedostoja</li>
       <li xml:lang="fr">Ouvrir et créer de nouveaux fichiers « todo.txt »</li>
       <li xml:lang="he">פתיחה ויצירה של קובצי todo.txt</li>
       <li xml:lang="it">Apri e crea nuovi file todo.txt</li>
@@ -131,6 +136,7 @@
       <li xml:lang="de">Aufgaben hinzufügen, löschen und bearbeiten</li>
       <li xml:lang="es">Añadir, borrar y modificar tareas</li>
       <li xml:lang="eu">Zereginak gehitu, ezabatu eta editatu</li>
+      <li xml:lang="fi">Lisää, poista ja muokkaa tehtäviä</li>
       <li xml:lang="fr">Ajouter, supprimer et modifier des tâches</li>
       <li xml:lang="he">הוספה, מחיקה ועריכה של משימות</li>
       <li xml:lang="it">Aggiungi, elimina e modifica le attività</li>
@@ -148,6 +154,7 @@
       <li xml:lang="de">Aufgaben filtern und suchen</li>
       <li xml:lang="es">Filtrar y buscar tareas</li>
       <li xml:lang="eu">Zereginak iragazi eta bilatu</li>
+      <li xml:lang="fi">Tehtävien suodatus ja haku</li>
       <li xml:lang="fr">Filtrer et rechercher des tâches</li>
       <li xml:lang="he">סינון וחיפוש משימות</li>
       <li xml:lang="it">Filtra e ricerca le attività</li>
@@ -176,6 +183,7 @@
       <caption xml:lang="de">Beispiel für die Nutzung von KomoDo mit hellem Design.</caption>
       <caption xml:lang="es">Ejemplo de KomoDo con un esquema de color claro.</caption>
       <caption xml:lang="eu">KomoDo kolore-antolaera argiarekin erabiltzearen adibidea.</caption>
+      <caption xml:lang="fi">Esimerkki käytössä olevasta vaaleaväriteemaisesta KomoDosta.</caption>
       <caption xml:lang="fr">Exemple d'utilisation de KomoDo avec un thème de couleur claire.</caption>
       <caption xml:lang="he">דוגמה של שימוש ב־KomoDo עם ערכת עיצוב בהירה.</caption>
       <caption xml:lang="it">Esempio di utilizzo di KomoDo con uno schema di colori chiaro.</caption>
@@ -196,6 +204,7 @@
       <caption xml:lang="de">Beispiel für die Nutzung von KomoDo mit dunklem Design.</caption>
       <caption xml:lang="es">Ejemplo de KomoDo con un esquema de color oscuro.</caption>
       <caption xml:lang="eu">KomoDo kolore-antolaera ilunarekin erabiltzearen adibidea.</caption>
+      <caption xml:lang="fi">Esimerkki käytössä olevasta tummaväriteemaisesta KomoDosta.</caption>
       <caption xml:lang="fr">Exemple d'utilisation de KomoDo avec un thème de couleur sombre.</caption>
       <caption xml:lang="he">דוגמה של שימוש ב־KomoDo עם ערכת עיצוב כהה.</caption>
       <caption xml:lang="it">Esempio di utilizzo di KomoDo con uno schema di colori scuro.</caption>
