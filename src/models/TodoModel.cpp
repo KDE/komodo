@@ -20,6 +20,8 @@ TodoModel::TodoModel(QObject *parent)
     m_dateRegexp = QRegularExpression(QStringLiteral("\\d{4}-\\d\\d-\\d\\d"));
     m_keyValuePairRegexp = QRegularExpression(QStringLiteral("[a-zA-Z]+:[\\S]+"));
 
+    QString fileNameArg = qApp->property("filename").toString();
+
     m_fileWatcher = new KDirWatch(this);
     connect(this, &TodoModel::filePathChanged, this, &TodoModel::loadFile);
     connect(this, &TodoModel::dataChanged, this, &TodoModel::saveFile);
@@ -27,7 +29,7 @@ TodoModel::TodoModel(QObject *parent)
     m_config->load();
     m_filterIndex = m_config->filterIndex();
     m_autoInsertCreationDate = m_config->autoInsertCreationDate();
-    if (!m_config->todoFilePath().isEmpty()) {
+    if (!m_config->todoFilePath().isEmpty() && fileNameArg.isEmpty()) {
         m_filePath = QUrl::fromLocalFile(m_config->todoFilePath());
         if (!fileExists()) {
             m_filePath = QUrl();
@@ -36,6 +38,8 @@ TodoModel::TodoModel(QObject *parent)
         } else {
             loadFile();
         }
+    } else if (!fileNameArg.isEmpty()) {
+        m_filePath = QUrl::fromLocalFile(fileNameArg);
     }
     connect(m_fileWatcher, &KDirWatch::dirty, this, &TodoModel::fileModified);
     connect(m_fileWatcher, &KDirWatch::deleted, this, &TodoModel::fileModified);
@@ -347,6 +351,11 @@ void TodoModel::setAutoInsertCreationDate(bool enabled)
     m_config->setAutoInsertCreationDate(m_autoInsertCreationDate);
     m_config->save();
     Q_EMIT autoInsertCreationDateChanged();
+}
+
+QString TodoModel::startupSearchText()
+{
+    return qApp->property("search-text").toString();
 }
 
 bool TodoModel::loadFile()

@@ -7,6 +7,7 @@
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <QApplication>
+#include <QCommandLineParser>
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
@@ -46,6 +47,25 @@ int main(int argc, char *argv[])
                                  "<p>KomoDo is a todo manager that uses todo.txt specification. It parses any compliant todo.txt files and turns them into "
                                  "easy to use list of tasks.</p>"));
     KAboutData::setApplicationData(aboutData);
+    QCommandLineParser parser;
+
+    auto searchArgName = QStringLiteral("search-text");
+    auto filenameArgName = QStringLiteral("filename");
+
+    parser.addOption(QCommandLineOption(searchArgName, i18nc("@info:shell", "Inserts the given text in the search bar."), searchArgName));
+    parser.addOption(
+        QCommandLineOption(filenameArgName, i18nc("@info:shell", "Open the given filename. The one in the config will be ignored."), filenameArgName));
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
+
+    if (parser.isSet(searchArgName)) {
+        app.instance()->setProperty(searchArgName.toStdString().c_str(), parser.value(searchArgName));
+    }
+    if (parser.isSet(filenameArgName)) {
+        app.instance()->setProperty(filenameArgName.toStdString().c_str(), parser.value(filenameArgName));
+    }
+
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.komodo")));
 
 #ifdef USE_DBUS

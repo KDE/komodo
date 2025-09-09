@@ -17,6 +17,7 @@ class TodoModel : public QAbstractListModel
     Q_PROPERTY(QUrl filePath READ filePath WRITE setFilePath NOTIFY filePathChanged)
     Q_PROPERTY(int filterIndex READ filterIndex WRITE setFilterIndex NOTIFY filterIndexChanged)
     Q_PROPERTY(bool autoInsertCreationDate READ autoInsertCreationDate WRITE setAutoInsertCreationDate NOTIFY autoInsertCreationDateChanged)
+    Q_PROPERTY(QString startupSearchText READ startupSearchText)
 
 public:
     // https://github.com/todotxt/todo.txt/blob/master/description.svg
@@ -61,6 +62,8 @@ public:
     bool autoInsertCreationDate() const;
     void setAutoInsertCreationDate(bool enabled);
     Q_SIGNAL void autoInsertCreationDateChanged();
+
+    QString startupSearchText();
 
     Q_INVOKABLE bool loadFile();
     Q_INVOKABLE bool saveFile();

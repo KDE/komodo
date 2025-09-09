@@ -130,7 +130,10 @@ Kirigami.ScrollablePage {
                             cardsListView.currentIndex = -1;
                         }
                     }
-                    onTextChanged: Qt.callLater(page.updateSearch);
+                    onTextChanged: Qt.callLater(page.updateSearch)
+                    Component.onCompleted: {
+                        text = TodoModel.startupSearchText;
+                    }
                 }
                 QQC2.Label {
                     text: i18n("Filter:")
