@@ -22,7 +22,6 @@
   <name xml:lang="sv">Komodo</name>
   <name xml:lang="tr">KomoDo</name>
   <name xml:lang="uk">KomoDo</name>
-  <name xml:lang="x-test">xxKomoDoxx</name>
   <summary>Work on To-Do lists</summary>
   <summary xml:lang="ca">Treballa amb llistes de tasques pendents</summary>
   <summary xml:lang="ca-valencia">Treballa amb llistes de tasques pendents</summary>
@@ -39,7 +38,6 @@
   <summary xml:lang="sv">Arbeta med uppgiftslistor</summary>
   <summary xml:lang="tr">Yapılacaklar listeleri ile çalışın</summary>
   <summary xml:lang="uk">Робота над списками завдань</summary>
-  <summary xml:lang="x-test">xxWork on To-Do listsxx</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
   <project_group>KDE</project_group>
@@ -74,7 +72,6 @@
     <p xml:lang="sv">KomoDo är en uppgiftshanterare som använder todo.txt-specifikationen. Den analyserar alla kompatibla todo.txt-filer och omvandlar dem till lättanvända listor med uppgifter.</p>
     <p xml:lang="tr">KomoDo, todo.txt belirtimini kullanan bir yapılacaklar yöneticisidir. Uyumlu tüm todo.txt dosyalarını ayrıştırır ve bunları kullanımı kolay görev listelerine dönüştürür.</p>
     <p xml:lang="uk">KomoDo — програма для керування завданнями, яка використовує специфікацію todo.txt. Вона обробляє усі сумісні файли todo.txt і перетворює їх у простий у використанні список завдань.</p>
-    <p xml:lang="x-test">xxKomoDo is a todo manager that uses todo.txt specification. It parses any compliant todo.txt files and turns them into easy to use list of tasks.xx</p>
     <p>KomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!</p>
     <p xml:lang="ca">El KomoDo integra ajuda per a l'especificació «todo.txt», de manera que també és adequat per als nouvinguts!</p>
     <p xml:lang="ca-valencia">KomoDo integra ajuda per a l'especificació «todo.txt», de manera que també és adequat per als nouvinguts!</p>
@@ -92,7 +89,6 @@
     <p xml:lang="sv">KomoDo har inbyggd hjälp för todo.txt-specifikationen, så den passar även för nybörjare.</p>
     <p xml:lang="tr">KomoDo’nun todo.txt belirtimi için içsel yardımı vardır, bu nedenle yeni başlayanlar için de uygundur!</p>
     <p xml:lang="uk">До KomoDo вбудовано довідку щодо специфікації todo.txt, тому програма може бути використана і початківцями!</p>
-    <p xml:lang="x-test">xxKomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!xx</p>
     <p>Features</p>
     <p xml:lang="ca">Característiques</p>
     <p xml:lang="ca-valencia">Característiques</p>
@@ -110,7 +106,6 @@
     <p xml:lang="sv">Funktioner</p>
     <p xml:lang="tr">Özellikler</p>
     <p xml:lang="uk">Можливості</p>
-    <p xml:lang="x-test">xxFeaturesxx</p>
     <ul>
       <li>Open and create new todo.txt files</li>
       <li xml:lang="ca">Obre i crea fitxers «todo.txt» nous</li>
@@ -129,7 +124,6 @@
       <li xml:lang="sv">Öppna och skapa nya todo.txt-filer</li>
       <li xml:lang="tr">Yeni todo.txt dosyaları oluşturun ve onları açın</li>
       <li xml:lang="uk">Відкриття і створення файлів todo.txt</li>
-      <li xml:lang="x-test">xxOpen and create new todo.txt filesxx</li>
       <li>Add, delete and edit tasks</li>
       <li xml:lang="ca">Afegeix, suprimeix i edita tasques</li>
       <li xml:lang="ca-valencia">Afig, suprimix i edita tasques</li>
@@ -147,7 +141,6 @@
       <li xml:lang="sv">Lägg till, ta bort och redigera uppgifter</li>
       <li xml:lang="tr">Görevler ekleyin, onları düzenleyin veya silin</li>
       <li xml:lang="uk">Додавання, вилучення і редагування записів завдань</li>
-      <li xml:lang="x-test">xxAdd, delete and edit tasksxx</li>
       <li>Filter and search tasks</li>
       <li xml:lang="ca">Filtra i cerca tasques</li>
       <li xml:lang="ca-valencia">Filtra i busca tasques</li>
@@ -165,7 +158,6 @@
       <li xml:lang="sv">Filtrera och sök efter uppgifter</li>
       <li xml:lang="tr">Görevleri süzün ve içlerinde arama yapın</li>
       <li xml:lang="uk">Фільтрування і пошук завдань</li>
-      <li xml:lang="x-test">xxFilter and search tasksxx</li>
     </ul>
   </description>
   <url type="homepage">https://apps.kde.org/komodo/</url>
@@ -194,7 +186,6 @@
       <caption xml:lang="sv">Exempel på Komodo använt med ett ljust färgschema.</caption>
       <caption xml:lang="tr">KomoDo’nun açık renk şemasıyla kullanımı örneği</caption>
       <caption xml:lang="uk">Приклад використання KomoDo зі світлою темою кольорів.</caption>
-      <caption xml:lang="x-test">xxExample of KomoDo being used with light colorscheme.xx</caption>
       <image>https://cdn.kde.org/screenshots/komodo/screenshot.png</image>
     </screenshot>
     <screenshot environment="plasma:dark">
@@ -215,7 +206,6 @@
       <caption xml:lang="sv">Exempel på Komodo använt med ett mörkt färgschema.</caption>
       <caption xml:lang="tr">KomoDo’nun koyu renk şemasıyla kullanımı örneği</caption>
       <caption xml:lang="uk">Приклад використання KomoDo з темною темою кольорів.</caption>
-      <caption xml:lang="x-test">xxExample of KomoDo being used with dark colorscheme.xx</caption>
       <image>https://cdn.kde.org/screenshots/komodo/screenshot-dark.png</image>
     </screenshot>
   </screenshots>
