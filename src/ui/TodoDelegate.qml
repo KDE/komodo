@@ -287,6 +287,7 @@ Kirigami.AbstractCard {
                     font.family: "monospace"
                     Layout.fillWidth: true
                     Layout.fillHeight: true
+                    Layout.minimumWidth: delegateLayout.width - Kirigami.Units.smallSpacing
                     Layout.maximumWidth: delegateLayout.width - Kirigami.Units.smallSpacing
                     wrapMode: Text.Wrap
                     placeholderText: todoDelegate.model.description == "" ? i18nc("Placeholder text for creating new tasks", "(A) YYYY-MM-DD Description +Project @Context key:value") : todoDelegate.model.description
@@ -403,6 +404,9 @@ Kirigami.AbstractCard {
                         QQC2.ToolTip.text: cancelEditAction.tooltip
                         KeyNavigation.tab: searchField
                     }
+                }
+                Component.onCompleted: {
+                    editTodoItemText.forceActiveFocus();
                 }
             }
 
