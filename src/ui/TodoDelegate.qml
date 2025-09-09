@@ -13,6 +13,7 @@ Kirigami.AbstractCard {
 
     required property int index
     required property var model
+    property bool autoInsertCreationDate: false
 
     property bool currentItem: Kirigami.CardsListView.isCurrentItem
     property bool editMode: false
@@ -291,7 +292,15 @@ Kirigami.AbstractCard {
                     Layout.maximumWidth: delegateLayout.width - Kirigami.Units.smallSpacing
                     wrapMode: Text.Wrap
                     placeholderText: todoDelegate.model.description == "" ? i18nc("Placeholder text for creating new tasks", "(A) YYYY-MM-DD Description +Project @Context key:value") : todoDelegate.model.description
-                    text: todoDelegate.model.description
+                    text: {
+                        if (todoDelegate.model.description == "" && todoDelegate.autoInsertCreationDate) {
+                            var timezoneOffset = (new Date()).getTimezoneOffset() * 60 * 1000;
+                            var ISOTimeWithLocale = (new Date(Date.now() - timezoneOffset)).toISOString().slice(0, 10);
+                            return ISOTimeWithLocale + " ";
+                        } else {
+                            return todoDelegate.model.description;
+                        }
+                    }
                     Accessible.role: Accessible.EditableText
                     KeyNavigation.backtab: cancelEditButton
                     Keys.onReturnPressed: {

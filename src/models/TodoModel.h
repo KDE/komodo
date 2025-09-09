@@ -16,6 +16,8 @@ class TodoModel : public QAbstractListModel
     QML_SINGLETON
     Q_PROPERTY(QUrl filePath READ filePath WRITE setFilePath NOTIFY filePathChanged)
     Q_PROPERTY(int filterIndex READ filterIndex WRITE setFilterIndex NOTIFY filterIndexChanged)
+    Q_PROPERTY(bool autoInsertCreationDate READ autoInsertCreationDate WRITE setAutoInsertCreationDate NOTIFY autoInsertCreationDateChanged)
+
 public:
     // https://github.com/todotxt/todo.txt/blob/master/description.svg
     enum Roles {
@@ -56,6 +58,10 @@ public:
     void setFilterIndex(const int &newFilterIndex);
     Q_SIGNAL void filterIndexChanged();
 
+    bool autoInsertCreationDate() const;
+    void setAutoInsertCreationDate(bool enabled);
+    Q_SIGNAL void autoInsertCreationDateChanged();
+
     Q_INVOKABLE bool loadFile();
     Q_INVOKABLE bool saveFile();
     Q_INVOKABLE bool fileExists() const;
@@ -73,6 +79,7 @@ private:
     KomodoConfig *m_config;
     KDirWatch *m_fileWatcher;
     int m_filterIndex = 0;
+    bool m_autoInsertCreationDate = false;
     bool fileModifiedFromApp = false;
 
     // Regexp for the completion status: x

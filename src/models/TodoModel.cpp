@@ -336,6 +336,19 @@ void TodoModel::setFilterIndex(const int &newFilterIndex)
     Q_EMIT filterIndexChanged();
 }
 
+bool TodoModel::autoInsertCreationDate() const
+{
+    return m_autoInsertCreationDate;
+}
+
+void TodoModel::setAutoInsertCreationDate(bool enabled)
+{
+    m_autoInsertCreationDate = enabled;
+    m_config->setAutoInsertCreationDate(m_autoInsertCreationDate);
+    m_config->save();
+    Q_EMIT autoInsertCreationDateChanged();
+}
+
 bool TodoModel::loadFile()
 {
     QFile file(m_filePath.toLocalFile());

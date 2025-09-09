@@ -236,6 +236,7 @@ Kirigami.ScrollablePage {
                 filterComboBox.currentIndex = 0;
                 cardsListView.currentIndex = filteredModel.mapFromSource(TodoModel.indexFromQUuid(TodoModel.addTodo(""))).row;
                 cardsListView.currentItem.editMode = true;
+                cardsListView.currentItem.autoInsertCreationDate = TodoModel.autoInsertCreationDate;
             }
             shortcut: StandardKey.New
         },
@@ -260,6 +261,17 @@ Kirigami.ScrollablePage {
             onTriggered: Qt.openUrlExternally("help:/komodo")
             enabled: pageStack.layers.depth <= 1
             shortcut: StandardKey.HelpContents
+        },
+        Kirigami.Action {
+            text: i18nc("@action:inmenu", "Auto-insert creation date")
+            icon.name: "view-calendar-symbolic"
+            checkable: true
+            checked: TodoModel.autoInsertCreationDate
+            tooltip: i18nc("A checkbox for toggling this setting", "Insert a creation date for any new task automatically")
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            onTriggered: {
+                TodoModel.autoInsertCreationDate = checked;
+            }
         },
         Kirigami.Action {
             text: i18nc("@action:inmenu", "About KomoDo")

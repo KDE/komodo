@@ -14,5 +14,9 @@
 		<entry name="FilterIndex" type="Int">
 			<label>index of the current filter</label>
 		</entry>
+		<entry name="AutoInsertCreationDate" type="Bool">
+			<label>insert creation date automatically to a new task</label>
+			<default>false</default>
+		</entry>
 	</group>
 </kcfg>
