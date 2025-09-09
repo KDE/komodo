@@ -140,6 +140,7 @@ Kirigami.ScrollablePage {
                     editable: false
                     textRole: "text"
                     valueRole: "value"
+                    currentIndex: TodoModel.filterIndex
                     model: [
                         {
                             value: "default",

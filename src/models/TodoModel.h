@@ -72,7 +72,7 @@ private:
     QList<Todo> m_todos;
     KomodoConfig *m_config;
     KDirWatch *m_fileWatcher;
-    int m_filterIndex;
+    int m_filterIndex = 0;
     bool fileModifiedFromApp = false;
 
     // Regexp for the completion status: x
