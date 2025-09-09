@@ -26,6 +26,7 @@ TodoModel::TodoModel(QObject *parent)
     m_config = KomodoConfig::self();
     m_config->load();
     m_filterIndex = m_config->filterIndex();
+    m_autoInsertCreationDate = m_config->autoInsertCreationDate();
     if (!m_config->todoFilePath().isEmpty()) {
         m_filePath = QUrl::fromLocalFile(m_config->todoFilePath());
         if (!fileExists()) {
