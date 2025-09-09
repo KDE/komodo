@@ -16,7 +16,6 @@ Kirigami.AbstractCard {
 
     property bool currentItem: Kirigami.CardsListView.isCurrentItem
     property bool editMode: false
-    property alias textEditField: editTodoItemText
 
     KeyNavigation.tab: completionStatus
     // Create custom shadowed rectangle for the focus coloring
@@ -236,7 +235,6 @@ Kirigami.AbstractCard {
                                 icon.name: "edit-entry-symbolic"
                                 onTriggered: {
                                     todoDelegate.editMode = true;
-                                    editTodoItemText.focus = true;
                                 }
                                 shortcut: todoDelegate.currentItem ? "Ctrl+E" : ""
                             }
@@ -273,11 +271,16 @@ Kirigami.AbstractCard {
                     }
                 }
             }
+
+            Component {
+                id: editComp
             ColumnLayout {
                 id: editLayout
                 visible: todoDelegate.editMode
                 onVisibleChanged: {
-                    editTodoItemText.forceActiveFocus();
+                    if (visible) {
+                        editTodoItemText.forceActiveFocus();
+                    }
                 }
                 QQC2.TextField {
                     id: editTodoItemText
@@ -401,6 +404,13 @@ Kirigami.AbstractCard {
                         KeyNavigation.tab: searchField
                     }
                 }
+            }
+
+            }
+            Loader {
+                visible: todoDelegate.editMode
+                sourceComponent: editComp
+                active: todoDelegate.editMode
             }
         }
     }

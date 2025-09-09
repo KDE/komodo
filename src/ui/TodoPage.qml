@@ -33,6 +33,12 @@ Kirigami.ScrollablePage {
         TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
     }
 
+    function updateSearch() {
+        filteredModel.filterRegularExpression = RegExp(searchField.text.replace("+", "\\+").replace("(", "\\(").replace(")", "\\)"), "gi");
+        cardsListView.currentIndex = -1;
+        searchField.forceActiveFocus();
+    }
+
     Dialogs.FileDialog {
         id: openDialog
         onAccepted: {
@@ -107,16 +113,6 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Timer {
-        id: searchTextTimer
-        interval: 0
-        onTriggered: {
-            filteredModel.filterRegularExpression = RegExp(searchField.text.replace("+", "\\+").replace("(", "\\(").replace(")", "\\)"), "gi");
-            cardsListView.currentIndex = -1;
-            searchField.forceActiveFocus();
-        }
-    }
-
     header: ColumnLayout {
         QQC2.Pane {
             Layout.fillWidth: true
@@ -134,7 +130,7 @@ Kirigami.ScrollablePage {
                             cardsListView.currentIndex = -1;
                         }
                     }
-                    onTextChanged: searchTextTimer.restart()
+                    onTextChanged: Qt.callLater(page.updateSearch);
                 }
                 QQC2.Label {
                     text: i18n("Filter:")
@@ -238,7 +234,6 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 filterComboBox.currentIndex = 0;
                 cardsListView.currentIndex = filteredModel.mapFromSource(TodoModel.indexFromQUuid(TodoModel.addTodo(""))).row;
-                cardsListView.currentItem.textEditField.text = "";
                 cardsListView.currentItem.editMode = true;
             }
             shortcut: StandardKey.New
@@ -342,9 +337,6 @@ Kirigami.ScrollablePage {
             // there is multiple edited items and user moves between them with keys
             onFocusChanged: {
                 cardsListView.keyNavigationEnabled = !editMode;
-                if (editMode) {
-                    textEditField.forceActiveFocus();
-                }
             }
             onEditModeChanged: {
                 if (editMode) {
