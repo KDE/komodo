@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-30 00:45+0000\n"
+"POT-Creation-Date: 2025-09-11 00:45+0000\n"
 "PO-Revision-Date: 2025-08-31 07:46+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,35 +28,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: src/main.cpp:30
+#: src/main.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
 msgstr "KomoDo"
 
-#: src/main.cpp:34
+#: src/main.cpp:35
 #, kde-format
 msgid "Work on To-Do lists"
 msgstr "עבודה על רשימות מטלות"
 
-#: src/main.cpp:38
+#: src/main.cpp:39
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
 msgstr "© 2025 אקסלי לאהטינן"
 
-#: src/main.cpp:39
+#: src/main.cpp:40
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
 msgstr "אקסלי לאהטינן"
 
-#: src/main.cpp:40
+#: src/main.cpp:41
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "יוצר"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 #, kde-format
 msgctxt "Longer description in about page"
 msgid ""
@@ -65,6 +65,18 @@ msgid ""
 msgstr ""
 "<p>KomoDo הוא מנהל משימות שמשתמש במפרט todo.txt. הוא מפענח קובצי todo.txt "
 "תואמים והופך אותם לרשימות מטלות פשוטות לשימוש.</p>"
+
+#: src/main.cpp:55
+#, kde-format
+msgctxt "@info:shell"
+msgid "Inserts the given text in the search bar."
+msgstr ""
+
+#: src/main.cpp:57
+#, kde-format
+msgctxt "@info:shell"
+msgid "Open the given filename. The one in the config will be ignored."
+msgstr ""
 
 #: src/Main.qml:17
 #, kde-format
@@ -103,35 +115,35 @@ msgctxt "@button"
 msgid "Edit"
 msgstr "עריכה"
 
-#: src/ui/TodoDelegate.qml:258
+#: src/ui/TodoDelegate.qml:257
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: src/ui/TodoDelegate.qml:289
+#: src/ui/TodoDelegate.qml:294
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
 msgstr "‏(A) YYYY-MM-DD תיאור +מיזם @הקשר מפתח:ערך"
 
-#: src/ui/TodoDelegate.qml:317
+#: src/ui/TodoDelegate.qml:330
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
 msgstr "הוספת תאריך…"
 
-#: src/ui/TodoDelegate.qml:319
+#: src/ui/TodoDelegate.qml:332
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
 msgstr "פתיחת בורר תאריכים והוספתו במקום של הסמן"
 
-#: src/ui/TodoDelegate.qml:331
+#: src/ui/TodoDelegate.qml:344
 #, kde-format
 msgid "Syntax Information"
 msgstr "פרטי תחביר"
 
-#: src/ui/TodoDelegate.qml:336
+#: src/ui/TodoDelegate.qml:349
 #, kde-format
 msgctxt "Syntax quick guide"
 msgid ""
@@ -158,39 +170,39 @@ msgstr ""
 "של מידע. רשות.</li></ul></li></ul><p>תיאור, הקשרים צמדי מפתח:ערך ומיזמים "
 "ניתן לערבב.</p><p>לפירוט ודוגמאות, אפשר ללחוץ על כפתור העזרה.</p><br>"
 
-#: src/ui/TodoDelegate.qml:341
+#: src/ui/TodoDelegate.qml:354
 #, kde-format
 msgid "Syntax Information…"
 msgstr "פרטי תחביר…"
 
-#: src/ui/TodoDelegate.qml:349
+#: src/ui/TodoDelegate.qml:362
 #, kde-format
 msgid "Show todo.txt syntax reference"
 msgstr "הצגת סימוכין לתחביר todo.txt"
 
-#: src/ui/TodoDelegate.qml:363
+#: src/ui/TodoDelegate.qml:376
 #, kde-format
 msgctxt "@button"
 msgid "Save"
 msgstr "שמירה"
 
-#: src/ui/TodoDelegate.qml:384
+#: src/ui/TodoDelegate.qml:397
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"
 msgstr "ביטול"
 
-#: src/ui/TodoPage.qml:65
+#: src/ui/TodoPage.qml:71
 #, kde-format
 msgid "Delete To-Do"
 msgstr "מחיקת מטלה"
 
-#: src/ui/TodoPage.qml:77
+#: src/ui/TodoPage.qml:83
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
 msgstr "למחוק את המטלה הזאת"
 
-#: src/ui/TodoPage.qml:140
+#: src/ui/TodoPage.qml:139
 #, kde-format
 msgid "Filter:"
 msgstr "סינון:"
@@ -265,18 +277,31 @@ msgid "Help…"
 msgstr "עזרה…"
 
 #: src/ui/TodoPage.qml:269
+#, fuzzy, kde-format
+#| msgid "Task creation date"
+msgctxt "@action:inmenu"
+msgid "Auto-insert creation date"
+msgstr "תאריך יצירת משימה"
+
+#: src/ui/TodoPage.qml:273
+#, kde-format
+msgctxt "A checkbox for toggling this setting"
+msgid "Insert a creation date for any new task automatically"
+msgstr ""
+
+#: src/ui/TodoPage.qml:280
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
 msgstr "על KomoDo"
 
-#: src/ui/TodoPage.qml:295
+#: src/ui/TodoPage.qml:306
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
 msgstr "ברוך בואך ל־KomoDo!"
 
-#: src/ui/TodoPage.qml:296
+#: src/ui/TodoPage.qml:307
 #, kde-format
 msgctxt "Welcome introduction text"
 msgid ""
@@ -300,7 +325,7 @@ msgstr ""
 "קיימת לעומת <i><interface>יצירת רשימת מטלות חדשה…</interface></i> שתפתח "
 "רשימה חדשה.</p>"
 
-#: src/ui/TodoPage.qml:308
+#: src/ui/TodoPage.qml:319
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
