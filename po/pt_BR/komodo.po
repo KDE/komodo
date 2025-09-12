@@ -2,13 +2,14 @@
 # This file is distributed under the same license as the komodo package.
 #
 # SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:45+0000\n"
-"PO-Revision-Date: 2025-08-30 08:43-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2025-09-10 23:12-0300\n"
+"Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +21,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Marcus Gama"
+msgstr "Marcus Gama, Geraldo Simião"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "marcus.gama@gmail.com"
+msgstr "marcus.gama@gmail.com, geraldosimiao@fedoraproject.org"
 
 #: src/main.cpp:31
 #, kde-format
@@ -70,13 +71,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Inserts the given text in the search bar."
-msgstr ""
+msgstr "Insere o texto fornecido na barra de pesquisa."
 
 #: src/main.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open the given filename. The one in the config will be ignored."
-msgstr ""
+msgstr "Abre o arquivo fornecido. O que estiver na configuração será ignorado."
 
 #: src/Main.qml:17
 #, kde-format
@@ -285,17 +286,16 @@ msgid "Help…"
 msgstr "Ajuda…"
 
 #: src/ui/TodoPage.qml:269
-#, fuzzy, kde-format
-#| msgid "Task creation date"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-insert creation date"
-msgstr "Data de criação da tarefa"
+msgstr "Inserir automaticamente a data de criação"
 
 #: src/ui/TodoPage.qml:273
 #, kde-format
 msgctxt "A checkbox for toggling this setting"
 msgid "Insert a creation date for any new task automatically"
-msgstr ""
+msgstr "Insere uma data de criação para qualquer nova tarefa automaticamente"
 
 #: src/ui/TodoPage.qml:280
 #, kde-format
