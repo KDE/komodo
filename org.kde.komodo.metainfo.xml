@@ -165,7 +165,6 @@
   <url type="donation">https://www.kde.org/community/donations/?app=komodo</url>
   <url type="translate">https://l10n.kde.org/</url>
   <url type="vcs-browser">https://invent.kde.org/utilities/komodo</url>
-  <url type="manifest">https://github.com/flathub/org.kde.komodo</url>
   <launchable type="desktop-id">org.kde.komodo.desktop</launchable>
   <screenshots>
     <screenshot type="default" environment="plasma">
