@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:45+0000\n"
-"PO-Revision-Date: 2025-08-31 07:46+0300\n"
+"PO-Revision-Date: 2025-09-17 11:41+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -70,13 +70,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Inserts the given text in the search bar."
-msgstr ""
+msgstr "מזין את הטקסט שסופק בסרגל החיפוש."
 
 #: src/main.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open the given filename. The one in the config will be ignored."
-msgstr ""
+msgstr "לפתוח את שם הקובץ שסופק. זה שבהגדרות לא יחול."
 
 #: src/Main.qml:17
 #, kde-format
@@ -277,17 +277,16 @@ msgid "Help…"
 msgstr "עזרה…"
 
 #: src/ui/TodoPage.qml:269
-#, fuzzy, kde-format
-#| msgid "Task creation date"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-insert creation date"
-msgstr "תאריך יצירת משימה"
+msgstr "הוספת תאריך יצירה אוטומטית"
 
 #: src/ui/TodoPage.qml:273
 #, kde-format
 msgctxt "A checkbox for toggling this setting"
 msgid "Insert a creation date for any new task automatically"
-msgstr ""
+msgstr "להוסיף תאריך יצירה לכל משימה חדשה אוטומטית"
 
 #: src/ui/TodoPage.qml:280
 #, kde-format
