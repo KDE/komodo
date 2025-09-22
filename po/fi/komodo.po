@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:45+0000\n"
-"PO-Revision-Date: 2025-09-10 18:02+0300\n"
+"PO-Revision-Date: 2025-09-19 18:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -36,7 +36,7 @@ msgstr "KomoDo"
 #: src/main.cpp:35
 #, kde-format
 msgid "Work on To-Do lists"
-msgstr ""
+msgstr "Käytä tehtäväluetteloja"
 
 #: src/main.cpp:39
 #, kde-format
@@ -69,13 +69,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Inserts the given text in the search bar."
-msgstr ""
+msgstr "Lisää annetun tekstin hakuriville."
 
 #: src/main.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open the given filename. The one in the config will be ignored."
-msgstr ""
+msgstr "Avaa annetun tiedostonimen. Asetuksissa asetettu sivuutetaan."
 
 #: src/Main.qml:17
 #, kde-format
@@ -86,7 +86,7 @@ msgstr "KomoDo"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle completion status"
-msgstr ""
+msgstr "Vaihda tehtävän valmistumisen tila"
 
 #: src/ui/TodoDelegate.qml:99
 #, kde-format
@@ -247,7 +247,7 @@ msgstr "Virkistä"
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
-msgstr ""
+msgstr "Tämä tehtäväluettelo on poistettu! Avaa toinen tai luo uusi."
 
 #: src/ui/TodoPage.qml:217 src/ui/TodoPage.qml:256
 #, kde-format
@@ -280,17 +280,16 @@ msgid "Help…"
 msgstr "Ohje…"
 
 #: src/ui/TodoPage.qml:269
-#, fuzzy, kde-format
-#| msgid "Task creation date"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-insert creation date"
-msgstr "Tehtävän luontipäivä"
+msgstr "Lisää luomispäiväys automaattisesti"
 
 #: src/ui/TodoPage.qml:273
 #, kde-format
 msgctxt "A checkbox for toggling this setting"
 msgid "Insert a creation date for any new task automatically"
-msgstr ""
+msgstr "Lisää uusiin tehtäviin automaattisesti luomispäiväyksen"
 
 #: src/ui/TodoPage.qml:280
 #, kde-format
@@ -318,6 +317,16 @@ msgid ""
 "<i><interface>Open To-Do list…</interface></i> to use an existing list or "
 "<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
 msgstr ""
+"<p>KoMoDo on <a href='https://github.com/todotxt/todo.txt'>todo.txt</a>-"
+"sääntöjä käyttävä tehtäväluettelosovellus.</p><p>Säännöt oppii nopeasti, ja "
+"KoMoDossa on niille ohjeosiot:<br>Napsauta työkalurivin <i><interface>Ohje…</"
+"interface></i>painiketta.<br>Tehtävää muokattaessa napsauta "
+"<i><interface>Syntaksiohje…</interface></i>-painiketta.</p><p>Sääntöjä voi "
+"seurata niin tiukasti tai höllästi kuin haluaa.<br>Kokeile vapaasti ja löydä "
+"itsellesi paras tapa tehtävien hallinnointiin.</p><p>Käytä olemassa olevaa "
+"luetteloa napsauttamalla <i><interface>Avaa tehtäväluettelo…</interface></i> "
+"tai aloita uusi napsauttamalla <i><interface>Uusi tehtäväluettelo…</"
+"interface></i>.</p>"
 
 #: src/ui/TodoPage.qml:319
 #, kde-format
