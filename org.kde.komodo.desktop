@@ -3,6 +3,7 @@
 
 [Desktop Entry]
 Name=KomoDo
+Name[ar]=كومودو
 Name[ca]=KomoDo
 Name[ca@valencia]=KomoDo
 Name[de]=KomoDo
@@ -20,6 +21,7 @@ Name[sv]=Komodo
 Name[tr]=KomoDo
 Name[uk]=KomoDo
 GenericName=todo.txt Application
+GenericName[ar]=تطبيق todo.txt
 GenericName[ca]=Aplicació de «todo.txt»
 GenericName[ca@valencia]=Aplicació de «todo.txt»
 GenericName[de]=„todo.txt“-Anwendung
@@ -37,6 +39,7 @@ GenericName[sv]=Program för todo.txt
 GenericName[tr]=todo.txt Uygulaması
 GenericName[uk]=Програма для todo.txt
 Comment=Create and manage todo.txt task lists
+Comment[ar]=إنشاء وإدارة قوائم المهام في ملف todo.txt
 Comment[ca]=Crea i gestiona llistes de tasques «todo.txt»
 Comment[ca@valencia]=Crea i gestiona llistes de tasques «todo.txt»
 Comment[de]=Todo-Listen nach dem „todo.txt“-Prinzip erstellen und verwalten
@@ -59,6 +62,7 @@ Type=Application
 Terminal=false
 Categories=Utility;KDE;
 Keywords=Productivity;Todo;Task;
+Keywords[ar]=Productivity;Todo;Task;الإنتاجية;المهام;الواجبات;
 Keywords[ca]=Productivitat;Tasca pendent;Tasca;
 Keywords[ca@valencia]=Productivitat;Tasca pendent;Tasca;
 Keywords[de]=Produktivität;Todo;Aufgabe;
