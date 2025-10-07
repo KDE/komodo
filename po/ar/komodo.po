@@ -1,0 +1,333 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the komodo package.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: komodo\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-09-11 00:45+0000\n"
+"PO-Revision-Date: 2025-10-06 13:04+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "زايد السعيدي"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zayed.alsaidi@gmail.com"
+
+#: src/main.cpp:31
+#, kde-format
+msgctxt "@title"
+msgid "KomoDo"
+msgstr "كومودو"
+
+#: src/main.cpp:35
+#, kde-format
+msgid "Work on To-Do lists"
+msgstr "اعمل على قوائم المهامّ"
+
+#: src/main.cpp:39
+#, kde-format
+msgid "© 2025 Akseli Lahtinen"
+msgstr "© 2025 أكسيلي لاهتينين"
+
+#: src/main.cpp:40
+#, kde-format
+msgctxt "@info:credit"
+msgid "Akseli Lahtinen"
+msgstr "أكسيلي لاهتينين"
+
+#: src/main.cpp:41
+#, kde-format
+msgctxt "@info:credit"
+msgid "Author"
+msgstr "المؤلف"
+
+#: src/main.cpp:47
+#, kde-format
+msgctxt "Longer description in about page"
+msgid ""
+"<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
+"compliant todo.txt files and turns them into easy to use list of tasks.</p>"
+msgstr ""
+"<p>كومودو هو مدير مهامّ يستعمل مواصفات todo.txt. يحلّل أي ملفات todo.txt "
+"متوافقة ويحوّلها إلى قائمة مهامّ سهلة الاستعمال.</p>"
+
+#: src/main.cpp:55
+#, kde-format
+msgctxt "@info:shell"
+msgid "Inserts the given text in the search bar."
+msgstr "أَدرِج النّصّ المعطى في شريط البحث."
+
+#: src/main.cpp:57
+#, kde-format
+msgctxt "@info:shell"
+msgid "Open the given filename. The one in the config will be ignored."
+msgstr "افتح اسم الملف المعطى. سيُتجاهَل الملف الموجود في الإعدادات."
+
+#: src/Main.qml:17
+#, kde-format
+msgid "KomoDo"
+msgstr "كومودو"
+
+#: src/ui/TodoDelegate.qml:63
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Toggle completion status"
+msgstr "بدّل حالة الاكتمال"
+
+#: src/ui/TodoDelegate.qml:99
+#, kde-format
+msgid "Priority"
+msgstr "الأولويّة"
+
+#: src/ui/TodoDelegate.qml:192
+#, kde-format
+msgid "Task completion date"
+msgstr "تاريخ اكتمال المهمّة"
+
+#: src/ui/TodoDelegate.qml:205
+#, kde-format
+msgid "Task due date"
+msgstr "تاريخ استحقاق المهمّة"
+
+#: src/ui/TodoDelegate.qml:218
+#, kde-format
+msgid "Task creation date"
+msgstr "تاريخ إنشاء المهمّة"
+
+#: src/ui/TodoDelegate.qml:234
+#, kde-format
+msgctxt "@button"
+msgid "Edit"
+msgstr "حرّر"
+
+#: src/ui/TodoDelegate.qml:257
+#, kde-format
+msgctxt "@button"
+msgid "Delete"
+msgstr "احذف"
+
+#: src/ui/TodoDelegate.qml:294
+#, kde-format
+msgctxt "Placeholder text for creating new tasks"
+msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
+msgstr "(أ) س س س س-ش ش-ي ي وصف +المشروع @السياق مفتاح:قيمة"
+
+#: src/ui/TodoDelegate.qml:330
+#, kde-format
+msgctxt "@button"
+msgid "Insert Date…"
+msgstr "أَدرِج التّاريخ…"
+
+#: src/ui/TodoDelegate.qml:332
+#, kde-format
+msgid "Open a date picker and insert it at cursor position"
+msgstr "افتح منتقي تاريخ وأَدرِجه عند موقع المؤشّر"
+
+#: src/ui/TodoDelegate.qml:344
+#, kde-format
+msgid "Syntax Information"
+msgstr "معلومات الصّيغة"
+
+#: src/ui/TodoDelegate.qml:349
+#, kde-format
+msgctxt "Syntax quick guide"
+msgid ""
+"<p>Order of items matters:</p><pre>Completion Priority Creation-Date "
+"Description</pre><ul><li>x : Completion status. Remove to set task "
+"incompleted.</li><li>(A) : Priority. Can be from A to Z. Optional.</"
+"li><li>Completion Date: Date in Year-Month-Day format. Add only if there is "
+"creation date and task is completed.</li><li>Creation date: Date in Year-"
+"Month-Day format. Optional, but recommended.</li><li>Description: General "
+"task description. Mandatory.<ul><li>+Project: Projects this task is relevant "
+"to. Optional.</li><li>@Context: In which contexts this task is relevant in. "
+"Optional.</li><li>key:value: Various key-value pairs of information. "
+"Optional.</li></ul></li></ul><p>Description, contexts, key:value-pairs and "
+"projects can be mixed with each other.</p><p>For more detailed information "
+"and examples, click on the Help button.</p><br>"
+msgstr ""
+"<p>ترتيب العناصر مهمّ:</p><pre>الاكتمال الأولويّة تاريخ-الإنشاء الوصف</"
+"pre><ul><li>x : حالة الاكتمال. أَزِلْه لضبط المهمّة كغير مكتملة.</li><li>(أ) : "
+"الأولويّة. يمكن أن تكون من ألف إلى ياء. اختياريّة.</li><li>تاريخ الاكتمال: "
+"التّاريخ بصيغة السّنة-الشّهر-اليوم. أَضِفْه فقط إن كان هناك تاريخ إنشاء و المهمّة "
+"مكتملة.</li><li>تاريخ الإنشاء: التّاريخ بصيغة السّنة-الشّهر-اليوم. اختياريّ، لكن "
+"موصى به.</li><li>الوصف: وصف عامّ للمهمّة. إجباريّ.<ul><li>+المشروع: المشاريع "
+"التي تتعلّق بها هذه المهمّة. اختياريّ.</li><li>@السّياق: السّياقات التي تتعلّق بها "
+"هذه المهمّة. اختياريّ.</li><li>مفتاح:قيمة: أزواج متنوّعة من معلومات المفتاح-"
+"القيمة. اختياريّة.</li></ul></li></ul><p>يمكن خلط الوصف والسّياقات وأزواج "
+"المفتاح-القيمة والمشاريع ببعضها البعض.</p><p>للمزيد من المعلومات والأمثلة "
+"المفصّلة، انقر على زرّ المساعدة.</p><br>"
+
+#: src/ui/TodoDelegate.qml:354
+#, kde-format
+msgid "Syntax Information…"
+msgstr "معلومات الصّيغة…"
+
+#: src/ui/TodoDelegate.qml:362
+#, kde-format
+msgid "Show todo.txt syntax reference"
+msgstr "أَظهِر دليل صيغة todo.txt"
+
+#: src/ui/TodoDelegate.qml:376
+#, kde-format
+msgctxt "@button"
+msgid "Save"
+msgstr "احفظ"
+
+#: src/ui/TodoDelegate.qml:397
+#, kde-format
+msgctxt "@button"
+msgid "Cancel"
+msgstr "ألغِ"
+
+#: src/ui/TodoPage.qml:71
+#, kde-format
+msgid "Delete To-Do"
+msgstr "احذف المهمّة"
+
+#: src/ui/TodoPage.qml:83
+#, kde-format
+msgid "Are you sure you wish to delete this To-Do?"
+msgstr "هل أنت متأكّد من رغبتك في حذف هذه المهمّة؟"
+
+#: src/ui/TodoPage.qml:139
+#, kde-format
+msgid "Filter:"
+msgstr "المرشّح:"
+
+#: src/ui/TodoPage.qml:150
+#, kde-format
+msgid "Show All"
+msgstr "أظهر الكلّ"
+
+#: src/ui/TodoPage.qml:154
+#, kde-format
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#: src/ui/TodoPage.qml:158
+#, kde-format
+msgid "Incomplete"
+msgstr "غير مكتمل"
+
+#: src/ui/TodoPage.qml:162
+#, kde-format
+msgid "Completed"
+msgstr "اكتمل"
+
+#: src/ui/TodoPage.qml:193
+#, kde-format
+msgid ""
+"This To-Do list has been changed externally. Reloading it is strongly "
+"advised!"
+msgstr "هذه القائمة من المهامّ تغيّرت خارجيًّا. يُنصَح بشدّة بإعادة تحميلها!"
+
+#: src/ui/TodoPage.qml:199
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr "أعد التحميل"
+
+#: src/ui/TodoPage.qml:211
+#, kde-format
+msgid ""
+"This To-Do list has been deleted! Open another To-Do list or create new one."
+msgstr "حُذِفَتْ قائمة المهامّ هذه! افتح قائمة مهامّ أخرى أو أنشئ واحدة جديدة."
+
+#: src/ui/TodoPage.qml:217 src/ui/TodoPage.qml:256
+#, kde-format
+msgctxt "@button"
+msgid "Create New To-Do List…"
+msgstr "أنشئ قائمة مهامّ جديدة…"
+
+#: src/ui/TodoPage.qml:224
+#, kde-format
+msgctxt "@action:button"
+msgid "Open To-Do List…"
+msgstr "افتح قائمة المهامّ…"
+
+#: src/ui/TodoPage.qml:236
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New To-Do…"
+msgstr "مهمّة جديدة…"
+
+#: src/ui/TodoPage.qml:248
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open To-Do List…"
+msgstr "افتح قائمة المهامّ…"
+
+#: src/ui/TodoPage.qml:262
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Help…"
+msgstr "مساعدة…"
+
+#: src/ui/TodoPage.qml:269
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Auto-insert creation date"
+msgstr "أَدرِج تاريخ الإنشاء آليًّا"
+
+#: src/ui/TodoPage.qml:273
+#, kde-format
+msgctxt "A checkbox for toggling this setting"
+msgid "Insert a creation date for any new task automatically"
+msgstr "أَدرِج تاريخ إنشاء آليًّا لأيّ مهمّة جديدة"
+
+#: src/ui/TodoPage.qml:280
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About KomoDo"
+msgstr "عن كومودو"
+
+#: src/ui/TodoPage.qml:306
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Welcome to KomoDo!"
+msgstr "أهلًا بك في كومودو!"
+
+#: src/ui/TodoPage.qml:307
+#, kde-format
+msgctxt "Welcome introduction text"
+msgid ""
+"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
+"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
+"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
+"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
+"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
+"follow the rules as much or as little as you wish.<br> Feel free to "
+"experiment to find out your ideal way of managing tasks.</p><p>Click "
+"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
+"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
+msgstr ""
+"<p>كومودو هو تطبيق لقائمة المهامّ يستعمل قواعد <a href='https://github.com/"
+"todotxt/todo.txt'>todo.txt</a>.</p><p>تعلّم القواعد سريع إلى حدّ ما ولدى "
+"كومودو أقسام مساعدة لها: <br>على شريط الأدوات، انقر على زرّ "
+"<i><interface>مساعدة…</interface></i>.<br>أثناء تحرير مهمّة، انقر على زرّ "
+"<i><interface>معلومات الصّيغة…</interface></i>.</p><p>يمكنك اتّباع القواعد "
+"بالقدر الذي ترغب به.<br> لا تتردّد في التّجربة لإيجاد طريقتك المثاليّة في إدارة "
+"المهامّ.</p><p>انقر <i><interface>افتح قائمة المهامّ…</interface></i> لاستعمال "
+"قائمة موجودة أو <i><interface>أنشئ قائمة مهامّ جديدة…</interface></i> لبدء "
+"قائمة جديدة.</p>"
+
+#: src/ui/TodoPage.qml:319
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No To-Dos found."
+msgstr "لم تُعثَر على مهامّ."
