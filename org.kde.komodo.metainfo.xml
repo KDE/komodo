@@ -6,6 +6,7 @@
 	-->
   <id>org.kde.komodo</id>
   <name>KomoDo</name>
+  <name xml:lang="ar">كومودو</name>
   <name xml:lang="ca">KomoDo</name>
   <name xml:lang="ca-valencia">KomoDo</name>
   <name xml:lang="de">KomoDo</name>
@@ -23,6 +24,7 @@
   <name xml:lang="tr">KomoDo</name>
   <name xml:lang="uk">KomoDo</name>
   <summary>Work on To-Do lists</summary>
+  <summary xml:lang="ar">اعمل على قوائم المهام</summary>
   <summary xml:lang="ca">Treballa amb llistes de tasques pendents</summary>
   <summary xml:lang="ca-valencia">Treballa amb llistes de tasques pendents</summary>
   <summary xml:lang="de">An Todo-Listen arbeiten</summary>
@@ -57,6 +59,7 @@
   <content_rating type="oars-1.1"/>
   <description>
     <p>KomoDo is a todo manager that uses todo.txt specification. It parses any compliant todo.txt files and turns them into easy to use list of tasks.</p>
+    <p xml:lang="ar">كومودو هو مدير مهام يستخدم مواصفات todo.txt. يحلّل أيّ ملفات todo.txt موافقة ويحوّلها إلى قائمة مهام سهلة الاستخدام.</p>
     <p xml:lang="ca">El KomoDo és un gestor de tasques pendents que utilitza l'especificació «todo.txt». Analitza qualsevol fitxer que compleixi «todo.txt» i els converteix en una llista de tasques fàcil d'utilitzar.</p>
     <p xml:lang="ca-valencia">KomoDo és un gestor de tasques pendents que utilitza l'especificació «todo.txt». Analitza qualsevol fitxer que complisca «todo.txt» i els convertix en una llista de tasques fàcil d'utilitzar.</p>
     <p xml:lang="de">KomoDo ist eine Anwendung zur Aufgabenverwaltung, die die „todo.txt“-Spezifikation verwendet. Jegliche passende „todo.txt“-Datei wird von KomoDo verarbeitet und in einfach zu verwendende Aufgabenlisten verwandelt.</p>
@@ -74,6 +77,7 @@
     <p xml:lang="tr">KomoDo, todo.txt belirtimini kullanan bir yapılacaklar yöneticisidir. Uyumlu tüm todo.txt dosyalarını ayrıştırır ve bunları kullanımı kolay görev listelerine dönüştürür.</p>
     <p xml:lang="uk">KomoDo — програма для керування завданнями, яка використовує специфікацію todo.txt. Вона обробляє усі сумісні файли todo.txt і перетворює їх у простий у використанні список завдань.</p>
     <p>KomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!</p>
+    <p xml:lang="ar">كومودو يتضمّن دليلًا مضمَّنًا لمواصفات todo.txt، لذا هو مناسب للوافدين الجدد أيضًا!</p>
     <p xml:lang="ca">El KomoDo integra ajuda per a l'especificació «todo.txt», de manera que també és adequat per als nouvinguts!</p>
     <p xml:lang="ca-valencia">KomoDo integra ajuda per a l'especificació «todo.txt», de manera que també és adequat per als nouvinguts!</p>
     <p xml:lang="de">KomoDo bietet eine integrierte Hilfestellung für die „todo.txt“-Spezifikation – ist also auch ideal für Neulinge!</p>
@@ -91,6 +95,7 @@
     <p xml:lang="tr">KomoDo’nun todo.txt belirtimi için içsel yardımı vardır, bu nedenle yeni başlayanlar için de uygundur!</p>
     <p xml:lang="uk">До KomoDo вбудовано довідку щодо специфікації todo.txt, тому програма може бути використана і початківцями!</p>
     <p>Features</p>
+    <p xml:lang="ar">الميزات</p>
     <p xml:lang="ca">Característiques</p>
     <p xml:lang="ca-valencia">Característiques</p>
     <p xml:lang="de">Funktionen</p>
@@ -109,6 +114,7 @@
     <p xml:lang="uk">Можливості</p>
     <ul>
       <li>Open and create new todo.txt files</li>
+      <li xml:lang="ar">افتح وأنشئ ملفات todo.txt جديدة</li>
       <li xml:lang="ca">Obre i crea fitxers «todo.txt» nous</li>
       <li xml:lang="ca-valencia">Obri i crea fitxers «todo.txt» nous</li>
       <li xml:lang="de">Neue „todo.txt“-Dateien öffnen und erstellen</li>
@@ -126,6 +132,7 @@
       <li xml:lang="tr">Yeni todo.txt dosyaları oluşturun ve onları açın</li>
       <li xml:lang="uk">Відкриття і створення файлів todo.txt</li>
       <li>Add, delete and edit tasks</li>
+      <li xml:lang="ar">أضِف، احذف، وحرّر المهام</li>
       <li xml:lang="ca">Afegeix, suprimeix i edita tasques</li>
       <li xml:lang="ca-valencia">Afig, suprimix i edita tasques</li>
       <li xml:lang="de">Aufgaben hinzufügen, löschen und bearbeiten</li>
@@ -143,6 +150,7 @@
       <li xml:lang="tr">Görevler ekleyin, onları düzenleyin veya silin</li>
       <li xml:lang="uk">Додавання, вилучення і редагування записів завдань</li>
       <li>Filter and search tasks</li>
+      <li xml:lang="ar">صفِّ وابحث عن المهام</li>
       <li xml:lang="ca">Filtra i cerca tasques</li>
       <li xml:lang="ca-valencia">Filtra i busca tasques</li>
       <li xml:lang="de">Aufgaben filtern und suchen</li>
@@ -170,6 +178,7 @@
   <screenshots>
     <screenshot type="default" environment="plasma">
       <caption>Example of KomoDo being used with light colorscheme.</caption>
+      <caption xml:lang="ar">مثال على استخدام كومودو مع نظام ألوان فاتح.</caption>
       <caption xml:lang="ca">Exemple del KomoDo que utilitza un esquema de colors clars.</caption>
       <caption xml:lang="ca-valencia">Exemple de KomoDo que utilitza un esquema de colors clars.</caption>
       <caption xml:lang="de">Beispiel für die Nutzung von KomoDo mit hellem Design.</caption>
@@ -190,6 +199,7 @@
     </screenshot>
     <screenshot environment="plasma:dark">
       <caption>Example of KomoDo being used with dark colorscheme.</caption>
+      <caption xml:lang="ar">مثال على استخدام كومودو مع نظام ألوان داكن.</caption>
       <caption xml:lang="ca">Exemple del KomoDo que utilitza amb un esquema de colors foscos.</caption>
       <caption xml:lang="ca-valencia">Exemple de KomoDo que utilitza amb un esquema de colors foscos.</caption>
       <caption xml:lang="de">Beispiel für die Nutzung von KomoDo mit dunklem Design.</caption>
