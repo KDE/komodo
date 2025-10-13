@@ -1,0 +1,334 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the komodo package.
+# SPDX-FileCopyrightText: 2025 Shinjo Park <kde@peremen.name>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: komodo\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-09-11 00:45+0000\n"
+"PO-Revision-Date: 2025-10-12 14:52+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 24.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "박신조"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#: src/main.cpp:31
+#, kde-format
+msgctxt "@title"
+msgid "KomoDo"
+msgstr "KomoDo"
+
+#: src/main.cpp:35
+#, kde-format
+msgid "Work on To-Do lists"
+msgstr "할 일 목록 관리"
+
+#: src/main.cpp:39
+#, kde-format
+msgid "© 2025 Akseli Lahtinen"
+msgstr "© 2025 Akseli Lahtinen"
+
+#: src/main.cpp:40
+#, kde-format
+msgctxt "@info:credit"
+msgid "Akseli Lahtinen"
+msgstr "Akseli Lahtinen"
+
+#: src/main.cpp:41
+#, kde-format
+msgctxt "@info:credit"
+msgid "Author"
+msgstr "작성자"
+
+#: src/main.cpp:47
+#, kde-format
+msgctxt "Longer description in about page"
+msgid ""
+"<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
+"compliant todo.txt files and turns them into easy to use list of tasks.</p>"
+msgstr ""
+"<p>KomoDo는 todo.txt 규칙을 사용하는 할 일 관리자입니다. todo.txt 파일을 처리"
+"하고 쉽게 사용할 수 있는 할 일 목록으로 변환합니다.</p>"
+
+#: src/main.cpp:55
+#, kde-format
+msgctxt "@info:shell"
+msgid "Inserts the given text in the search bar."
+msgstr "지정한 문자열을 검색 표시줄에 삽입합니다."
+
+#: src/main.cpp:57
+#, kde-format
+msgctxt "@info:shell"
+msgid "Open the given filename. The one in the config will be ignored."
+msgstr "지정한 파일 이름을 엽니다. 설정 파일에 지정한 것을 무시합니다."
+
+#: src/Main.qml:17
+#, kde-format
+msgid "KomoDo"
+msgstr "KomoDo"
+
+#: src/ui/TodoDelegate.qml:63
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Toggle completion status"
+msgstr "완료 상태 전환"
+
+#: src/ui/TodoDelegate.qml:99
+#, kde-format
+msgid "Priority"
+msgstr "우선 순위"
+
+#: src/ui/TodoDelegate.qml:192
+#, kde-format
+msgid "Task completion date"
+msgstr "할 일 완료 일자"
+
+#: src/ui/TodoDelegate.qml:205
+#, kde-format
+msgid "Task due date"
+msgstr "할 일 만료 일자"
+
+#: src/ui/TodoDelegate.qml:218
+#, kde-format
+msgid "Task creation date"
+msgstr "할 일 생성 일자"
+
+#: src/ui/TodoDelegate.qml:234
+#, kde-format
+msgctxt "@button"
+msgid "Edit"
+msgstr "편집"
+
+#: src/ui/TodoDelegate.qml:257
+#, kde-format
+msgctxt "@button"
+msgid "Delete"
+msgstr "삭제"
+
+#: src/ui/TodoDelegate.qml:294
+#, kde-format
+msgctxt "Placeholder text for creating new tasks"
+msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
+msgstr "(A) YYYY-MM-DD 설명 +프로젝트 @콘텍스트 키:값"
+
+#: src/ui/TodoDelegate.qml:330
+#, kde-format
+msgctxt "@button"
+msgid "Insert Date…"
+msgstr "살짜 삽입…"
+
+#: src/ui/TodoDelegate.qml:332
+#, kde-format
+msgid "Open a date picker and insert it at cursor position"
+msgstr "날짜 선택기를 열고 커서 위치에 선택한 날짜 삽입"
+
+#: src/ui/TodoDelegate.qml:344
+#, kde-format
+msgid "Syntax Information"
+msgstr "문법 정보"
+
+#: src/ui/TodoDelegate.qml:349
+#, kde-format
+msgctxt "Syntax quick guide"
+msgid ""
+"<p>Order of items matters:</p><pre>Completion Priority Creation-Date "
+"Description</pre><ul><li>x : Completion status. Remove to set task "
+"incompleted.</li><li>(A) : Priority. Can be from A to Z. Optional.</"
+"li><li>Completion Date: Date in Year-Month-Day format. Add only if there is "
+"creation date and task is completed.</li><li>Creation date: Date in Year-"
+"Month-Day format. Optional, but recommended.</li><li>Description: General "
+"task description. Mandatory.<ul><li>+Project: Projects this task is relevant "
+"to. Optional.</li><li>@Context: In which contexts this task is relevant in. "
+"Optional.</li><li>key:value: Various key-value pairs of information. "
+"Optional.</li></ul></li></ul><p>Description, contexts, key:value-pairs and "
+"projects can be mixed with each other.</p><p>For more detailed information "
+"and examples, click on the Help button.</p><br>"
+msgstr ""
+"<p>항목의 순서는 중요합니다.</p><pre>완료 우선순위 생성한날짜 설명</"
+"pre><ul><li>x: 완료 상태입니다. 삭제하면 할 일을 완료하지 않은 것으로 표시합"
+"니다.</li><li>(A): 우선 순위입니다. A부터 Z까지를 사용할 수 있습니다. 선택 사"
+"항입니다.</li><li>완료 날짜: 연-월-일 형식의 날짜입니다. 생성한 날짜가 있고 "
+"할 일이 완료됨으로 표시된 경우에만 추가하십시오.</li><li>생성한 날짜: 연-월-"
+"일 형식의 날짜입니다. 선택 사항이지만 입력하는 것을 추천합니다.</li><li>설"
+"명: 할 일의 설명입니다. 필수 사항입니다.<ul><li>+프로젝트: 이 할 일이 포함된 "
+"프로젝트입니다. 선택 사항입니다.</li><li>@콘텍스트: 이 할 일이 포함된 콘텍스"
+"트입니다. 선택 사항입니다.</li><li>키:값: 정보를 포함하는 다양한 키 값 쌍입니"
+"다. 선택 사항입니다.</li></ul></li></ul><p>설명, 콘텍스트, 키 값 쌍은 동시에 "
+"지정할 수 있습니다.</p><p>더 자세한 정보와 예제를 보려면 도움말 단추를 클릭하"
+"십시오.</p><br>"
+
+#: src/ui/TodoDelegate.qml:354
+#, kde-format
+msgid "Syntax Information…"
+msgstr "문법 정보…"
+
+#: src/ui/TodoDelegate.qml:362
+#, kde-format
+msgid "Show todo.txt syntax reference"
+msgstr "todo.txt 문법 참조 보기"
+
+#: src/ui/TodoDelegate.qml:376
+#, kde-format
+msgctxt "@button"
+msgid "Save"
+msgstr "저장"
+
+#: src/ui/TodoDelegate.qml:397
+#, kde-format
+msgctxt "@button"
+msgid "Cancel"
+msgstr "취소"
+
+#: src/ui/TodoPage.qml:71
+#, kde-format
+msgid "Delete To-Do"
+msgstr "할 일 삭제"
+
+#: src/ui/TodoPage.qml:83
+#, kde-format
+msgid "Are you sure you wish to delete this To-Do?"
+msgstr "이 할 일을 삭제하시겠습니까?"
+
+#: src/ui/TodoPage.qml:139
+#, kde-format
+msgid "Filter:"
+msgstr "필터:"
+
+#: src/ui/TodoPage.qml:150
+#, kde-format
+msgid "Show All"
+msgstr "모두 표시"
+
+#: src/ui/TodoPage.qml:154
+#, kde-format
+msgid "Due Date"
+msgstr "만료 기한"
+
+#: src/ui/TodoPage.qml:158
+#, kde-format
+msgid "Incomplete"
+msgstr "미완료"
+
+#: src/ui/TodoPage.qml:162
+#, kde-format
+msgid "Completed"
+msgstr "완료됨"
+
+#: src/ui/TodoPage.qml:193
+#, kde-format
+msgid ""
+"This To-Do list has been changed externally. Reloading it is strongly "
+"advised!"
+msgstr "이 할 일 목록이 외부에서 변경되었습니다. 새로 고침을 추천합니다!"
+
+#: src/ui/TodoPage.qml:199
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr "새로 고침"
+
+#: src/ui/TodoPage.qml:211
+#, kde-format
+msgid ""
+"This To-Do list has been deleted! Open another To-Do list or create new one."
+msgstr ""
+"이 할 일 목록이 삭제되었습니다! 다른 할 일 목록을 열거나 새 목록을 만드십시"
+"오."
+
+#: src/ui/TodoPage.qml:217 src/ui/TodoPage.qml:256
+#, kde-format
+msgctxt "@button"
+msgid "Create New To-Do List…"
+msgstr "새 할 일 목록 만들기…"
+
+#: src/ui/TodoPage.qml:224
+#, kde-format
+msgctxt "@action:button"
+msgid "Open To-Do List…"
+msgstr "할 일 목록 열기…"
+
+#: src/ui/TodoPage.qml:236
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New To-Do…"
+msgstr "새 할 일…"
+
+#: src/ui/TodoPage.qml:248
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open To-Do List…"
+msgstr "할 일 목록 열기…"
+
+#: src/ui/TodoPage.qml:262
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Help…"
+msgstr "도움말…"
+
+#: src/ui/TodoPage.qml:269
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Auto-insert creation date"
+msgstr "자동으로 생성한 날짜 삽입"
+
+#: src/ui/TodoPage.qml:273
+#, kde-format
+msgctxt "A checkbox for toggling this setting"
+msgid "Insert a creation date for any new task automatically"
+msgstr "새 할 일에 자동으로 생성한 날짜 삽입"
+
+#: src/ui/TodoPage.qml:280
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About KomoDo"
+msgstr "KomoDo 정보"
+
+#: src/ui/TodoPage.qml:306
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Welcome to KomoDo!"
+msgstr "KomoDo에 오신 것을 환영합니다!"
+
+#: src/ui/TodoPage.qml:307
+#, kde-format
+msgctxt "Welcome introduction text"
+msgid ""
+"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
+"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
+"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
+"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
+"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
+"follow the rules as much or as little as you wish.<br> Feel free to "
+"experiment to find out your ideal way of managing tasks.</p><p>Click "
+"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
+"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
+msgstr ""
+"<p>KomoDo는 <a href='https://github.com/todotxt/todo.txt'>todo.txt</a> 규칙"
+"을 따르는 할 일 목록 앱입니다.</p><p>규칙은 쉽게 익힐 수 있으며 KomoDo에는 도"
+"움말이 내장되어 있습니다.<br>도구 모음에서는 <i><interface>도움말…</"
+"interface></i> 단추를 클릭하십시오.<br>할 일을 편집할 때에는 <i><interface>문"
+"법 정보…</interface></i> 단추를 클릭하십시오.</p><p>필요한 대로 규칙을 따를 "
+"수 있습니다.<br>사용자에게 맞는 형태로 실험해 보십시오.</p><p><i><interface>"
+"할 일 목록 열기…</interface></i>를 클릭하여 기존 목록을 열거나 <i><interface>"
+"새 할 일 목록 만들기…</interface></i>를 클릭하여 새 목록을 시작하십시오.</p>"
+
+#: src/ui/TodoPage.qml:319
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No To-Dos found."
+msgstr "할 일을 찾을 수 없습니다."
