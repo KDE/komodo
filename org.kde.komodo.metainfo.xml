@@ -24,6 +24,7 @@
   <name xml:lang="sv">Komodo</name>
   <name xml:lang="tr">KomoDo</name>
   <name xml:lang="uk">KomoDo</name>
+  <name xml:lang="zh-CN">KomoDo</name>
   <summary>Work on To-Do lists</summary>
   <summary xml:lang="ar">اعمل على قوائم المهام</summary>
   <summary xml:lang="ca">Treballa amb llistes de tasques pendents</summary>
@@ -43,6 +44,7 @@
   <summary xml:lang="sv">Arbeta med uppgiftslistor</summary>
   <summary xml:lang="tr">Yapılacaklar listeleri ile çalışın</summary>
   <summary xml:lang="uk">Робота над списками завдань</summary>
+  <summary xml:lang="zh-CN">处理待办事项列表</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
   <project_group>KDE</project_group>
@@ -79,6 +81,7 @@
     <p xml:lang="sv">KomoDo är en uppgiftshanterare som använder todo.txt-specifikationen. Den analyserar alla kompatibla todo.txt-filer och omvandlar dem till lättanvända listor med uppgifter.</p>
     <p xml:lang="tr">KomoDo, todo.txt belirtimini kullanan bir yapılacaklar yöneticisidir. Uyumlu tüm todo.txt dosyalarını ayrıştırır ve bunları kullanımı kolay görev listelerine dönüştürür.</p>
     <p xml:lang="uk">KomoDo — програма для керування завданнями, яка використовує специфікацію todo.txt. Вона обробляє усі сумісні файли todo.txt і перетворює їх у простий у використанні список завдань.</p>
+    <p xml:lang="zh-CN">KomoDo 是一款遵循 todo.txt 规范的待办事项管理器。它能解析任何符合规范的 todo.txt 文件，并将其转换为易于使用的任务列表。</p>
     <p>KomoDo has built-in help for the todo.txt specification, so it's suitable for newcomers too!</p>
     <p xml:lang="ar">كومودو يتضمّن دليلًا مضمَّنًا لمواصفات todo.txt، لذا هو مناسب للوافدين الجدد أيضًا!</p>
     <p xml:lang="ca">El KomoDo integra ajuda per a l'especificació «todo.txt», de manera que també és adequat per als nouvinguts!</p>
@@ -98,6 +101,7 @@
     <p xml:lang="sv">KomoDo har inbyggd hjälp för todo.txt-specifikationen, så den passar även för nybörjare.</p>
     <p xml:lang="tr">KomoDo’nun todo.txt belirtimi için içsel yardımı vardır, bu nedenle yeni başlayanlar için de uygundur!</p>
     <p xml:lang="uk">До KomoDo вбудовано довідку щодо специфікації todo.txt, тому програма може бути використана і початківцями!</p>
+    <p xml:lang="zh-CN">KomoDo 内置了针对 todo.txt 规范的帮助文档，因此也非常适合新手使用！</p>
     <p>Features</p>
     <p xml:lang="ar">الميزات</p>
     <p xml:lang="ca">Característiques</p>
@@ -117,6 +121,7 @@
     <p xml:lang="sv">Funktioner</p>
     <p xml:lang="tr">Özellikler</p>
     <p xml:lang="uk">Можливості</p>
+    <p xml:lang="zh-CN">特性</p>
     <ul>
       <li>Open and create new todo.txt files</li>
       <li xml:lang="ar">افتح وأنشئ ملفات todo.txt جديدة</li>
@@ -137,6 +142,7 @@
       <li xml:lang="sv">Öppna och skapa nya todo.txt-filer</li>
       <li xml:lang="tr">Yeni todo.txt dosyaları oluşturun ve onları açın</li>
       <li xml:lang="uk">Відкриття і створення файлів todo.txt</li>
+      <li xml:lang="zh-CN">打开并创建新的 todo.txt 文件</li>
       <li>Add, delete and edit tasks</li>
       <li xml:lang="ar">أضِف، احذف، وحرّر المهام</li>
       <li xml:lang="ca">Afegeix, suprimeix i edita tasques</li>
@@ -156,6 +162,7 @@
       <li xml:lang="sv">Lägg till, ta bort och redigera uppgifter</li>
       <li xml:lang="tr">Görevler ekleyin, onları düzenleyin veya silin</li>
       <li xml:lang="uk">Додавання, вилучення і редагування записів завдань</li>
+      <li xml:lang="zh-CN">添加、删除和编辑任务</li>
       <li>Filter and search tasks</li>
       <li xml:lang="ar">صفِّ وابحث عن المهام</li>
       <li xml:lang="ca">Filtra i cerca tasques</li>
@@ -175,6 +182,7 @@
       <li xml:lang="sv">Filtrera och sök efter uppgifter</li>
       <li xml:lang="tr">Görevleri süzün ve içlerinde arama yapın</li>
       <li xml:lang="uk">Фільтрування і пошук завдань</li>
+      <li xml:lang="zh-CN">筛选和搜索任务</li>
     </ul>
   </description>
   <url type="homepage">https://apps.kde.org/komodo/</url>
@@ -204,6 +212,7 @@
       <caption xml:lang="sv">Exempel på Komodo använt med ett ljust färgschema.</caption>
       <caption xml:lang="tr">KomoDo’nun açık renk şemasıyla kullanımı örneği</caption>
       <caption xml:lang="uk">Приклад використання KomoDo зі світлою темою кольорів.</caption>
+      <caption xml:lang="zh-CN">KomoDo 使用浅色配色方案的示例。</caption>
       <image>https://cdn.kde.org/screenshots/komodo/screenshot.png</image>
     </screenshot>
     <screenshot environment="plasma:dark">
@@ -226,6 +235,7 @@
       <caption xml:lang="sv">Exempel på Komodo använt med ett mörkt färgschema.</caption>
       <caption xml:lang="tr">KomoDo’nun koyu renk şemasıyla kullanımı örneği</caption>
       <caption xml:lang="uk">Приклад використання KomoDo з темною темою кольорів.</caption>
+      <caption xml:lang="zh-CN">KomoDo 使用深色配色方案的示例。</caption>
       <image>https://cdn.kde.org/screenshots/komodo/screenshot-dark.png</image>
     </screenshot>
   </screenshots>
