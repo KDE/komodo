@@ -239,7 +239,7 @@
       <image>https://cdn.kde.org/screenshots/komodo/screenshot-dark.png</image>
     </screenshot>
   </screenshots>
-  <value key="KDE::supporters">Thibault Molleman</value>
+  <value key="KDE::supporters">Thibault Molleman, anthropy@mastodon.derg.nz</value>
   <provides>
     <binary>komodo</binary>
   </provides>
