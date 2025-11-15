@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.dateandtime as DateTime
+import org.kde.komodo.models
 
 Kirigami.AbstractCard {
     id: todoDelegate
@@ -136,7 +137,7 @@ Kirigami.AbstractCard {
                             property var textUrl: {
                                 let value = "";
                                 // Split the value like this in case its URL
-                                if (textData[1].startsWith("http") || textData[1].startsWith("file://")) {
+                                if (TodoModel.disallowedKeyName(textData[1])) {
                                     const url = modelData.split(":").slice(1).join(":");
                                     value = url;
                                 }

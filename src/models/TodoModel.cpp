@@ -95,7 +95,7 @@ Todo TodoModel::parseTodoFromDescription(const QString &description) const
                 todo.addContext(item);
                 continue;
             } else if (item.contains(m_keyValuePairRegexp)) {
-                if (!item.startsWith(QStringLiteral("http"))) {
+                if (!disallowedKeyName(item)) {
                     todo.addKeyValuePair(item);
                 }
                 continue;
@@ -438,4 +438,23 @@ QModelIndex TodoModel::indexFromQUuid(const QUuid &uuid) const
         }
     }
     return QModelIndex();
+}
+
+bool TodoModel::disallowedKeyName(const QString &keyName) const
+{
+    const QStringList disallowedKeys = QStringList{
+        QStringLiteral("https"),
+        QStringLiteral("http"),
+        QStringLiteral("file"),
+        QStringLiteral("mailto"),
+        QStringLiteral("sftp"),
+    };
+
+    for (const auto &k : disallowedKeys) {
+        if (keyName.startsWith(k)) {
+            return true;
+        }
+    }
+
+    return false;
 }
