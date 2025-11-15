@@ -83,10 +83,7 @@ Todo TodoModel::parseTodoFromDescription(const QString &description) const
         splitDescription.removeFirst();
     }
 
-    QString descr;
     for (const auto &item : splitDescription) {
-        descr.append(item);
-        descr.append(QStringLiteral(" "));
         if (item.length() > 1) {
             if (item.startsWith(QStringLiteral("+"))) {
                 todo.addProject(item);
