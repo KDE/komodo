@@ -19,7 +19,7 @@ TodoModel::TodoModel(QObject *parent)
     m_keyValuePriorityRegexp = QRegularExpression(QStringLiteral("pri:([A-Z])"));
     m_dateRegexp = QRegularExpression(QStringLiteral("\\d{4}-\\d\\d-\\d\\d"));
     m_keyValuePairRegexp = QRegularExpression(QStringLiteral("[a-zA-Z]+:[\\S]+"));
-    m_textSplitRegexp = QRegularExpression(QStringLiteral(" |\\[([^\\]]+)\\]\\(([^)]+)\\)"));
+    m_textSplitRegexp = QRegularExpression(QStringLiteral(" |\\[[^\\]]+\\]\\([^)]+\\)"));
 
     QString fileNameArg = qApp->property("filename").toString();
 
