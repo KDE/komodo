@@ -1,7 +1,8 @@
 (A) +a +b +c +d +e +fffffffffffffffffff +gggggggggggggg asdkljasdjaksdjli +hhhhhhhhhh aaa@bbb.cc 1+1 @jkdfsjlsdkfs sdfgklsdjflk @sdjkhfksdgjhsd +asdasdjkhsdkf +234234234
 (B) 2025-06-21 Outline chapter 5 chapter:5 +Novel @Computer
-(B) new task +here @cool due:2025-07-01 https://kde.org
+(B) new task +here @cool due:2025-07-01 https://kde.org item:file://foo/bar
 (C) 2025-06-21 Add cover sheets link:https://example.com/lo%20l/#context?id=123 @Office +TPSReports
+(D) 2025-08-23 +TestFile this [inline url testing](file://kde.org) @test +file for [email url](foo@bar.com) whathappens:[here ?](https://example.com) @todoapp due:2026-01-01
 (F) 2025-06-21 +TestFile this is the @test +file for @todoapp due:2026-01-01
 2025-06-21 Pick up milk @GroceryStore
 Plan backyard herb garden @Home
@@ -11,3 +12,4 @@ x 2025-06-21 2025-06-21 Download Todo.txt mobile app note:blaa_text @Phone pri:F
 x 2025-06-28 +Family Call Mom @Phone pri:A
 x 2025-06-28 2025-06-21 +project description @context pri:A
 x 2025-06-28 Schedule annual @checkup due:2025-12-31 +Health pri:A
+x 2025-08-23 2025-08-24 +TestFile Another [inline url testing](https://kde.org) @test +file for [email url](foo@bar.com) @todoapp due:2026-01-01 pri:A

@@ -95,4 +95,6 @@ private:
     QRegularExpression m_dateRegexp;
     // Regexp for keyvalue-pair
     QRegularExpression m_keyValuePairRegexp;
+    // Regexp for splitting description into separate items
+    QRegularExpression m_textSplitRegexp;
 };

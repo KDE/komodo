@@ -19,6 +19,7 @@ TodoModel::TodoModel(QObject *parent)
     m_keyValuePriorityRegexp = QRegularExpression(QStringLiteral("pri:([A-Z])"));
     m_dateRegexp = QRegularExpression(QStringLiteral("\\d{4}-\\d\\d-\\d\\d"));
     m_keyValuePairRegexp = QRegularExpression(QStringLiteral("[a-zA-Z]+:[\\S]+"));
+    m_textSplitRegexp = QRegularExpression(QStringLiteral(" |\\[([^\\]]+)\\]\\(([^)]+)\\)"));
 
     QString fileNameArg = qApp->property("filename").toString();
 
@@ -53,7 +54,7 @@ Todo TodoModel::parseTodoFromDescription(const QString &description) const
     if (description.isEmpty()) {
         return todo;
     }
-    auto splitDescription = description.split(QStringLiteral(" "));
+    auto splitDescription = description.split(m_textSplitRegexp);
     bool completionStatus = false;
     if (splitDescription.first() == QStringLiteral("x")) {
         completionStatus = true;
