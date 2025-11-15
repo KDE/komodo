@@ -116,7 +116,6 @@ Kirigami.AbstractCard {
                     Layout.fillWidth: true
                     Kirigami.SelectableLabel {
                         id: prettyDescriptionLabel
-                        font.family: "monospace"
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignTop
                         wrapMode: Text.Wrap
