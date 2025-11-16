@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:45+0000\n"
+"POT-Creation-Date: 2025-11-16 00:45+0000\n"
 "PO-Revision-Date: 2025-09-12 10:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -94,56 +94,56 @@ msgstr "Tamamlanma durumunu aç/kapat"
 msgid "Priority"
 msgstr "Öncelik"
 
-#: src/ui/TodoDelegate.qml:192
+#: src/ui/TodoDelegate.qml:191
 #, kde-format
 msgid "Task completion date"
 msgstr "Görevin tamamlanma tarihi"
 
-#: src/ui/TodoDelegate.qml:205
+#: src/ui/TodoDelegate.qml:204
 #, kde-format
 msgid "Task due date"
 msgstr "Görevin bitiş tarihi"
 
-#: src/ui/TodoDelegate.qml:218
+#: src/ui/TodoDelegate.qml:217
 #, kde-format
 msgid "Task creation date"
 msgstr "Görevin oluşturulma tarihi"
 
-#: src/ui/TodoDelegate.qml:234
+#: src/ui/TodoDelegate.qml:233
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
 msgstr "Düzenle"
 
-#: src/ui/TodoDelegate.qml:257
+#: src/ui/TodoDelegate.qml:256
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
 msgstr "Sil"
 
-#: src/ui/TodoDelegate.qml:294
+#: src/ui/TodoDelegate.qml:293
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
 msgstr "(A) YYYY-AA-GG Açıklama +Proje @Bağlam anahtar:değer"
 
-#: src/ui/TodoDelegate.qml:330
+#: src/ui/TodoDelegate.qml:329
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
 msgstr "Tarih Gir…"
 
-#: src/ui/TodoDelegate.qml:332
+#: src/ui/TodoDelegate.qml:331
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
 msgstr "Bir tarih seçicisi aç ve imleç konumunda yerleştir"
 
-#: src/ui/TodoDelegate.qml:344
+#: src/ui/TodoDelegate.qml:343
 #, kde-format
 msgid "Syntax Information"
 msgstr "Sözdizim Bilgisi"
 
-#: src/ui/TodoDelegate.qml:349
+#: src/ui/TodoDelegate.qml:348
 #, kde-format
 msgctxt "Syntax quick guide"
 msgid ""
@@ -174,23 +174,23 @@ msgstr ""
 "birbirleriyle karıştırılabilir.</p><p>Daha fazla ayrıntılı bilgi ve örnekler "
 "için “Yardım” düğmesine tıklayın.</p><br>"
 
-#: src/ui/TodoDelegate.qml:354
+#: src/ui/TodoDelegate.qml:353
 #, kde-format
 msgid "Syntax Information…"
 msgstr "Sözdizim Bilgisi…"
 
-#: src/ui/TodoDelegate.qml:362
+#: src/ui/TodoDelegate.qml:361
 #, kde-format
 msgid "Show todo.txt syntax reference"
 msgstr "todo.txt sözdizim başvurusunu göster"
 
-#: src/ui/TodoDelegate.qml:376
+#: src/ui/TodoDelegate.qml:375
 #, kde-format
 msgctxt "@button"
 msgid "Save"
 msgstr "Kaydet"
 
-#: src/ui/TodoDelegate.qml:397
+#: src/ui/TodoDelegate.qml:396
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"

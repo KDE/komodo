@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:45+0000\n"
+"POT-Creation-Date: 2025-11-16 00:45+0000\n"
 "PO-Revision-Date: 2025-09-11 18:29+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -97,56 +97,56 @@ msgstr "Commuta l'estat de compleció"
 msgid "Priority"
 msgstr "Prioritat"
 
-#: src/ui/TodoDelegate.qml:192
+#: src/ui/TodoDelegate.qml:191
 #, kde-format
 msgid "Task completion date"
 msgstr "Data de finalització de la tasca"
 
-#: src/ui/TodoDelegate.qml:205
+#: src/ui/TodoDelegate.qml:204
 #, kde-format
 msgid "Task due date"
 msgstr "Data de venciment de la tasca"
 
-#: src/ui/TodoDelegate.qml:218
+#: src/ui/TodoDelegate.qml:217
 #, kde-format
 msgid "Task creation date"
 msgstr "Data de creació de la tasca"
 
-#: src/ui/TodoDelegate.qml:234
+#: src/ui/TodoDelegate.qml:233
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
 msgstr "Edita"
 
-#: src/ui/TodoDelegate.qml:257
+#: src/ui/TodoDelegate.qml:256
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: src/ui/TodoDelegate.qml:294
+#: src/ui/TodoDelegate.qml:293
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
 msgstr "(A) AAAA-MM-DD Descripció +Projecte @Context clau:valor"
 
-#: src/ui/TodoDelegate.qml:330
+#: src/ui/TodoDelegate.qml:329
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
 msgstr "Insereix una data…"
 
-#: src/ui/TodoDelegate.qml:332
+#: src/ui/TodoDelegate.qml:331
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
 msgstr "Obre un selector de dates i la insereix a la posició del cursor"
 
-#: src/ui/TodoDelegate.qml:344
+#: src/ui/TodoDelegate.qml:343
 #, kde-format
 msgid "Syntax Information"
 msgstr "Informació de la sintaxi"
 
-#: src/ui/TodoDelegate.qml:349
+#: src/ui/TodoDelegate.qml:348
 #, kde-format
 msgctxt "Syntax quick guide"
 msgid ""
@@ -177,23 +177,23 @@ msgstr ""
 "poden barrejar entre ells.</p><p>Per a informació més detallada i exemples "
 "feu clic al botó d'ajuda.</p><br>"
 
-#: src/ui/TodoDelegate.qml:354
+#: src/ui/TodoDelegate.qml:353
 #, kde-format
 msgid "Syntax Information…"
 msgstr "Informació de la sintaxi…"
 
-#: src/ui/TodoDelegate.qml:362
+#: src/ui/TodoDelegate.qml:361
 #, kde-format
 msgid "Show todo.txt syntax reference"
 msgstr "Mostra la referència de la sintaxi de «todo.txt»"
 
-#: src/ui/TodoDelegate.qml:376
+#: src/ui/TodoDelegate.qml:375
 #, kde-format
 msgctxt "@button"
 msgid "Save"
 msgstr "Desa"
 
-#: src/ui/TodoDelegate.qml:397
+#: src/ui/TodoDelegate.qml:396
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:45+0000\n"
+"POT-Creation-Date: 2025-11-16 00:45+0000\n"
 "PO-Revision-Date: 2025-09-11 06:59+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -95,56 +95,56 @@ msgstr "Preklopi stanje dokončanja"
 msgid "Priority"
 msgstr "Prednost"
 
-#: src/ui/TodoDelegate.qml:192
+#: src/ui/TodoDelegate.qml:191
 #, kde-format
 msgid "Task completion date"
 msgstr "Datum zaključka opravila"
 
-#: src/ui/TodoDelegate.qml:205
+#: src/ui/TodoDelegate.qml:204
 #, kde-format
 msgid "Task due date"
 msgstr "Rok opravila"
 
-#: src/ui/TodoDelegate.qml:218
+#: src/ui/TodoDelegate.qml:217
 #, kde-format
 msgid "Task creation date"
 msgstr "Datum kreiranja opravila"
 
-#: src/ui/TodoDelegate.qml:234
+#: src/ui/TodoDelegate.qml:233
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
 msgstr "Uredi"
 
-#: src/ui/TodoDelegate.qml:257
+#: src/ui/TodoDelegate.qml:256
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
 msgstr "Zbriši"
 
-#: src/ui/TodoDelegate.qml:294
+#: src/ui/TodoDelegate.qml:293
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
 msgstr "(A) YYYY-MM-DD Opis +Projekt @KLjuč konteksta:vrednost"
 
-#: src/ui/TodoDelegate.qml:330
+#: src/ui/TodoDelegate.qml:329
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
 msgstr "Vstavi datum…"
 
-#: src/ui/TodoDelegate.qml:332
+#: src/ui/TodoDelegate.qml:331
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
 msgstr "Odprite izbirnik datuma in ga vstavite na mesto kazalca"
 
-#: src/ui/TodoDelegate.qml:344
+#: src/ui/TodoDelegate.qml:343
 #, kde-format
 msgid "Syntax Information"
 msgstr "Informacija o skladnji"
 
-#: src/ui/TodoDelegate.qml:349
+#: src/ui/TodoDelegate.qml:348
 #, kde-format
 msgctxt "Syntax quick guide"
 msgid ""
@@ -175,23 +175,23 @@ msgstr ""
 "kombinirati.</p><p>Za podrobnejše informacije in primere kliknite gumb Pomoč."
 "</p><br>"
 
-#: src/ui/TodoDelegate.qml:354
+#: src/ui/TodoDelegate.qml:353
 #, kde-format
 msgid "Syntax Information…"
 msgstr "Informacija o skladnji…"
 
-#: src/ui/TodoDelegate.qml:362
+#: src/ui/TodoDelegate.qml:361
 #, kde-format
 msgid "Show todo.txt syntax reference"
 msgstr "Prikaži referenco skladnje datoteke todo.txt"
 
-#: src/ui/TodoDelegate.qml:376
+#: src/ui/TodoDelegate.qml:375
 #, kde-format
 msgctxt "@button"
 msgid "Save"
 msgstr "Shrani"
 
-#: src/ui/TodoDelegate.qml:397
+#: src/ui/TodoDelegate.qml:396
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"
