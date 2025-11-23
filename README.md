@@ -43,3 +43,8 @@ See the built-in help for more information.
 You can use [kde-builder](https://kde-builder.kde.org/en/) to build KomoDo.
 
 Install it, and then in terminal just run `kde-builder komodo`.
+
+## AI and contributions
+
+In general KomoDo does not allow "AI" powered contributions. 
+If something is unclear, feel free to ask about it.
