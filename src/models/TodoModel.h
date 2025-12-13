@@ -1,23 +1,23 @@
 // SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+// SPDX-FileCopyrightText: 2025 Martin Sh <hemisputnik@proton.me>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
 
 #include "Todo.h"
-#include "komodo_config.h"
 #include <KDirWatch>
 #include <QAbstractItemModel>
 #include <QRegularExpression>
+#include <QUrl>
+#include <QtQml/qqmlregistration.h>
 
 class TodoModel : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
-    QML_SINGLETON
     Q_PROPERTY(QUrl filePath READ filePath WRITE setFilePath NOTIFY filePathChanged)
-    Q_PROPERTY(int filterIndex READ filterIndex WRITE setFilterIndex NOTIFY filterIndexChanged)
-    Q_PROPERTY(bool autoInsertCreationDate READ autoInsertCreationDate WRITE setAutoInsertCreationDate NOTIFY autoInsertCreationDateChanged)
     Q_PROPERTY(QString startupSearchText READ startupSearchText)
+    Q_PROPERTY(QString fileNameArg READ fileNameArg)
 
 public:
     // https://github.com/todotxt/todo.txt/blob/master/description.svg
@@ -53,17 +53,12 @@ public:
     void setFilePath(const QUrl &newFilePath);
     Q_SIGNAL void filePathChanged();
 
+    Q_INVOKABLE void setLocalFilePath(const QString &localFile);
+
     Q_SIGNAL void fileChanged();
 
-    int filterIndex() const;
-    void setFilterIndex(const int &newFilterIndex);
-    Q_SIGNAL void filterIndexChanged();
-
-    bool autoInsertCreationDate() const;
-    void setAutoInsertCreationDate(bool enabled);
-    Q_SIGNAL void autoInsertCreationDateChanged();
-
     QString startupSearchText();
+    QString fileNameArg();
 
     Q_INVOKABLE bool loadFile();
     Q_INVOKABLE bool saveFile();
@@ -79,7 +74,6 @@ private:
 
     QUrl m_filePath;
     QList<Todo> m_todos;
-    KomodoConfig *m_config;
     KDirWatch *m_fileWatcher;
     int m_filterIndex = 0;
     bool m_autoInsertCreationDate = false;

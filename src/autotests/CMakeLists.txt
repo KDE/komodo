@@ -1,9 +1,8 @@
 # SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+# SPDX-FileCopyrightText: 2025 Martin Sh <hemisputnik@proton.me>
 # SPDX-License-Identifier: BSD-2-Clause
 
 add_library(${CMAKE_PROJECT_NAME}_models_test STATIC ../models/Todo.cpp ../models/TodoModel.cpp)
-
-kconfig_target_kcfg_file(${CMAKE_PROJECT_NAME}_models_test FILE ../models/komodo_config.kcfg CLASS_NAME KomodoConfig MUTATORS GENERATE_PROPERTIES GENERATE_MOC DEFAULT_VALUE_GETTERS QML_REGISTRATION SINGLETON)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}_models_test
     PUBLIC

@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+// SPDX-FileCopyrightText: 2025 Martin Sh <hemisputnik@proton.me>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+#include "komodo_config.h"
 #include "version-komodo.h"
 #include <KAboutData>
 #include <KIconTheme>
@@ -74,6 +76,9 @@ int main(int argc, char *argv[])
 
     QApplication::setStyle(QStringLiteral("breeze"));
     QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+
+    auto config = KomodoConfig::self();
+    qmlRegisterSingletonInstance("org.kde.komodo.config", 1, 0, "Config", config);
 
     QQmlApplicationEngine engine;
 

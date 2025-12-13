@@ -1,15 +1,16 @@
 // SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+// SPDX-FileCopyrightText: 2025 Martin Sh <hemisputnik@proton.me>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "TodoModel.h"
 #include <KColorScheme>
 #include <KColorUtils>
+#include <QCoreApplication>
 #include <QDateTime>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QString>
-#include <QUrl>
 
 TodoModel::TodoModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -20,27 +21,9 @@ TodoModel::TodoModel(QObject *parent)
     m_dateRegexp = QRegularExpression(QStringLiteral("\\d{4}-\\d\\d-\\d\\d"));
     m_keyValuePairRegexp = QRegularExpression(QStringLiteral("[a-zA-Z]+:[\\S]+"));
 
-    QString fileNameArg = qApp->property("filename").toString();
-
     m_fileWatcher = new KDirWatch(this);
-    connect(this, &TodoModel::filePathChanged, this, &TodoModel::loadFile);
+
     connect(this, &TodoModel::dataChanged, this, &TodoModel::saveFile);
-    m_config = KomodoConfig::self();
-    m_config->load();
-    m_filterIndex = m_config->filterIndex();
-    m_autoInsertCreationDate = m_config->autoInsertCreationDate();
-    if (!m_config->todoFilePath().isEmpty() && fileNameArg.isEmpty()) {
-        m_filePath = QUrl::fromLocalFile(m_config->todoFilePath());
-        if (!fileExists()) {
-            m_filePath = QUrl();
-            m_config->setTodoFilePath(QString());
-            m_config->save();
-        } else {
-            loadFile();
-        }
-    } else if (!fileNameArg.isEmpty()) {
-        m_filePath = QUrl::fromLocalFile(fileNameArg);
-    }
     connect(m_fileWatcher, &KDirWatch::dirty, this, &TodoModel::fileModified);
     connect(m_fileWatcher, &KDirWatch::deleted, this, &TodoModel::fileModified);
     connect(m_fileWatcher, &KDirWatch::created, this, &TodoModel::fileModified);
@@ -322,40 +305,22 @@ QUrl TodoModel::filePath() const
 void TodoModel::setFilePath(const QUrl &newFilePath)
 {
     m_filePath = newFilePath;
-    m_config->setTodoFilePath(m_filePath.toLocalFile());
-    m_config->save();
     Q_EMIT filePathChanged();
 }
 
-int TodoModel::filterIndex() const
+void TodoModel::setLocalFilePath(const QString &localFile)
 {
-    return m_filterIndex;
-}
-
-void TodoModel::setFilterIndex(const int &newFilterIndex)
-{
-    m_filterIndex = newFilterIndex;
-    m_config->setFilterIndex(m_filterIndex);
-    m_config->save();
-    Q_EMIT filterIndexChanged();
-}
-
-bool TodoModel::autoInsertCreationDate() const
-{
-    return m_autoInsertCreationDate;
-}
-
-void TodoModel::setAutoInsertCreationDate(bool enabled)
-{
-    m_autoInsertCreationDate = enabled;
-    m_config->setAutoInsertCreationDate(m_autoInsertCreationDate);
-    m_config->save();
-    Q_EMIT autoInsertCreationDateChanged();
+    setFilePath(QUrl::fromLocalFile(QDir(localFile).absolutePath()));
 }
 
 QString TodoModel::startupSearchText()
 {
     return qApp->property("search-text").toString();
+}
+
+QString TodoModel::fileNameArg()
+{
+    return qApp->property("filename").toString();
 }
 
 bool TodoModel::loadFile()

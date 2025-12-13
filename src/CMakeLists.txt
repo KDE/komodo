@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+# SPDX-FileCopyrightText: 2025 Martin Sh <hemisputnik@proton.me>
 # SPDX-License-Identifier: BSD-2-Clause
 
 add_executable(${CMAKE_PROJECT_NAME}
@@ -17,13 +18,18 @@ ecm_add_qml_module(${CMAKE_PROJECT_NAME}
     URI
     org.kde.${CMAKE_PROJECT_NAME}
     DEPENDENCIES
+    org.kde.kitemmodels
+    org.kde.${CMAKE_PROJECT_NAME}.models
     org.kde.${CMAKE_PROJECT_NAME}.ui
 )
 
 ecm_target_qml_sources(${CMAKE_PROJECT_NAME}
     SOURCES
     Main.qml
+    TodoPage.qml
 )
+
+kconfig_target_kcfg_file(${CMAKE_PROJECT_NAME} FILE komodo_config.kcfg CLASS_NAME KomodoConfig MUTATORS GENERATE_PROPERTIES GENERATE_MOC DEFAULT_VALUE_GETTERS QML_REGISTRATION SINGLETON)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
     PRIVATE
@@ -41,8 +47,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     KF6::GuiAddons
     KF6::ColorScheme
     KF6::IconThemes
-    ${CMAKE_PROJECT_NAME}_uiplugin
-    ${CMAKE_PROJECT_NAME}_modelsplugin
+    ${CMAKE_PROJECT_NAME}_ui
+    ${CMAKE_PROJECT_NAME}_models
 )
 
 if (USE_DBUS)

@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+// SPDX-FileCopyrightText: 2025 Martin Sh <hemisputnik@proton.me>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 import QtQuick
@@ -7,7 +8,10 @@ import QtQuick.Controls as QQC2
 import QtQuick.Dialogs as Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels
+
+import org.kde.komodo.config
 import org.kde.komodo.models
+import org.kde.komodo.ui
 
 Kirigami.ScrollablePage {
     id: page
@@ -19,9 +23,9 @@ Kirigami.ScrollablePage {
     horizontalScrollBarInteractive: false
 
     Connections {
-        target: TodoModel
+        target: todoModel
         function onFileChanged() {
-            const fileExists = TodoModel.fileExists();
+            const fileExists = todoModel.fileExists();
             fileDeletedMessage.visible = !fileExists;
             fileChangedMessage.visible = fileExists;
             cardsListView.enabled = fileExists;
@@ -30,7 +34,7 @@ Kirigami.ScrollablePage {
 
     function deleteTodo(index) {
         const originalIndex = filteredModel.index(index, 0);
-        TodoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
+        todoModel.deleteTodo(filteredModel.mapToSource(originalIndex));
     }
 
     function updateSearch() {
@@ -42,7 +46,12 @@ Kirigami.ScrollablePage {
     Dialogs.FileDialog {
         id: openDialog
         onAccepted: {
-            TodoModel.filePath = selectedFile;
+            todoModel.filePath = selectedFile;
+            todoModel.loadFile();
+
+            Config.todoFilePath = selectedFile;
+            Config.save();
+            
             fileDeletedMessage.visible = false;
             cardsListView.enabled = true;
         }
@@ -53,7 +62,12 @@ Kirigami.ScrollablePage {
     Dialogs.FileDialog {
         id: createNewDialog
         onAccepted: {
-            TodoModel.filePath = selectedFile;
+            todoModel.filePath = selectedFile;
+            todoModel.loadFile();
+
+            Config.todoFilePath = selectedFile;
+            Config.save();
+
             fileDeletedMessage.visible = false;
             cardsListView.enabled = true;
         }
@@ -102,14 +116,14 @@ Kirigami.ScrollablePage {
     }
 
     titleDelegate: Kirigami.Heading {
-        text: TodoModel.filePath.toString().replace("file://", "").split('/').pop()
+        text: todoModel.filePath.toString().replace("file://", "").split('/').pop()
         elide: Text.ElideMiddle
         MouseArea {
             hoverEnabled: true
             anchors.fill: parent
             QQC2.ToolTip.visible: containsMouse
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-            QQC2.ToolTip.text: TodoModel.filePath.toString().replace("file://", "")
+            QQC2.ToolTip.text: todoModel.filePath.toString().replace("file://", "")
         }
     }
 
@@ -132,7 +146,7 @@ Kirigami.ScrollablePage {
                     }
                     onTextChanged: Qt.callLater(page.updateSearch)
                     Component.onCompleted: {
-                        text = TodoModel.startupSearchText;
+                        text = todoModel.startupSearchText;
                     }
                 }
                 QQC2.Label {
@@ -143,7 +157,7 @@ Kirigami.ScrollablePage {
                     editable: false
                     textRole: "text"
                     valueRole: "value"
-                    currentIndex: TodoModel.filterIndex
+                    currentIndex: Config.filterIndex
                     model: [
                         {
                             value: "default",
@@ -163,15 +177,13 @@ Kirigami.ScrollablePage {
                         },
                     ]
                     onCurrentIndexChanged: {
-                        TodoModel.filterIndex = currentIndex;
+                        Config.filterIndex = currentIndex;
+                        Config.save();
                     }
                     onCurrentValueChanged: {
                         cardsListView.currentIndex = -1;
                         filteredModel.secondaryFilter = filterComboBox.currentValue;
-                        TodoModel.loadFile();
-                    }
-                    Component.onCompleted: {
-                        currentIndex = TodoModel.filterIndex;
+                        filteredModel.invalidateFilter();
                     }
                 }
             }
@@ -198,7 +210,7 @@ Kirigami.ScrollablePage {
                     icon.name: "view-refresh-symbolic"
                     text: i18nc("@action:button", "Reload")
                     onTriggered: source => {
-                        TodoModel.loadFile();
+                        todoModel.loadFile();
                         fileChangedMessage.visible = false;
                     }
                 }
@@ -234,12 +246,12 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: "list-add-symbolic"
             text: i18nc("@action:inmenu", "New To-Do…")
-            enabled: TodoModel.filePath != ""
+            enabled: todoModel.filePath != ""
             onTriggered: {
                 filterComboBox.currentIndex = 0;
-                cardsListView.currentIndex = filteredModel.mapFromSource(TodoModel.indexFromQUuid(TodoModel.addTodo(""))).row;
+                cardsListView.currentIndex = filteredModel.mapFromSource(todoModel.indexFromQUuid(todoModel.addTodo(""))).row;
                 cardsListView.currentItem.editMode = true;
-                cardsListView.currentItem.autoInsertCreationDate = TodoModel.autoInsertCreationDate;
+                cardsListView.currentItem.autoInsertCreationDate = Config.autoInsertCreationDate;
             }
             shortcut: StandardKey.New
         },
@@ -269,11 +281,12 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:inmenu", "Auto-insert creation date")
             icon.name: "view-calendar-symbolic"
             checkable: true
-            checked: TodoModel.autoInsertCreationDate
+            checked: Config.autoInsertCreationDate
             tooltip: i18nc("A checkbox for toggling this setting", "Insert a creation date for any new task automatically")
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: {
-                TodoModel.autoInsertCreationDate = checked;
+                Config.autoInsertCreationDate = checked;
+                Config.save();
             }
         },
         Kirigami.Action {
@@ -300,7 +313,7 @@ Kirigami.ScrollablePage {
             id: noTodosLoaded
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
             anchors.centerIn: parent
-            visible: TodoModel.filePath == ""
+            visible: todoModel.filePath == ""
             type: Kirigami.PlaceholderMessage.Actionable
             icon.name: "org.kde.komodo"
             text: i18nc("@info:placeholder", "Welcome to KomoDo!")
@@ -321,7 +334,30 @@ Kirigami.ScrollablePage {
         model: KSortFilterProxyModel {
             id: filteredModel
             property var secondaryFilter: "default"
-            sourceModel: TodoModel
+            
+            sourceModel: TodoModel {
+                id: todoModel
+
+                filePath: Config.todoFilePath
+
+                Component.onCompleted: {
+                    // Filename argument always takes priority over the stored path.
+                    if (todoModel.fileNameArg.length > 0) {
+                        todoModel.setLocalFilePath(todoModel.fileNameArg);
+                        Config.todoFilePath = todoModel.filePath;
+                        Config.save();
+                    }
+
+                    if (!todoModel.fileExists()) {
+                        todoModel.filePath = "";
+                        Config.todoFilePath = "";
+                        Config.save();
+                    } else {
+                        todoModel.loadFile();
+                    }
+                }
+            }
+            
             filterRoleName: "description"
             sortRoleName: "description"
             filterRowCallback: function (source_row, source_parent) {

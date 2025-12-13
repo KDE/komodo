@@ -1,15 +1,14 @@
 # SPDX-FileCopyrightText: 2025 Akseli Lahtinen <akselmo@akselmo.dev>
+# SPDX-FileCopyrightText: 2025 Martin Sh <hemisputnik@proton.me>
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(${CMAKE_PROJECT_NAME}_models STATIC)
+add_library(${CMAKE_PROJECT_NAME}_models SHARED)
 
 ecm_add_qml_module(${CMAKE_PROJECT_NAME}_models
     URI
     org.kde.${CMAKE_PROJECT_NAME}.models
     GENERATE_PLUGIN_SOURCE
 )
-
-kconfig_target_kcfg_file(${CMAKE_PROJECT_NAME}_models FILE komodo_config.kcfg CLASS_NAME KomodoConfig MUTATORS GENERATE_PROPERTIES GENERATE_MOC DEFAULT_VALUE_GETTERS QML_REGISTRATION SINGLETON)
 
 target_sources(${CMAKE_PROJECT_NAME}_models
     PRIVATE
@@ -21,8 +20,6 @@ target_sources(${CMAKE_PROJECT_NAME}_models
 
 target_link_libraries(${CMAKE_PROJECT_NAME}_models
     PUBLIC
-    KF6::ConfigGui
-    KF6::ConfigCore
     Qt6::Core
     Qt6::Gui
     Qt6::Qml
@@ -30,3 +27,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}_models
     KF6::ColorScheme
     KF6::CoreAddons
 )
+
+install(TARGETS ${CMAKE_PROJECT_NAME}_models ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+
