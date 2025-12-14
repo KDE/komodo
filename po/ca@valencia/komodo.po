@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
 "PO-Revision-Date: 2025-09-11 18:29+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,35 +30,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: src/main.cpp:31
+#: src/main.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
 msgstr "KomoDo"
 
-#: src/main.cpp:35
+#: src/main.cpp:37
 #, kde-format
 msgid "Work on To-Do lists"
 msgstr "Treballa amb llistes de tasques pendents"
 
-#: src/main.cpp:39
+#: src/main.cpp:41
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
 msgstr "© 2025 Akseli Lahtinen"
 
-#: src/main.cpp:40
+#: src/main.cpp:42
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
 msgstr "Akseli Lahtinen"
 
-#: src/main.cpp:41
+#: src/main.cpp:43
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "Autoria"
 
-#: src/main.cpp:47
+#: src/main.cpp:49
 #, kde-format
 msgctxt "Longer description in about page"
 msgid ""
@@ -69,22 +69,168 @@ msgstr ""
 "«todo.txt». Analitza qualsevol fitxer que complisca «todo.txt» i els "
 "convertix en una llista de tasques fàcil d'utilitzar.</p>"
 
-#: src/main.cpp:55
+#: src/main.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Inserts the given text in the search bar."
 msgstr "Inserix el text indicat a la barra de busca."
 
-#: src/main.cpp:57
+#: src/main.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open the given filename. The one in the config will be ignored."
 msgstr "Obri el nom de fitxer indicat. S'ignorarà el de la configuració."
 
-#: src/Main.qml:17
+#: src/Main.qml:16
 #, kde-format
 msgid "KomoDo"
 msgstr "KomoDo"
+
+#: src/TodoPage.qml:85
+#, kde-format
+msgid "Delete To-Do"
+msgstr "Suprimix la tasca pendent"
+
+#: src/TodoPage.qml:97
+#, kde-format
+msgid "Are you sure you wish to delete this To-Do?"
+msgstr "Segur que voleu suprimir esta tasca pendent?"
+
+#: src/TodoPage.qml:153
+#, kde-format
+msgid "Filter:"
+msgstr "Filtre:"
+
+#: src/TodoPage.qml:164
+#, kde-format
+msgid "Show All"
+msgstr "Mostra-ho tot"
+
+#: src/TodoPage.qml:168
+#, kde-format
+msgid "Due Date"
+msgstr "Data de venciment"
+
+#: src/TodoPage.qml:172
+#, kde-format
+msgid "Incomplete"
+msgstr "Incompleta"
+
+#: src/TodoPage.qml:176
+#, kde-format
+msgid "Completed"
+msgstr "Completada"
+
+#: src/TodoPage.qml:205
+#, kde-format
+msgid ""
+"This To-Do list has been changed externally. Reloading it is strongly "
+"advised!"
+msgstr ""
+"Esta llista de tasques pendents s'ha canviat externament. És molt "
+"recomanable tornar-la a carregar!"
+
+#: src/TodoPage.qml:211
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr "Torna a carregar"
+
+#: src/TodoPage.qml:223
+#, kde-format
+msgid ""
+"This To-Do list has been deleted! Open another To-Do list or create new one."
+msgstr ""
+"Esta llista de tasques pendents s'ha suprimit! Obriu una altra llista de "
+"tasques pendents o creeu-ne una de nova."
+
+# skip-rule: kct-todo-list
+#: src/TodoPage.qml:229 src/TodoPage.qml:268
+#, kde-format
+msgctxt "@button"
+msgid "Create New To-Do List…"
+msgstr "Crea una llista nova de tasques pendents…"
+
+#: src/TodoPage.qml:236
+#, kde-format
+msgctxt "@action:button"
+msgid "Open To-Do List…"
+msgstr "Obri una llista de tasques pendents…"
+
+#: src/TodoPage.qml:248
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New To-Do…"
+msgstr "Tasca pendent nova…"
+
+#: src/TodoPage.qml:260
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open To-Do List…"
+msgstr "Obri una llista de tasques pendents…"
+
+#: src/TodoPage.qml:274
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Help…"
+msgstr "Ajuda…"
+
+#: src/TodoPage.qml:281
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Auto-insert creation date"
+msgstr "Inserix automàticament la data de creació"
+
+#: src/TodoPage.qml:285
+#, kde-format
+msgctxt "A checkbox for toggling this setting"
+msgid "Insert a creation date for any new task automatically"
+msgstr "Inserix automàticament una data de creació per a qualsevol tasca nova"
+
+#: src/TodoPage.qml:293
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About KomoDo"
+msgstr "Quant a KomoDo"
+
+#: src/TodoPage.qml:319
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Welcome to KomoDo!"
+msgstr "Us donem la benvinguda a KomoDo!"
+
+#: src/TodoPage.qml:320
+#, kde-format
+msgctxt "Welcome introduction text"
+msgid ""
+"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
+"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
+"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
+"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
+"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
+"follow the rules as much or as little as you wish.<br> Feel free to "
+"experiment to find out your ideal way of managing tasks.</p><p>Click "
+"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
+"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
+msgstr ""
+"<p>KomoDo és una aplicació de llista de tasques pendents que utilitza les "
+"regles de <a href='https://github.com/todotxt/todo.txt'>todo.txt</a>.</"
+"p><p>Les regles són força ràpides d'aprendre i KomoDo té seccions d'ajuda "
+"per a açò: <br>En la barra d'eines, cliqueu damunt del botó "
+"<i><interface>Ajuda…</interface></i> <br>Mentre esteu editant una tasca, "
+"cliqueu damunt del botó <i><interface>Informació de la sintaxi…</interface></"
+"i> .</p><p>Podeu seguir les regles molt o poc segons vulgueu.<br> "
+"Experimenteu amb total llibertat la manera de gestionar les tasques.</"
+"p><p>Cliqueu damunt <i><interface>Obri una llista de tasques pendents…</"
+"interface></i> per a utilitzar una llista existent o <i><interface>Crea una "
+"llista nova de tasques pendents…</interface></i> per a començar una llista "
+"nova.</p>"
+
+#: src/TodoPage.qml:332
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No To-Dos found."
+msgstr "No s'ha trobat cap tasca pendent."
 
 #: src/ui/TodoDelegate.qml:63
 #, kde-format
@@ -198,149 +344,3 @@ msgstr "Guarda"
 msgctxt "@button"
 msgid "Cancel"
 msgstr "Cancel·la"
-
-#: src/ui/TodoPage.qml:71
-#, kde-format
-msgid "Delete To-Do"
-msgstr "Suprimix la tasca pendent"
-
-#: src/ui/TodoPage.qml:83
-#, kde-format
-msgid "Are you sure you wish to delete this To-Do?"
-msgstr "Segur que voleu suprimir esta tasca pendent?"
-
-#: src/ui/TodoPage.qml:139
-#, kde-format
-msgid "Filter:"
-msgstr "Filtre:"
-
-#: src/ui/TodoPage.qml:150
-#, kde-format
-msgid "Show All"
-msgstr "Mostra-ho tot"
-
-#: src/ui/TodoPage.qml:154
-#, kde-format
-msgid "Due Date"
-msgstr "Data de venciment"
-
-#: src/ui/TodoPage.qml:158
-#, kde-format
-msgid "Incomplete"
-msgstr "Incompleta"
-
-#: src/ui/TodoPage.qml:162
-#, kde-format
-msgid "Completed"
-msgstr "Completada"
-
-#: src/ui/TodoPage.qml:193
-#, kde-format
-msgid ""
-"This To-Do list has been changed externally. Reloading it is strongly "
-"advised!"
-msgstr ""
-"Esta llista de tasques pendents s'ha canviat externament. És molt "
-"recomanable tornar-la a carregar!"
-
-#: src/ui/TodoPage.qml:199
-#, kde-format
-msgctxt "@action:button"
-msgid "Reload"
-msgstr "Torna a carregar"
-
-#: src/ui/TodoPage.qml:211
-#, kde-format
-msgid ""
-"This To-Do list has been deleted! Open another To-Do list or create new one."
-msgstr ""
-"Esta llista de tasques pendents s'ha suprimit! Obriu una altra llista de "
-"tasques pendents o creeu-ne una de nova."
-
-# skip-rule: kct-todo-list
-#: src/ui/TodoPage.qml:217 src/ui/TodoPage.qml:256
-#, kde-format
-msgctxt "@button"
-msgid "Create New To-Do List…"
-msgstr "Crea una llista nova de tasques pendents…"
-
-#: src/ui/TodoPage.qml:224
-#, kde-format
-msgctxt "@action:button"
-msgid "Open To-Do List…"
-msgstr "Obri una llista de tasques pendents…"
-
-#: src/ui/TodoPage.qml:236
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "New To-Do…"
-msgstr "Tasca pendent nova…"
-
-#: src/ui/TodoPage.qml:248
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open To-Do List…"
-msgstr "Obri una llista de tasques pendents…"
-
-#: src/ui/TodoPage.qml:262
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Help…"
-msgstr "Ajuda…"
-
-#: src/ui/TodoPage.qml:269
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Auto-insert creation date"
-msgstr "Inserix automàticament la data de creació"
-
-#: src/ui/TodoPage.qml:273
-#, kde-format
-msgctxt "A checkbox for toggling this setting"
-msgid "Insert a creation date for any new task automatically"
-msgstr "Inserix automàticament una data de creació per a qualsevol tasca nova"
-
-#: src/ui/TodoPage.qml:280
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "About KomoDo"
-msgstr "Quant a KomoDo"
-
-#: src/ui/TodoPage.qml:306
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Welcome to KomoDo!"
-msgstr "Us donem la benvinguda a KomoDo!"
-
-#: src/ui/TodoPage.qml:307
-#, kde-format
-msgctxt "Welcome introduction text"
-msgid ""
-"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
-"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
-"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
-"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
-"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
-"follow the rules as much or as little as you wish.<br> Feel free to "
-"experiment to find out your ideal way of managing tasks.</p><p>Click "
-"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
-"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
-msgstr ""
-"<p>KomoDo és una aplicació de llista de tasques pendents que utilitza les "
-"regles de <a href='https://github.com/todotxt/todo.txt'>todo.txt</a>.</"
-"p><p>Les regles són força ràpides d'aprendre i KomoDo té seccions d'ajuda "
-"per a açò: <br>En la barra d'eines, cliqueu damunt del botó "
-"<i><interface>Ajuda…</interface></i> <br>Mentre esteu editant una tasca, "
-"cliqueu damunt del botó <i><interface>Informació de la sintaxi…</interface></"
-"i> .</p><p>Podeu seguir les regles molt o poc segons vulgueu.<br> "
-"Experimenteu amb total llibertat la manera de gestionar les tasques.</"
-"p><p>Cliqueu damunt <i><interface>Obri una llista de tasques pendents…</"
-"interface></i> per a utilitzar una llista existent o <i><interface>Crea una "
-"llista nova de tasques pendents…</interface></i> per a començar una llista "
-"nova.</p>"
-
-#: src/ui/TodoPage.qml:319
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "No To-Dos found."
-msgstr "No s'ha trobat cap tasca pendent."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
 "PO-Revision-Date: 2025-10-05 12:32+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,35 +28,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: src/main.cpp:31
+#: src/main.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
 msgstr "KomoDo"
 
-#: src/main.cpp:35
+#: src/main.cpp:37
 #, kde-format
 msgid "Work on To-Do lists"
 msgstr "עבודה על רשימות מטלות"
 
-#: src/main.cpp:39
+#: src/main.cpp:41
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
 msgstr "© 2025 אקסלי לאהטינן"
 
-#: src/main.cpp:40
+#: src/main.cpp:42
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
 msgstr "אקסלי לאהטינן"
 
-#: src/main.cpp:41
+#: src/main.cpp:43
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "יוצר"
 
-#: src/main.cpp:47
+#: src/main.cpp:49
 #, kde-format
 msgctxt "Longer description in about page"
 msgid ""
@@ -66,22 +66,160 @@ msgstr ""
 "<p>KomoDo הוא מנהל משימות שמשתמש במפרט todo.txt. הוא מפענח קובצי todo.txt "
 "תואמים והופך אותם לרשימות מטלות פשוטות לשימוש.</p>"
 
-#: src/main.cpp:55
+#: src/main.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Inserts the given text in the search bar."
 msgstr "מזין את הטקסט שסופק בסרגל החיפוש."
 
-#: src/main.cpp:57
+#: src/main.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open the given filename. The one in the config will be ignored."
 msgstr "לפתוח את שם הקובץ שסופק. זה שבהגדרות לא יחול."
 
-#: src/Main.qml:17
+#: src/Main.qml:16
 #, kde-format
 msgid "KomoDo"
 msgstr "KomoDo"
+
+#: src/TodoPage.qml:85
+#, kde-format
+msgid "Delete To-Do"
+msgstr "מחיקת מטלה"
+
+#: src/TodoPage.qml:97
+#, kde-format
+msgid "Are you sure you wish to delete this To-Do?"
+msgstr "למחוק את המטלה הזאת"
+
+#: src/TodoPage.qml:153
+#, kde-format
+msgid "Filter:"
+msgstr "סינון:"
+
+#: src/TodoPage.qml:164
+#, kde-format
+msgid "Show All"
+msgstr "להציג הכול"
+
+#: src/TodoPage.qml:168
+#, kde-format
+msgid "Due Date"
+msgstr "תאריך יעד"
+
+#: src/TodoPage.qml:172
+#, kde-format
+msgid "Incomplete"
+msgstr "חלקי"
+
+#: src/TodoPage.qml:176
+#, kde-format
+msgid "Completed"
+msgstr "הושלם"
+
+#: src/TodoPage.qml:205
+#, kde-format
+msgid ""
+"This To-Do list has been changed externally. Reloading it is strongly "
+"advised!"
+msgstr "רשימת המטלות הזאת נערכה חיצונית. מומלץ לטעון אותה מחדש!"
+
+#: src/TodoPage.qml:211
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr "לטעון מחדש"
+
+#: src/TodoPage.qml:223
+#, kde-format
+msgid ""
+"This To-Do list has been deleted! Open another To-Do list or create new one."
+msgstr "רשימת המטלות הזאת נמחקה! אפשר לפתוח רשימת מטלות אחרת או ליצור חדשה."
+
+#: src/TodoPage.qml:229 src/TodoPage.qml:268
+#, kde-format
+msgctxt "@button"
+msgid "Create New To-Do List…"
+msgstr "יצירת רשימת מטלות חדשה…"
+
+#: src/TodoPage.qml:236
+#, kde-format
+msgctxt "@action:button"
+msgid "Open To-Do List…"
+msgstr "פתיחת רשימת מטלות…"
+
+#: src/TodoPage.qml:248
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New To-Do…"
+msgstr "מטלה חדשה…"
+
+#: src/TodoPage.qml:260
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open To-Do List…"
+msgstr "פתיחת רשימת מטלות…"
+
+#: src/TodoPage.qml:274
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Help…"
+msgstr "עזרה…"
+
+#: src/TodoPage.qml:281
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Auto-insert creation date"
+msgstr "הוספת תאריך יצירה אוטומטית"
+
+#: src/TodoPage.qml:285
+#, kde-format
+msgctxt "A checkbox for toggling this setting"
+msgid "Insert a creation date for any new task automatically"
+msgstr "להוסיף תאריך יצירה לכל משימה חדשה אוטומטית"
+
+#: src/TodoPage.qml:293
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About KomoDo"
+msgstr "על KomoDo"
+
+#: src/TodoPage.qml:319
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Welcome to KomoDo!"
+msgstr "ברוך בואך ל־KomoDo!"
+
+#: src/TodoPage.qml:320
+#, kde-format
+msgctxt "Welcome introduction text"
+msgid ""
+"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
+"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
+"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
+"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
+"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
+"follow the rules as much or as little as you wish.<br> Feel free to "
+"experiment to find out your ideal way of managing tasks.</p><p>Click "
+"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
+"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
+msgstr ""
+"<p>KomoDo הוא יישום רשימות מטלות שמשתמש בכללי <a href='https://github.com/"
+"todotxt/todo.txt'>todo.txt</a>.</p><p>הכללים די פשוטים ללמידה ול־KomoDo יש "
+"סעיפי עזרה לשם כך: <br>בסרגל הכלים, ניתן ללחוץ על הכפתור <i><interface>עזרה…"
+"</interface></i>.<br>במהלך עריכת משימה, ניתן ללחוץ על הכפתור "
+"<i><interface>פרטי תחביר…</interface></i>.</p><p>אפשר להיצמד לכללים כראות "
+"עיניך.<br>אפשר להתנסות ולמצוא את הדרך הכי נוחה לך לניהול משימות.</p><p>לחיצה "
+"על <i><interface>פתיחת רשימת מטלות…</interface></i> תאפשר לך להשתמש ברשימה "
+"קיימת לעומת <i><interface>יצירת רשימת מטלות חדשה…</interface></i> שתפתח "
+"רשימה חדשה.</p>"
+
+#: src/TodoPage.qml:332
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No To-Dos found."
+msgstr "לא נמצאו מטלות."
 
 #: src/ui/TodoDelegate.qml:63
 #, kde-format
@@ -191,144 +329,6 @@ msgstr "שמירה"
 msgctxt "@button"
 msgid "Cancel"
 msgstr "ביטול"
-
-#: src/ui/TodoPage.qml:71
-#, kde-format
-msgid "Delete To-Do"
-msgstr "מחיקת מטלה"
-
-#: src/ui/TodoPage.qml:83
-#, kde-format
-msgid "Are you sure you wish to delete this To-Do?"
-msgstr "למחוק את המטלה הזאת"
-
-#: src/ui/TodoPage.qml:139
-#, kde-format
-msgid "Filter:"
-msgstr "סינון:"
-
-#: src/ui/TodoPage.qml:150
-#, kde-format
-msgid "Show All"
-msgstr "להציג הכול"
-
-#: src/ui/TodoPage.qml:154
-#, kde-format
-msgid "Due Date"
-msgstr "תאריך יעד"
-
-#: src/ui/TodoPage.qml:158
-#, kde-format
-msgid "Incomplete"
-msgstr "חלקי"
-
-#: src/ui/TodoPage.qml:162
-#, kde-format
-msgid "Completed"
-msgstr "הושלם"
-
-#: src/ui/TodoPage.qml:193
-#, kde-format
-msgid ""
-"This To-Do list has been changed externally. Reloading it is strongly "
-"advised!"
-msgstr "רשימת המטלות הזאת נערכה חיצונית. מומלץ לטעון אותה מחדש!"
-
-#: src/ui/TodoPage.qml:199
-#, kde-format
-msgctxt "@action:button"
-msgid "Reload"
-msgstr "לטעון מחדש"
-
-#: src/ui/TodoPage.qml:211
-#, kde-format
-msgid ""
-"This To-Do list has been deleted! Open another To-Do list or create new one."
-msgstr "רשימת המטלות הזאת נמחקה! אפשר לפתוח רשימת מטלות אחרת או ליצור חדשה."
-
-#: src/ui/TodoPage.qml:217 src/ui/TodoPage.qml:256
-#, kde-format
-msgctxt "@button"
-msgid "Create New To-Do List…"
-msgstr "יצירת רשימת מטלות חדשה…"
-
-#: src/ui/TodoPage.qml:224
-#, kde-format
-msgctxt "@action:button"
-msgid "Open To-Do List…"
-msgstr "פתיחת רשימת מטלות…"
-
-#: src/ui/TodoPage.qml:236
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "New To-Do…"
-msgstr "מטלה חדשה…"
-
-#: src/ui/TodoPage.qml:248
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open To-Do List…"
-msgstr "פתיחת רשימת מטלות…"
-
-#: src/ui/TodoPage.qml:262
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Help…"
-msgstr "עזרה…"
-
-#: src/ui/TodoPage.qml:269
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Auto-insert creation date"
-msgstr "הוספת תאריך יצירה אוטומטית"
-
-#: src/ui/TodoPage.qml:273
-#, kde-format
-msgctxt "A checkbox for toggling this setting"
-msgid "Insert a creation date for any new task automatically"
-msgstr "להוסיף תאריך יצירה לכל משימה חדשה אוטומטית"
-
-#: src/ui/TodoPage.qml:280
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "About KomoDo"
-msgstr "על KomoDo"
-
-#: src/ui/TodoPage.qml:306
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Welcome to KomoDo!"
-msgstr "ברוך בואך ל־KomoDo!"
-
-#: src/ui/TodoPage.qml:307
-#, kde-format
-msgctxt "Welcome introduction text"
-msgid ""
-"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
-"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
-"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
-"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
-"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
-"follow the rules as much or as little as you wish.<br> Feel free to "
-"experiment to find out your ideal way of managing tasks.</p><p>Click "
-"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
-"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
-msgstr ""
-"<p>KomoDo הוא יישום רשימות מטלות שמשתמש בכללי <a href='https://github.com/"
-"todotxt/todo.txt'>todo.txt</a>.</p><p>הכללים די פשוטים ללמידה ול־KomoDo יש "
-"סעיפי עזרה לשם כך: <br>בסרגל הכלים, ניתן ללחוץ על הכפתור <i><interface>עזרה…"
-"</interface></i>.<br>במהלך עריכת משימה, ניתן ללחוץ על הכפתור "
-"<i><interface>פרטי תחביר…</interface></i>.</p><p>אפשר להיצמד לכללים כראות "
-"עיניך.<br>אפשר להתנסות ולמצוא את הדרך הכי נוחה לך לניהול משימות.</p><p>לחיצה "
-"על <i><interface>פתיחת רשימת מטלות…</interface></i> תאפשר לך להשתמש ברשימה "
-"קיימת לעומת <i><interface>יצירת רשימת מטלות חדשה…</interface></i> שתפתח "
-"רשימה חדשה.</p>"
-
-#: src/ui/TodoPage.qml:319
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "No To-Dos found."
-msgstr "לא נמצאו מטלות."
 
 #~ msgid "KomoDo Help"
 #~ msgstr "העזרה של KomoDo"

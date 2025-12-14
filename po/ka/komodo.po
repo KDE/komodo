@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
 "PO-Revision-Date: 2025-09-11 03:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,35 +28,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "temuri.doghonadze@gmail.com"
 
-#: src/main.cpp:31
+#: src/main.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
 msgstr "KomoDo"
 
-#: src/main.cpp:35
+#: src/main.cpp:37
 #, kde-format
 msgid "Work on To-Do lists"
 msgstr "მუშაობა გეგმის სიებზე"
 
-#: src/main.cpp:39
+#: src/main.cpp:41
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
 msgstr "© 2025 Akseli Lahtinen"
 
-#: src/main.cpp:40
+#: src/main.cpp:42
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
 msgstr "Akseli Lahtinen"
 
-#: src/main.cpp:41
+#: src/main.cpp:43
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "ავტორი"
 
-#: src/main.cpp:47
+#: src/main.cpp:49
 #, kde-format
 msgctxt "Longer description in about page"
 msgid ""
@@ -67,22 +67,163 @@ msgstr ""
 "იყენებს. ის დაამუშავებს ნებისმიერ თავსებად todo.txt ფაილებს და მათ იოლად "
 "გამოსაყენებელი ამოცანების სიად გადააქცევს.</p>"
 
-#: src/main.cpp:55
+#: src/main.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Inserts the given text in the search bar."
 msgstr "ჩასვამს მოცემულ ტექსტს ძებნის ზოლში."
 
-#: src/main.cpp:57
+#: src/main.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Open the given filename. The one in the config will be ignored."
 msgstr "მოცემული ფაილის გახსნა. კონფიგურაციაში მითითებული გამოტოვებული იქნება."
 
-#: src/Main.qml:17
+#: src/Main.qml:16
 #, kde-format
 msgid "KomoDo"
 msgstr "KomoDo"
+
+#: src/TodoPage.qml:85
+#, kde-format
+msgid "Delete To-Do"
+msgstr "გეგმის წაშლა"
+
+#: src/TodoPage.qml:97
+#, kde-format
+msgid "Are you sure you wish to delete this To-Do?"
+msgstr "მართლა გნებავთ ამ გეგმის წაშლა?"
+
+#: src/TodoPage.qml:153
+#, kde-format
+msgid "Filter:"
+msgstr "ფილტრი:"
+
+#: src/TodoPage.qml:164
+#, kde-format
+msgid "Show All"
+msgstr "ყველას ჩვენება"
+
+#: src/TodoPage.qml:168
+#, kde-format
+msgid "Due Date"
+msgstr "თარიღამდე"
+
+#: src/TodoPage.qml:172
+#, kde-format
+msgid "Incomplete"
+msgstr "არასრული"
+
+#: src/TodoPage.qml:176
+#, kde-format
+msgid "Completed"
+msgstr "დასრულებული"
+
+#: src/TodoPage.qml:205
+#, kde-format
+msgid ""
+"This To-Do list has been changed externally. Reloading it is strongly "
+"advised!"
+msgstr ""
+"ეს გეგმების სია გარედან შეიცვალა. რეკომენდებულია, ის თავიდან ჩატვირთოთ!"
+
+#: src/TodoPage.qml:211
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr "თავიდან ჩატვირთვა"
+
+#: src/TodoPage.qml:223
+#, kde-format
+msgid ""
+"This To-Do list has been deleted! Open another To-Do list or create new one."
+msgstr ""
+"ეს გეგმების სია წაიშალა! გახსენით სხვა გეგმების სია, ან ახალი შექმენით."
+
+#: src/TodoPage.qml:229 src/TodoPage.qml:268
+#, kde-format
+msgctxt "@button"
+msgid "Create New To-Do List…"
+msgstr "ახალი გეგმების სიის შექმნა…"
+
+#: src/TodoPage.qml:236
+#, kde-format
+msgctxt "@action:button"
+msgid "Open To-Do List…"
+msgstr "გეგმებსი სიის გახსნა…"
+
+#: src/TodoPage.qml:248
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New To-Do…"
+msgstr "ახალი გეგმა…"
+
+#: src/TodoPage.qml:260
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open To-Do List…"
+msgstr "გეგმებსი სიის გახსნა…"
+
+#: src/TodoPage.qml:274
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Help…"
+msgstr "დახმარება…"
+
+#: src/TodoPage.qml:281
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Auto-insert creation date"
+msgstr "შექმნის თარიღის ავტომატური ჩასმა"
+
+#: src/TodoPage.qml:285
+#, kde-format
+msgctxt "A checkbox for toggling this setting"
+msgid "Insert a creation date for any new task automatically"
+msgstr "ახალი ამოცანებისთვის შექმნის თარიღის ავტომატური ჩასმა"
+
+#: src/TodoPage.qml:293
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About KomoDo"
+msgstr "KomoDo-ის შესახებ"
+
+#: src/TodoPage.qml:319
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Welcome to KomoDo!"
+msgstr "მოგესალმებათ Komodo!"
+
+#: src/TodoPage.qml:320
+#, kde-format
+msgctxt "Welcome introduction text"
+msgid ""
+"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
+"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
+"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
+"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
+"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
+"follow the rules as much or as little as you wish.<br> Feel free to "
+"experiment to find out your ideal way of managing tasks.</p><p>Click "
+"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
+"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
+msgstr ""
+"<p>KomoDo გეგმების სიის პროგრამაა, რომელიც იყენებს <a href='https://github."
+"com/todotxt/todo.txt'>todo.txt</a> წესებს.</p><p>წესები საკმაოდ სწრაფია და "
+"KomoDo– ს აქვს დახმარების სექციები: <br>ინსტრუმენტთა პანელზე დააჭირეთ "
+"<i><interface>ღილაკს დახმარება...</interface></i><br>დავალების "
+"რედაქტირებისას დააჭირეთ <i><interface>ღილაკს სინტაქსის ინფორმაცია...</"
+"interface></i></p><p>თქვენ შეგიძლიათ დაიცვათ წესები იმდენი ან რამდენიც გსურთ."
+"<br> მოგერიდებათ ექსპერიმენტი, რომ გაარკვიოთ დავალებების მართვის იდეალური "
+"გზა.</p><p>დააჭირეთ <i><interface>გეგმების სიის გახსნას...</interface></i> "
+"არსებული სიის გამოსაყენებლად ან <i><interface>ახალი სამუშაო სიის "
+"შესაქმნელად...</interface></i> ახალი სიის დასაწყებად.</p>"
+
+#: src/TodoPage.qml:332
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No To-Dos found."
+msgstr "გეგმები აღმოჩენილი არაა."
 
 #: src/ui/TodoDelegate.qml:63
 #, kde-format
@@ -197,147 +338,6 @@ msgstr "შენახვა"
 msgctxt "@button"
 msgid "Cancel"
 msgstr "გაუქმება"
-
-#: src/ui/TodoPage.qml:71
-#, kde-format
-msgid "Delete To-Do"
-msgstr "გეგმის წაშლა"
-
-#: src/ui/TodoPage.qml:83
-#, kde-format
-msgid "Are you sure you wish to delete this To-Do?"
-msgstr "მართლა გნებავთ ამ გეგმის წაშლა?"
-
-#: src/ui/TodoPage.qml:139
-#, kde-format
-msgid "Filter:"
-msgstr "ფილტრი:"
-
-#: src/ui/TodoPage.qml:150
-#, kde-format
-msgid "Show All"
-msgstr "ყველას ჩვენება"
-
-#: src/ui/TodoPage.qml:154
-#, kde-format
-msgid "Due Date"
-msgstr "თარიღამდე"
-
-#: src/ui/TodoPage.qml:158
-#, kde-format
-msgid "Incomplete"
-msgstr "არასრული"
-
-#: src/ui/TodoPage.qml:162
-#, kde-format
-msgid "Completed"
-msgstr "დასრულებული"
-
-#: src/ui/TodoPage.qml:193
-#, kde-format
-msgid ""
-"This To-Do list has been changed externally. Reloading it is strongly "
-"advised!"
-msgstr ""
-"ეს გეგმების სია გარედან შეიცვალა. რეკომენდებულია, ის თავიდან ჩატვირთოთ!"
-
-#: src/ui/TodoPage.qml:199
-#, kde-format
-msgctxt "@action:button"
-msgid "Reload"
-msgstr "თავიდან ჩატვირთვა"
-
-#: src/ui/TodoPage.qml:211
-#, kde-format
-msgid ""
-"This To-Do list has been deleted! Open another To-Do list or create new one."
-msgstr ""
-"ეს გეგმების სია წაიშალა! გახსენით სხვა გეგმების სია, ან ახალი შექმენით."
-
-#: src/ui/TodoPage.qml:217 src/ui/TodoPage.qml:256
-#, kde-format
-msgctxt "@button"
-msgid "Create New To-Do List…"
-msgstr "ახალი გეგმების სიის შექმნა…"
-
-#: src/ui/TodoPage.qml:224
-#, kde-format
-msgctxt "@action:button"
-msgid "Open To-Do List…"
-msgstr "გეგმებსი სიის გახსნა…"
-
-#: src/ui/TodoPage.qml:236
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "New To-Do…"
-msgstr "ახალი გეგმა…"
-
-#: src/ui/TodoPage.qml:248
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open To-Do List…"
-msgstr "გეგმებსი სიის გახსნა…"
-
-#: src/ui/TodoPage.qml:262
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Help…"
-msgstr "დახმარება…"
-
-#: src/ui/TodoPage.qml:269
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Auto-insert creation date"
-msgstr "შექმნის თარიღის ავტომატური ჩასმა"
-
-#: src/ui/TodoPage.qml:273
-#, kde-format
-msgctxt "A checkbox for toggling this setting"
-msgid "Insert a creation date for any new task automatically"
-msgstr "ახალი ამოცანებისთვის შექმნის თარიღის ავტომატური ჩასმა"
-
-#: src/ui/TodoPage.qml:280
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "About KomoDo"
-msgstr "KomoDo-ის შესახებ"
-
-#: src/ui/TodoPage.qml:306
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Welcome to KomoDo!"
-msgstr "მოგესალმებათ Komodo!"
-
-#: src/ui/TodoPage.qml:307
-#, kde-format
-msgctxt "Welcome introduction text"
-msgid ""
-"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
-"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
-"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
-"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
-"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
-"follow the rules as much or as little as you wish.<br> Feel free to "
-"experiment to find out your ideal way of managing tasks.</p><p>Click "
-"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
-"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
-msgstr ""
-"<p>KomoDo გეგმების სიის პროგრამაა, რომელიც იყენებს <a href='https://github."
-"com/todotxt/todo.txt'>todo.txt</a> წესებს.</p><p>წესები საკმაოდ სწრაფია და "
-"KomoDo– ს აქვს დახმარების სექციები: <br>ინსტრუმენტთა პანელზე დააჭირეთ "
-"<i><interface>ღილაკს დახმარება...</interface></i><br>დავალების "
-"რედაქტირებისას დააჭირეთ <i><interface>ღილაკს სინტაქსის ინფორმაცია...</"
-"interface></i></p><p>თქვენ შეგიძლიათ დაიცვათ წესები იმდენი ან რამდენიც გსურთ."
-"<br> მოგერიდებათ ექსპერიმენტი, რომ გაარკვიოთ დავალებების მართვის იდეალური "
-"გზა.</p><p>დააჭირეთ <i><interface>გეგმების სიის გახსნას...</interface></i> "
-"არსებული სიის გამოსაყენებლად ან <i><interface>ახალი სამუშაო სიის "
-"შესაქმნელად...</interface></i> ახალი სიის დასაწყებად.</p>"
-
-#: src/ui/TodoPage.qml:319
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "No To-Dos found."
-msgstr "გეგმები აღმოჩენილი არაა."
 
 #~ msgid "KomoDo Help"
 #~ msgstr "KomoDo-ის დახმარება"
