@@ -259,7 +259,4 @@
       </description>
     </release>
   </releases>
-  <custom>
-    <value key="KDE::supporters">@thonkdifferent@hachyderm.io</value>
-  </custom>
 </component>
