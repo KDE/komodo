@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-14 00:45+0000\n"
-"PO-Revision-Date: 2025-12-31 16:07+0200\n"
+"PO-Revision-Date: 2026-01-01 23:22+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -110,17 +110,17 @@ msgstr "Rodyti visas"
 #: src/TodoPage.qml:168
 #, kde-format
 msgid "Due Date"
-msgstr ""
+msgstr "Galutinio termino data"
 
 #: src/TodoPage.qml:172
 #, kde-format
 msgid "Incomplete"
-msgstr ""
+msgstr "Neatliktos"
 
 #: src/TodoPage.qml:176
 #, kde-format
 msgid "Completed"
-msgstr ""
+msgstr "Atliktos"
 
 #: src/TodoPage.qml:205
 #, kde-format
@@ -236,7 +236,7 @@ msgstr "Nerasta jokių užduočių."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle completion status"
-msgstr ""
+msgstr "Perjungti atlikimo būseną"
 
 #: src/ui/TodoDelegate.qml:99
 #, kde-format
@@ -246,12 +246,12 @@ msgstr "Prioritetas"
 #: src/ui/TodoDelegate.qml:191
 #, kde-format
 msgid "Task completion date"
-msgstr ""
+msgstr "Užduoties atlikimo data"
 
 #: src/ui/TodoDelegate.qml:204
 #, kde-format
 msgid "Task due date"
-msgstr ""
+msgstr "Užduoties galutinio termino data"
 
 #: src/ui/TodoDelegate.qml:217
 #, kde-format
@@ -285,7 +285,7 @@ msgstr "Įterpti datą…"
 #: src/ui/TodoDelegate.qml:331
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
-msgstr ""
+msgstr "Atverti datos parinkiklį ir įterpti ją žymeklio vietoje"
 
 #: src/ui/TodoDelegate.qml:343
 #, kde-format
