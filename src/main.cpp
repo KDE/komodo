@@ -54,9 +54,9 @@ int main(int argc, char *argv[])
     auto searchArgName = QStringLiteral("search-text");
     auto filenameArgName = QStringLiteral("filename");
 
-    parser.addOption(QCommandLineOption(searchArgName, i18nc("@info:shell", "Inserts the given text in the search bar."), searchArgName));
+    parser.addOption(QCommandLineOption(searchArgName, i18nc("@info:shell", "Insert the given text in the search bar."), searchArgName));
     parser.addOption(
-        QCommandLineOption(filenameArgName, i18nc("@info:shell", "Open the given filename. The one in the config will be ignored."), filenameArgName));
+        QCommandLineOption(filenameArgName, i18nc("@info:shell", "Open the file with the given name. The filename in the config will be ignored."), filenameArgName));
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
