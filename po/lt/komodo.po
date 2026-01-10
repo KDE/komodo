@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-01-10 00:46+0000\n"
 "PO-Revision-Date: 2026-01-01 23:22+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -69,15 +69,21 @@ msgstr ""
 "naudojamais užduočių sąrašais.</p>"
 
 #: src/main.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Inserts the given text in the search bar."
 msgctxt "@info:shell"
-msgid "Inserts the given text in the search bar."
+msgid "Insert the given text in the search bar."
 msgstr "Įterpia nurodytą tekstą į paieškos juostą."
 
 #: src/main.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Open the given filename. The one in the config will be ignored."
 msgctxt "@info:shell"
-msgid "Open the given filename. The one in the config will be ignored."
+msgid ""
+"Open the file with the given name. The filename in the config will be "
+"ignored."
 msgstr ""
 "Atverti nurodytą failo pavadinimą. To, kuris yra konfigūracijoje, bus "
 "nepaisoma."

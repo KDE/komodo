@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-01-10 00:46+0000\n"
 "PO-Revision-Date: 2025-07-30 21:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -66,15 +66,21 @@ msgstr ""
 "todo.txt 文件，并将其转换为易于使用的任务列表。</p>"
 
 #: src/main.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Inserts the given text in the search bar."
 msgctxt "@info:shell"
-msgid "Inserts the given text in the search bar."
+msgid "Insert the given text in the search bar."
 msgstr "在搜索栏中插入给定的文本。"
 
 #: src/main.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Open the given filename. The one in the config will be ignored."
 msgctxt "@info:shell"
-msgid "Open the given filename. The one in the config will be ignored."
+msgid ""
+"Open the file with the given name. The filename in the config will be "
+"ignored."
 msgstr "打开给定的文件名。配置中的文件名将被忽略。"
 
 #: src/Main.qml:16

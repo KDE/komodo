@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-01-10 00:46+0000\n"
 "PO-Revision-Date: 2025-10-05 12:32+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -67,15 +67,21 @@ msgstr ""
 "תואמים והופך אותם לרשימות מטלות פשוטות לשימוש.</p>"
 
 #: src/main.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Inserts the given text in the search bar."
 msgctxt "@info:shell"
-msgid "Inserts the given text in the search bar."
+msgid "Insert the given text in the search bar."
 msgstr "מזין את הטקסט שסופק בסרגל החיפוש."
 
 #: src/main.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Open the given filename. The one in the config will be ignored."
 msgctxt "@info:shell"
-msgid "Open the given filename. The one in the config will be ignored."
+msgid ""
+"Open the file with the given name. The filename in the config will be "
+"ignored."
 msgstr "לפתוח את שם הקובץ שסופק. זה שבהגדרות לא יחול."
 
 #: src/Main.qml:16
