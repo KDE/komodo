@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the komodo package.
 #
-# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-10 00:46+0000\n"
-"PO-Revision-Date: 2025-10-05 12:32+0300\n"
+"PO-Revision-Date: 2026-01-10 13:05+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -67,22 +67,18 @@ msgstr ""
 "תואמים והופך אותם לרשימות מטלות פשוטות לשימוש.</p>"
 
 #: src/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Inserts the given text in the search bar."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
-msgstr "מזין את הטקסט שסופק בסרגל החיפוש."
+msgstr "מילוי הטקסט שסופק בסרגל החיפוש."
 
 #: src/main.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Open the given filename. The one in the config will be ignored."
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Open the file with the given name. The filename in the config will be "
 "ignored."
-msgstr "לפתוח את שם הקובץ שסופק. זה שבהגדרות לא יחול."
+msgstr "פתיחת הקובץ בשם שסופק. שם הקובץ בהגדרות לא תקף."
 
 #: src/Main.qml:16
 #, kde-format

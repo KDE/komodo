@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-10 00:46+0000\n"
-"PO-Revision-Date: 2025-09-11 03:52+0200\n"
+"PO-Revision-Date: 2026-01-10 02:51+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -68,22 +68,20 @@ msgstr ""
 "გამოსაყენებელი ამოცანების სიად გადააქცევს.</p>"
 
 #: src/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Inserts the given text in the search bar."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
-msgstr "ჩასვამს მოცემულ ტექსტს ძებნის ზოლში."
+msgstr "მითითებული ტექსტის ჩასმა ძებნის ზოლში."
 
 #: src/main.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Open the given filename. The one in the config will be ignored."
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Open the file with the given name. The filename in the config will be "
 "ignored."
-msgstr "მოცემული ფაილის გახსნა. კონფიგურაციაში მითითებული გამოტოვებული იქნება."
+msgstr ""
+"მითითებული სახელის მქონე ფაილის გახსნა. კონფიგურაციაში მითითებული ფაილის "
+"სახელი გამოტოვებული იქნება."
 
 #: src/Main.qml:16
 #, kde-format

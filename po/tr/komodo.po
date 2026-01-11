@@ -1,14 +1,14 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the komodo package.
 #
-# SPDX-FileCopyrightText: 2025 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2025, 2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-10 00:46+0000\n"
-"PO-Revision-Date: 2025-12-22 18:05+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"PO-Revision-Date: 2026-01-10 21:38+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -67,22 +67,18 @@ msgstr ""
 "bir görevler listesine dönüştürür.</p>"
 
 #: src/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Inserts the given text in the search bar."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
 msgstr "Verilen metni arama çubuğuna yerleştir."
 
 #: src/main.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Open the given filename. The one in the config will be ignored."
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Open the file with the given name. The filename in the config will be "
 "ignored."
-msgstr "Verilen dosya adını aç. Yapılandırmadaki değer yok sayılır."
+msgstr "Adı verilen dosyayı aç. Yapılandırmadaki ad yok sayılır."
 
 #: src/Main.qml:16
 #, kde-format

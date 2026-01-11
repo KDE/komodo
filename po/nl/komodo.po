@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the komodo package.
 #
-# SPDX-FileCopyrightText: 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-10 00:46+0000\n"
-"PO-Revision-Date: 2025-09-11 17:28+0200\n"
+"PO-Revision-Date: 2026-01-10 12:36+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - 2025"
+msgstr "Freek de Kruijf - 2025-2026"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -67,23 +67,20 @@ msgstr ""
 "te gebruiken lijst met taken.</p>"
 
 #: src/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Inserts the given text in the search bar."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
 msgstr "Voeg de gegeven tekst in in de zoekbalk."
 
 #: src/main.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Open the given filename. The one in the config will be ignored."
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Open the file with the given name. The filename in the config will be "
 "ignored."
 msgstr ""
-"Open de gegeven bestandsnaam. Die in de configuratie zal genegeerd worden."
+"Open het bestand met de gegeven naam. De bestandsnaam in de configuratie zal "
+"genegeerd worden."
 
 #: src/Main.qml:16
 #, kde-format

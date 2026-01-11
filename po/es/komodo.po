@@ -1,15 +1,15 @@
 # Spanish translations for komodo.po package.
-# Copyright (C) 2025 This file is copyright:
+# Copyright (C) 2025-2026 This file is copyright:
 # This file is distributed under the same license as the komodo package.
 # Automatically generated, 2025.
 #
-# SPDX-FileCopyrightText: 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-10 00:46+0000\n"
-"PO-Revision-Date: 2025-09-11 12:14+0100\n"
+"PO-Revision-Date: 2026-01-11 00:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -69,22 +69,20 @@ msgstr ""
 "convertirlo en una lista de tareas fácil de usar.</p>"
 
 #: src/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Inserts the given text in the search bar."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
-msgstr "Inserta el texto indicado en la barra de búsqueda."
+msgstr "Insertar el texto indicado en la barra de búsqueda."
 
 #: src/main.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Open the given filename. The one in the config will be ignored."
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Open the file with the given name. The filename in the config will be "
 "ignored."
-msgstr "Abrir el archivo indicado. El de la configuración se ignorará."
+msgstr ""
+"Abrir el archivo con el nombre indicado. El archivo de la configuración se "
+"ignorará."
 
 #: src/Main.qml:16
 #, kde-format
