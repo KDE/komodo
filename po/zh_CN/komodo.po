@@ -66,22 +66,18 @@ msgstr ""
 "todo.txt 文件，并将其转换为易于使用的任务列表。</p>"
 
 #: src/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Inserts the given text in the search bar."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
-msgstr "在搜索栏中插入给定的文本。"
+msgstr ""
 
 #: src/main.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Open the given filename. The one in the config will be ignored."
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Open the file with the given name. The filename in the config will be "
 "ignored."
-msgstr "打开给定的文件名。配置中的文件名将被忽略。"
+msgstr ""
 
 #: src/Main.qml:16
 #, kde-format

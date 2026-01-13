@@ -1,60 +1,59 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the komodo package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# SPDX-FileCopyrightText: 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-10 00:46+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
-"Language: ga\n"
+"PO-Revision-Date: 2026-01-13 02:22+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
-"3 : 4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kisaragi Hiu"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "mail@kisaragi-hiu.com"
 
 #: src/main.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
-msgstr ""
+msgstr "KomoDo"
 
 #: src/main.cpp:37
 #, kde-format
 msgid "Work on To-Do lists"
-msgstr ""
+msgstr "待辦事項清單"
 
 #: src/main.cpp:41
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
-msgstr ""
+msgstr "© 2025 Akseli Lahtinen"
 
 #: src/main.cpp:42
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
-msgstr ""
+msgstr "Akseli Lahtinen"
 
 #: src/main.cpp:43
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
-msgstr ""
+msgstr "作者"
 
 #: src/main.cpp:49
 #, kde-format
@@ -63,12 +62,14 @@ msgid ""
 "<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
 "compliant todo.txt files and turns them into easy to use list of tasks.</p>"
 msgstr ""
+"<p>KomoDo 是一個利用 todo.txt 標準的待辦事項管理器。它能剖析任何合規的 todo."
+"txt 檔案，將它們轉為容易使用的待辦事項清單。</p>"
 
 #: src/main.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
-msgstr ""
+msgstr "插入指定文字到搜尋列。"
 
 #: src/main.cpp:59
 #, kde-format
@@ -76,120 +77,120 @@ msgctxt "@info:shell"
 msgid ""
 "Open the file with the given name. The filename in the config will be "
 "ignored."
-msgstr ""
+msgstr "開啟指定的檔案，並忽略設定裡所設的檔案名稱。"
 
 #: src/Main.qml:16
 #, kde-format
 msgid "KomoDo"
-msgstr ""
+msgstr "KomoDo"
 
 #: src/TodoPage.qml:85
 #, kde-format
 msgid "Delete To-Do"
-msgstr ""
+msgstr "刪除待辦事項"
 
 #: src/TodoPage.qml:97
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
-msgstr ""
+msgstr "您確定要刪除這個待辦事項嗎？"
 
 #: src/TodoPage.qml:153
 #, kde-format
 msgid "Filter:"
-msgstr ""
+msgstr "過濾："
 
 #: src/TodoPage.qml:164
 #, kde-format
 msgid "Show All"
-msgstr ""
+msgstr "顯示全部"
 
 #: src/TodoPage.qml:168
 #, kde-format
 msgid "Due Date"
-msgstr ""
+msgstr "到期日"
 
 #: src/TodoPage.qml:172
 #, kde-format
 msgid "Incomplete"
-msgstr ""
+msgstr "未完成"
 
 #: src/TodoPage.qml:176
 #, kde-format
 msgid "Completed"
-msgstr ""
+msgstr "已完成"
 
 #: src/TodoPage.qml:205
 #, kde-format
 msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
 "advised!"
-msgstr ""
+msgstr "這個待辦事項清單已在外部被變更，強烈建議重新載入它！"
 
 #: src/TodoPage.qml:211
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr ""
+msgstr "重新載入"
 
 #: src/TodoPage.qml:223
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
-msgstr ""
+msgstr "這個待辦事項清單已被刪除！請開啟另一個待辦事項清單或建立一個新的。"
 
 #: src/TodoPage.qml:229 src/TodoPage.qml:268
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
-msgstr ""
+msgstr "建立新的待辦事項清單…"
 
 #: src/TodoPage.qml:236
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
-msgstr ""
+msgstr "開啟待辦事項清單…"
 
 #: src/TodoPage.qml:248
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
-msgstr ""
+msgstr "新增待辦事項…"
 
 #: src/TodoPage.qml:260
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
-msgstr ""
+msgstr "開啟待辦事項清單…"
 
 #: src/TodoPage.qml:274
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
-msgstr ""
+msgstr "說明…"
 
 #: src/TodoPage.qml:281
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-insert creation date"
-msgstr ""
+msgstr "自動插入建立日期"
 
 #: src/TodoPage.qml:285
 #, kde-format
 msgctxt "A checkbox for toggling this setting"
 msgid "Insert a creation date for any new task automatically"
-msgstr ""
+msgstr "自動為新的待辦事項插入建立日期"
 
 #: src/TodoPage.qml:293
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
-msgstr ""
+msgstr "關於 KomoDo"
 
 #: src/TodoPage.qml:319
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
-msgstr ""
+msgstr "歡迎來到 KomoDo！"
 
 #: src/TodoPage.qml:320
 #, kde-format
@@ -205,72 +206,80 @@ msgid ""
 "<i><interface>Open To-Do list…</interface></i> to use an existing list or "
 "<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
 msgstr ""
+"<p>KomoDo 是一個跟隨 <a href='https://github.com/todotxt/todo.txt'>todo.txt</"
+"a> 規格的待辦事項應用程式。</p><p>todo.txt 規格的規則不難學習，而 KomoDo 在多"
+"處有提供說明：<br>在工具列點擊 <i><interface>說明…</interface></i> 按鈕。<br>"
+"編輯待辦事項時，點擊 <i><interface>語法資訊…</interface></i> 按鈕。</p><p>您"
+"可以隨您喜好跟隨或是不跟隨規格中的規則。<br>重要的是您能找到最符合自己的管理"
+"待辦事項的方式。</p><p>點擊 <i><interface>開啟待辦事項清單…</interface></i> "
+"來利用現有的待辦事項清單，或是用 <i><interface>建立新的待辦事項清單…</"
+"interface></i> 來建立新的清單。</p>"
 
 #: src/TodoPage.qml:332
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
-msgstr ""
+msgstr "沒有找到待辦事項。"
 
 #: src/ui/TodoDelegate.qml:63
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle completion status"
-msgstr ""
+msgstr "切換是否已完成"
 
 #: src/ui/TodoDelegate.qml:99
 #, kde-format
 msgid "Priority"
-msgstr ""
+msgstr "優先度"
 
 #: src/ui/TodoDelegate.qml:191
 #, kde-format
 msgid "Task completion date"
-msgstr ""
+msgstr "待辦事項完成日期"
 
 #: src/ui/TodoDelegate.qml:204
 #, kde-format
 msgid "Task due date"
-msgstr ""
+msgstr "待辦事項到期日期"
 
 #: src/ui/TodoDelegate.qml:217
 #, kde-format
 msgid "Task creation date"
-msgstr ""
+msgstr "待辦事項建立日期"
 
 #: src/ui/TodoDelegate.qml:233
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: src/ui/TodoDelegate.qml:256
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: src/ui/TodoDelegate.qml:293
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
-msgstr ""
+msgstr "(A) YYYY-MM-DD 描述 +專案 @情境 鍵:值"
 
 #: src/ui/TodoDelegate.qml:329
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
-msgstr ""
+msgstr "插入日期…"
 
 #: src/ui/TodoDelegate.qml:331
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
-msgstr ""
+msgstr "開啟日期挑選器，挑選日期後將其插入在游標位置"
 
 #: src/ui/TodoDelegate.qml:343
 #, kde-format
 msgid "Syntax Information"
-msgstr ""
+msgstr "語法資訊"
 
 #: src/ui/TodoDelegate.qml:348
 #, kde-format
@@ -289,25 +298,34 @@ msgid ""
 "projects can be mixed with each other.</p><p>For more detailed information "
 "and examples, click on the Help button.</p><br>"
 msgstr ""
+"<p>項目的順序是重要的：</p><pre>是否已完成 優先度 建立日期 描述</"
+"pre><ul><li>x：是否已完成。沒有 x 代表待辦事項尚未完成。</li><li>(A)：優先"
+"度。可以是 A-Z 的字母。可以不寫。</li><li>完成日期：年月日格式的日期。只有在"
+"有提供建立日期且待辦事項已完成時才有關。</li><li>建立日期：年月日格式的日期。"
+"可以不寫，但建議填入。</li><li>描述：待辦事項文字。必要。<ul><li>+專案：這個"
+"待辦事項相關的專案。可以不寫。</li><li>@情境：這個待辦事項在什麼情境是有關"
+"的。可以不寫。</li><li>鍵:值：其他資訊欄位。可以不寫。</li></ul></li></ul><p>"
+"描述、@情境、+專案、以及鍵:值對的順序可以混在一起。</p><p>詳細資訊和範例請點"
+"擊說明按鈕查看說明。</p><br>"
 
 #: src/ui/TodoDelegate.qml:353
 #, kde-format
 msgid "Syntax Information…"
-msgstr ""
+msgstr "語法資訊…"
 
 #: src/ui/TodoDelegate.qml:361
 #, kde-format
 msgid "Show todo.txt syntax reference"
-msgstr ""
+msgstr "顯示 todo.txt 語法參考"
 
 #: src/ui/TodoDelegate.qml:375
 #, kde-format
 msgctxt "@button"
 msgid "Save"
-msgstr ""
+msgstr "儲存"
 
 #: src/ui/TodoDelegate.qml:396
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
