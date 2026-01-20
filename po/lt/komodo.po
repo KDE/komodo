@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-10 00:46+0000\n"
-"PO-Revision-Date: 2026-01-01 23:22+0200\n"
+"PO-Revision-Date: 2026-01-19 16:12+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -69,24 +69,20 @@ msgstr ""
 "naudojamais užduočių sąrašais.</p>"
 
 #: src/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Inserts the given text in the search bar."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
-msgstr "Įterpia nurodytą tekstą į paieškos juostą."
+msgstr "Įterpti nurodytą tekstą į paieškos juostą."
 
 #: src/main.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Open the given filename. The one in the config will be ignored."
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Open the file with the given name. The filename in the config will be "
 "ignored."
 msgstr ""
-"Atverti nurodytą failo pavadinimą. To, kuris yra konfigūracijoje, bus "
-"nepaisoma."
+"Atverti failą nurodytu pavadinimu. Konfigūracijoje esančio failo pavadinimo "
+"bus nepaisoma."
 
 #: src/Main.qml:16
 #, kde-format
@@ -280,7 +276,7 @@ msgstr "Ištrinti"
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
-msgstr ""
+msgstr "(A) MMMM-mm-dd Aprašas +Projektas @Kontekstas raktas:reikšmė"
 
 #: src/ui/TodoDelegate.qml:329
 #, kde-format
@@ -315,6 +311,20 @@ msgid ""
 "projects can be mixed with each other.</p><p>For more detailed information "
 "and examples, click on the Help button.</p><br>"
 msgstr ""
+"<p>Elementų tvarka turi reikšmės:</p><pre>Atlikimas Prioritetas "
+"Sukūrimo_data Aprašas</pre><ul><li>x : Atlikimo būsena. Pašalinkite norėdami "
+"žymėti užduotį kaip neatliktą.</li><li>(A) : Prioritetas. Gali būti nuo A "
+"iki Z. Nebūtinas.</li><li>Atlikimo data: Data formatu metai-mėnesis-diena. "
+"Pridėkite tik tuo atveju, jei yra sukūrimo data ir užduotis yra atlikta.</"
+"li><li>Sukūrimo data: Data formatu metai-mėnesis-diena. Nebūtina, bet "
+"rekomenduojama.</li><li>Aprašas: Bendras užduoties aprašymas. Privalomas."
+"<ul><li>+Projektas: Projektai, su kuriais yra susijusi ši užduotis. "
+"Nebūtinas.</li><li>@Kontekstas: Kokiuose kontekstuose ši užduotis yra "
+"aktuali. Nebūtinas.</li><li>raktas:reikšmė: Įvairios informacinės rakto-"
+"reikšmės poros. Nebūtinos.</li></ul></li></ul><p>Aprašas, kontekstai, rakto:"
+"reikšmės poros ir projektai gali būti vienas su kitu maišomi.</p><p>Norėdami "
+"gauti daugiau informacijos ir matyti pavyzdžius, spustelėkite „Pagalbos“ "
+"mygtuką.</p><br>"
 
 #: src/ui/TodoDelegate.qml:353
 #, kde-format
