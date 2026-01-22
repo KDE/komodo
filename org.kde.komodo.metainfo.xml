@@ -15,6 +15,7 @@
   <name xml:lang="fi">KomoDo</name>
   <name xml:lang="fr">KomoDo</name>
   <name xml:lang="he">KomoDo</name>
+  <name xml:lang="ia">KomoDo</name>
   <name xml:lang="it">KomoDo</name>
   <name xml:lang="ka">KomoDo</name>
   <name xml:lang="ko">KomoDo</name>
@@ -120,6 +121,7 @@
     <p xml:lang="fi">Ominaisuuksia</p>
     <p xml:lang="fr">Fonctionnalités</p>
     <p xml:lang="he">יכולות</p>
+    <p xml:lang="ia">Characteristicas</p>
     <p xml:lang="it">Funzionalità</p>
     <p xml:lang="ka">თვისებები</p>
     <p xml:lang="ko">기능</p>
