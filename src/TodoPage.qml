@@ -71,7 +71,7 @@ Kirigami.ScrollablePage {
             fileDeletedMessage.visible = false;
             cardsListView.enabled = true;
         }
-        fileMode: Qt.SaveFile
+        fileMode: Dialogs.FileDialog.SaveFile
         modality: Qt.ApplicationModal
         defaultSuffix: "txt"
         nameFilters: ["Text files (*.txt)"]
