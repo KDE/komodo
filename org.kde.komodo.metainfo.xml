@@ -273,11 +273,23 @@
     <release version="1.5.0" date="2025-09-09">
       <description>
         <p>Performance improvements to search, added launch arguments, moved help into a docbook, fix loading saved filter.</p>
+        <p xml:lang="ca">Millores de rendiment per a cercar, s'han afegit arguments de llançament, s'ha mogut l'ajuda a un docbook, s'ha corregit la càrrega de filtre desat.</p>
+        <p xml:lang="he">שיפורי ביצועים לחיפוש, נוספו ארגומנטים להפעלה, העזרה הועברה ל־docbook, תוקנה טעינת מסנן שמור.</p>
+        <p xml:lang="ka">გაუმჯობესდა ძებნის წარმადობა, დაემატა გაშვების არგუმენტები, დახმარების სექცია გადავიდა Docbook-ში და გასწორდა შენახული ფილტრის ჩატვირთვა.</p>
+        <p xml:lang="pt-BR">Melhorias de desempenho na busca, adição de argumentos de inicialização, mudança da ajuda para um documento anexo, correção no carregamento de filtros salvos.</p>
+        <p xml:lang="sl">Izboljšave delovanja iskanja, dodani argumenti za zagon, pomoč premaknjena v dokumentacijo, popravljeno nalaganje shranjenega filtra.</p>
+        <p xml:lang="uk">Удосконалення швидкодії пошуку, додано аргументи запуску, довідку переформатовано у docbook, виправлено завантаження збереженого фільтра.</p>
       </description>
     </release>
     <release version="1.0.0" date="2025-08-01">
       <description>
         <p>Initial release of KomoDo, a To-Do list application.</p>
+        <p xml:lang="ca">Versió inicial del KomoDo, una aplicació de llista de tasques pendents.</p>
+        <p xml:lang="he">המהדורה הראשונה של KomoDo, יישום רשימת מטלות.</p>
+        <p xml:lang="ka">KomoDo-ის, გეგმების სიის აპლიკაციის პირველი ვერსია.</p>
+        <p xml:lang="pt-BR">Lançamento inicial do KomoDo, um aplicativo de lista de tarefas.</p>
+        <p xml:lang="sl">Začetna izdaja KomoDo, aplikacije za seznam opravil.</p>
+        <p xml:lang="uk">Початковий випуск KomoDo, програми для роботи зі списком завдань.</p>
       </description>
     </release>
   </releases>
