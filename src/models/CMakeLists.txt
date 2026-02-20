@@ -5,7 +5,7 @@
 add_library(${CMAKE_PROJECT_NAME}_models SHARED)
 
 ecm_add_qml_module(${CMAKE_PROJECT_NAME}_models
-    URI
+    URI "org.kde.komodo.models"
     org.kde.${CMAKE_PROJECT_NAME}.models
     GENERATE_PLUGIN_SOURCE
 )
@@ -27,6 +27,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME}_models
     KF6::ColorScheme
     KF6::CoreAddons
 )
+
+ecm_finalize_qml_module(${CMAKE_PROJECT_NAME}_models DESTINATION ${KDE_INSTALL_QMLDIR} EXPORT ${CMAKE_PROJECT_NAME})
 
 install(TARGETS ${CMAKE_PROJECT_NAME}_models ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
