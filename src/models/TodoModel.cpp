@@ -20,6 +20,7 @@ TodoModel::TodoModel(QObject *parent)
     m_keyValuePriorityRegexp = QRegularExpression(QStringLiteral("pri:([A-Z])"));
     m_dateRegexp = QRegularExpression(QStringLiteral("\\d{4}-\\d\\d-\\d\\d"));
     m_keyValuePairRegexp = QRegularExpression(QStringLiteral("[a-zA-Z]+:[\\S]+"));
+    m_textSplitRegexp = QRegularExpression(QStringLiteral(" |\\[[^\\]]+\\]\\([^)]+\\)"));
 
     m_fileWatcher = new KDirWatch(this);
 
@@ -36,7 +37,7 @@ Todo TodoModel::parseTodoFromDescription(const QString &description) const
     if (description.isEmpty()) {
         return todo;
     }
-    auto splitDescription = description.split(QStringLiteral(" "));
+    auto splitDescription = description.split(m_textSplitRegexp);
     bool completionStatus = false;
     if (splitDescription.first() == QStringLiteral("x")) {
         completionStatus = true;
@@ -65,10 +66,7 @@ Todo TodoModel::parseTodoFromDescription(const QString &description) const
         splitDescription.removeFirst();
     }
 
-    QString descr;
     for (const auto &item : splitDescription) {
-        descr.append(item);
-        descr.append(QStringLiteral(" "));
         if (item.length() > 1) {
             if (item.startsWith(QStringLiteral("+"))) {
                 todo.addProject(item);
@@ -77,7 +75,7 @@ Todo TodoModel::parseTodoFromDescription(const QString &description) const
                 todo.addContext(item);
                 continue;
             } else if (item.contains(m_keyValuePairRegexp)) {
-                if (!item.startsWith(QStringLiteral("http"))) {
+                if (!disallowedKeyName(item)) {
                     todo.addKeyValuePair(item);
                 }
                 continue;
@@ -101,9 +99,6 @@ QString TodoModel::prettyPrintDescription(const Todo &todo) const
     // For some reason the string replacer does not work for the last item?
     // This just adds extra character at the end so we replace the last item.
     auto prettyDescr = QStringLiteral("%1 ").arg(todo.description());
-    prettyDescr.replace(m_completionRegexp, QString());
-    prettyDescr.replace(todo.creationDate(), QString());
-    prettyDescr.replace(todo.completionDate(), QString());
     const auto keyValuePairs = todo.keyValuePairs();
     const auto projects = todo.projects();
     const auto contexts = todo.contexts();
@@ -111,6 +106,9 @@ QString TodoModel::prettyPrintDescription(const Todo &todo) const
         prettyDescr.replace(pair, QString());
     }
     prettyDescr.replace(m_priorityRegexp, QString());
+    prettyDescr.replace(m_completionRegexp, QString());
+    prettyDescr.replace(todo.creationDate(), QString());
+    prettyDescr.replace(todo.completionDate(), QString());
 
     // There's probably better way to do this but hey as long as it works.
     // TODO: look into making custom theme for KSyntaxHighlighting at runtime and use that instead.
@@ -402,4 +400,23 @@ QModelIndex TodoModel::indexFromQUuid(const QUuid &uuid) const
         }
     }
     return QModelIndex();
+}
+
+bool TodoModel::disallowedKeyName(const QString &keyName) const
+{
+    const QStringList disallowedKeys = QStringList{
+        QStringLiteral("https"),
+        QStringLiteral("http"),
+        QStringLiteral("file"),
+        QStringLiteral("mailto"),
+        QStringLiteral("sftp"),
+    };
+
+    for (const auto &k : disallowedKeys) {
+        if (keyName.startsWith(k)) {
+            return true;
+        }
+    }
+
+    return false;
 }

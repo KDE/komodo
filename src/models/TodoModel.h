@@ -68,6 +68,8 @@ public:
 
     Q_INVOKABLE QModelIndex indexFromQUuid(const QUuid &uuid) const;
 
+    Q_INVOKABLE bool disallowedKeyName(const QString &keyName) const;
+
 private:
     void updateCompletionStatus(Todo &todo, const bool completed);
     QString prettyPrintDescription(const Todo &todo) const;
@@ -89,4 +91,6 @@ private:
     QRegularExpression m_dateRegexp;
     // Regexp for keyvalue-pair
     QRegularExpression m_keyValuePairRegexp;
+    // Regexp for splitting description into separate items
+    QRegularExpression m_textSplitRegexp;
 };

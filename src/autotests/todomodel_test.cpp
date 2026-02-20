@@ -97,6 +97,16 @@ void TodoModelTest::testParseTodo_data()
     QTest::addRow("Task with empty key:vals") << u"2025-08-29 this task has keys without values like item: and due: and also :val"_s << false << QString()
                                               << QString() << u"2025-08-29"_s << QStringList{} << QStringList{} << QStringList{}
                                               << u"this task has keys without values like item: and due: and also :val"_s << QString();
+
+    QTest::addRow("Complicated task with inline markdown")
+        << u"(E) 2025-06-21 This is a @Complicated +Task with [inline markdown stuff](https://kde.org) +Stuff task:123 +Test @QTest @Computer due:2025-12-02 and email [email link](foo@bar.com) thing:stuff another:[inline link?](https://example.com)"_s
+        << false << u"(E)"_s << QString() << u"2025-06-21"_s << QStringList{u"@Complicated"_s, u"@QTest"_s, u"@Computer"_s}
+        << QStringList{u"+Task"_s, u"+Stuff"_s, u"+Test"_s} << QStringList{u"task:123"_s, u"due:2025-12-02"_s, u"thing:stuff"_s}
+        << u"This is a @Complicated +Task with [inline markdown stuff](https://kde.org) +Stuff +Test @QTest @Computer and email [email link](foo@bar.com) another:[inline link?](https://example.com)"_s
+        << u"2025-12-02"_s;
+    QTest::addRow("All dates are the same") << u"x (X) 2026-01-01 2026-01-01 +TestFile @XPriority due on same day as created due:2026-01-01"_s << true
+                                            << u"(X)"_s << u"2026-01-01"_s << u"2026-01-01"_s << QStringList{u"@XPriority"_s} << QStringList{u"+TestFile"_s}
+                                            << QStringList(u"due:2026-01-01"_s) << u"+TestFile @XPriority due on same day as created"_s << u"2026-01-01"_s;
 }
 void TodoModelTest::testParseTodo()
 {
@@ -129,7 +139,7 @@ void TodoModelTest::testLoadFile()
 {
     todoModel->setFilePath(testFilePath);
     QVERIFY(todoModel->loadFile());
-    QVERIFY(todoModel->todos().length() == 13);
+    QVERIFY(todoModel->todos().length() == 15);
 }
 void TodoModelTest::testMakeNewTodo()
 {
@@ -221,8 +231,6 @@ void TodoModelTest::testSaveFile()
     }
     file.close();
 
-    qDebug() << "Text before saving" << beforeSave;
-    qDebug() << "Text after saving" << afterSave;
     QVERIFY(afterSave.count() > beforeSave.count());
 }
 void TodoModelTest::cleanupTestCase()

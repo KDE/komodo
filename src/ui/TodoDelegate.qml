@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.dateandtime as DateTime
+import org.kde.komodo.models
 
 Kirigami.AbstractCard {
     id: todoDelegate
@@ -132,11 +133,12 @@ Kirigami.AbstractCard {
                         id: keyValuePairRepeater
                         model: todoDelegate.model.keyValuePairs
                         RowLayout {
+                            id: keyValuePairLayout
                             property var textData: modelData.split(":")
                             property var textUrl: {
                                 let value = "";
                                 // Split the value like this in case its URL
-                                if (textData[1].startsWith("http") || textData[1].startsWith("file://")) {
+                                if (todoModel.disallowedKeyName(textData[1])) {
                                     const url = modelData.split(":").slice(1).join(":");
                                     value = url;
                                 }
@@ -156,7 +158,7 @@ Kirigami.AbstractCard {
                             Kirigami.SelectableLabel {
                                 Layout.maximumWidth: delegateLayout.width - keyLabel.width - completionColumn.width - Kirigami.Units.smallSpacing * 4
                                 text: parent.textData[1]
-                                visible: !textUrl
+                                visible: !keyValuePairLayout.textUrl
                                 wrapMode: Text.Wrap
                                 Layout.alignment: Qt.AlignLeft
                                 rightPadding: Kirigami.Units.smallSpacing
@@ -167,10 +169,10 @@ Kirigami.AbstractCard {
                                 // Make sure the external url icon does not go outside the view
                                 Layout.maximumWidth: delegateLayout.width - keyLabel.width - completionColumn.width - Kirigami.Units.smallSpacing * 4
                                 Layout.alignment: Qt.AlignLeft
-                                visible: textUrl
+                                visible: keyValuePairLayout.textUrl
                                 elide: Text.ElideRight
-                                text: textUrl
-                                url: textUrl
+                                text: keyValuePairLayout.textUrl
+                                url: keyValuePairLayout.textUrl
                             }
                         }
                     }
