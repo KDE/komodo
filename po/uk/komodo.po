@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-10 00:46+0000\n"
+"POT-Creation-Date: 2026-02-21 00:50+0000\n"
 "PO-Revision-Date: 2026-01-12 03:17+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -229,67 +229,67 @@ msgctxt "@info:placeholder"
 msgid "No To-Dos found."
 msgstr "Не знайдено записів завдань."
 
-#: src/ui/TodoDelegate.qml:63
+#: src/ui/TodoDelegate.qml:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle completion status"
 msgstr "Перемкнути стан завершеності"
 
-#: src/ui/TodoDelegate.qml:99
+#: src/ui/TodoDelegate.qml:100
 #, kde-format
 msgid "Priority"
 msgstr "Пріоритетність"
 
-#: src/ui/TodoDelegate.qml:191
+#: src/ui/TodoDelegate.qml:193
 #, kde-format
 msgid "Task completion date"
 msgstr "Дата завершення завдання"
 
-#: src/ui/TodoDelegate.qml:204
+#: src/ui/TodoDelegate.qml:206
 #, kde-format
 msgid "Task due date"
 msgstr "Кінцева дата завдання"
 
-#: src/ui/TodoDelegate.qml:217
+#: src/ui/TodoDelegate.qml:219
 #, kde-format
 msgid "Task creation date"
 msgstr "Дата створення завдання"
 
-#: src/ui/TodoDelegate.qml:233
+#: src/ui/TodoDelegate.qml:235
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
 msgstr "Змінити"
 
-#: src/ui/TodoDelegate.qml:256
+#: src/ui/TodoDelegate.qml:258
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
 msgstr "Вилучити"
 
-#: src/ui/TodoDelegate.qml:293
+#: src/ui/TodoDelegate.qml:295
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
 msgstr "(A) РРРР-ММ-ДД Опис +Проєкт @Контекст ключ:значення"
 
-#: src/ui/TodoDelegate.qml:329
+#: src/ui/TodoDelegate.qml:331
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
 msgstr "Вставити дату…"
 
-#: src/ui/TodoDelegate.qml:331
+#: src/ui/TodoDelegate.qml:333
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
 msgstr "Відкрити засіб вибору дати і вставити її у позиції курсора"
 
-#: src/ui/TodoDelegate.qml:343
+#: src/ui/TodoDelegate.qml:345
 #, kde-format
 msgid "Syntax Information"
 msgstr "Відомості щодо синтаксису"
 
-#: src/ui/TodoDelegate.qml:348
+#: src/ui/TodoDelegate.qml:350
 #, kde-format
 msgctxt "Syntax quick guide"
 msgid ""
@@ -320,23 +320,23 @@ msgstr ""
 "поєднувати одне з одним.</p><p>Щоб дізнатися більше та ознайомитися із "
 "прикладами, натисніть кнопку «Довідка».</p><br>"
 
-#: src/ui/TodoDelegate.qml:353
+#: src/ui/TodoDelegate.qml:355
 #, kde-format
 msgid "Syntax Information…"
 msgstr "Відомості щодо синтаксису…"
 
-#: src/ui/TodoDelegate.qml:361
+#: src/ui/TodoDelegate.qml:363
 #, kde-format
 msgid "Show todo.txt syntax reference"
 msgstr "Показати довідку щодо синтаксису todo.txt"
 
-#: src/ui/TodoDelegate.qml:375
+#: src/ui/TodoDelegate.qml:377
 #, kde-format
 msgctxt "@button"
 msgid "Save"
 msgstr "Зберегти"
 
-#: src/ui/TodoDelegate.qml:396
+#: src/ui/TodoDelegate.qml:398
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"

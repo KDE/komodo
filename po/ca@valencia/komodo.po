@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-10 00:46+0000\n"
+"POT-Creation-Date: 2026-02-21 00:50+0000\n"
 "PO-Revision-Date: 2026-01-14 09:03+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -236,67 +236,67 @@ msgctxt "@info:placeholder"
 msgid "No To-Dos found."
 msgstr "No s'ha trobat cap tasca pendent."
 
-#: src/ui/TodoDelegate.qml:63
+#: src/ui/TodoDelegate.qml:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle completion status"
 msgstr "Canvia l'estat de compleció"
 
-#: src/ui/TodoDelegate.qml:99
+#: src/ui/TodoDelegate.qml:100
 #, kde-format
 msgid "Priority"
 msgstr "Prioritat"
 
-#: src/ui/TodoDelegate.qml:191
+#: src/ui/TodoDelegate.qml:193
 #, kde-format
 msgid "Task completion date"
 msgstr "Data de finalització de la tasca"
 
-#: src/ui/TodoDelegate.qml:204
+#: src/ui/TodoDelegate.qml:206
 #, kde-format
 msgid "Task due date"
 msgstr "Data de venciment de la tasca"
 
-#: src/ui/TodoDelegate.qml:217
+#: src/ui/TodoDelegate.qml:219
 #, kde-format
 msgid "Task creation date"
 msgstr "Data de creació de la tasca"
 
-#: src/ui/TodoDelegate.qml:233
+#: src/ui/TodoDelegate.qml:235
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
 msgstr "Edita"
 
-#: src/ui/TodoDelegate.qml:256
+#: src/ui/TodoDelegate.qml:258
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
 msgstr "Suprimix"
 
-#: src/ui/TodoDelegate.qml:293
+#: src/ui/TodoDelegate.qml:295
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
 msgstr "(A) AAAA-MM-DD Descripció +Projecte @Context clau:valor"
 
-#: src/ui/TodoDelegate.qml:329
+#: src/ui/TodoDelegate.qml:331
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
 msgstr "Inserix una data…"
 
-#: src/ui/TodoDelegate.qml:331
+#: src/ui/TodoDelegate.qml:333
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
 msgstr "Obri un selector de dates i la inserix a la posició del cursor"
 
-#: src/ui/TodoDelegate.qml:343
+#: src/ui/TodoDelegate.qml:345
 #, kde-format
 msgid "Syntax Information"
 msgstr "Informació de la sintaxi"
 
-#: src/ui/TodoDelegate.qml:348
+#: src/ui/TodoDelegate.qml:350
 #, kde-format
 msgctxt "Syntax quick guide"
 msgid ""
@@ -327,23 +327,23 @@ msgstr ""
 "poden barrejar entre ells.</p><p>Per a informació més detallada i exemples "
 "cliqueu damunt del botó d'ajuda.</p><br>"
 
-#: src/ui/TodoDelegate.qml:353
+#: src/ui/TodoDelegate.qml:355
 #, kde-format
 msgid "Syntax Information…"
 msgstr "Informació de la sintaxi…"
 
-#: src/ui/TodoDelegate.qml:361
+#: src/ui/TodoDelegate.qml:363
 #, kde-format
 msgid "Show todo.txt syntax reference"
 msgstr "Mostra la referència de la sintaxi de «todo.txt»"
 
-#: src/ui/TodoDelegate.qml:375
+#: src/ui/TodoDelegate.qml:377
 #, kde-format
 msgctxt "@button"
 msgid "Save"
 msgstr "Guarda"
 
-#: src/ui/TodoDelegate.qml:396
+#: src/ui/TodoDelegate.qml:398
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"
