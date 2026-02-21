@@ -287,6 +287,7 @@
         <p xml:lang="nl">Prestatieverbeteringen voor de zoekfunctie, opstartargumenten toegevoegd, help verplaatst naar een docbook, probleem opgelost bij het laden van opgeslagen filters.</p>
         <p xml:lang="pt-BR">Melhorias de desempenho na busca, adição de argumentos de inicialização, mudança da ajuda para um documento anexo, correção no carregamento de filtros salvos.</p>
         <p xml:lang="sl">Izboljšave delovanja iskanja, dodani argumenti za zagon, pomoč premaknjena v dokumentacijo, popravljeno nalaganje shranjenega filtra.</p>
+        <p xml:lang="tr">Arama işlevi için başarım iyileştirmeleri, başlatma argümanları, yardım belgeleri derlemesi, kayıtlı süzgeci yüklemeyi düzeltme.</p>
         <p xml:lang="uk">Удосконалення швидкодії пошуку, додано аргументи запуску, довідку переформатовано у docbook, виправлено завантаження збереженого фільтра.</p>
       </description>
     </release>
@@ -302,6 +303,7 @@
         <p xml:lang="nl">Initiële uitgave van KomoDo, een toepassing voor een lijst met TeDoens.</p>
         <p xml:lang="pt-BR">Lançamento inicial do KomoDo, um aplicativo de lista de tarefas.</p>
         <p xml:lang="sl">Začetna izdaja KomoDo, aplikacije za seznam opravil.</p>
+        <p xml:lang="tr">KomoDo uygulamasının ilk yayımı.</p>
         <p xml:lang="uk">Початковий випуск KomoDo, програми для роботи зі списком завдань.</p>
       </description>
     </release>
