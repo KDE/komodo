@@ -282,6 +282,7 @@
         <p xml:lang="ca">Millores de rendiment per a cercar, s'han afegit arguments de llançament, s'ha mogut l'ajuda a un docbook, s'ha corregit la càrrega de filtre desat.</p>
         <p xml:lang="ca-valencia">Millores de rendiment per a buscar, s'han afegit arguments de llançament, s'ha mogut l'ajuda a un docbook, s'ha corregit la càrrega de filtre guardat.</p>
         <p xml:lang="es">Mejoras en el rendimiento de la búsqueda, se han añadido argumentos de lanzamiento, se ha movido la ayuda a un docbook y se ha corregido la carga del filtro guardado.</p>
+        <p xml:lang="fr">Améliorations des performances de la recherche, ajout d’arguments de lancement, déplacement de l'aide dans un fichier « docbook », correction du chargement du filtre enregistré.</p>
         <p xml:lang="he">שיפורי ביצועים לחיפוש, נוספו ארגומנטים להפעלה, העזרה הועברה ל־docbook, תוקנה טעינת מסנן שמור.</p>
         <p xml:lang="ka">გაუმჯობესდა ძებნის წარმადობა, დაემატა გაშვების არგუმენტები, დახმარების სექცია გადავიდა Docbook-ში და გასწორდა შენახული ფილტრის ჩატვირთვა.</p>
         <p xml:lang="nl">Prestatieverbeteringen voor de zoekfunctie, opstartargumenten toegevoegd, help verplaatst naar een docbook, probleem opgelost bij het laden van opgeslagen filters.</p>
@@ -298,6 +299,7 @@
         <p xml:lang="ca">Versió inicial del KomoDo, una aplicació de llista de tasques pendents.</p>
         <p xml:lang="ca-valencia">Versió inicial de KomoDo, una aplicació de llista de tasques pendents.</p>
         <p xml:lang="es">Versión inicial de KomoDo, una aplicación de lista de tareas pendientes.</p>
+        <p xml:lang="fr">Première version de KomoDo, une application pour les tâches à faire.</p>
         <p xml:lang="he">המהדורה הראשונה של KomoDo, יישום רשימת מטלות.</p>
         <p xml:lang="ka">KomoDo-ის, გეგმების სიის აპლიკაციის პირველი ვერსია.</p>
         <p xml:lang="nl">Initiële uitgave van KomoDo, een toepassing voor een lijst met TeDoens.</p>
