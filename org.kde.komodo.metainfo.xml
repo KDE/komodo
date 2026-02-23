@@ -273,6 +273,16 @@
     <release version="1.6.0" date="2026-02-20">
       <description>
         <p>Allow markdown style inline links, some parsing fixes, remove monospace font from tasks.</p>
+        <p xml:lang="ar">السماح بالروابط المضمنة بنمط التخفيض، بعض إصلاحات التحليل، إزالة الخط أحادي المسافة من المهام.</p>
+        <p xml:lang="ca">Permet enllaços en línia d'estil markdown, algunes correccions d'anàlisi, elimina la lletra monoespai de les tasques.</p>
+        <p xml:lang="ca-valencia">Permet enllaços en línia d'estil markdown, algunes correccions d'anàlisi, elimina la lletra monoespai de les tasques.</p>
+        <p xml:lang="es">Permitir enlaces en línea al estilo de markdown; algunas correcciones de análisis; eliminar fuente monoespacio de las tareas.</p>
+        <p xml:lang="ka">Markdown-ის სტილის ხაზშივე ბმულები, გასწორდა რამდენიმე დამუშავების შეცდომა, ამოცანებიდან წაიშალა ერთსიგანიანი ფონტი.</p>
+        <p xml:lang="nl">Sta markdown-stijl inline koppelingen toe, enige reparaties van ontleden, verwijder monospace lettertype uit taken.</p>
+        <p xml:lang="pt-BR">Permitir links embutidos no estilo Markdown, algumas correções de análise sintática, remover fonte monoespaçada das tarefas.</p>
+        <p xml:lang="sl">Dovoli vgrajene povezave v slogu markdowna, nekaj popravkov razčlenjevanja, odstrani pisavo monospace iz opravil.</p>
+        <p xml:lang="tr">Markdown tarzı satır için bağlantılara izin ver, bazı ayrıştırma düzeltmeleri, görevlerden eş aralıklı yazıtipini kaldır</p>
+        <p xml:lang="uk">Уможливлено вбудовані посилання у стилі markdown, деякі виправлення обробки, вилучено моноширинний шрифт із завдань.</p>
       </description>
     </release>
     <release version="1.5.0" date="2025-09-09">
