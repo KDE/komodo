@@ -281,6 +281,7 @@
         <p xml:lang="he">מעתה קישורים פנימיים בסגנון Markdown אפשריים, בוצעו תיקוני פיענוח, גופן ברוחב אחיד הוסר מהמשימות.</p>
         <p xml:lang="it">Consente collegamenti in linea in stile markdown, alcune correzioni di analisi, rimozione del carattere a spaziatura fissa dalle attività.</p>
         <p xml:lang="ka">Markdown-ის სტილის ხაზშივე ბმულები, გასწორდა რამდენიმე დამუშავების შეცდომა, ამოცანებიდან წაიშალა ერთსიგანიანი ფონტი.</p>
+        <p xml:lang="lt">Leidžiamos „Markdown“ stiliaus įterpiamos nuorodos, atlikti kai kurie nagrinėjimo pataisymai, iš užduočių pašalintas lygiaplotis šriftas.</p>
         <p xml:lang="nl">Sta markdown-stijl inline koppelingen toe, enige reparaties van ontleden, verwijder monospace lettertype uit taken.</p>
         <p xml:lang="pt-BR">Permitir links embutidos no estilo Markdown, algumas correções de análise sintática, remover fonte monoespaçada das tarefas.</p>
         <p xml:lang="sl">Dovoli vgrajene povezave v slogu markdowna, nekaj popravkov razčlenjevanja, odstrani pisavo monospace iz opravil.</p>
@@ -299,6 +300,7 @@
         <p xml:lang="he">שיפורי ביצועים לחיפוש, נוספו ארגומנטים להפעלה, העזרה הועברה ל־docbook, תוקנה טעינת מסנן שמור.</p>
         <p xml:lang="it">Miglioramenti delle prestazioni della ricerca, aggiunti argomenti di avvio, spostamento della guida in un docbook, correzione del caricamento del filtro salvato.</p>
         <p xml:lang="ka">გაუმჯობესდა ძებნის წარმადობა, დაემატა გაშვების არგუმენტები, დახმარების სექცია გადავიდა Docbook-ში და გასწორდა შენახული ფილტრის ჩატვირთვა.</p>
+        <p xml:lang="lt">Paieškai atlikti našumo patobulinimai, pridėti paleidimo argumentai, pagalba perkelta į dokumentacijos knygą, ištaisytas įrašyto filtro įkėlimas.</p>
         <p xml:lang="nl">Prestatieverbeteringen voor de zoekfunctie, opstartargumenten toegevoegd, help verplaatst naar een docbook, probleem opgelost bij het laden van opgeslagen filters.</p>
         <p xml:lang="pt-BR">Melhorias de desempenho na busca, adição de argumentos de inicialização, mudança da ajuda para um documento anexo, correção no carregamento de filtros salvos.</p>
         <p xml:lang="sl">Izboljšave delovanja iskanja, dodani argumenti za zagon, pomoč premaknjena v dokumentacijo, popravljeno nalaganje shranjenega filtra.</p>
@@ -317,6 +319,7 @@
         <p xml:lang="he">המהדורה הראשונה של KomoDo, יישום רשימת מטלות.</p>
         <p xml:lang="it">Versione iniziale di KomoDo, un'applicazione per la gestione delle liste di cose da fare.</p>
         <p xml:lang="ka">KomoDo-ის, გეგმების სიის აპლიკაციის პირველი ვერსია.</p>
+        <p xml:lang="lt">Pradinė KomoDo, užduočių sąrašo programos laida.</p>
         <p xml:lang="nl">Initiële uitgave van KomoDo, een toepassing voor een lijst met TeDoens.</p>
         <p xml:lang="pt-BR">Lançamento inicial do KomoDo, um aplicativo de lista de tarefas.</p>
         <p xml:lang="sl">Začetna izdaja KomoDo, aplikacije za seznam opravil.</p>
