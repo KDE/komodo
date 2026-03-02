@@ -1,16 +1,16 @@
 # Translation for komodo.po to Euskara/Basque (eu).
-# Copyright (C) 2025 This file is copyright:
+# Copyright (C) 2025-2026 This file is copyright:
 # This file is distributed under the same license as the komodo package.
 # KDE euskaratzeko proiektuaren arduraduna <xalba@ni.es>.
 #
 # Translators:
-# SPDX-FileCopyrightText: 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2025, 2026 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-21 00:50+0000\n"
-"PO-Revision-Date: 2025-09-11 20:09+0200\n"
+"PO-Revision-Date: 2026-03-01 12:07+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -70,24 +70,20 @@ msgstr ""
 "egin eta zeregin-zerrenda erabilerraza bihurtzen du.</p>"
 
 #: src/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Inserts the given text in the search bar."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
 msgstr "Emandako testua bilaketa-barran txertatzen du."
 
 #: src/main.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Open the given filename. The one in the config will be ignored."
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Open the file with the given name. The filename in the config will be "
 "ignored."
 msgstr ""
-"Ireki emandako fitxategi-izena. Konfigurazioan emandakoa ez da kontuan "
-"hartuko."
+"Ireki emandako izena duen fitxategia. Konfigurazioko fitxategi-izena ez da "
+"kontuan hartuko."
 
 #: src/Main.qml:16
 #, kde-format
