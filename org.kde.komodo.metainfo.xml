@@ -288,6 +288,7 @@
         <p xml:lang="sl">Dovoli vgrajene povezave v slogu markdowna, nekaj popravkov razčlenjevanja, odstrani pisavo monospace iz opravil.</p>
         <p xml:lang="tr">Markdown tarzı satır için bağlantılara izin ver, bazı ayrıştırma düzeltmeleri, görevlerden eş aralıklı yazıtipini kaldır</p>
         <p xml:lang="uk">Уможливлено вбудовані посилання у стилі markdown, деякі виправлення обробки, вилучено моноширинний шрифт із завдань.</p>
+        <p xml:lang="zh-TW">允許使用 Markdown 風格的行內連結、一些剖析修正、讓待辦事項不要用等寬字型。</p>
       </description>
     </release>
     <release version="1.5.0" date="2025-09-09">
@@ -308,6 +309,7 @@
         <p xml:lang="sl">Izboljšave delovanja iskanja, dodani argumenti za zagon, pomoč premaknjena v dokumentacijo, popravljeno nalaganje shranjenega filtra.</p>
         <p xml:lang="tr">Arama işlevi için başarım iyileştirmeleri, başlatma argümanları, yardım belgeleri derlemesi, kayıtlı süzgeci yüklemeyi düzeltme.</p>
         <p xml:lang="uk">Удосконалення швидкодії пошуку, додано аргументи запуску, довідку переформатовано у docbook, виправлено завантаження збереженого фільтра.</p>
+        <p xml:lang="zh-TW">改善搜尋效能、新增啟動參數、將說明移動到 docbook 手冊中、修正載入已儲存的過濾器。</p>
       </description>
     </release>
     <release version="1.0.0" date="2025-08-01">
@@ -328,6 +330,7 @@
         <p xml:lang="sl">Začetna izdaja KomoDo, aplikacije za seznam opravil.</p>
         <p xml:lang="tr">KomoDo uygulamasının ilk yayımı.</p>
         <p xml:lang="uk">Початковий випуск KomoDo, програми для роботи зі списком завдань.</p>
+        <p xml:lang="zh-TW">KomoDo 待辦事項應用程式的初始版本。</p>
       </description>
     </release>
   </releases>
