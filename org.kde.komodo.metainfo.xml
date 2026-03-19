@@ -9,6 +9,7 @@
   <name xml:lang="ar">كومودو</name>
   <name xml:lang="ca">KomoDo</name>
   <name xml:lang="ca-valencia">KomoDo</name>
+  <name xml:lang="cs">KomoDo</name>
   <name xml:lang="de">KomoDo</name>
   <name xml:lang="es">KomoDo</name>
   <name xml:lang="eu">KomoDo</name>
@@ -115,6 +116,7 @@
     <p xml:lang="ar">الميزات</p>
     <p xml:lang="ca">Característiques</p>
     <p xml:lang="ca-valencia">Característiques</p>
+    <p xml:lang="cs">Vlastnosti</p>
     <p xml:lang="de">Funktionen</p>
     <p xml:lang="es">Funciones</p>
     <p xml:lang="eu">Ezaugarriak</p>
