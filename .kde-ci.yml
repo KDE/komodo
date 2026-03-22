@@ -17,3 +17,4 @@ Dependencies:
       'frameworks/kcolorscheme': '@latest-kf6'
       'frameworks/kdbusaddons': '@latest-kf6'
       'frameworks/kdoctools': '@latest-kf6'
+      'plasma/libplasma': '@latest-kf6'

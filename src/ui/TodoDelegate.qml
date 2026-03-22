@@ -14,7 +14,13 @@ Kirigami.AbstractCard {
 
     required property int index
     required property var model
+
+    property var backtab: null
+
     property bool autoInsertCreationDate: false
+
+    property bool inApp: true
+    signal editInAppClicked(taskText: string)
 
     property bool currentItem: Kirigami.CardsListView.isCurrentItem
     property bool editMode: false
@@ -62,8 +68,8 @@ Kirigami.AbstractCard {
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                         QQC2.ToolTip.text: i18nc("@info:tooltip", "Toggle completion status")
-                        KeyNavigation.tab: editButton
-                        KeyNavigation.backtab: searchField
+                        KeyNavigation.tab: todoDelegate.inApp ? editInAppButton : editButton
+                        KeyNavigation.backtab: backtab
                         background: Rectangle {
                             visible: completionStatus.visualFocus
                             color: Kirigami.Theme.highlightColor
@@ -224,12 +230,35 @@ Kirigami.AbstractCard {
                         }
 
                         QQC2.Button {
+                            id: editInAppButton
+                            Layout.alignment: Qt.AlignRight
+                            Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+                            Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+                            flat: true
+                            display: QQC2.AbstractButton.IconOnly
+                            visible: !inApp
+                            action: Kirigami.Action {
+                                id: editInAppItemAction
+                                text: i18nc("@button", "Edit in KomoDo…")
+                                tooltip: text
+                                icon.name: "edit-entry-symbolic"
+                                onTriggered: todoDelegate.editInAppClicked(todoDelegate.model.description)
+                                shortcut: !inApp && todoDelegate.currentItem ? "Ctrl+E" : ""
+                            }
+                            KeyNavigation.tab: deleteItemButton.visible ? deleteItemButton : backtab
+                            QQC2.ToolTip.visible: hovered
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.text: editInAppItemAction.tooltip
+                        }
+
+                        QQC2.Button {
                             id: editButton
                             Layout.alignment: Qt.AlignRight
                             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
                             flat: true
                             display: QQC2.AbstractButton.IconOnly
+                            visible: inApp
                             action: Kirigami.Action {
                                 id: editItemAction
                                 text: i18nc("@button", "Edit")
@@ -238,9 +267,9 @@ Kirigami.AbstractCard {
                                 onTriggered: {
                                     todoDelegate.editMode = true;
                                 }
-                                shortcut: todoDelegate.currentItem ? "Ctrl+E" : ""
+                                shortcut: inApp && todoDelegate.currentItem ? "Ctrl+E" : ""
                             }
-                            KeyNavigation.tab: deleteItemButton
+                            KeyNavigation.tab: deleteItemButton.visible ? deleteItemButton : backtab
                             QQC2.ToolTip.visible: hovered
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.text: editItemAction.tooltip
@@ -253,6 +282,7 @@ Kirigami.AbstractCard {
                             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
                             display: QQC2.AbstractButton.IconOnly
                             flat: true
+                            visible: inApp
                             action: Kirigami.Action {
                                 id: deleteItemAction
                                 text: i18nc("@button", "Delete")
@@ -265,7 +295,7 @@ Kirigami.AbstractCard {
                                 shortcut: todoDelegate.currentItem ? "Ctrl+D" : ""
                                 tooltip: text
                             }
-                            KeyNavigation.tab: searchField
+                            KeyNavigation.tab: backtab
                             QQC2.ToolTip.visible: hovered
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.text: deleteItemAction.tooltip
@@ -412,7 +442,7 @@ Kirigami.AbstractCard {
                         QQC2.ToolTip.visible: hovered
                         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                         QQC2.ToolTip.text: cancelEditAction.tooltip
-                        KeyNavigation.tab: searchField
+                        KeyNavigation.tab: backtab
                     }
                 }
                 Component.onCompleted: {

@@ -66,3 +66,8 @@ add_subdirectory(ui)
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
+
+if(BUILD_PLASMOID)
+    add_subdirectory(plasmoid)
+endif()
+

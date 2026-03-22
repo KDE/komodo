@@ -34,6 +34,7 @@
     "modules": [
         {
             "name": "komodo",
+            "config-opts": [ "-DBUILD_PLASMOID=OFF" ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "sources": [

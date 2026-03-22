@@ -7,7 +7,6 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs as Dialogs
 import org.kde.kirigami as Kirigami
-import org.kde.kitemmodels
 
 import org.kde.komodo.config
 import org.kde.komodo.models
@@ -38,7 +37,7 @@ Kirigami.ScrollablePage {
     }
 
     function updateSearch() {
-        filteredModel.filterRegularExpression = RegExp(searchField.text.replace("+", "\\+").replace("(", "\\(").replace(")", "\\)"), "gi");
+        filteredModel.primaryFilter = searchField.text;
         cardsListView.currentIndex = -1;
         searchField.forceActiveFocus();
     }
@@ -183,7 +182,6 @@ Kirigami.ScrollablePage {
                     onCurrentValueChanged: {
                         cardsListView.currentIndex = -1;
                         filteredModel.secondaryFilter = filterComboBox.currentValue;
-                        filteredModel.invalidateFilter();
                     }
                 }
             }
@@ -297,43 +295,14 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    Kirigami.CardsListView {
+    TodoListView {
         id: cardsListView
-        highlightFollowsCurrentItem: true
-        currentIndex: -1
-        highlightMoveDuration: 1
-        highlightMoveVelocity: 1
-        focusPolicy: Qt.NoFocus
-        // For some reason the content width is too wide and this causes issues
-        // that allows us to scroll with arrow keys from side to side???
-        // IDK why this fixes it but whatever
-        contentWidth: contentItem.childrenRect.width
 
-        Kirigami.PlaceholderMessage {
-            id: noTodosLoaded
-            width: parent.width - (Kirigami.Units.largeSpacing * 4)
-            anchors.centerIn: parent
-            visible: todoModel.filePath == ""
-            type: Kirigami.PlaceholderMessage.Actionable
-            icon.name: "org.kde.komodo"
-            text: i18nc("@info:placeholder", "Welcome to KomoDo!")
-            explanation: i18nc("Welcome introduction text", "<p>KomoDo is a To-Do list application that uses <a href='https://github.com/todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to learn and KomoDo has help sections for it: <br>On the toolbar, click the <i><interface>Help…</interface></i> button.<br>While editing a task, click the <i><interface>Syntax Information…</interface></i> button.</p><p>You can follow the rules as much or as little as you wish.<br> Feel free to experiment to find out your ideal way of managing tasks.</p><p>Click <i><interface>Open To-Do list…</interface></i> to use an existing list or <i><interface>Create New To-Do list…</interface></i> to start a new list.</p>")
-            onLinkActivated: link => {
-                Qt.openUrlExternally(link);
-            }
-        }
+        backtab: searchField
+        inApp: true
 
-        Kirigami.PlaceholderMessage {
-            id: noTodosFound
-            width: parent.width - (Kirigami.Units.largeSpacing * 4)
-            anchors.centerIn: parent
-            visible: !noTodosLoaded.visible && filteredModel.count === 0
-            icon.name: "org.kde.komodo"
-            text: i18nc("@info:placeholder", "No To-Dos found.")
-        }
-        model: KSortFilterProxyModel {
+        model: TodoFilterProxyModel {
             id: filteredModel
-            property var secondaryFilter: "default"
             
             sourceModel: TodoModel {
                 id: todoModel
@@ -357,63 +326,21 @@ Kirigami.ScrollablePage {
                     }
                 }
             }
-            
-            filterRoleName: "description"
-            sortRoleName: "description"
-            filterRowCallback: function (source_row, source_parent) {
-                const item = sourceModel.index(source_row, 0, source_parent);
-                if (searchField.text.length > 0) {
-                    const itemText = sourceModel.data(item, TodoModel.DescriptionRole);
-                    if (!itemText.match(filterRegularExpression) && itemText.length > 0) {
-                        return false;
-                    }
-                }
-
-                switch (secondaryFilter) {
-                case "default":
-                    return true;
-                case "hasDueDate":
-                    return sourceModel.data(item, TodoModel.DueDateRole) != "";
-                case "isNotCompleted":
-                    return !sourceModel.data(item, TodoModel.CompletionRole);
-                case "isCompleted":
-                    return sourceModel.data(item, TodoModel.CompletionRole);
-                default:
-                    return false;
-                }
-            }
         }
 
-        delegate: TodoDelegate {
-            // Focus automatically on an item being edited, in case
-            // there is multiple edited items and user moves between them with keys
-            onFocusChanged: {
-                cardsListView.keyNavigationEnabled = !editMode;
-            }
-            onEditModeChanged: {
-                if (editMode) {
-                    cardsListView.currentIndex = index;
-                }
-                cardsListView.keyNavigationEnabled = !editMode;
-            }
+        emptyMessage: Kirigami.PlaceholderMessage {
+            icon.name: "org.kde.komodo"
+            text: i18nc("@info:placeholder", "No To-Dos found.")
         }
 
-        Keys.onEscapePressed: {
-            cardsListView.currentIndex = -1;
-        }
-
-        Keys.onPressed: event => {
-            if (event.key == Qt.Key_PageDown) {
-                for (let i = 0; i < 3; i++) {
-                    incrementCurrentIndex();
-                }
-                event.accepted = true;
-            }
-            if (event.key == Qt.Key_PageUp) {
-                for (let i = 0; i < 3; i++) {
-                    decrementCurrentIndex();
-                }
-                event.accepted = true;
+        showNotLoadedMessage: todoModel.filePath == ""
+        notLoadedMessage: Kirigami.PlaceholderMessage {
+            type: Kirigami.PlaceholderMessage.Actionable
+            icon.name: "org.kde.komodo"
+            text: i18nc("@info:placeholder", "Welcome to KomoDo!")
+            explanation: i18nc("Welcome introduction text", "<p>KomoDo is a To-Do list application that uses <a href='https://github.com/todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to learn and KomoDo has help sections for it: <br>On the toolbar, click the <i><interface>Help…</interface></i> button.<br>While editing a task, click the <i><interface>Syntax Information…</interface></i> button.</p><p>You can follow the rules as much or as little as you wish.<br> Feel free to experiment to find out your ideal way of managing tasks.</p><p>Click <i><interface>Open To-Do list…</interface></i> to use an existing list or <i><interface>Create New To-Do list…</interface></i> to start a new list.</p>")
+            onLinkActivated: link => {
+                Qt.openUrlExternally(link);
             }
         }
     }

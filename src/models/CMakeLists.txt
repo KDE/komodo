@@ -10,6 +10,11 @@ ecm_add_qml_module(${CMAKE_PROJECT_NAME}_models
     GENERATE_PLUGIN_SOURCE
 )
 
+ecm_target_qml_sources(${CMAKE_PROJECT_NAME}_models
+    SOURCES
+    TodoFilterProxyModel.qml
+)
+
 target_sources(${CMAKE_PROJECT_NAME}_models
     PRIVATE
     Todo.cpp
@@ -26,6 +31,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}_models
     KF6::GuiAddons
     KF6::ColorScheme
     KF6::CoreAddons
+    KF6::ItemModels
 )
 
 ecm_finalize_qml_module(${CMAKE_PROJECT_NAME}_models DESTINATION ${KDE_INSTALL_QMLDIR} EXPORT ${CMAKE_PROJECT_NAME})

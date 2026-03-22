@@ -13,8 +13,15 @@
 
 class TodoModel : public QAbstractListModel
 {
+Q_SIGNALS:
+    void rowCountChanged();
+    void filePathChanged();
+    void fileChanged();
+
+private:
     Q_OBJECT
     QML_ELEMENT
+    Q_PROPERTY(int count READ rowCount NOTIFY rowCountChanged)
     Q_PROPERTY(QUrl filePath READ filePath WRITE setFilePath NOTIFY filePathChanged)
     Q_PROPERTY(QString startupSearchText READ startupSearchText)
     Q_PROPERTY(QString fileNameArg READ fileNameArg)
@@ -41,7 +48,7 @@ public:
     Todo parseTodoFromDescription(const QString &description) const;
     QList<Todo> todos() const;
 
-    int rowCount(const QModelIndex &) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role) const override;
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;
@@ -51,11 +58,8 @@ public:
 
     QUrl filePath() const;
     void setFilePath(const QUrl &newFilePath);
-    Q_SIGNAL void filePathChanged();
 
     Q_INVOKABLE void setLocalFilePath(const QString &localFile);
-
-    Q_SIGNAL void fileChanged();
 
     QString startupSearchText();
     QString fileNameArg();
@@ -64,6 +68,7 @@ public:
     Q_INVOKABLE bool saveFile();
     Q_INVOKABLE bool fileExists() const;
 
+    Q_SLOT void fileDeleted();
     Q_SLOT void fileModified();
 
     Q_INVOKABLE QModelIndex indexFromQUuid(const QUuid &uuid) const;

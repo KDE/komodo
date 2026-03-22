@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "hemisputnik@proton.me",
+                "Name": "Martin Sh"
+            },
+            {
+                "Email": "akselmo@akselmo.dev",
+                "Name": "Akseli Lahtinen"
+            }
+        ],
+        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=komodo&component=Widget",
+        "Category": "Utilities",
+        "Description": "Manage your tasks at a glance",
+        "Icon": "org.kde.komodo",
+        "License": "GPL-2.0+",
+        "Name": "KomoDo Tasks",
+        "Website": "https://apps.kde.org/komodo/"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
+

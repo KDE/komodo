@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+    http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+
+    <!--
+    SPDX-FileCopyrightText: 2025 Martin Sh <hemisputnik@proton.me>
+    SPDX-License-Identifier: LGPL-2.0-or-later
+    -->
+
+    <kcfgfile name=""/>
+
+    <group name="General">
+		<entry name="filePath" type="String">
+			<label>todo.txt filepath</label>
+		</entry>
+		<entry name="searchBarEnabled" type="Bool">
+			<label>Search bar visible</label>
+			<default>true</default>
+		</entry>
+		<entry name="searchTerm" type="String">
+			<label>Saved search term (also functions as fixed search term, if search bar is not enabled)</label>
+		</entry>
+        <entry name="filterIndex" type="Int">
+            <label>Index of the current filter</label>
+        </entry>
+        <entry name="showBadge" type="Bool">
+            <label>Show number of incomplete tasks in a badge</label>
+            <default>true</default>
+        </entry>
+    </group>
+</kcfg>

@@ -25,8 +25,11 @@ TodoModel::TodoModel(QObject *parent)
     m_fileWatcher = new KDirWatch(this);
 
     connect(this, &TodoModel::dataChanged, this, &TodoModel::saveFile);
+    connect(this, &QAbstractItemModel::modelReset, this, &TodoModel::rowCountChanged);
+    connect(this, &QAbstractItemModel::rowsInserted, this, &TodoModel::rowCountChanged);
+    connect(this, &QAbstractItemModel::rowsRemoved, this, &TodoModel::rowCountChanged);
     connect(m_fileWatcher, &KDirWatch::dirty, this, &TodoModel::fileModified);
-    connect(m_fileWatcher, &KDirWatch::deleted, this, &TodoModel::fileModified);
+    connect(m_fileWatcher, &KDirWatch::deleted, this, &TodoModel::fileDeleted);
     connect(m_fileWatcher, &KDirWatch::created, this, &TodoModel::fileModified);
 }
 
@@ -379,6 +382,14 @@ bool TodoModel::fileExists() const
 {
     QFileInfo fi(m_filePath.toLocalFile());
     return fi.exists();
+}
+
+void TodoModel::fileDeleted()
+{
+    beginResetModel();
+    m_todos.clear();
+    endResetModel();
+    fileModified();
 }
 
 void TodoModel::fileModified()

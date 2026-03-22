@@ -13,6 +13,7 @@ ecm_add_qml_module(${CMAKE_PROJECT_NAME}_ui
 ecm_target_qml_sources(${CMAKE_PROJECT_NAME}_ui
     SOURCES
     TodoDelegate.qml
+    TodoListView.qml
 )
 
 ecm_finalize_qml_module(${CMAKE_PROJECT_NAME}_ui DESTINATION ${KDE_INSTALL_QMLDIR} EXPORT ${CMAKE_PROJECT_NAME})

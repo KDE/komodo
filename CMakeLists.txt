@@ -4,6 +4,8 @@
 cmake_minimum_required(VERSION 3.20)
 project(komodo VERSION 1.6.0)
 
+option(BUILD_PLASMOID "Build plasmoid" ON)
+
 string(TOUPPER ${CMAKE_PROJECT_NAME} CMAKE_PROJECT_NAME_UPPERCASE)
 include(FeatureSummary)
 
@@ -42,13 +44,19 @@ set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
     TYPE OPTIONAL
 )
 
-set(USE_DBUS OFF)
-if(UNIX AND NOT APPLE AND NOT ANDROID AND NOT HAIKU)
-    set(USE_DBUS ON)
+set(USE_DBUS ON)
+if(NOT UNIX OR APPLE OR ANDROID OR HAIKU)
+    set(USE_DBUS OFF)
+    set(BUILD_PLASMOID OFF)
 endif()
+
 if(USE_DBUS)
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS DBusAddons)
     add_compile_definitions(-DUSE_DBUS)
+endif()
+
+if(BUILD_PLASMOID)
+    find_package(Plasma REQUIRED)
 endif()
 
 find_package(KF6KirigamiAddons 1.9 REQUIRED)
