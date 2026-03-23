@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:50+0000\n"
+"POT-Creation-Date: 2026-03-23 00:47+0000\n"
 "PO-Revision-Date: 2026-01-10 13:05+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -85,115 +85,252 @@ msgstr "פתיחת הקובץ בשם שסופק. שם הקובץ בהגדרות 
 msgid "KomoDo"
 msgstr "KomoDo"
 
-#: src/TodoPage.qml:85
+#: src/plasmoid/config.qml:9
+#, kde-format
+msgctxt "@title:tab Configuration category"
+msgid "General"
+msgstr ""
+
+#: src/plasmoid/configGeneral.qml:24
+#, kde-format
+msgctxt "@option:check"
+msgid "Show number of incomplete tasks when on a panel"
+msgstr ""
+
+#: src/plasmoid/configGeneral.qml:28
+#, kde-format
+msgctxt "@info:tooltip Near the 'show badge' checkbox"
+msgid "Tasks which are hidden by the search filter are not counted."
+msgstr ""
+
+#: src/plasmoid/configGeneral.qml:33
+#, kde-format
+msgctxt "@label"
+msgid "File path:"
+msgstr ""
+
+#: src/plasmoid/configGeneral.qml:39
+#, fuzzy, kde-format
+#| msgctxt "@button"
+#| msgid "Create New To-Do List…"
+msgctxt "@info:placeholder"
+msgid "Path to To-Do list…"
+msgstr "יצירת רשימת מטלות חדשה…"
+
+#: src/plasmoid/configGeneral.qml:47
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Open To-Do List…"
+msgctxt "@action:button"
+msgid "Choose To-Do list…"
+msgstr "פתיחת רשימת מטלות…"
+
+#: src/plasmoid/configGeneral.qml:57
+#, fuzzy, kde-format
+#| msgid "Work on To-Do lists"
+msgctxt "@label:filedialog"
+msgid "Choose a To-Do list"
+msgstr "עבודה על רשימות מטלות"
+
+#: src/plasmoid/configGeneral.qml:58 src/plasmoid/FullRepresentation.qml:96
+#, kde-format
+msgctxt "Filename filter"
+msgid "Text files (*.txt)"
+msgstr ""
+
+#: src/plasmoid/configGeneral.qml:73
+#, kde-format
+msgctxt "@label:group, followed by 'show' or 'hide, use ... instead'"
+msgid "Search bar:"
+msgstr ""
+
+#: src/plasmoid/configGeneral.qml:74
+#, fuzzy, kde-format
+#| msgid "Show All"
+msgctxt "@option:check, show search bar, following 'search bar'"
+msgid "Show"
+msgstr "להציג הכול"
+
+#: src/plasmoid/configGeneral.qml:81
+#, kde-format
+msgctxt "@option:check, hide search bar, following 'search bar'"
+msgid "Hide, use these values instead:"
+msgstr ""
+
+#: src/plasmoid/configGeneral.qml:97
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search term…"
+msgstr ""
+
+#: src/plasmoid/configGeneral.qml:117 src/plasmoid/FullRepresentation.qml:61
+#, fuzzy, kde-format
+#| msgid "Show All"
+msgctxt "@item:inmenu Secondary filter, show all tasks"
+msgid "Show All"
+msgstr "להציג הכול"
+
+#: src/plasmoid/configGeneral.qml:121 src/plasmoid/FullRepresentation.qml:65
+#, fuzzy, kde-format
+#| msgid "Due Date"
+msgctxt "@item:inmenu Secondary filter, show tasks with due date"
+msgid "Due Date"
+msgstr "תאריך יעד"
+
+#: src/plasmoid/configGeneral.qml:125 src/plasmoid/FullRepresentation.qml:69
+#, fuzzy, kde-format
+#| msgid "Incomplete"
+msgctxt "@item:inmenu Secondary filter, show incomplete tasks"
+msgid "Incomplete"
+msgstr "חלקי"
+
+#: src/plasmoid/configGeneral.qml:129 src/plasmoid/FullRepresentation.qml:73
+#, fuzzy, kde-format
+#| msgid "Completed"
+msgctxt "@item:inmenu Secondary filter, show completed tasks"
+msgid "Completed"
+msgstr "הושלם"
+
+#: src/plasmoid/FullRepresentation.qml:120 src/TodoPage.qml:333
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No To-Dos found."
+msgstr "לא נמצאו מטלות."
+
+#: src/plasmoid/FullRepresentation.qml:124
+#, kde-format
+msgctxt "@action:button Shown when the to-do list is empty"
+msgid "Edit in KomoDo…"
+msgstr ""
+
+#: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:340
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Welcome to KomoDo!"
+msgstr "ברוך בואך ל־KomoDo!"
+
+#: src/plasmoid/FullRepresentation.qml:137 src/TodoPage.qml:234
+#, kde-format
+msgctxt "@action:button"
+msgid "Open To-Do List…"
+msgstr "פתיחת רשימת מטלות…"
+
+#: src/plasmoid/main.qml:25
+#, fuzzy, kde-format
+#| msgid "KomoDo"
+msgctxt "@info:tooltip title, shown on hover"
+msgid "KomoDo Tasks"
+msgstr "KomoDo"
+
+#: src/plasmoid/main.qml:26
+#, kde-format
+msgctxt "@info:tooltip description, shown on hover"
+msgid "Manage your tasks at a glance"
+msgstr ""
+
+#: src/plasmoid/main.qml:66
+#, kde-format
+msgctxt "@action:inmenu Open the KomoDo app"
+msgid "Manage Tasks…"
+msgstr ""
+
+#: src/TodoPage.qml:84
 #, kde-format
 msgid "Delete To-Do"
 msgstr "מחיקת מטלה"
 
-#: src/TodoPage.qml:97
+#: src/TodoPage.qml:96
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
 msgstr "למחוק את המטלה הזאת"
 
-#: src/TodoPage.qml:153
+#: src/TodoPage.qml:152
 #, kde-format
 msgid "Filter:"
 msgstr "סינון:"
 
-#: src/TodoPage.qml:164
+#: src/TodoPage.qml:163
 #, kde-format
 msgid "Show All"
 msgstr "להציג הכול"
 
-#: src/TodoPage.qml:168
+#: src/TodoPage.qml:167
 #, kde-format
 msgid "Due Date"
 msgstr "תאריך יעד"
 
-#: src/TodoPage.qml:172
+#: src/TodoPage.qml:171
 #, kde-format
 msgid "Incomplete"
 msgstr "חלקי"
 
-#: src/TodoPage.qml:176
+#: src/TodoPage.qml:175
 #, kde-format
 msgid "Completed"
 msgstr "הושלם"
 
-#: src/TodoPage.qml:205
+#: src/TodoPage.qml:203
 #, kde-format
 msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
 "advised!"
 msgstr "רשימת המטלות הזאת נערכה חיצונית. מומלץ לטעון אותה מחדש!"
 
-#: src/TodoPage.qml:211
+#: src/TodoPage.qml:209
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
 msgstr "לטעון מחדש"
 
-#: src/TodoPage.qml:223
+#: src/TodoPage.qml:221
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
 msgstr "רשימת המטלות הזאת נמחקה! אפשר לפתוח רשימת מטלות אחרת או ליצור חדשה."
 
-#: src/TodoPage.qml:229 src/TodoPage.qml:268
+#: src/TodoPage.qml:227 src/TodoPage.qml:266
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
 msgstr "יצירת רשימת מטלות חדשה…"
 
-#: src/TodoPage.qml:236
-#, kde-format
-msgctxt "@action:button"
-msgid "Open To-Do List…"
-msgstr "פתיחת רשימת מטלות…"
-
-#: src/TodoPage.qml:248
+#: src/TodoPage.qml:246
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
 msgstr "מטלה חדשה…"
 
-#: src/TodoPage.qml:260
+#: src/TodoPage.qml:258
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
 msgstr "פתיחת רשימת מטלות…"
 
-#: src/TodoPage.qml:274
+#: src/TodoPage.qml:272
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
 msgstr "עזרה…"
 
-#: src/TodoPage.qml:281
+#: src/TodoPage.qml:279
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-insert creation date"
 msgstr "הוספת תאריך יצירה אוטומטית"
 
-#: src/TodoPage.qml:285
+#: src/TodoPage.qml:283
 #, kde-format
 msgctxt "A checkbox for toggling this setting"
 msgid "Insert a creation date for any new task automatically"
 msgstr "להוסיף תאריך יצירה לכל משימה חדשה אוטומטית"
 
-#: src/TodoPage.qml:293
+#: src/TodoPage.qml:291
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
 msgstr "על KomoDo"
 
-#: src/TodoPage.qml:319
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Welcome to KomoDo!"
-msgstr "ברוך בואך ל־KomoDo!"
-
-#: src/TodoPage.qml:320
+#: src/TodoPage.qml:341
 #, kde-format
 msgctxt "Welcome introduction text"
 msgid ""
@@ -217,73 +354,73 @@ msgstr ""
 "קיימת לעומת <i><interface>יצירת רשימת מטלות חדשה…</interface></i> שתפתח "
 "רשימה חדשה.</p>"
 
-#: src/TodoPage.qml:332
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "No To-Dos found."
-msgstr "לא נמצאו מטלות."
-
-#: src/ui/TodoDelegate.qml:64
+#: src/ui/TodoDelegate.qml:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle completion status"
 msgstr "מתג מצב השלמה"
 
-#: src/ui/TodoDelegate.qml:100
+#: src/ui/TodoDelegate.qml:106
 #, kde-format
 msgid "Priority"
 msgstr "עדיפות"
 
-#: src/ui/TodoDelegate.qml:193
+#: src/ui/TodoDelegate.qml:199
 #, kde-format
 msgid "Task completion date"
 msgstr "תאריך השלמת משימה"
 
-#: src/ui/TodoDelegate.qml:206
+#: src/ui/TodoDelegate.qml:212
 #, kde-format
 msgid "Task due date"
 msgstr "תאריך יעד למשימה"
 
-#: src/ui/TodoDelegate.qml:219
+#: src/ui/TodoDelegate.qml:225
 #, kde-format
 msgid "Task creation date"
 msgstr "תאריך יצירת משימה"
 
-#: src/ui/TodoDelegate.qml:235
+#: src/ui/TodoDelegate.qml:242
+#, kde-format
+msgctxt "@button"
+msgid "Edit in KomoDo…"
+msgstr ""
+
+#: src/ui/TodoDelegate.qml:264
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
 msgstr "עריכה"
 
-#: src/ui/TodoDelegate.qml:258
+#: src/ui/TodoDelegate.qml:288
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: src/ui/TodoDelegate.qml:295
+#: src/ui/TodoDelegate.qml:325
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
 msgstr "‏(A) YYYY-MM-DD תיאור +מיזם @הקשר מפתח:ערך"
 
-#: src/ui/TodoDelegate.qml:331
+#: src/ui/TodoDelegate.qml:361
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
 msgstr "הוספת תאריך…"
 
-#: src/ui/TodoDelegate.qml:333
+#: src/ui/TodoDelegate.qml:363
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
 msgstr "פתיחת בורר תאריכים והוספתו במקום של הסמן"
 
-#: src/ui/TodoDelegate.qml:345
+#: src/ui/TodoDelegate.qml:375
 #, kde-format
 msgid "Syntax Information"
 msgstr "פרטי תחביר"
 
-#: src/ui/TodoDelegate.qml:350
+#: src/ui/TodoDelegate.qml:380
 #, kde-format
 msgctxt "Syntax quick guide"
 msgid ""
@@ -310,23 +447,23 @@ msgstr ""
 "של מידע. רשות.</li></ul></li></ul><p>תיאור, הקשרים צמדי מפתח:ערך ומיזמים "
 "ניתן לערבב.</p><p>לפירוט ודוגמאות, אפשר ללחוץ על כפתור העזרה.</p><br>"
 
-#: src/ui/TodoDelegate.qml:355
+#: src/ui/TodoDelegate.qml:385
 #, kde-format
 msgid "Syntax Information…"
 msgstr "פרטי תחביר…"
 
-#: src/ui/TodoDelegate.qml:363
+#: src/ui/TodoDelegate.qml:393
 #, kde-format
 msgid "Show todo.txt syntax reference"
 msgstr "הצגת סימוכין לתחביר todo.txt"
 
-#: src/ui/TodoDelegate.qml:377
+#: src/ui/TodoDelegate.qml:407
 #, kde-format
 msgctxt "@button"
 msgid "Save"
 msgstr "שמירה"
 
-#: src/ui/TodoDelegate.qml:398
+#: src/ui/TodoDelegate.qml:428
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"
