@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:47+0000\n"
-"PO-Revision-Date: 2026-01-10 08:48+0100\n"
+"PO-Revision-Date: 2026-03-23 06:34+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -90,104 +90,94 @@ msgstr "KomoDo"
 #, kde-format
 msgctxt "@title:tab Configuration category"
 msgid "General"
-msgstr ""
+msgstr "Splošno"
 
 #: src/plasmoid/configGeneral.qml:24
 #, kde-format
 msgctxt "@option:check"
 msgid "Show number of incomplete tasks when on a panel"
-msgstr ""
+msgstr "Prikaži število nedokončanih opravil, kadar so na plošči."
 
 #: src/plasmoid/configGeneral.qml:28
 #, kde-format
 msgctxt "@info:tooltip Near the 'show badge' checkbox"
 msgid "Tasks which are hidden by the search filter are not counted."
-msgstr ""
+msgstr "Opravila, ki jih skriva iskalni filter, se ne štejejo."
 
 #: src/plasmoid/configGeneral.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "File path:"
-msgstr ""
+msgstr "Pot datoteke:"
 
 #: src/plasmoid/configGeneral.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@button"
-#| msgid "Create New To-Do List…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Path to To-Do list…"
-msgstr "Ustvari nov seznam opravil…"
+msgstr "Pot do seznama opravil…"
 
 #: src/plasmoid/configGeneral.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open To-Do List…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Choose To-Do list…"
-msgstr "Odpri seznam opravil…"
+msgstr "Izberi seznam opravil…"
 
 #: src/plasmoid/configGeneral.qml:57
-#, fuzzy, kde-format
-#| msgid "Work on To-Do lists"
+#, kde-format
 msgctxt "@label:filedialog"
 msgid "Choose a To-Do list"
-msgstr "Delo na seznamih opravil"
+msgstr "Izberi seznam opravil"
 
 #: src/plasmoid/configGeneral.qml:58 src/plasmoid/FullRepresentation.qml:96
 #, kde-format
 msgctxt "Filename filter"
 msgid "Text files (*.txt)"
-msgstr ""
+msgstr "Besedilne datoteke (*.txt)"
 
 #: src/plasmoid/configGeneral.qml:73
 #, kde-format
 msgctxt "@label:group, followed by 'show' or 'hide, use ... instead'"
 msgid "Search bar:"
-msgstr ""
+msgstr "Iskalna vrstica:"
 
 #: src/plasmoid/configGeneral.qml:74
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@option:check, show search bar, following 'search bar'"
 msgid "Show"
-msgstr "Pokaži vse"
+msgstr "Pokaži"
 
 #: src/plasmoid/configGeneral.qml:81
 #, kde-format
 msgctxt "@option:check, hide search bar, following 'search bar'"
 msgid "Hide, use these values instead:"
-msgstr ""
+msgstr "Skrij, namesto tega uporabi te vrednosti:"
 
 #: src/plasmoid/configGeneral.qml:97
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search term…"
-msgstr ""
+msgstr "Iskalni izraz…"
 
 #: src/plasmoid/configGeneral.qml:117 src/plasmoid/FullRepresentation.qml:61
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show all tasks"
 msgid "Show All"
 msgstr "Pokaži vse"
 
 #: src/plasmoid/configGeneral.qml:121 src/plasmoid/FullRepresentation.qml:65
-#, fuzzy, kde-format
-#| msgid "Due Date"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show tasks with due date"
 msgid "Due Date"
 msgstr "Rok"
 
 #: src/plasmoid/configGeneral.qml:125 src/plasmoid/FullRepresentation.qml:69
-#, fuzzy, kde-format
-#| msgid "Incomplete"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show incomplete tasks"
 msgid "Incomplete"
 msgstr "Nedokončan"
 
 #: src/plasmoid/configGeneral.qml:129 src/plasmoid/FullRepresentation.qml:73
-#, fuzzy, kde-format
-#| msgid "Completed"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show completed tasks"
 msgid "Completed"
 msgstr "Zaključen"
@@ -202,7 +192,7 @@ msgstr "NI najdenih seznamov opravil."
 #, kde-format
 msgctxt "@action:button Shown when the to-do list is empty"
 msgid "Edit in KomoDo…"
-msgstr ""
+msgstr "Uredi v KomoDo…"
 
 #: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:340
 #, kde-format
@@ -217,23 +207,22 @@ msgid "Open To-Do List…"
 msgstr "Odpri seznam opravil…"
 
 #: src/plasmoid/main.qml:25
-#, fuzzy, kde-format
-#| msgid "KomoDo"
+#, kde-format
 msgctxt "@info:tooltip title, shown on hover"
 msgid "KomoDo Tasks"
-msgstr "KomoDo"
+msgstr "KomoDo opravila"
 
 #: src/plasmoid/main.qml:26
 #, kde-format
 msgctxt "@info:tooltip description, shown on hover"
 msgid "Manage your tasks at a glance"
-msgstr ""
+msgstr "Upravljajte svoja opravila na prvi pogled"
 
 #: src/plasmoid/main.qml:66
 #, kde-format
 msgctxt "@action:inmenu Open the KomoDo app"
 msgid "Manage Tasks…"
-msgstr ""
+msgstr "Upravljajte opravila…"
 
 #: src/TodoPage.qml:84
 #, kde-format
@@ -390,7 +379,7 @@ msgstr "Datum kreiranja opravila"
 #, kde-format
 msgctxt "@button"
 msgid "Edit in KomoDo…"
-msgstr ""
+msgstr "Uredi v KomoDo…"
 
 #: src/ui/TodoDelegate.qml:264
 #, kde-format

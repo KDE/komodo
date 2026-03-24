@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:47+0000\n"
-"PO-Revision-Date: 2026-01-21 16:56+0100\n"
+"PO-Revision-Date: 2026-03-23 17:08+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -86,7 +86,7 @@ msgstr "KomoDo"
 #, kde-format
 msgctxt "@title:tab Configuration category"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: src/plasmoid/configGeneral.qml:24
 #, kde-format
@@ -104,47 +104,43 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "File path:"
-msgstr ""
+msgstr "Percurso de file:"
 
 #: src/plasmoid/configGeneral.qml:39
-#, fuzzy, kde-format
-#| msgid "Work on To-Do lists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Path to To-Do list…"
-msgstr "Labor sur Lista de Facer"
+msgstr "Percurso a Lista de Facer…"
 
 #: src/plasmoid/configGeneral.qml:47
-#, fuzzy, kde-format
-#| msgid "Work on To-Do lists"
+#, kde-format
 msgctxt "@action:button"
 msgid "Choose To-Do list…"
-msgstr "Labor sur Lista de Facer"
+msgstr "Selige Lista de Facer..."
 
 #: src/plasmoid/configGeneral.qml:57
-#, fuzzy, kde-format
-#| msgid "Work on To-Do lists"
+#, kde-format
 msgctxt "@label:filedialog"
 msgid "Choose a To-Do list"
-msgstr "Labor sur Lista de Facer"
+msgstr "Selige un Lista de Facer"
 
 #: src/plasmoid/configGeneral.qml:58 src/plasmoid/FullRepresentation.qml:96
 #, kde-format
 msgctxt "Filename filter"
 msgid "Text files (*.txt)"
-msgstr ""
+msgstr "Files de texto (*.txt)"
 
 #: src/plasmoid/configGeneral.qml:73
 #, kde-format
 msgctxt "@label:group, followed by 'show' or 'hide, use ... instead'"
 msgid "Search bar:"
-msgstr ""
+msgstr "Barra de cerca:"
 
 #: src/plasmoid/configGeneral.qml:74
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@option:check, show search bar, following 'search bar'"
 msgid "Show"
-msgstr "Monstra omne"
+msgstr "Monstra"
 
 #: src/plasmoid/configGeneral.qml:81
 #, kde-format
@@ -156,32 +152,28 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search term…"
-msgstr ""
+msgstr "Termino de cerca…"
 
 #: src/plasmoid/configGeneral.qml:117 src/plasmoid/FullRepresentation.qml:61
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show all tasks"
 msgid "Show All"
 msgstr "Monstra omne"
 
 #: src/plasmoid/configGeneral.qml:121 src/plasmoid/FullRepresentation.qml:65
-#, fuzzy, kde-format
-#| msgid "Due Date"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show tasks with due date"
 msgid "Due Date"
 msgstr "Data de expiration"
 
 #: src/plasmoid/configGeneral.qml:125 src/plasmoid/FullRepresentation.qml:69
-#, fuzzy, kde-format
-#| msgid "Incomplete"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show incomplete tasks"
 msgid "Incomplete"
 msgstr "Incomplete"
 
 #: src/plasmoid/configGeneral.qml:129 src/plasmoid/FullRepresentation.qml:73
-#, fuzzy, kde-format
-#| msgid "Completed"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show completed tasks"
 msgid "Completed"
 msgstr "Completate"
@@ -202,7 +194,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
-msgstr ""
+msgstr "Benvenite a KomoDo!"
 
 #: src/plasmoid/FullRepresentation.qml:137 src/TodoPage.qml:234
 #, kde-format
@@ -211,11 +203,10 @@ msgid "Open To-Do List…"
 msgstr ""
 
 #: src/plasmoid/main.qml:25
-#, fuzzy, kde-format
-#| msgid "KomoDo"
+#, kde-format
 msgctxt "@info:tooltip title, shown on hover"
 msgid "KomoDo Tasks"
-msgstr "KomoDo"
+msgstr "Cargas de KomoDo"
 
 #: src/plasmoid/main.qml:26
 #, kde-format

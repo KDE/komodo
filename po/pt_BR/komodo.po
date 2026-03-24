@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-23 00:47+0000\n"
-"PO-Revision-Date: 2026-01-10 07:03-0300\n"
+"PO-Revision-Date: 2026-03-23 09:45-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -93,107 +93,98 @@ msgstr "KomoDo"
 #, kde-format
 msgctxt "@title:tab Configuration category"
 msgid "General"
-msgstr ""
+msgstr "Geral"
 
 #: src/plasmoid/configGeneral.qml:24
 #, kde-format
 msgctxt "@option:check"
 msgid "Show number of incomplete tasks when on a panel"
-msgstr ""
+msgstr "Mostrar o número de tarefas incompletas quando em um painel"
 
 #: src/plasmoid/configGeneral.qml:28
 #, kde-format
 msgctxt "@info:tooltip Near the 'show badge' checkbox"
 msgid "Tasks which are hidden by the search filter are not counted."
 msgstr ""
+"Tarefas que estão ocultas pelo filtro de pesquisa não são contabilizadas."
 
 #: src/plasmoid/configGeneral.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "File path:"
-msgstr ""
+msgstr "Caminho do arquivo:"
 
 #: src/plasmoid/configGeneral.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@button"
-#| msgid "Create New To-Do List…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Path to To-Do list…"
-msgstr "Criar nova lista de tarefas…"
+msgstr "Caminho para lista de tarefas…"
 
 #: src/plasmoid/configGeneral.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open To-Do List…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Choose To-Do list…"
-msgstr "Abrir lista de tarefas…"
+msgstr "Selecionar lista de tarefas…"
 
 #: src/plasmoid/configGeneral.qml:57
-#, fuzzy, kde-format
-#| msgid "Work on To-Do lists"
+#, kde-format
 msgctxt "@label:filedialog"
 msgid "Choose a To-Do list"
-msgstr "Trabalhar em listas de tarefas"
+msgstr "Selecionar uma lista de tarefas"
 
 #: src/plasmoid/configGeneral.qml:58 src/plasmoid/FullRepresentation.qml:96
 #, kde-format
 msgctxt "Filename filter"
 msgid "Text files (*.txt)"
-msgstr ""
+msgstr "Arquivos de texto (*.txt)"
 
 #: src/plasmoid/configGeneral.qml:73
 #, kde-format
 msgctxt "@label:group, followed by 'show' or 'hide, use ... instead'"
 msgid "Search bar:"
-msgstr ""
+msgstr "Barra de pesquisa:"
 
 #: src/plasmoid/configGeneral.qml:74
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@option:check, show search bar, following 'search bar'"
 msgid "Show"
-msgstr "Mostrar tudo"
+msgstr "Mostrar"
 
 #: src/plasmoid/configGeneral.qml:81
 #, kde-format
 msgctxt "@option:check, hide search bar, following 'search bar'"
 msgid "Hide, use these values instead:"
-msgstr ""
+msgstr "Ocultar, usar estes valores em vez disso:"
 
 #: src/plasmoid/configGeneral.qml:97
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search term…"
-msgstr ""
+msgstr "Termo de pesquisa…"
 
 #: src/plasmoid/configGeneral.qml:117 src/plasmoid/FullRepresentation.qml:61
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show all tasks"
 msgid "Show All"
 msgstr "Mostrar tudo"
 
 #: src/plasmoid/configGeneral.qml:121 src/plasmoid/FullRepresentation.qml:65
-#, fuzzy, kde-format
-#| msgid "Due Date"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show tasks with due date"
 msgid "Due Date"
 msgstr "Data de vencimento"
 
 #: src/plasmoid/configGeneral.qml:125 src/plasmoid/FullRepresentation.qml:69
-#, fuzzy, kde-format
-#| msgid "Incomplete"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show incomplete tasks"
 msgid "Incomplete"
-msgstr "Incompletas"
+msgstr "Incompleta"
 
 #: src/plasmoid/configGeneral.qml:129 src/plasmoid/FullRepresentation.qml:73
-#, fuzzy, kde-format
-#| msgid "Completed"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show completed tasks"
 msgid "Completed"
-msgstr "Concluídas"
+msgstr "Concluída"
 
 #: src/plasmoid/FullRepresentation.qml:120 src/TodoPage.qml:333
 #, kde-format
@@ -205,7 +196,7 @@ msgstr "Nenhuma tarefa encontrada."
 #, kde-format
 msgctxt "@action:button Shown when the to-do list is empty"
 msgid "Edit in KomoDo…"
-msgstr ""
+msgstr "Editar em KomoDo…"
 
 #: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:340
 #, kde-format
@@ -220,23 +211,22 @@ msgid "Open To-Do List…"
 msgstr "Abrir lista de tarefas…"
 
 #: src/plasmoid/main.qml:25
-#, fuzzy, kde-format
-#| msgid "KomoDo"
+#, kde-format
 msgctxt "@info:tooltip title, shown on hover"
 msgid "KomoDo Tasks"
-msgstr "KomoDo"
+msgstr "Tarefas KomoDo"
 
 #: src/plasmoid/main.qml:26
 #, kde-format
 msgctxt "@info:tooltip description, shown on hover"
 msgid "Manage your tasks at a glance"
-msgstr ""
+msgstr "Gerencie suas tarefas num relance"
 
 #: src/plasmoid/main.qml:66
 #, kde-format
 msgctxt "@action:inmenu Open the KomoDo app"
 msgid "Manage Tasks…"
-msgstr ""
+msgstr "Gerenciar tarefas…"
 
 #: src/TodoPage.qml:84
 #, kde-format
@@ -393,7 +383,7 @@ msgstr "Data de criação da tarefa"
 #, kde-format
 msgctxt "@button"
 msgid "Edit in KomoDo…"
-msgstr ""
+msgstr "Editar em KomoDo…"
 
 #: src/ui/TodoDelegate.qml:264
 #, kde-format
