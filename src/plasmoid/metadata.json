@@ -3,19 +3,51 @@
         "Authors": [
             {
                 "Email": "hemisputnik@proton.me",
-                "Name": "Martin Sh"
+                "Name": "Martin Sh",
+                "Name[ca]": "Martin Sh",
+                "Name[es]": "Martin Sh",
+                "Name[he]": "מרטין ש",
+                "Name[ia]": "Martin Sh",
+                "Name[nl]": "Martin Sh",
+                "Name[pt_BR]": "Martin Sh",
+                "Name[tr]": "Martin Sh",
+                "Name[uk]": "Martin Sh"
             },
             {
                 "Email": "akselmo@akselmo.dev",
-                "Name": "Akseli Lahtinen"
+                "Name": "Akseli Lahtinen",
+                "Name[ca]": "Akseli Lahtinen",
+                "Name[es]": "Akseli Lahtinen",
+                "Name[he]": "אקסלי לאהטינן",
+                "Name[ia]": "Akseli Lahtinen",
+                "Name[nl]": "Akseli Lahtinen",
+                "Name[pt_BR]": "Akseli Lahtinen",
+                "Name[tr]": "Akseli Lahtinen",
+                "Name[uk]": "Akseli Lahtinen"
             }
         ],
         "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=komodo&component=Widget",
         "Category": "Utilities",
         "Description": "Manage your tasks at a glance",
+        "Description[ca]": "Gestioneu les tasques d'una ullada",
+        "Description[es]": "Gestione sus tareas de un vistazo",
+        "Description[he]": "ניהול המשימות שלך במבט חטוף",
+        "Description[ia]": "Gere ti cargas con un sol oclada",
+        "Description[nl]": "Beheer uw taken in een oogopslag",
+        "Description[pt_BR]": "Gerencie suas tarefas num relance",
+        "Description[tr]": "Görevlerinizi bir bakışta yönetin",
+        "Description[uk]": "Миттєве керування вашими завданнями",
         "Icon": "org.kde.komodo",
         "License": "GPL-2.0+",
         "Name": "KomoDo Tasks",
+        "Name[ca]": "Tasques del KomoDo",
+        "Name[es]": "Tareas de KomoDo",
+        "Name[he]": "משימות KomoDo",
+        "Name[ia]": "Cargas de KomoDo",
+        "Name[nl]": "KomoDo-taken",
+        "Name[pt_BR]": "Tarefas KomoDo",
+        "Name[tr]": "Komodo Görevler",
+        "Name[uk]": "Завдання KomoDo",
         "Website": "https://apps.kde.org/komodo/"
     },
     "X-Plasma-API-Minimum-Version": "6.0"
