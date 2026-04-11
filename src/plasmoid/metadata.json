@@ -15,6 +15,7 @@
                 "Name[ka]": "Martin Sh",
                 "Name[nl]": "Martin Sh",
                 "Name[pt_BR]": "Martin Sh",
+                "Name[sk]": "Martin Sh",
                 "Name[sl]": "Martin Sh",
                 "Name[tr]": "Martin Sh",
                 "Name[uk]": "Martin Sh"
@@ -33,6 +34,7 @@
                 "Name[ka]": "Akseli Lahtinen",
                 "Name[nl]": "Akseli Lahtinen",
                 "Name[pt_BR]": "Akseli Lahtinen",
+                "Name[sk]": "Akseli Lahtinen",
                 "Name[sl]": "Akseli Lahtinen",
                 "Name[tr]": "Akseli Lahtinen",
                 "Name[uk]": "Akseli Lahtinen"
@@ -52,6 +54,7 @@
         "Description[ka]": "მართეთ თქვენი ამოცანები ერთი შეხედვით",
         "Description[nl]": "Beheer uw taken in een oogopslag",
         "Description[pt_BR]": "Gerencie suas tarefas num relance",
+        "Description[sk]": "Spravujte svoje úlohy na prvý pohľad",
         "Description[sl]": "Upravljajte svoja opravila na prvi pogled",
         "Description[tr]": "Görevlerinizi bir bakışta yönetin",
         "Description[uk]": "Миттєве керування вашими завданнями",
@@ -69,6 +72,7 @@
         "Name[ka]": "KomoDo ამოცანები",
         "Name[nl]": "KomoDo-taken",
         "Name[pt_BR]": "Tarefas KomoDo",
+        "Name[sk]": "Úlohy KomoDo",
         "Name[sl]": "KomoDo opravila",
         "Name[tr]": "Komodo Görevler",
         "Name[uk]": "Завдання KomoDo",
