@@ -23,6 +23,7 @@
   <name xml:lang="lt">KomoDo</name>
   <name xml:lang="nl">KomoDo</name>
   <name xml:lang="pt-BR">KomoDo</name>
+  <name xml:lang="sk">KomoDo</name>
   <name xml:lang="sl">KomoDo</name>
   <name xml:lang="sv">Komodo</name>
   <name xml:lang="tr">KomoDo</name>
@@ -45,6 +46,7 @@
   <summary xml:lang="lt">Dirbti su užduočių sąrašais</summary>
   <summary xml:lang="nl">Werk op todo.txt bestanden</summary>
   <summary xml:lang="pt-BR">Trabalhar em listas de tarefas</summary>
+  <summary xml:lang="sk">Pracovať so zoznamami úloh</summary>
   <summary xml:lang="sl">Delo na seznamih todo.txt</summary>
   <summary xml:lang="sv">Arbeta med uppgiftslistor</summary>
   <summary xml:lang="tr">Yapılacaklar listeleri ile çalışın</summary>
@@ -84,6 +86,7 @@
     <p xml:lang="lt">KomoDo yra užduočių tvarkytuvė, kuri naudoja todo.txt specifikaciją. Ji nagrinėja bet kuriuos atitinkamus todo.txt failus ir paverčia juos lengvai naudojamais užduočių sąrašais.</p>
     <p xml:lang="nl">KomoDo is een todo-beheerder die todo.txt specificaties gebruikt. Het ontleedt elke compliant todo.txt bestanden en zet ze om in een gemakkelijk te gebruiken lijst met taken.</p>
     <p xml:lang="pt-BR">KomoDo é um gerenciador de tarefas que utiliza a especificação todo.txt. Ele analisa qualquer arquivo todo.txt compatível e os transforma em uma lista de tarefas fácil de usar.</p>
+    <p xml:lang="sk">KomoDo je správca úloh, ktorý používa špecifikáciu todo.txt. Parsuje akékoľvek kompatibilné súbory todo.txt a premení ich na jednoduchý zoznam úloh.</p>
     <p xml:lang="sl">KomoDo je upravljalnik opravil, ki uporablja specifikacijo todo.txt. Razčleni vse skladne datoteke todo.txt in jih pretvori v enostavne sezname opravil.</p>
     <p xml:lang="sv">KomoDo är en uppgiftshanterare som använder todo.txt-specifikationen. Den analyserar alla kompatibla todo.txt-filer och omvandlar dem till lättanvända listor med uppgifter.</p>
     <p xml:lang="tr">KomoDo, todo.txt belirtimini kullanan bir yapılacaklar yöneticisidir. Uyumlu tüm todo.txt dosyalarını ayrıştırır ve bunları kullanımı kolay görev listelerine dönüştürür.</p>
@@ -106,6 +109,7 @@
     <p xml:lang="lt">KomoDo turi įtaisytas pagalbines priemones, susijusias su todo.txt specifikacija, todėl programa taip pat tinka ir naujokams!</p>
     <p xml:lang="nl">KomoDo heeft en ingebouwde help voor de todo.txt specificatie, het is dus ook geschikt voor nieuwkomers!</p>
     <p xml:lang="pt-BR">O KomoDo tem ajuda integrada para a especificação todo.txt, então é adequado também para iniciantes!</p>
+    <p xml:lang="sk">KomoDo má vstavanú pomoc pre špecifikáciu todo.txt, takže je vhodný aj pre začiatočníkov!</p>
     <p xml:lang="sl">KomoDo ima vgrajeno pomoč za specifikacijo todo.txt, zato je primeren tudi za novince!</p>
     <p xml:lang="sv">KomoDo har inbyggd hjälp för todo.txt-specifikationen, så den passar även för nybörjare.</p>
     <p xml:lang="tr">KomoDo’nun todo.txt belirtimi için içsel yardımı vardır, bu nedenle yeni başlayanlar için de uygundur!</p>
@@ -130,6 +134,7 @@
     <p xml:lang="lt">Ypatybės</p>
     <p xml:lang="nl">Mogelijkheden</p>
     <p xml:lang="pt-BR">Funcionalidades</p>
+    <p xml:lang="sk">Funkcie</p>
     <p xml:lang="sl">Zmožnosti</p>
     <p xml:lang="sv">Funktioner</p>
     <p xml:lang="tr">Özellikler</p>
@@ -153,6 +158,7 @@
       <li xml:lang="lt">Atverti ir kurti naujus todo.txt failus</li>
       <li xml:lang="nl">Open en maak nieuwe todo.txt bestanden</li>
       <li xml:lang="pt-BR">Abrir e criar novos arquivos todo.txt</li>
+      <li xml:lang="sk">Otváranie a vytváranie nových súborov todo.txt</li>
       <li xml:lang="sl">Odpirajte in kreirajte nove datoteke todo.txt</li>
       <li xml:lang="sv">Öppna och skapa nya todo.txt-filer</li>
       <li xml:lang="tr">Yeni todo.txt dosyaları oluşturun ve onları açın</li>
@@ -175,6 +181,7 @@
       <li xml:lang="lt">Pridėti, ištrinti ir taisyti užduotis</li>
       <li xml:lang="nl">Voeg toe, verwijder en bewerkt taken</li>
       <li xml:lang="pt-BR">Adicionar, excluir e editar tarefas</li>
+      <li xml:lang="sk">Pridávanie, odstraňovanie a úprava úloh</li>
       <li xml:lang="sl">Dodajajte, brišite in urejajte opravila</li>
       <li xml:lang="sv">Lägg till, ta bort och redigera uppgifter</li>
       <li xml:lang="tr">Görevler ekleyin, onları düzenleyin veya silin</li>
@@ -197,6 +204,7 @@
       <li xml:lang="lt">Filtruoti ir ieškoti užduočių</li>
       <li xml:lang="nl">Filter en zoek taken</li>
       <li xml:lang="pt-BR">Filtrar e pesquisar tarefas</li>
+      <li xml:lang="sk">Filtrovanie a hľadanie úloh</li>
       <li xml:lang="sl">Filtrirajte in iščite opravila</li>
       <li xml:lang="sv">Filtrera och sök efter uppgifter</li>
       <li xml:lang="tr">Görevleri süzün ve içlerinde arama yapın</li>
@@ -229,6 +237,7 @@
       <caption xml:lang="lt">Pavyzdys, kaip KomoDo yra naudojama su šviesiu spalvų rinkiniu.</caption>
       <caption xml:lang="nl">Voorbeeld van KomoDo die gebruikt wordt met een licht kleurenschema.</caption>
       <caption xml:lang="pt-BR">Exemplo de KomoDo sendo usado com esquema de cores claras.</caption>
+      <caption xml:lang="sk">Príklad použitia KomoDo so svetlou farebnou schémou.</caption>
       <caption xml:lang="sl">Primer uporabe KomoDo s svetlo barvno shemo.</caption>
       <caption xml:lang="sv">Exempel på Komodo använt med ett ljust färgschema.</caption>
       <caption xml:lang="tr">KomoDo’nun açık renk şemasıyla kullanımı örneği</caption>
@@ -254,6 +263,7 @@
       <caption xml:lang="lt">Pavyzdys, kaip KomoDo yra naudojama su tamsiu spalvų rinkiniu.</caption>
       <caption xml:lang="nl">Voorbeeld van KomoDo die gebruikt wordt met een donker kleurenschema.</caption>
       <caption xml:lang="pt-BR">Exemplo de KomoDo sendo usado com esquema de cores escuras.</caption>
+      <caption xml:lang="sk">Príklad použitia KomoDo s tmavou farebnou schémou.</caption>
       <caption xml:lang="sl">Primer uporabe KomoDo s temno barvno shemo.</caption>
       <caption xml:lang="sv">Exempel på Komodo använt med ett mörkt färgschema.</caption>
       <caption xml:lang="tr">KomoDo’nun koyu renk şemasıyla kullanımı örneği</caption>
@@ -287,6 +297,7 @@
         <p xml:lang="lt">Leidžiamos „Markdown“ stiliaus įterpiamos nuorodos, atlikti kai kurie nagrinėjimo pataisymai, iš užduočių pašalintas lygiaplotis šriftas.</p>
         <p xml:lang="nl">Sta markdown-stijl inline koppelingen toe, enige reparaties van ontleden, verwijder monospace lettertype uit taken.</p>
         <p xml:lang="pt-BR">Permitir links embutidos no estilo Markdown, algumas correções de análise sintática, remover fonte monoespaçada das tarefas.</p>
+        <p xml:lang="sk">Povolené inline odkazy v štýle markdown, opravy parsovania, odstránenie neproporcionálneho písma z úloh.</p>
         <p xml:lang="sl">Dovoli vgrajene povezave v slogu markdowna, nekaj popravkov razčlenjevanja, odstrani pisavo monospace iz opravil.</p>
         <p xml:lang="tr">Markdown tarzı satır için bağlantılara izin ver, bazı ayrıştırma düzeltmeleri, görevlerden eş aralıklı yazıtipini kaldır</p>
         <p xml:lang="uk">Уможливлено вбудовані посилання у стилі markdown, деякі виправлення обробки, вилучено моноширинний шрифт із завдань.</p>
@@ -308,6 +319,7 @@
         <p xml:lang="lt">Paieškai atlikti našumo patobulinimai, pridėti paleidimo argumentai, pagalba perkelta į dokumentacijos knygą, ištaisytas įrašyto filtro įkėlimas.</p>
         <p xml:lang="nl">Prestatieverbeteringen voor de zoekfunctie, opstartargumenten toegevoegd, help verplaatst naar een docbook, probleem opgelost bij het laden van opgeslagen filters.</p>
         <p xml:lang="pt-BR">Melhorias de desempenho na busca, adição de argumentos de inicialização, mudança da ajuda para um documento anexo, correção no carregamento de filtros salvos.</p>
+        <p xml:lang="sk">Vylepšenia výkonu hľadania, pridané argumenty spúšťania, pomocník presunutý do docbook, oprava načítavania uloženého filtra.</p>
         <p xml:lang="sl">Izboljšave delovanja iskanja, dodani argumenti za zagon, pomoč premaknjena v dokumentacijo, popravljeno nalaganje shranjenega filtra.</p>
         <p xml:lang="tr">Arama işlevi için başarım iyileştirmeleri, başlatma argümanları, yardım belgeleri derlemesi, kayıtlı süzgeci yüklemeyi düzeltme.</p>
         <p xml:lang="uk">Удосконалення швидкодії пошуку, додано аргументи запуску, довідку переформатовано у docbook, виправлено завантаження збереженого фільтра.</p>
@@ -329,6 +341,7 @@
         <p xml:lang="lt">Pradinė KomoDo, užduočių sąrašo programos laida.</p>
         <p xml:lang="nl">Initiële uitgave van KomoDo, een toepassing voor een lijst met TeDoens.</p>
         <p xml:lang="pt-BR">Lançamento inicial do KomoDo, um aplicativo de lista de tarefas.</p>
+        <p xml:lang="sk">Prvé vydanie KomoDo, aplikácie zoznamu úloh.</p>
         <p xml:lang="sl">Začetna izdaja KomoDo, aplikacije za seznam opravil.</p>
         <p xml:lang="tr">KomoDo uygulamasının ilk yayımı.</p>
         <p xml:lang="uk">Початковий випуск KomoDo, програми для роботи зі списком завдань.</p>
