@@ -34,7 +34,7 @@
   <summary xml:lang="ar">اعمل على قوائم المهام</summary>
   <summary xml:lang="ca">Treballa amb llistes de tasques pendents</summary>
   <summary xml:lang="ca-valencia">Treballa amb llistes de tasques pendents</summary>
-  <summary xml:lang="de">An Todo-Listen arbeiten</summary>
+  <summary xml:lang="de">An Aufgabenlisten arbeiten</summary>
   <summary xml:lang="es">Trabajar con listas de tareas pendientes</summary>
   <summary xml:lang="eu">Egitekoen zerrendetan lan egin</summary>
   <summary xml:lang="fi">Käytä tehtäväluetteloja</summary>
@@ -288,6 +288,7 @@
         <p xml:lang="ar">السماح بالروابط المضمنة بنمط التخفيض، بعض إصلاحات التحليل، إزالة الخط أحادي المسافة من المهام.</p>
         <p xml:lang="ca">Permet enllaços en línia d'estil markdown, algunes correccions d'anàlisi, elimina la lletra monoespai de les tasques.</p>
         <p xml:lang="ca-valencia">Permet enllaços en línia d'estil markdown, algunes correccions d'anàlisi, elimina la lletra monoespai de les tasques.</p>
+        <p xml:lang="de">Unterstützung für Verknüpfungen im Markdown-Stil hinzugefügt, einige Verarbeitungsprobleme behoben, nichtproportionale Schriftart aus Aufgaben entfernt</p>
         <p xml:lang="es">Permitir enlaces en línea al estilo de markdown; algunas correcciones de análisis; eliminar fuente monoespacio de las tareas.</p>
         <p xml:lang="eu">Markdown estiloko lerro barruko estekak onartu, sintaxi-azterketaren zenbait akats zuzendu, eta zereginetatik zabalera-finkoko letra-tipoak kendu.</p>
         <p xml:lang="fr">Autoriser les liens intégrés au format « Markdown », corriger certains problèmes d'analyse, supprimer la fonte à chasse fixe des tâches.</p>
@@ -310,6 +311,7 @@
         <p xml:lang="ar">تحسينات في أداء البحث، إضافة معلمات تشغيل، نقل المساعدة إلى ملف docbook، إصلاح تحميل المرشح المحفوظ.</p>
         <p xml:lang="ca">Millores de rendiment per a cercar, s'han afegit arguments de llançament, s'ha mogut l'ajuda a un docbook, s'ha corregit la càrrega de filtre desat.</p>
         <p xml:lang="ca-valencia">Millores de rendiment per a buscar, s'han afegit arguments de llançament, s'ha mogut l'ajuda a un docbook, s'ha corregit la càrrega de filtre guardat.</p>
+        <p xml:lang="de">Leistungsverbesserungen bei der Suche, Startoptionen hinzugefügt, Hilfe in docbook verschoben, Fehler beim Laden gespeicherter Filter behoben.</p>
         <p xml:lang="es">Mejoras en el rendimiento de la búsqueda, se han añadido argumentos de lanzamiento, se ha movido la ayuda a un docbook y se ha corregido la carga del filtro guardado.</p>
         <p xml:lang="eu">Bilaketaren errendimendua hobetu, abiarazte-argumentuak gehitu, laguntza DocBook formatura eraman, eta gordetako iragazkia zamatzea zuzendu.</p>
         <p xml:lang="fr">Améliorations des performances de la recherche, ajout d’arguments de lancement, déplacement de l'aide dans un fichier « docbook », correction du chargement du filtre enregistré.</p>
@@ -332,6 +334,7 @@
         <p xml:lang="ar">الإصدار الأولي من كومودو، تطبيق قائمة المهام.</p>
         <p xml:lang="ca">Versió inicial del KomoDo, una aplicació de llista de tasques pendents.</p>
         <p xml:lang="ca-valencia">Versió inicial de KomoDo, una aplicació de llista de tasques pendents.</p>
+        <p xml:lang="de">Erste Veröffentlichung von KomoDo, einer Anwendung für Aufgabenlisten.</p>
         <p xml:lang="es">Versión inicial de KomoDo, una aplicación de lista de tareas pendientes.</p>
         <p xml:lang="eu">KomoDoren hasierako askapena, Zeregin-zerrenda aplikazio bat.</p>
         <p xml:lang="fr">Première version de KomoDo, une application pour les tâches à faire.</p>
