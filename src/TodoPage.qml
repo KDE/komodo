@@ -290,7 +290,14 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             text: i18nc("@action:inmenu", "About KomoDo")
             icon.name: "help-about-symbolic"
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: pageStack.layers.push(aboutPage)
+        },
+        Kirigami.Action {
+            text: i18nc("@action:inmenu", "About KDE")
+            icon.name: "kdeapp"
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDEPage"))
             enabled: pageStack.layers.depth <= 1
         }
     ]
