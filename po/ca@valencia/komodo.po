@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:47+0000\n"
+"POT-Creation-Date: 2026-05-02 00:47+0000\n"
 "PO-Revision-Date: 2026-03-23 10:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -187,7 +187,7 @@ msgctxt "@item:inmenu Secondary filter, show completed tasks"
 msgid "Completed"
 msgstr "Completada"
 
-#: src/plasmoid/FullRepresentation.qml:120 src/TodoPage.qml:333
+#: src/plasmoid/FullRepresentation.qml:120 src/TodoPage.qml:340
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
@@ -199,7 +199,7 @@ msgctxt "@action:button Shown when the to-do list is empty"
 msgid "Edit in KomoDo…"
 msgstr "Edita en KomoDo…"
 
-#: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:340
+#: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:347
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
@@ -330,7 +330,15 @@ msgctxt "@action:inmenu"
 msgid "About KomoDo"
 msgstr "Quant a KomoDo"
 
-#: src/TodoPage.qml:341
+#: src/TodoPage.qml:297
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "About KomoDo"
+msgctxt "@action:inmenu"
+msgid "About KDE"
+msgstr "Quant a KomoDo"
+
+#: src/TodoPage.qml:348
 #, kde-format
 msgctxt "Welcome introduction text"
 msgid ""
