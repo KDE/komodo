@@ -328,7 +328,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KDE"
-msgstr ""
+msgstr "O prostředí KDE"
 
 #: src/TodoPage.qml:348
 #, kde-format

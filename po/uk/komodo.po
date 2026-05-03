@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-02 00:47+0000\n"
-"PO-Revision-Date: 2026-03-23 21:47+0200\n"
+"PO-Revision-Date: 2026-05-02 19:34+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -324,12 +324,10 @@ msgid "About KomoDo"
 msgstr "Про KomoDo"
 
 #: src/TodoPage.qml:297
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "About KomoDo"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "About KDE"
-msgstr "Про KomoDo"
+msgstr "Про KDE"
 
 #: src/TodoPage.qml:348
 #, kde-format

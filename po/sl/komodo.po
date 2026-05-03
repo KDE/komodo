@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-02 00:47+0000\n"
-"PO-Revision-Date: 2026-03-23 06:34+0100\n"
+"PO-Revision-Date: 2026-05-02 06:50+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -96,7 +96,7 @@ msgstr "Splošno"
 #, kde-format
 msgctxt "@option:check"
 msgid "Show number of incomplete tasks when on a panel"
-msgstr "Prikaži število nedokončanih opravil, kadar so na plošči."
+msgstr "Prikaži število nedokončanih opravil, kadar so na plošči"
 
 #: src/plasmoid/configGeneral.qml:28
 #, kde-format
@@ -325,12 +325,10 @@ msgid "About KomoDo"
 msgstr "O KomoDo"
 
 #: src/TodoPage.qml:297
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "About KomoDo"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "About KDE"
-msgstr "O KomoDo"
+msgstr "O KDE"
 
 #: src/TodoPage.qml:348
 #, kde-format
