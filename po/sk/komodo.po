@@ -324,12 +324,10 @@ msgid "About KomoDo"
 msgstr "O aplikácii KomoDo"
 
 #: src/TodoPage.qml:297
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "About KomoDo"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "About KDE"
-msgstr "O aplikácii KomoDo"
+msgstr "O aplikácii KDE"
 
 #: src/TodoPage.qml:348
 #, kde-format
