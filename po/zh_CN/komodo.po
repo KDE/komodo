@@ -319,12 +319,10 @@ msgid "About KomoDo"
 msgstr "关于 KomoDo"
 
 #: src/TodoPage.qml:297
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "About KomoDo"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "About KDE"
-msgstr "关于 KomoDo"
+msgstr ""
 
 #: src/TodoPage.qml:348
 #, kde-format
