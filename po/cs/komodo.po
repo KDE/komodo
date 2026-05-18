@@ -1,31 +1,32 @@
 # Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the komodo package.
 # SPDX-FileCopyrightText: 2026 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-02 00:47+0000\n"
-"PO-Revision-Date: 2026-03-17 08:48+0100\n"
-"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-05-17 23:32+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: src/main.cpp:33
 #, kde-format
@@ -36,18 +37,18 @@ msgstr "KomoDo"
 #: src/main.cpp:37
 #, kde-format
 msgid "Work on To-Do lists"
-msgstr ""
+msgstr "Práce na seznamech úkolů"
 
 #: src/main.cpp:41
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
-msgstr ""
+msgstr "© 2025 Akseli Lahtinen"
 
 #: src/main.cpp:42
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
-msgstr ""
+msgstr "Akseli Lahtinen"
 
 #: src/main.cpp:43
 #, kde-format
@@ -62,12 +63,15 @@ msgid ""
 "<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
 "compliant todo.txt files and turns them into easy to use list of tasks.</p>"
 msgstr ""
+"<p>KomoDo je správce úkolů, který využívá specifikaci todo.txt. Analyzuje "
+"všechny soubory todo.txt, které tuto specifikaci splňují, a převádí je na "
+"přehledný seznam úkolů.</p>"
 
 #: src/main.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
-msgstr ""
+msgstr "Zadejte uvedený text do vyhledávacího pole."
 
 #: src/main.cpp:59
 #, kde-format
@@ -76,6 +80,7 @@ msgid ""
 "Open the file with the given name. The filename in the config will be "
 "ignored."
 msgstr ""
+"Otevřete soubor s uvedeným názvem. Název souboru v nastavení bude ignorován."
 
 #: src/Main.qml:16
 #, kde-format
@@ -86,101 +91,94 @@ msgstr "KomoDo"
 #, kde-format
 msgctxt "@title:tab Configuration category"
 msgid "General"
-msgstr ""
+msgstr "Obecné"
 
 #: src/plasmoid/configGeneral.qml:24
 #, kde-format
 msgctxt "@option:check"
 msgid "Show number of incomplete tasks when on a panel"
-msgstr ""
+msgstr "Zobrazit počet nedokončených úkolů na panelu"
 
 #: src/plasmoid/configGeneral.qml:28
 #, kde-format
 msgctxt "@info:tooltip Near the 'show badge' checkbox"
 msgid "Tasks which are hidden by the search filter are not counted."
-msgstr ""
+msgstr "Úkoly, které jsou skryty vyhledávacím filtrem, se nezapočítávají."
 
 #: src/plasmoid/configGeneral.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "File path:"
-msgstr ""
+msgstr "Cesta k souboru:"
 
 #: src/plasmoid/configGeneral.qml:39
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Path to To-Do list…"
-msgstr ""
+msgstr "Cesta k vlastnímu seznamu úkolů…"
 
 #: src/plasmoid/configGeneral.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "New To-Do…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Choose To-Do list…"
-msgstr "Nový úkol…"
+msgstr "Zvolit seznam úkolů…"
 
 #: src/plasmoid/configGeneral.qml:57
 #, kde-format
 msgctxt "@label:filedialog"
 msgid "Choose a To-Do list"
-msgstr ""
+msgstr "Zvolit seznam úkolů"
 
 #: src/plasmoid/configGeneral.qml:58 src/plasmoid/FullRepresentation.qml:96
 #, kde-format
 msgctxt "Filename filter"
 msgid "Text files (*.txt)"
-msgstr ""
+msgstr "Textové soubory (*.txt)"
 
 #: src/plasmoid/configGeneral.qml:73
 #, kde-format
 msgctxt "@label:group, followed by 'show' or 'hide, use ... instead'"
 msgid "Search bar:"
-msgstr ""
+msgstr "Panel pro hledání:"
 
 #: src/plasmoid/configGeneral.qml:74
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@option:check, show search bar, following 'search bar'"
 msgid "Show"
-msgstr "Zobrazit vše"
+msgstr "Zobrazit"
 
 #: src/plasmoid/configGeneral.qml:81
 #, kde-format
 msgctxt "@option:check, hide search bar, following 'search bar'"
 msgid "Hide, use these values instead:"
-msgstr ""
+msgstr "Skrýt, použít místo toho tyto hodnoty:"
 
 #: src/plasmoid/configGeneral.qml:97
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search term…"
-msgstr ""
+msgstr "Hledat výraz…"
 
 #: src/plasmoid/configGeneral.qml:117 src/plasmoid/FullRepresentation.qml:61
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show all tasks"
 msgid "Show All"
 msgstr "Zobrazit vše"
 
 #: src/plasmoid/configGeneral.qml:121 src/plasmoid/FullRepresentation.qml:65
-#, fuzzy, kde-format
-#| msgid "Due Date"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show tasks with due date"
 msgid "Due Date"
 msgstr "Datum dokončení"
 
 #: src/plasmoid/configGeneral.qml:125 src/plasmoid/FullRepresentation.qml:69
-#, fuzzy, kde-format
-#| msgid "Incomplete"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show incomplete tasks"
 msgid "Incomplete"
 msgstr "Nedokončeno"
 
 #: src/plasmoid/configGeneral.qml:129 src/plasmoid/FullRepresentation.qml:73
-#, fuzzy, kde-format
-#| msgid "Completed"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show completed tasks"
 msgid "Completed"
 msgstr "Dokončeno"
@@ -189,44 +187,43 @@ msgstr "Dokončeno"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
-msgstr ""
+msgstr "Nebyly nalezeny žádné úkoly."
 
 #: src/plasmoid/FullRepresentation.qml:124
 #, kde-format
 msgctxt "@action:button Shown when the to-do list is empty"
 msgid "Edit in KomoDo…"
-msgstr ""
+msgstr "Upravit v KomoDo…"
 
 #: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:347
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
-msgstr ""
+msgstr "Vítejte v KomoDo!"
 
 #: src/plasmoid/FullRepresentation.qml:137 src/TodoPage.qml:234
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
-msgstr ""
+msgstr "Otevřít seznam úkolů…"
 
 #: src/plasmoid/main.qml:25
-#, fuzzy, kde-format
-#| msgid "KomoDo"
+#, kde-format
 msgctxt "@info:tooltip title, shown on hover"
 msgid "KomoDo Tasks"
-msgstr "KomoDo"
+msgstr "Úkoly KomoDo"
 
 #: src/plasmoid/main.qml:26
 #, kde-format
 msgctxt "@info:tooltip description, shown on hover"
 msgid "Manage your tasks at a glance"
-msgstr ""
+msgstr "Správa úkolů na jednom místě"
 
 #: src/plasmoid/main.qml:66
 #, kde-format
 msgctxt "@action:inmenu Open the KomoDo app"
 msgid "Manage Tasks…"
-msgstr ""
+msgstr "Správa úkolů…"
 
 #: src/TodoPage.qml:84
 #, kde-format
@@ -236,7 +233,7 @@ msgstr "Smazat úkol"
 #: src/TodoPage.qml:96
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
-msgstr ""
+msgstr "Opravdu chcete tento úkol smazat?"
 
 #: src/TodoPage.qml:152
 #, kde-format
@@ -269,6 +266,8 @@ msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
 "advised!"
 msgstr ""
+"Tento seznam úkolů byl externě upraven. Důrazně doporučujeme jej znovu "
+"načíst!"
 
 #: src/TodoPage.qml:209
 #, kde-format
@@ -281,12 +280,13 @@ msgstr "Obnovit"
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
 msgstr ""
+"Tento seznam úkolů byl smazán! Otevřete jiný seznam úkolů nebo vytvořte nový."
 
 #: src/TodoPage.qml:227 src/TodoPage.qml:266
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
-msgstr ""
+msgstr "Vytvořit nový seznam úkolů…"
 
 #: src/TodoPage.qml:246
 #, kde-format
@@ -298,7 +298,7 @@ msgstr "Nový úkol…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
-msgstr ""
+msgstr "Otevřít seznam úkolů…"
 
 #: src/TodoPage.qml:272
 #, kde-format
@@ -310,19 +310,19 @@ msgstr "Nápověda…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-insert creation date"
-msgstr ""
+msgstr "Automatické vložení data vytvoření"
 
 #: src/TodoPage.qml:283
 #, kde-format
 msgctxt "A checkbox for toggling this setting"
 msgid "Insert a creation date for any new task automatically"
-msgstr ""
+msgstr "Automaticky vložit datum vytvoření u každého nového úkolu"
 
 #: src/TodoPage.qml:291
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
-msgstr ""
+msgstr "O aplikaci KomoDo"
 
 #: src/TodoPage.qml:297
 #, kde-format
@@ -344,12 +344,23 @@ msgid ""
 "<i><interface>Open To-Do list…</interface></i> to use an existing list or "
 "<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
 msgstr ""
+"<p>KomoDo je aplikace pro správu úkolů, která využívá pravidla <a "
+"href='https://github.com/todotxt/todo.txt'>todo.txt</a>.</p><p>Pravidla se "
+"dá naučit poměrně rychle a KomoDo k nim nabízí nápovědu: <br>Na panelu "
+"nástrojů klikněte na tlačítko <i><interface>Nápověda…</interface></i>."
+"<br>Při úpravách úkolu klikněte na tlačítko <i><interface>Informace o "
+"syntaxi…</interface></i>.</p><p>Pravidla můžete dodržovat v takovém rozsahu, "
+"v jakém si přejete.<br> Neváhejte experimentovat a najít si ideální způsob "
+"správy úkolů.</p><p>Klikněte na <i><interface>Otevřít seznam úkolů…</"
+"interface></i>, chcete-li použít existující seznam, nebo na "
+"<i><interface>Vytvořit nový seznam úkolů…</interface></i>, chcete-li začít "
+"nový seznam.</p>"
 
 #: src/ui/TodoDelegate.qml:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle completion status"
-msgstr ""
+msgstr "Přepnout stav dokončení"
 
 #: src/ui/TodoDelegate.qml:106
 #, kde-format
@@ -359,23 +370,23 @@ msgstr "Priorita"
 #: src/ui/TodoDelegate.qml:199
 #, kde-format
 msgid "Task completion date"
-msgstr ""
+msgstr "Datum dokončení úkolu"
 
 #: src/ui/TodoDelegate.qml:212
 #, kde-format
 msgid "Task due date"
-msgstr ""
+msgstr "Datum splnění úkolu"
 
 #: src/ui/TodoDelegate.qml:225
 #, kde-format
 msgid "Task creation date"
-msgstr ""
+msgstr "Datum vytvoření úkolu"
 
 #: src/ui/TodoDelegate.qml:242
 #, kde-format
 msgctxt "@button"
 msgid "Edit in KomoDo…"
-msgstr ""
+msgstr "Upravit v KomoDo…"
 
 #: src/ui/TodoDelegate.qml:264
 #, kde-format
@@ -393,23 +404,23 @@ msgstr "Smazat"
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
-msgstr ""
+msgstr "(A) YYYY-MM-DD Description +Project @Context key:value"
 
 #: src/ui/TodoDelegate.qml:361
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
-msgstr ""
+msgstr "Vložit datum…"
 
 #: src/ui/TodoDelegate.qml:363
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
-msgstr ""
+msgstr "Otevřít výběr data a vložit jej na místo kurzoru"
 
 #: src/ui/TodoDelegate.qml:375
 #, kde-format
 msgid "Syntax Information"
-msgstr ""
+msgstr "Informace o syntaxi"
 
 #: src/ui/TodoDelegate.qml:380
 #, kde-format
@@ -428,16 +439,29 @@ msgid ""
 "projects can be mixed with each other.</p><p>For more detailed information "
 "and examples, click on the Help button.</p><br>"
 msgstr ""
+"<p>Pořadí položek je důležité:</p><pre>Stav dokončení Priorita Datum "
+"vytvoření Popis</pre><ul><li>x : Stav dokončení. Odstraněním nastavíte úkol "
+"jako nedokončený.</li><li>(A) : Priorita. Může být v rozmezí A až Z. "
+"Volitelné.</li><li>Datum dokončení: Datum ve formátu rok-měsíc-den. Přidejte "
+"pouze v případě, že existuje datum vytvoření a úkol je dokončen.</"
+"li><li>Datum vytvoření: Datum ve formátu rok-měsíc-den. Volitelné, ale "
+"doporučené.</li><li>Popis: Obecný popis úkolu. Povinné.<ul><li>+Project: "
+"Projekty, ke kterým se tento úkol vztahuje. Volitelné.</li><li>@Context: V "
+"jakých kontextech je tento úkol relevantní. Volitelné.</li><li>key:value: "
+"Různé páry klíč-hodnota s informacemi. Volitelné.</li></ul></li></"
+"ul><p>Popis, kontexty, páry klíč-hodnota a projekty lze vzájemně kombinovat."
+"</p><p>Pro podrobnější informace a příklady klikněte na tlačítko Nápověda.</"
+"p><br>"
 
 #: src/ui/TodoDelegate.qml:385
 #, kde-format
 msgid "Syntax Information…"
-msgstr ""
+msgstr "Informace o syntaxi…"
 
 #: src/ui/TodoDelegate.qml:393
 #, kde-format
 msgid "Show todo.txt syntax reference"
-msgstr ""
+msgstr "Zobrazit přehled syntaxe souboru todo.txt"
 
 #: src/ui/TodoDelegate.qml:407
 #, kde-format
