@@ -19,6 +19,7 @@
                 "Name[sk]": "Martin Sh",
                 "Name[sl]": "Martin Sh",
                 "Name[tr]": "Martin Sh",
+                "Name[ug]": "Martin Sh",
                 "Name[uk]": "Martin Sh",
                 "Name[zh_TW]": "Martin Sh"
             },
@@ -40,6 +41,7 @@
                 "Name[sk]": "Akseli Lahtinen",
                 "Name[sl]": "Akseli Lahtinen",
                 "Name[tr]": "Akseli Lahtinen",
+                "Name[ug]": "Akseli Lahtinen",
                 "Name[uk]": "Akseli Lahtinen",
                 "Name[zh_TW]": "Akseli Lahtinen"
             }
@@ -62,6 +64,7 @@
         "Description[sk]": "Spravujte svoje úlohy na prvý pohľad",
         "Description[sl]": "Upravljajte svoja opravila na prvi pogled",
         "Description[tr]": "Görevlerinizi bir bakışta yönetin",
+        "Description[ug]": "ۋەزىپىڭىزنى بىر قاراپلا باشقۇرالايسىز",
         "Description[uk]": "Миттєве керування вашими завданнями",
         "Description[zh_TW]": "輕易管理您的待辦事項",
         "Icon": "org.kde.komodo",
@@ -82,6 +85,7 @@
         "Name[sk]": "Úlohy KomoDo",
         "Name[sl]": "KomoDo opravila",
         "Name[tr]": "Komodo Görevler",
+        "Name[ug]": "KomoDo ۋەزىپە",
         "Name[uk]": "Завдання KomoDo",
         "Name[zh_TW]": "KomoDo 待辦事項",
         "Website": "https://apps.kde.org/komodo/"
