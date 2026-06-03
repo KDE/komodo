@@ -27,6 +27,7 @@
   <name xml:lang="sl">KomoDo</name>
   <name xml:lang="sv">Komodo</name>
   <name xml:lang="tr">KomoDo</name>
+  <name xml:lang="ug">KomoDo</name>
   <name xml:lang="uk">KomoDo</name>
   <name xml:lang="zh-CN">KomoDo</name>
   <name xml:lang="zh-TW">KomoDo</name>
@@ -141,6 +142,7 @@
     <p xml:lang="sl">Zmožnosti</p>
     <p xml:lang="sv">Funktioner</p>
     <p xml:lang="tr">Özellikler</p>
+    <p xml:lang="ug">ئىقتىدار</p>
     <p xml:lang="uk">Можливості</p>
     <p xml:lang="zh-CN">特性</p>
     <p xml:lang="zh-TW">功能</p>
@@ -214,6 +216,7 @@
       <li xml:lang="sl">Filtrirajte in iščite opravila</li>
       <li xml:lang="sv">Filtrera och sök efter uppgifter</li>
       <li xml:lang="tr">Görevleri süzün ve içlerinde arama yapın</li>
+      <li xml:lang="ug">ۋەزىپە سۈزۈپ ۋە ئىزدەيدۇ</li>
       <li xml:lang="uk">Фільтрування і пошук завдань</li>
       <li xml:lang="zh-CN">筛选和搜索任务</li>
       <li xml:lang="zh-TW">過濾並搜尋待辦事項</li>
