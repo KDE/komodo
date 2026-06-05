@@ -47,6 +47,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     KF6::GuiAddons
     KF6::ColorScheme
     KF6::IconThemes
+    KirigamiApp
     ${CMAKE_PROJECT_NAME}_ui
     ${CMAKE_PROJECT_NAME}_models
 )

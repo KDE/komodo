@@ -8,6 +8,7 @@
 #include <KIconTheme>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
+#include <KirigamiAddons/App/KirigamiAppDefaults>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QIcon>
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
     KIconTheme::initTheme();
 
     QApplication app(argc, argv);
+    KirigamiAppDefaults::apply(&app);
     KLocalizedString::setApplicationDomain("komodo");
 
     KAboutData aboutData(
@@ -73,9 +75,6 @@ int main(int argc, char *argv[])
 #ifdef USE_DBUS
     KDBusService service(KDBusService::Unique);
 #endif
-
-    QApplication::setStyle(QStringLiteral("breeze"));
-    QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
 
     auto config = KomodoConfig::self();
     qmlRegisterSingletonInstance("org.kde.komodo.config", 1, 0, "Config", config);
