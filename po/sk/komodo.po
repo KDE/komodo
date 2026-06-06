@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-02 00:47+0000\n"
+"POT-Creation-Date: 2026-06-06 00:47+0000\n"
 "PO-Revision-Date: 2026-03-23 00:47+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -27,35 +27,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: src/main.cpp:33
+#: src/main.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
 msgstr "KomoDo"
 
-#: src/main.cpp:37
+#: src/main.cpp:39
 #, kde-format
 msgid "Work on To-Do lists"
 msgstr "Pracovať so zoznamami úloh"
 
-#: src/main.cpp:41
+#: src/main.cpp:43
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
 msgstr "© 2025 Akseli Lahtinen"
 
-#: src/main.cpp:42
+#: src/main.cpp:44
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
 msgstr "Akseli Lahtinen"
 
-#: src/main.cpp:43
+#: src/main.cpp:45
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "Autor"
 
-#: src/main.cpp:49
+#: src/main.cpp:51
 #, kde-format
 msgctxt "Longer description in about page"
 msgid ""
@@ -66,13 +66,13 @@ msgstr ""
 "akékoľvek kompatibilné súbory todo.txt a premení ich na jednoduchý zoznam "
 "úloh.</p>"
 
-#: src/main.cpp:57
+#: src/main.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
 msgstr "Vložiť zadaný text do panela hľadania."
 
-#: src/main.cpp:59
+#: src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid ""

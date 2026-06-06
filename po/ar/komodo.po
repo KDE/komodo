@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-02 00:47+0000\n"
+"POT-Creation-Date: 2026-06-06 00:47+0000\n"
 "PO-Revision-Date: 2026-05-07 12:30+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -28,35 +28,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: src/main.cpp:33
+#: src/main.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
 msgstr "كومودو"
 
-#: src/main.cpp:37
+#: src/main.cpp:39
 #, kde-format
 msgid "Work on To-Do lists"
 msgstr "اعمل على قوائم المهامّ"
 
-#: src/main.cpp:41
+#: src/main.cpp:43
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
 msgstr "© 2025 أكسيلي لاهتينين"
 
-#: src/main.cpp:42
+#: src/main.cpp:44
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
 msgstr "أكسيلي لاهتينين"
 
-#: src/main.cpp:43
+#: src/main.cpp:45
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "المؤلف"
 
-#: src/main.cpp:49
+#: src/main.cpp:51
 #, kde-format
 msgctxt "Longer description in about page"
 msgid ""
@@ -66,13 +66,13 @@ msgstr ""
 "<p>كومودو هو مدير مهامّ يستعمل مواصفات todo.txt. يحلّل أي ملفات todo.txt "
 "متوافقة ويحوّلها إلى قائمة مهامّ سهلة الاستعمال.</p>"
 
-#: src/main.cpp:57
+#: src/main.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
 msgstr "أَدرِج النّصّ المعطى في شريط البحث."
 
-#: src/main.cpp:59
+#: src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-02 00:47+0000\n"
+"POT-Creation-Date: 2026-06-06 00:47+0000\n"
 "PO-Revision-Date: 2026-05-21 22:28+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -27,35 +27,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: src/main.cpp:33
+#: src/main.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
 msgstr "KomoDo"
 
-#: src/main.cpp:37
+#: src/main.cpp:39
 #, kde-format
 msgid "Work on To-Do lists"
 msgstr "待辦事項清單"
 
-#: src/main.cpp:41
+#: src/main.cpp:43
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
 msgstr "© 2025 Akseli Lahtinen"
 
-#: src/main.cpp:42
+#: src/main.cpp:44
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
 msgstr "Akseli Lahtinen"
 
-#: src/main.cpp:43
+#: src/main.cpp:45
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "作者"
 
-#: src/main.cpp:49
+#: src/main.cpp:51
 #, kde-format
 msgctxt "Longer description in about page"
 msgid ""
@@ -65,13 +65,13 @@ msgstr ""
 "<p>KomoDo 是一個利用 todo.txt 標準的待辦事項管理器。它能剖析任何合規的 todo."
 "txt 檔案，將它們轉為容易使用的待辦事項清單。</p>"
 
-#: src/main.cpp:57
+#: src/main.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
 msgstr "插入指定文字到搜尋列。"
 
-#: src/main.cpp:59
+#: src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid ""

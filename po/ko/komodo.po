@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-02 00:47+0000\n"
+"POT-Creation-Date: 2026-06-06 00:47+0000\n"
 "PO-Revision-Date: 2025-10-12 14:52+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,35 +27,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: src/main.cpp:33
+#: src/main.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "KomoDo"
 msgstr "KomoDo"
 
-#: src/main.cpp:37
+#: src/main.cpp:39
 #, kde-format
 msgid "Work on To-Do lists"
 msgstr "할 일 목록 관리"
 
-#: src/main.cpp:41
+#: src/main.cpp:43
 #, kde-format
 msgid "© 2025 Akseli Lahtinen"
 msgstr "© 2025 Akseli Lahtinen"
 
-#: src/main.cpp:42
+#: src/main.cpp:44
 #, kde-format
 msgctxt "@info:credit"
 msgid "Akseli Lahtinen"
 msgstr "Akseli Lahtinen"
 
-#: src/main.cpp:43
+#: src/main.cpp:45
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author"
 msgstr "작성자"
 
-#: src/main.cpp:49
+#: src/main.cpp:51
 #, kde-format
 msgctxt "Longer description in about page"
 msgid ""
@@ -65,7 +65,7 @@ msgstr ""
 "<p>KomoDo는 todo.txt 규칙을 사용하는 할 일 관리자입니다. todo.txt 파일을 처리"
 "하고 쉽게 사용할 수 있는 할 일 목록으로 변환합니다.</p>"
 
-#: src/main.cpp:57
+#: src/main.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Inserts the given text in the search bar."
@@ -73,7 +73,7 @@ msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
 msgstr "지정한 문자열을 검색 표시줄에 삽입합니다."
 
-#: src/main.cpp:59
+#: src/main.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Open the given filename. The one in the config will be ignored."
