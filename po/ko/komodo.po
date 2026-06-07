@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the komodo package.
-# SPDX-FileCopyrightText: 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-06 00:47+0000\n"
-"PO-Revision-Date: 2025-10-12 14:52+0200\n"
+"PO-Revision-Date: 2026-06-06 13:31+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -66,17 +66,13 @@ msgstr ""
 "하고 쉽게 사용할 수 있는 할 일 목록으로 변환합니다.</p>"
 
 #: src/main.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Inserts the given text in the search bar."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Insert the given text in the search bar."
 msgstr "지정한 문자열을 검색 표시줄에 삽입합니다."
 
 #: src/main.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Open the given filename. The one in the config will be ignored."
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Open the file with the given name. The filename in the config will be "
@@ -92,104 +88,94 @@ msgstr "KomoDo"
 #, kde-format
 msgctxt "@title:tab Configuration category"
 msgid "General"
-msgstr ""
+msgstr "일반"
 
 #: src/plasmoid/configGeneral.qml:24
 #, kde-format
 msgctxt "@option:check"
 msgid "Show number of incomplete tasks when on a panel"
-msgstr ""
+msgstr "패널에 완료되지 않은 할 일 개수 표시"
 
 #: src/plasmoid/configGeneral.qml:28
 #, kde-format
 msgctxt "@info:tooltip Near the 'show badge' checkbox"
 msgid "Tasks which are hidden by the search filter are not counted."
-msgstr ""
+msgstr "검색 필터에서 숨겨지는 할 일은 집계에 포함되지 않습니다."
 
 #: src/plasmoid/configGeneral.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "File path:"
-msgstr ""
+msgstr "파일 경로:"
 
 #: src/plasmoid/configGeneral.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@button"
-#| msgid "Create New To-Do List…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Path to To-Do list…"
-msgstr "새 할 일 목록 만들기…"
+msgstr "할 일 목록 경로…"
 
 #: src/plasmoid/configGeneral.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open To-Do List…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Choose To-Do list…"
-msgstr "할 일 목록 열기…"
+msgstr "할 일 목록 선택…"
 
 #: src/plasmoid/configGeneral.qml:57
-#, fuzzy, kde-format
-#| msgid "Work on To-Do lists"
+#, kde-format
 msgctxt "@label:filedialog"
 msgid "Choose a To-Do list"
-msgstr "할 일 목록 관리"
+msgstr "할 일 목록 선택"
 
 #: src/plasmoid/configGeneral.qml:58 src/plasmoid/FullRepresentation.qml:96
 #, kde-format
 msgctxt "Filename filter"
 msgid "Text files (*.txt)"
-msgstr ""
+msgstr "텍스트 파일 (*.txt)"
 
 #: src/plasmoid/configGeneral.qml:73
 #, kde-format
 msgctxt "@label:group, followed by 'show' or 'hide, use ... instead'"
 msgid "Search bar:"
-msgstr ""
+msgstr "검색 표시줄:"
 
 #: src/plasmoid/configGeneral.qml:74
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@option:check, show search bar, following 'search bar'"
 msgid "Show"
-msgstr "모두 표시"
+msgstr "표시"
 
 #: src/plasmoid/configGeneral.qml:81
 #, kde-format
 msgctxt "@option:check, hide search bar, following 'search bar'"
 msgid "Hide, use these values instead:"
-msgstr ""
+msgstr "숨기기, 대신 이 값 사용:"
 
 #: src/plasmoid/configGeneral.qml:97
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search term…"
-msgstr ""
+msgstr "검색 항목…"
 
 #: src/plasmoid/configGeneral.qml:117 src/plasmoid/FullRepresentation.qml:61
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show all tasks"
 msgid "Show All"
 msgstr "모두 표시"
 
 #: src/plasmoid/configGeneral.qml:121 src/plasmoid/FullRepresentation.qml:65
-#, fuzzy, kde-format
-#| msgid "Due Date"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show tasks with due date"
 msgid "Due Date"
 msgstr "만료 기한"
 
 #: src/plasmoid/configGeneral.qml:125 src/plasmoid/FullRepresentation.qml:69
-#, fuzzy, kde-format
-#| msgid "Incomplete"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show incomplete tasks"
 msgid "Incomplete"
 msgstr "미완료"
 
 #: src/plasmoid/configGeneral.qml:129 src/plasmoid/FullRepresentation.qml:73
-#, fuzzy, kde-format
-#| msgid "Completed"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show completed tasks"
 msgid "Completed"
 msgstr "완료됨"
@@ -204,7 +190,7 @@ msgstr "할 일을 찾을 수 없습니다."
 #, kde-format
 msgctxt "@action:button Shown when the to-do list is empty"
 msgid "Edit in KomoDo…"
-msgstr ""
+msgstr "KomoDo에서 편집…"
 
 #: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:347
 #, kde-format
@@ -219,23 +205,22 @@ msgid "Open To-Do List…"
 msgstr "할 일 목록 열기…"
 
 #: src/plasmoid/main.qml:25
-#, fuzzy, kde-format
-#| msgid "KomoDo"
+#, kde-format
 msgctxt "@info:tooltip title, shown on hover"
 msgid "KomoDo Tasks"
-msgstr "KomoDo"
+msgstr "KomoDo 할 일"
 
 #: src/plasmoid/main.qml:26
 #, kde-format
 msgctxt "@info:tooltip description, shown on hover"
 msgid "Manage your tasks at a glance"
-msgstr ""
+msgstr "내 할 일을 한 자리에서 관리하기"
 
 #: src/plasmoid/main.qml:66
 #, kde-format
 msgctxt "@action:inmenu Open the KomoDo app"
 msgid "Manage Tasks…"
-msgstr ""
+msgstr "할 일 관리…"
 
 #: src/TodoPage.qml:84
 #, kde-format
@@ -336,12 +321,10 @@ msgid "About KomoDo"
 msgstr "KomoDo 정보"
 
 #: src/TodoPage.qml:297
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "About KomoDo"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "About KDE"
-msgstr "KomoDo 정보"
+msgstr "KDE 정보"
 
 #: src/TodoPage.qml:348
 #, kde-format
@@ -396,7 +379,7 @@ msgstr "할 일 생성 일자"
 #, kde-format
 msgctxt "@button"
 msgid "Edit in KomoDo…"
-msgstr ""
+msgstr "KomoDo에서 편집…"
 
 #: src/ui/TodoDelegate.qml:264
 #, kde-format
