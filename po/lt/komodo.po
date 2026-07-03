@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-06 00:47+0000\n"
+"POT-Creation-Date: 2026-07-03 00:49+0000\n"
 "PO-Revision-Date: 2026-05-22 00:59+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -371,62 +371,62 @@ msgstr "Perjungti atlikimo būseną"
 msgid "Priority"
 msgstr "Prioritetas"
 
-#: src/ui/TodoDelegate.qml:199
+#: src/ui/TodoDelegate.qml:203
 #, kde-format
 msgid "Task completion date"
 msgstr "Užduoties atlikimo data"
 
-#: src/ui/TodoDelegate.qml:212
+#: src/ui/TodoDelegate.qml:216
 #, kde-format
 msgid "Task due date"
 msgstr "Užduoties galutinio termino data"
 
-#: src/ui/TodoDelegate.qml:225
+#: src/ui/TodoDelegate.qml:229
 #, kde-format
 msgid "Task creation date"
 msgstr "Užduoties sukūrimo data"
 
-#: src/ui/TodoDelegate.qml:242
+#: src/ui/TodoDelegate.qml:246
 #, kde-format
 msgctxt "@button"
 msgid "Edit in KomoDo…"
 msgstr "Taisyti programoje KomoDo…"
 
-#: src/ui/TodoDelegate.qml:264
+#: src/ui/TodoDelegate.qml:268
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
 msgstr "Taisyti"
 
-#: src/ui/TodoDelegate.qml:288
+#: src/ui/TodoDelegate.qml:292
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
 msgstr "Ištrinti"
 
-#: src/ui/TodoDelegate.qml:325
+#: src/ui/TodoDelegate.qml:329
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
 msgstr "(A) MMMM-mm-dd Aprašas +Projektas @Kontekstas raktas:reikšmė"
 
-#: src/ui/TodoDelegate.qml:361
+#: src/ui/TodoDelegate.qml:365
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
 msgstr "Įterpti datą…"
 
-#: src/ui/TodoDelegate.qml:363
+#: src/ui/TodoDelegate.qml:367
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
 msgstr "Atverti datos parinkiklį ir įterpti ją žymeklio vietoje"
 
-#: src/ui/TodoDelegate.qml:375
+#: src/ui/TodoDelegate.qml:379
 #, kde-format
 msgid "Syntax Information"
 msgstr "Informacija apie sintaksę"
 
-#: src/ui/TodoDelegate.qml:380
+#: src/ui/TodoDelegate.qml:384
 #, kde-format
 msgctxt "Syntax quick guide"
 msgid ""
@@ -458,23 +458,23 @@ msgstr ""
 "gauti daugiau informacijos ir matyti pavyzdžius, spustelėkite „Pagalbos“ "
 "mygtuką.</p><br>"
 
-#: src/ui/TodoDelegate.qml:385
+#: src/ui/TodoDelegate.qml:389
 #, kde-format
 msgid "Syntax Information…"
 msgstr "Informacija apie sintaksę…"
 
-#: src/ui/TodoDelegate.qml:393
+#: src/ui/TodoDelegate.qml:397
 #, kde-format
 msgid "Show todo.txt syntax reference"
 msgstr "Rodyti todo.txt sintaksės rodyklę"
 
-#: src/ui/TodoDelegate.qml:407
+#: src/ui/TodoDelegate.qml:411
 #, kde-format
 msgctxt "@button"
 msgid "Save"
 msgstr "Įrašyti"
 
-#: src/ui/TodoDelegate.qml:428
+#: src/ui/TodoDelegate.qml:432
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"

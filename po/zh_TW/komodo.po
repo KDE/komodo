@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-06 00:47+0000\n"
+"POT-Creation-Date: 2026-07-03 00:49+0000\n"
 "PO-Revision-Date: 2026-05-21 22:28+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -358,62 +358,62 @@ msgstr "切換是否已完成"
 msgid "Priority"
 msgstr "優先度"
 
-#: src/ui/TodoDelegate.qml:199
+#: src/ui/TodoDelegate.qml:203
 #, kde-format
 msgid "Task completion date"
 msgstr "待辦事項完成日期"
 
-#: src/ui/TodoDelegate.qml:212
+#: src/ui/TodoDelegate.qml:216
 #, kde-format
 msgid "Task due date"
 msgstr "待辦事項到期日期"
 
-#: src/ui/TodoDelegate.qml:225
+#: src/ui/TodoDelegate.qml:229
 #, kde-format
 msgid "Task creation date"
 msgstr "待辦事項建立日期"
 
-#: src/ui/TodoDelegate.qml:242
+#: src/ui/TodoDelegate.qml:246
 #, kde-format
 msgctxt "@button"
 msgid "Edit in KomoDo…"
 msgstr "在 KomoDo 內編輯…"
 
-#: src/ui/TodoDelegate.qml:264
+#: src/ui/TodoDelegate.qml:268
 #, kde-format
 msgctxt "@button"
 msgid "Edit"
 msgstr "編輯"
 
-#: src/ui/TodoDelegate.qml:288
+#: src/ui/TodoDelegate.qml:292
 #, kde-format
 msgctxt "@button"
 msgid "Delete"
 msgstr "刪除"
 
-#: src/ui/TodoDelegate.qml:325
+#: src/ui/TodoDelegate.qml:329
 #, kde-format
 msgctxt "Placeholder text for creating new tasks"
 msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
 msgstr "(A) YYYY-MM-DD 描述 +專案 @情境 鍵:值"
 
-#: src/ui/TodoDelegate.qml:361
+#: src/ui/TodoDelegate.qml:365
 #, kde-format
 msgctxt "@button"
 msgid "Insert Date…"
 msgstr "插入日期…"
 
-#: src/ui/TodoDelegate.qml:363
+#: src/ui/TodoDelegate.qml:367
 #, kde-format
 msgid "Open a date picker and insert it at cursor position"
 msgstr "開啟日期挑選器，挑選日期後將其插入在游標位置"
 
-#: src/ui/TodoDelegate.qml:375
+#: src/ui/TodoDelegate.qml:379
 #, kde-format
 msgid "Syntax Information"
 msgstr "語法資訊"
 
-#: src/ui/TodoDelegate.qml:380
+#: src/ui/TodoDelegate.qml:384
 #, kde-format
 msgctxt "Syntax quick guide"
 msgid ""
@@ -440,23 +440,23 @@ msgstr ""
 "描述、@情境、+專案、以及鍵:值對的順序可以混在一起。</p><p>詳細資訊和範例請點"
 "擊說明按鈕查看說明。</p><br>"
 
-#: src/ui/TodoDelegate.qml:385
+#: src/ui/TodoDelegate.qml:389
 #, kde-format
 msgid "Syntax Information…"
 msgstr "語法資訊…"
 
-#: src/ui/TodoDelegate.qml:393
+#: src/ui/TodoDelegate.qml:397
 #, kde-format
 msgid "Show todo.txt syntax reference"
 msgstr "顯示 todo.txt 語法參考"
 
-#: src/ui/TodoDelegate.qml:407
+#: src/ui/TodoDelegate.qml:411
 #, kde-format
 msgctxt "@button"
 msgid "Save"
 msgstr "儲存"
 
-#: src/ui/TodoDelegate.qml:428
+#: src/ui/TodoDelegate.qml:432
 #, kde-format
 msgctxt "@button"
 msgid "Cancel"
