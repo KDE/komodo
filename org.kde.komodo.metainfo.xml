@@ -25,7 +25,7 @@
   <name xml:lang="pt-BR">KomoDo</name>
   <name xml:lang="sk">KomoDo</name>
   <name xml:lang="sl">KomoDo</name>
-  <name xml:lang="sv">Komodo</name>
+  <name xml:lang="sv">KomoDo</name>
   <name xml:lang="tr">KomoDo</name>
   <name xml:lang="ug">KomoDo</name>
   <name xml:lang="uk">KomoDo</name>
@@ -313,6 +313,7 @@
         <p xml:lang="pt-BR">Permitir links embutidos no estilo Markdown, algumas correções de análise sintática, remover fonte monoespaçada das tarefas.</p>
         <p xml:lang="sk">Povolené inline odkazy v štýle markdown, opravy parsovania, odstránenie neproporcionálneho písma z úloh.</p>
         <p xml:lang="sl">Dovoli vgrajene povezave v slogu markdowna, nekaj popravkov razčlenjevanja, odstrani pisavo monospace iz opravil.</p>
+        <p xml:lang="sv">Tillåt länkar på plats med markdown-stil, vissa tolkningskorrigeringar, borttagning av teckensnitt med fast breddsteg från uppgifter.</p>
         <p xml:lang="tr">Markdown tarzı satır için bağlantılara izin ver, bazı ayrıştırma düzeltmeleri, görevlerden eş aralıklı yazıtipini kaldır</p>
         <p xml:lang="uk">Уможливлено вбудовані посилання у стилі markdown, деякі виправлення обробки, вилучено моноширинний шрифт із завдань.</p>
         <p xml:lang="zh-TW">允許使用 Markdown 風格的行內連結、一些剖析修正、讓待辦事項不要用等寬字型。</p>
@@ -338,6 +339,7 @@
         <p xml:lang="pt-BR">Melhorias de desempenho na busca, adição de argumentos de inicialização, mudança da ajuda para um documento anexo, correção no carregamento de filtros salvos.</p>
         <p xml:lang="sk">Vylepšenia výkonu hľadania, pridané argumenty spúšťania, pomocník presunutý do docbook, oprava načítavania uloženého filtra.</p>
         <p xml:lang="sl">Izboljšave delovanja iskanja, dodani argumenti za zagon, pomoč premaknjena v dokumentacijo, popravljeno nalaganje shranjenega filtra.</p>
+        <p xml:lang="sv">Prestandaförbättringar av sökning, tillagda startargument, hjälp flyttad till en docbook, korrigering av inläsning av sparat filter.</p>
         <p xml:lang="tr">Arama işlevi için başarım iyileştirmeleri, başlatma argümanları, yardım belgeleri derlemesi, kayıtlı süzgeci yüklemeyi düzeltme.</p>
         <p xml:lang="uk">Удосконалення швидкодії пошуку, додано аргументи запуску, довідку переформатовано у docbook, виправлено завантаження збереженого фільтра.</p>
         <p xml:lang="zh-TW">改善搜尋效能、新增啟動參數、將說明移動到 docbook 手冊中、修正載入已儲存的過濾器。</p>
@@ -363,6 +365,7 @@
         <p xml:lang="pt-BR">Lançamento inicial do KomoDo, um aplicativo de lista de tarefas.</p>
         <p xml:lang="sk">Prvé vydanie KomoDo, aplikácie zoznamu úloh.</p>
         <p xml:lang="sl">Začetna izdaja KomoDo, aplikacije za seznam opravil.</p>
+        <p xml:lang="sv">Originalutgåva av KomoDo, ett program för uppgiftslistor</p>
         <p xml:lang="tr">KomoDo uygulamasının ilk yayımı.</p>
         <p xml:lang="uk">Початковий випуск KomoDo, програми для роботи зі списком завдань.</p>
         <p xml:lang="zh-TW">KomoDo 待辦事項應用程式的初始版本。</p>
