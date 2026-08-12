@@ -149,7 +149,7 @@ msgstr "أظهر"
 #, kde-format
 msgctxt "@option:check, hide search bar, following 'search bar'"
 msgid "Hide, use these values instead:"
-msgstr "أخفِ، واستخدم هذه القيم بدلاً من ذلك:"
+msgstr "أخفِ، واستخدم هذه القيم بدلًا من ذلك:"
 
 #: src/plasmoid/configGeneral.qml:97
 #, kde-format
