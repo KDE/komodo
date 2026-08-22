@@ -26,8 +26,13 @@ Kirigami.ScrollablePage {
         function onFileChanged() {
             const fileExists = todoModel.fileExists();
             fileDeletedMessage.visible = !fileExists;
-            fileChangedMessage.visible = fileExists;
             cardsListView.enabled = fileExists;
+
+            if (fileExists && Config.autoReloadOnExternalChange) {
+                todoModel.loadFile();
+            } else {
+                fileChangedMessage.visible = fileExists;
+            }
         }
     }
 
@@ -284,6 +289,18 @@ Kirigami.ScrollablePage {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: {
                 Config.autoInsertCreationDate = checked;
+                Config.save();
+            }
+        },
+        Kirigami.Action {
+            text: i18nc("@action:inmenu", "Auto-reload on external changes")
+            icon.name: "view-refresh-symbolic"
+            checkable: true
+            checked: Config.autoReloadOnExternalChange
+            tooltip: i18nc("A checkbox for toggling this setting", "Reload the to-do list automatically when it changes on disk, such as through cloud sync")
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            onTriggered: {
+                Config.autoReloadOnExternalChange = checked;
                 Config.save();
             }
         },

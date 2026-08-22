@@ -18,5 +18,9 @@
 			<label>insert creation date automatically to a new task</label>
 			<default>false</default>
 		</entry>
+		<entry name="AutoReloadOnExternalChange" type="Bool">
+			<label>reload the to-do list automatically when it changes on disk</label>
+			<default>false</default>
+		</entry>
 	</group>
 </kcfg>
