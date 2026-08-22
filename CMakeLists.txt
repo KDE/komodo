@@ -35,6 +35,10 @@ ecm_setup_version(PROJECT
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/version-${CMAKE_PROJECT_NAME}.h"
 )
 
+# ABI version for the internal komodo_models and komodo_ui libraries, tracked separately from the app version.
+set(KOMODO_LIB_VERSION 0.1)
+set(KOMODO_LIB_SOVERSION 0)
+
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Widgets)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS ColorScheme Kirigami CoreAddons Config I18n ItemModels QQC2DesktopStyle GuiAddons IconThemes)
 
