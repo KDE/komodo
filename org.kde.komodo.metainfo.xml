@@ -287,7 +287,6 @@
   <provides>
     <binary>komodo</binary>
   </provides>
-  <icon type="stock">org.kde.komodo</icon>
   <branding>
     <color type="primary" scheme_preference="light">#cbffbe</color>
     <color type="primary" scheme_preference="dark">#364133</color>
