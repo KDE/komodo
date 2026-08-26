@@ -329,6 +329,7 @@
         <p xml:lang="de">Leistungsverbesserungen bei der Suche, Startoptionen hinzugefügt, Hilfe in docbook verschoben, Fehler beim Laden gespeicherter Filter behoben.</p>
         <p xml:lang="es">Mejoras en el rendimiento de la búsqueda, se han añadido argumentos de lanzamiento, se ha movido la ayuda a un docbook y se ha corregido la carga del filtro guardado.</p>
         <p xml:lang="eu">Bilaketaren errendimendua hobetu, abiarazte-argumentuak gehitu, laguntza DocBook formatura eraman, eta gordetako iragazkia zamatzea zuzendu.</p>
+        <p xml:lang="fi">Suorituskykyparannuksia hakuun, lisätty käynnistysparametreja, siirretty ohje DocBookiksi, korjattu tallennetun suodattimen lataaminen.</p>
         <p xml:lang="fr">Améliorations des performances de la recherche, ajout d’arguments de lancement, déplacement de l'aide dans un fichier « docbook », correction du chargement du filtre enregistré.</p>
         <p xml:lang="he">שיפורי ביצועים לחיפוש, נוספו ארגומנטים להפעלה, העזרה הועברה ל־docbook, תוקנה טעינת מסנן שמור.</p>
         <p xml:lang="it">Miglioramenti delle prestazioni della ricerca, aggiunti argomenti di avvio, spostamento della guida in un docbook, correzione del caricamento del filtro salvato.</p>
@@ -355,6 +356,7 @@
         <p xml:lang="de">Erste Veröffentlichung von KomoDo, einer Anwendung für Aufgabenlisten.</p>
         <p xml:lang="es">Versión inicial de KomoDo, una aplicación de lista de tareas pendientes.</p>
         <p xml:lang="eu">KomoDoren hasierako askapena, Zeregin-zerrenda aplikazio bat.</p>
+        <p xml:lang="fi">Ensijulkaisu: KoMoDo on tehtäväluettelosovellus.</p>
         <p xml:lang="fr">Première version de KomoDo, une application pour les tâches à faire.</p>
         <p xml:lang="he">המהדורה הראשונה של KomoDo, יישום רשימת מטלות.</p>
         <p xml:lang="it">Versione iniziale di KomoDo, un'applicazione per la gestione delle liste di cose da fare.</p>
