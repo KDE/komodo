@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:49+0000\n"
+"POT-Creation-Date: 2026-08-29 00:49+0000\n"
 "PO-Revision-Date: 2026-03-01 12:07+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -196,7 +196,7 @@ msgctxt "@item:inmenu Secondary filter, show completed tasks"
 msgid "Completed"
 msgstr "Osatuta"
 
-#: src/plasmoid/FullRepresentation.qml:120 src/TodoPage.qml:340
+#: src/plasmoid/FullRepresentation.qml:120 src/TodoPage.qml:357
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
@@ -208,13 +208,13 @@ msgctxt "@action:button Shown when the to-do list is empty"
 msgid "Edit in KomoDo…"
 msgstr ""
 
-#: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:347
+#: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:364
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
 msgstr "Ongi etorri KomoDora!"
 
-#: src/plasmoid/FullRepresentation.qml:137 src/TodoPage.qml:234
+#: src/plasmoid/FullRepresentation.qml:137 src/TodoPage.qml:239
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
@@ -239,42 +239,42 @@ msgctxt "@action:inmenu Open the KomoDo app"
 msgid "Manage Tasks…"
 msgstr ""
 
-#: src/TodoPage.qml:84
+#: src/TodoPage.qml:89
 #, kde-format
 msgid "Delete To-Do"
 msgstr "Ezabatu egitekoa"
 
-#: src/TodoPage.qml:96
+#: src/TodoPage.qml:101
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
 msgstr "Ziur zaude egitekoen zerrenda hau ezabatu nahi duzula?"
 
-#: src/TodoPage.qml:152
+#: src/TodoPage.qml:157
 #, kde-format
 msgid "Filter:"
 msgstr "Iragazkia:"
 
-#: src/TodoPage.qml:163
+#: src/TodoPage.qml:168
 #, kde-format
 msgid "Show All"
 msgstr "Erakutsi dena"
 
-#: src/TodoPage.qml:167
+#: src/TodoPage.qml:172
 #, kde-format
 msgid "Due Date"
 msgstr "Muga-eguna"
 
-#: src/TodoPage.qml:171
+#: src/TodoPage.qml:176
 #, kde-format
 msgid "Incomplete"
 msgstr "Osatugabe"
 
-#: src/TodoPage.qml:175
+#: src/TodoPage.qml:180
 #, kde-format
 msgid "Completed"
 msgstr "Osatuta"
 
-#: src/TodoPage.qml:203
+#: src/TodoPage.qml:208
 #, kde-format
 msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
@@ -283,13 +283,13 @@ msgstr ""
 "Egitekoen zerrenda hau kanpotik aldatu da. Biziki gomendatzen da berau "
 "birzamatzea!"
 
-#: src/TodoPage.qml:209
+#: src/TodoPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
 msgstr "Birzamatu"
 
-#: src/TodoPage.qml:221
+#: src/TodoPage.qml:226
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
@@ -297,49 +297,63 @@ msgstr ""
 "Egitekoen zerrenda hau ezabatu egin da! Ireki egitekoen beste zerrenda bat "
 "edo berri bat sortu."
 
-#: src/TodoPage.qml:227 src/TodoPage.qml:266
+#: src/TodoPage.qml:232 src/TodoPage.qml:271
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
 msgstr "Sortu egitekoen zerrenda berria…"
 
-#: src/TodoPage.qml:246
+#: src/TodoPage.qml:251
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
 msgstr "Egiteko berria…"
 
-#: src/TodoPage.qml:258
+#: src/TodoPage.qml:263
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
 msgstr "Ireki egitekoen zerrenda…"
 
-#: src/TodoPage.qml:272
+#: src/TodoPage.qml:277
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
 msgstr "Laguntza…"
 
-#: src/TodoPage.qml:279
+#: src/TodoPage.qml:284
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-insert creation date"
 msgstr "Automatikoki txertatu sorrera-data"
 
-#: src/TodoPage.qml:283
+#: src/TodoPage.qml:288
 #, kde-format
 msgctxt "A checkbox for toggling this setting"
 msgid "Insert a creation date for any new task automatically"
 msgstr "Zeregin berrietarako sorrera-data automatikoki txertatu"
 
-#: src/TodoPage.qml:291
+#: src/TodoPage.qml:296
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Auto-reload on external changes"
+msgstr ""
+
+#: src/TodoPage.qml:300
+#, kde-format
+msgctxt "A checkbox for toggling this setting"
+msgid ""
+"Reload the to-do list automatically when it changes on disk, such as through "
+"cloud sync"
+msgstr ""
+
+#: src/TodoPage.qml:308
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
 msgstr "KomoDori buruz"
 
-#: src/TodoPage.qml:297
+#: src/TodoPage.qml:314
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "About KomoDo"
@@ -347,7 +361,7 @@ msgctxt "@action:inmenu"
 msgid "About KDE"
 msgstr "KomoDori buruz"
 
-#: src/TodoPage.qml:348
+#: src/TodoPage.qml:365
 #, kde-format
 msgctxt "Welcome introduction text"
 msgid ""

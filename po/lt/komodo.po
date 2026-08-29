@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:49+0000\n"
+"POT-Creation-Date: 2026-08-29 00:49+0000\n"
 "PO-Revision-Date: 2026-05-22 00:59+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -185,7 +185,7 @@ msgctxt "@item:inmenu Secondary filter, show completed tasks"
 msgid "Completed"
 msgstr "Atliktos"
 
-#: src/plasmoid/FullRepresentation.qml:120 src/TodoPage.qml:340
+#: src/plasmoid/FullRepresentation.qml:120 src/TodoPage.qml:357
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No To-Dos found."
@@ -197,13 +197,13 @@ msgctxt "@action:button Shown when the to-do list is empty"
 msgid "Edit in KomoDo…"
 msgstr "Taisyti programoje KomoDo…"
 
-#: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:347
+#: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:364
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Welcome to KomoDo!"
 msgstr "Jus sveikina KomoDo!"
 
-#: src/plasmoid/FullRepresentation.qml:137 src/TodoPage.qml:234
+#: src/plasmoid/FullRepresentation.qml:137 src/TodoPage.qml:239
 #, kde-format
 msgctxt "@action:button"
 msgid "Open To-Do List…"
@@ -227,42 +227,42 @@ msgctxt "@action:inmenu Open the KomoDo app"
 msgid "Manage Tasks…"
 msgstr "Tvarkyti užduotis…"
 
-#: src/TodoPage.qml:84
+#: src/TodoPage.qml:89
 #, kde-format
 msgid "Delete To-Do"
 msgstr "Ištrinti užduotį"
 
-#: src/TodoPage.qml:96
+#: src/TodoPage.qml:101
 #, kde-format
 msgid "Are you sure you wish to delete this To-Do?"
 msgstr "Ar tikrai norite ištrinti šią užduotį?"
 
-#: src/TodoPage.qml:152
+#: src/TodoPage.qml:157
 #, kde-format
 msgid "Filter:"
 msgstr "Filtras:"
 
-#: src/TodoPage.qml:163
+#: src/TodoPage.qml:168
 #, kde-format
 msgid "Show All"
 msgstr "Rodyti visas"
 
-#: src/TodoPage.qml:167
+#: src/TodoPage.qml:172
 #, kde-format
 msgid "Due Date"
 msgstr "Galutinio termino data"
 
-#: src/TodoPage.qml:171
+#: src/TodoPage.qml:176
 #, kde-format
 msgid "Incomplete"
 msgstr "Neatliktos"
 
-#: src/TodoPage.qml:175
+#: src/TodoPage.qml:180
 #, kde-format
 msgid "Completed"
 msgstr "Atliktos"
 
-#: src/TodoPage.qml:203
+#: src/TodoPage.qml:208
 #, kde-format
 msgid ""
 "This To-Do list has been changed externally. Reloading it is strongly "
@@ -271,13 +271,13 @@ msgstr ""
 "Šis užduočių sąrašas buvo pakeistas išorėje. Yra primygtinai rekomenduojama "
 "įkelti jį iš naujo!"
 
-#: src/TodoPage.qml:209
+#: src/TodoPage.qml:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
 msgstr "Įkelti iš naujo"
 
-#: src/TodoPage.qml:221
+#: src/TodoPage.qml:226
 #, kde-format
 msgid ""
 "This To-Do list has been deleted! Open another To-Do list or create new one."
@@ -285,55 +285,69 @@ msgstr ""
 "Šis užduočių sąrašas ištrintas! Atverkite kitą užduočių sąrašą arba "
 "sukurkite naują."
 
-#: src/TodoPage.qml:227 src/TodoPage.qml:266
+#: src/TodoPage.qml:232 src/TodoPage.qml:271
 #, kde-format
 msgctxt "@button"
 msgid "Create New To-Do List…"
 msgstr "Sukurti naują užduočių sąrašą…"
 
-#: src/TodoPage.qml:246
+#: src/TodoPage.qml:251
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New To-Do…"
 msgstr "Nauja užduotis…"
 
-#: src/TodoPage.qml:258
+#: src/TodoPage.qml:263
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open To-Do List…"
 msgstr "Atverti užduočių sąrašą…"
 
-#: src/TodoPage.qml:272
+#: src/TodoPage.qml:277
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Help…"
 msgstr "Pagalba…"
 
-#: src/TodoPage.qml:279
+#: src/TodoPage.qml:284
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-insert creation date"
 msgstr "Automatiškai įterpti sukūrimo datą"
 
-#: src/TodoPage.qml:283
+#: src/TodoPage.qml:288
 #, kde-format
 msgctxt "A checkbox for toggling this setting"
 msgid "Insert a creation date for any new task automatically"
 msgstr "Automatiškai į kiekvieną naują užduotį įterpti sukūrimo datą"
 
-#: src/TodoPage.qml:291
+#: src/TodoPage.qml:296
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Auto-reload on external changes"
+msgstr ""
+
+#: src/TodoPage.qml:300
+#, kde-format
+msgctxt "A checkbox for toggling this setting"
+msgid ""
+"Reload the to-do list automatically when it changes on disk, such as through "
+"cloud sync"
+msgstr ""
+
+#: src/TodoPage.qml:308
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KomoDo"
 msgstr "Apie KomoDo"
 
-#: src/TodoPage.qml:297
+#: src/TodoPage.qml:314
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "About KDE"
 msgstr "Apie KDE"
 
-#: src/TodoPage.qml:348
+#: src/TodoPage.qml:365
 #, kde-format
 msgctxt "Welcome introduction text"
 msgid ""
