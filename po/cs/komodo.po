@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-29 00:49+0000\n"
-"PO-Revision-Date: 2026-05-17 23:32+0200\n"
-"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
+"PO-Revision-Date: 2026-08-29 23:37+0200\n"
+"Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -322,7 +322,7 @@ msgstr "Automaticky vložit datum vytvoření u každého nového úkolu"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-reload on external changes"
-msgstr ""
+msgstr "Automatické obnovení při změnách v externích souborech"
 
 #: src/TodoPage.qml:300
 #, kde-format
@@ -331,6 +331,8 @@ msgid ""
 "Reload the to-do list automatically when it changes on disk, such as through "
 "cloud sync"
 msgstr ""
+"Automaticky aktualizovat seznam úkolů, jakmile dojde k jeho změně na disku, "
+"například v důsledku synchronizace v cloudu"
 
 #: src/TodoPage.qml:308
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-29 00:49+0000\n"
-"PO-Revision-Date: 2026-05-02 17:00+0100\n"
+"PO-Revision-Date: 2026-08-29 17:32+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -325,7 +325,7 @@ msgstr "Insertar automáticamente una fecha de creación para cada nueva tarea"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-reload on external changes"
-msgstr ""
+msgstr "Volver a cargar si hay cambios externos"
 
 #: src/TodoPage.qml:300
 #, kde-format
@@ -334,6 +334,8 @@ msgid ""
 "Reload the to-do list automatically when it changes on disk, such as through "
 "cloud sync"
 msgstr ""
+"Volver a cargar la lista de tareas pendientes automáticamente si existen "
+"cambios en el disco, como tras sincronizar con la nube"
 
 #: src/TodoPage.qml:308
 #, kde-format
