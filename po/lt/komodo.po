@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-29 00:49+0000\n"
-"PO-Revision-Date: 2026-05-22 00:59+0300\n"
+"PO-Revision-Date: 2026-08-30 15:51+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -325,7 +325,7 @@ msgstr "Automatiškai į kiekvieną naują užduotį įterpti sukūrimo datą"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-reload on external changes"
-msgstr ""
+msgstr "Automatiškai įkelti naujo, kai yra išorinių pakeitimų"
 
 #: src/TodoPage.qml:300
 #, kde-format
@@ -334,6 +334,8 @@ msgid ""
 "Reload the to-do list automatically when it changes on disk, such as through "
 "cloud sync"
 msgstr ""
+"Automatiškai iš naujo įkelti užduočių sąrašą, kai jis pasikeičia diske, "
+"pavyzdžiui, sinchronizuojant su debesija"
 
 #: src/TodoPage.qml:308
 #, kde-format
