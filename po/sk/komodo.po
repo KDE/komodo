@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-29 00:49+0000\n"
-"PO-Revision-Date: 2026-03-23 00:47+0000\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-09-14 20:10+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: none\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -321,7 +321,7 @@ msgstr "Automaticky vložiť dátum vytvorenia pre každú novú úlohu"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-reload on external changes"
-msgstr ""
+msgstr "Automaticky znovu načítať pri externých zmenách"
 
 #: src/TodoPage.qml:300
 #, kde-format
@@ -330,6 +330,8 @@ msgid ""
 "Reload the to-do list automatically when it changes on disk, such as through "
 "cloud sync"
 msgstr ""
+"Automaticky znovu načítať zoznam úloh, keď sa zmení na disku, napríklad pri "
+"synchronizácii s cloudom"
 
 #: src/TodoPage.qml:308
 #, kde-format
