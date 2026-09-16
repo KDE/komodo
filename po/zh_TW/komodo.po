@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-29 00:49+0000\n"
-"PO-Revision-Date: 2026-05-21 22:28+0900\n"
+"PO-Revision-Date: 2026-09-15 14:06+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -316,7 +316,7 @@ msgstr "自動為新的待辦事項插入建立日期"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-reload on external changes"
-msgstr ""
+msgstr "有外部變更時自動重新載入"
 
 #: src/TodoPage.qml:300
 #, kde-format
@@ -324,7 +324,7 @@ msgctxt "A checkbox for toggling this setting"
 msgid ""
 "Reload the to-do list automatically when it changes on disk, such as through "
 "cloud sync"
-msgstr ""
+msgstr "待辦事項在磁碟上被雲端同步軟體等等更新時自動重新載入"
 
 #: src/TodoPage.qml:308
 #, kde-format
