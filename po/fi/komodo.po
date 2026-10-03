@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-29 00:49+0000\n"
-"PO-Revision-Date: 2026-02-25 16:02+0200\n"
+"PO-Revision-Date: 2026-09-03 19:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -88,104 +88,94 @@ msgstr "KomoDo"
 #, kde-format
 msgctxt "@title:tab Configuration category"
 msgid "General"
-msgstr ""
+msgstr "Perusasetukset"
 
 #: src/plasmoid/configGeneral.qml:24
 #, kde-format
 msgctxt "@option:check"
 msgid "Show number of incomplete tasks when on a panel"
-msgstr ""
+msgstr "Näytä paneelissa kesken olevien tehtävien määrä"
 
 #: src/plasmoid/configGeneral.qml:28
 #, kde-format
 msgctxt "@info:tooltip Near the 'show badge' checkbox"
 msgid "Tasks which are hidden by the search filter are not counted."
-msgstr ""
+msgstr "Hakusuodattimen piilottamia tehtäviä ei lasketa."
 
 #: src/plasmoid/configGeneral.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "File path:"
-msgstr ""
+msgstr "Tiedoston sijainti:"
 
 #: src/plasmoid/configGeneral.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@button"
-#| msgid "Create New To-Do List…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Path to To-Do list…"
-msgstr "Luo uusi tehtäväluettelo…"
+msgstr "Tehtäväluettelon sijainti…"
 
 #: src/plasmoid/configGeneral.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open To-Do List…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Choose To-Do list…"
-msgstr "Avaa tehtäväluettelo…"
+msgstr "Valitse tehtäväluettelo…"
 
 #: src/plasmoid/configGeneral.qml:57
-#, fuzzy, kde-format
-#| msgid "Work on To-Do lists"
+#, kde-format
 msgctxt "@label:filedialog"
 msgid "Choose a To-Do list"
-msgstr "Käytä tehtäväluetteloja"
+msgstr "Valitse tehtäväluettelo"
 
 #: src/plasmoid/configGeneral.qml:58 src/plasmoid/FullRepresentation.qml:96
 #, kde-format
 msgctxt "Filename filter"
 msgid "Text files (*.txt)"
-msgstr ""
+msgstr "Tekstitiedostot (*.txt)"
 
 #: src/plasmoid/configGeneral.qml:73
 #, kde-format
 msgctxt "@label:group, followed by 'show' or 'hide, use ... instead'"
 msgid "Search bar:"
-msgstr ""
+msgstr "Hakurivi:"
 
 #: src/plasmoid/configGeneral.qml:74
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@option:check, show search bar, following 'search bar'"
 msgid "Show"
-msgstr "Näytä kaikki"
+msgstr "Näytä"
 
 #: src/plasmoid/configGeneral.qml:81
 #, kde-format
 msgctxt "@option:check, hide search bar, following 'search bar'"
 msgid "Hide, use these values instead:"
-msgstr ""
+msgstr "Piilota, käytä sen sijaan näitä arvoja:"
 
 #: src/plasmoid/configGeneral.qml:97
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search term…"
-msgstr ""
+msgstr "Hakusana…"
 
 #: src/plasmoid/configGeneral.qml:117 src/plasmoid/FullRepresentation.qml:61
-#, fuzzy, kde-format
-#| msgid "Show All"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show all tasks"
 msgid "Show All"
 msgstr "Näytä kaikki"
 
 #: src/plasmoid/configGeneral.qml:121 src/plasmoid/FullRepresentation.qml:65
-#, fuzzy, kde-format
-#| msgid "Due Date"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show tasks with due date"
 msgid "Due Date"
 msgstr "Määräpäivä"
 
 #: src/plasmoid/configGeneral.qml:125 src/plasmoid/FullRepresentation.qml:69
-#, fuzzy, kde-format
-#| msgid "Incomplete"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show incomplete tasks"
 msgid "Incomplete"
 msgstr "Kesken"
 
 #: src/plasmoid/configGeneral.qml:129 src/plasmoid/FullRepresentation.qml:73
-#, fuzzy, kde-format
-#| msgid "Completed"
+#, kde-format
 msgctxt "@item:inmenu Secondary filter, show completed tasks"
 msgid "Completed"
 msgstr "Valmis"
@@ -200,7 +190,7 @@ msgstr "Tehtäviä ei löytynyt."
 #, kde-format
 msgctxt "@action:button Shown when the to-do list is empty"
 msgid "Edit in KomoDo…"
-msgstr ""
+msgstr "Muokkaa KomoDossa…"
 
 #: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:364
 #, kde-format
@@ -215,23 +205,22 @@ msgid "Open To-Do List…"
 msgstr "Avaa tehtäväluettelo…"
 
 #: src/plasmoid/main.qml:25
-#, fuzzy, kde-format
-#| msgid "KomoDo"
+#, kde-format
 msgctxt "@info:tooltip title, shown on hover"
 msgid "KomoDo Tasks"
-msgstr "KomoDo"
+msgstr "KomoDo-tehtävät"
 
 #: src/plasmoid/main.qml:26
 #, kde-format
 msgctxt "@info:tooltip description, shown on hover"
 msgid "Manage your tasks at a glance"
-msgstr ""
+msgstr "Hallinnoi tehtäviäsi silmäyksellä"
 
 #: src/plasmoid/main.qml:66
 #, kde-format
 msgctxt "@action:inmenu Open the KomoDo app"
 msgid "Manage Tasks…"
-msgstr ""
+msgstr "Hallinnoi tehtäviä…"
 
 #: src/TodoPage.qml:89
 #, kde-format
@@ -345,12 +334,10 @@ msgid "About KomoDo"
 msgstr "Tietoa KomoDosta"
 
 #: src/TodoPage.qml:314
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "About KomoDo"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "About KDE"
-msgstr "Tietoa KomoDosta"
+msgstr "Tietoa KDE:stä"
 
 #: src/TodoPage.qml:365
 #, kde-format
@@ -407,7 +394,7 @@ msgstr "Tehtävän luontipäivä"
 #, kde-format
 msgctxt "@button"
 msgid "Edit in KomoDo…"
-msgstr ""
+msgstr "Muokkaa KomoDossa…"
 
 #: src/ui/TodoDelegate.qml:268
 #, kde-format
