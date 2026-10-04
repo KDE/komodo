@@ -301,6 +301,7 @@
         <p xml:lang="de">Unterstützung für Verknüpfungen im Markdown-Stil hinzugefügt, einige Verarbeitungsprobleme behoben, nichtproportionale Schriftart aus Aufgaben entfernt</p>
         <p xml:lang="es">Permitir enlaces en línea al estilo de markdown; algunas correcciones de análisis; eliminar fuente monoespacio de las tareas.</p>
         <p xml:lang="eu">Markdown estiloko lerro barruko estekak onartu, sintaxi-azterketaren zenbait akats zuzendu, eta zereginetatik zabalera-finkoko letra-tipoak kendu.</p>
+        <p xml:lang="fi">Sallitaan Markdown-tyyliset tekstilinkit, joitakin jäsennyskorjauksia, poistettu tehtävistä tasalevyinen fontti.</p>
         <p xml:lang="fr">Autoriser les liens intégrés au format « Markdown », corriger certains problèmes d'analyse, supprimer la fonte à chasse fixe des tâches.</p>
         <p xml:lang="he">מעתה קישורים פנימיים בסגנון Markdown אפשריים, בוצעו תיקוני פיענוח, גופן ברוחב אחיד הוסר מהמשימות.</p>
         <p xml:lang="it">Consente collegamenti in linea in stile markdown, alcune correzioni di analisi, rimozione del carattere a spaziatura fissa dalle attività.</p>
