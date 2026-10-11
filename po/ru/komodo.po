@@ -1,0 +1,489 @@
+# Translation of komodo into Russian.
+# This file is distributed under the same license as the komodo package.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: komodo\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-08-29 00:49+0000\n"
+"PO-Revision-Date: 2026-10-10 12:46+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Александр Яворский"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kekcuha@gmail.com"
+
+#: src/main.cpp:35
+#, kde-format
+msgctxt "@title"
+msgid "KomoDo"
+msgstr "KomoDo"
+
+#: src/main.cpp:39
+#, kde-format
+msgid "Work on To-Do lists"
+msgstr "Работа со списками задач"
+
+#: src/main.cpp:43
+#, kde-format
+msgid "© 2025 Akseli Lahtinen"
+msgstr "© Akseli Lahtinen, 2025"
+
+#: src/main.cpp:44
+#, kde-format
+msgctxt "@info:credit"
+msgid "Akseli Lahtinen"
+msgstr "Akseli Lahtinen"
+
+#: src/main.cpp:45
+#, kde-format
+msgctxt "@info:credit"
+msgid "Author"
+msgstr "Автор"
+
+#: src/main.cpp:51
+#, kde-format
+msgctxt "Longer description in about page"
+msgid ""
+"<p>KomoDo is a todo manager that uses todo.txt specification. It parses any "
+"compliant todo.txt files and turns them into easy to use list of tasks.</p>"
+msgstr ""
+"<p>KomoDo — приложение для управления задачами, использующее спецификацию "
+"todo.txt. Оно разбирает любые файлы todo.txt, соответствующие спецификации, "
+"и преобразует их в удобный для работы список задач.</p>"
+
+#: src/main.cpp:59
+#, kde-format
+msgctxt "@info:shell"
+msgid "Insert the given text in the search bar."
+msgstr "Вставить указанный текст в строку поиска."
+
+#: src/main.cpp:61
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"Open the file with the given name. The filename in the config will be "
+"ignored."
+msgstr ""
+"Открыть файл с указанным именем. Имя файла в конфигурации игнорируется."
+
+#: src/Main.qml:16
+#, kde-format
+msgid "KomoDo"
+msgstr "KomoDo"
+
+#: src/plasmoid/config.qml:9
+#, kde-format
+msgctxt "@title:tab Configuration category"
+msgid "General"
+msgstr "Общие"
+
+#: src/plasmoid/configGeneral.qml:24
+#, kde-format
+msgctxt "@option:check"
+msgid "Show number of incomplete tasks when on a panel"
+msgstr "Показывать количество незавершённых задач при размещении на панели"
+
+#: src/plasmoid/configGeneral.qml:28
+#, kde-format
+msgctxt "@info:tooltip Near the 'show badge' checkbox"
+msgid "Tasks which are hidden by the search filter are not counted."
+msgstr "Задачи, скрытые фильтром поиска, не учитываются."
+
+#: src/plasmoid/configGeneral.qml:33
+#, kde-format
+msgctxt "@label"
+msgid "File path:"
+msgstr "Путь к файлу:"
+
+#: src/plasmoid/configGeneral.qml:39
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Path to To-Do list…"
+msgstr "Путь к списку задач…"
+
+#: src/plasmoid/configGeneral.qml:47
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose To-Do list…"
+msgstr "Выбрать список задач…"
+
+#: src/plasmoid/configGeneral.qml:57
+#, kde-format
+msgctxt "@label:filedialog"
+msgid "Choose a To-Do list"
+msgstr "Выберите список задач"
+
+#: src/plasmoid/configGeneral.qml:58 src/plasmoid/FullRepresentation.qml:96
+#, kde-format
+msgctxt "Filename filter"
+msgid "Text files (*.txt)"
+msgstr "Текстовые файлы (*.txt)"
+
+#: src/plasmoid/configGeneral.qml:73
+#, kde-format
+msgctxt "@label:group, followed by 'show' or 'hide, use ... instead'"
+msgid "Search bar:"
+msgstr "Панель поиска:"
+
+#: src/plasmoid/configGeneral.qml:74
+#, kde-format
+msgctxt "@option:check, show search bar, following 'search bar'"
+msgid "Show"
+msgstr "Показывать"
+
+#: src/plasmoid/configGeneral.qml:81
+#, kde-format
+msgctxt "@option:check, hide search bar, following 'search bar'"
+msgid "Hide, use these values instead:"
+msgstr "Скрывать, вместо этого использовать значения:"
+
+#: src/plasmoid/configGeneral.qml:97
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search term…"
+msgstr "Поисковый запрос…"
+
+#: src/plasmoid/configGeneral.qml:117 src/plasmoid/FullRepresentation.qml:61
+#, kde-format
+msgctxt "@item:inmenu Secondary filter, show all tasks"
+msgid "Show All"
+msgstr "Показать все"
+
+#: src/plasmoid/configGeneral.qml:121 src/plasmoid/FullRepresentation.qml:65
+#, kde-format
+msgctxt "@item:inmenu Secondary filter, show tasks with due date"
+msgid "Due Date"
+msgstr "Срок выполнения"
+
+#: src/plasmoid/configGeneral.qml:125 src/plasmoid/FullRepresentation.qml:69
+#, kde-format
+msgctxt "@item:inmenu Secondary filter, show incomplete tasks"
+msgid "Incomplete"
+msgstr "Незавершённые"
+
+#: src/plasmoid/configGeneral.qml:129 src/plasmoid/FullRepresentation.qml:73
+#, kde-format
+msgctxt "@item:inmenu Secondary filter, show completed tasks"
+msgid "Completed"
+msgstr "Завершённые"
+
+#: src/plasmoid/FullRepresentation.qml:120 src/TodoPage.qml:357
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No To-Dos found."
+msgstr "Задачи не найдены."
+
+#: src/plasmoid/FullRepresentation.qml:124
+#, kde-format
+msgctxt "@action:button Shown when the to-do list is empty"
+msgid "Edit in KomoDo…"
+msgstr "Изменить в KomoDo…"
+
+#: src/plasmoid/FullRepresentation.qml:133 src/TodoPage.qml:364
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Welcome to KomoDo!"
+msgstr "Добро пожаловать в KomoDo"
+
+#: src/plasmoid/FullRepresentation.qml:137 src/TodoPage.qml:239
+#, kde-format
+msgctxt "@action:button"
+msgid "Open To-Do List…"
+msgstr "Открыть список задач…"
+
+#: src/plasmoid/main.qml:25
+#, kde-format
+msgctxt "@info:tooltip title, shown on hover"
+msgid "KomoDo Tasks"
+msgstr "Задачи KomoDo"
+
+#: src/plasmoid/main.qml:26
+#, kde-format
+msgctxt "@info:tooltip description, shown on hover"
+msgid "Manage your tasks at a glance"
+msgstr "Все задачи под рукой"
+
+#: src/plasmoid/main.qml:66
+#, kde-format
+msgctxt "@action:inmenu Open the KomoDo app"
+msgid "Manage Tasks…"
+msgstr "Управление задачами…"
+
+#: src/TodoPage.qml:89
+#, kde-format
+msgid "Delete To-Do"
+msgstr "Удалить задачу"
+
+#: src/TodoPage.qml:101
+#, kde-format
+msgid "Are you sure you wish to delete this To-Do?"
+msgstr "Удалить эту задачу?"
+
+#: src/TodoPage.qml:157
+#, kde-format
+msgid "Filter:"
+msgstr "Фильтр:"
+
+#: src/TodoPage.qml:168
+#, kde-format
+msgid "Show All"
+msgstr "Показать все"
+
+#: src/TodoPage.qml:172
+#, kde-format
+msgid "Due Date"
+msgstr "Срок выполнения"
+
+#: src/TodoPage.qml:176
+#, kde-format
+msgid "Incomplete"
+msgstr "Незавершённые"
+
+#: src/TodoPage.qml:180
+#, kde-format
+msgid "Completed"
+msgstr "Завершённые"
+
+#: src/TodoPage.qml:208
+#, kde-format
+msgid ""
+"This To-Do list has been changed externally. Reloading it is strongly "
+"advised!"
+msgstr ""
+"Список задач изменён извне. Настоятельно рекомендуется загрузить его заново."
+
+#: src/TodoPage.qml:214
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr "Обновить"
+
+#: src/TodoPage.qml:226
+#, kde-format
+msgid ""
+"This To-Do list has been deleted! Open another To-Do list or create new one."
+msgstr ""
+"Этот список задач удалён. Откройте другой список задач или создайте новый."
+
+#: src/TodoPage.qml:232 src/TodoPage.qml:271
+#, kde-format
+msgctxt "@button"
+msgid "Create New To-Do List…"
+msgstr "Создать новый список задач…"
+
+#: src/TodoPage.qml:251
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New To-Do…"
+msgstr "Создать задачу…"
+
+#: src/TodoPage.qml:263
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open To-Do List…"
+msgstr "Открыть список задач…"
+
+#: src/TodoPage.qml:277
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Help…"
+msgstr "Справка…"
+
+#: src/TodoPage.qml:284
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Auto-insert creation date"
+msgstr "Автоматически вставлять дату создания"
+
+#: src/TodoPage.qml:288
+#, kde-format
+msgctxt "A checkbox for toggling this setting"
+msgid "Insert a creation date for any new task automatically"
+msgstr "Автоматически вставлять дату создания для каждой новой задачи"
+
+#: src/TodoPage.qml:296
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Auto-reload on external changes"
+msgstr "Автоматически обновлять при внешних изменениях"
+
+#: src/TodoPage.qml:300
+#, kde-format
+msgctxt "A checkbox for toggling this setting"
+msgid ""
+"Reload the to-do list automatically when it changes on disk, such as through "
+"cloud sync"
+msgstr ""
+"Автоматически обновлять список задач при изменении на диске, например при "
+"облачной синхронизации"
+
+#: src/TodoPage.qml:308
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About KomoDo"
+msgstr "О программе KomoDo"
+
+#: src/TodoPage.qml:314
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "About KDE"
+msgstr "О KDE"
+
+#: src/TodoPage.qml:365
+#, kde-format
+msgctxt "Welcome introduction text"
+msgid ""
+"<p>KomoDo is a To-Do list application that uses <a href='https://github.com/"
+"todotxt/todo.txt'>todo.txt</a> rules.</p><p>The rules are fairly quick to "
+"learn and KomoDo has help sections for it: <br>On the toolbar, click the "
+"<i><interface>Help…</interface></i> button.<br>While editing a task, click "
+"the <i><interface>Syntax Information…</interface></i> button.</p><p>You can "
+"follow the rules as much or as little as you wish.<br> Feel free to "
+"experiment to find out your ideal way of managing tasks.</p><p>Click "
+"<i><interface>Open To-Do list…</interface></i> to use an existing list or "
+"<i><interface>Create New To-Do list…</interface></i> to start a new list.</p>"
+msgstr ""
+"<p>KomoDo — приложение для работы со списками задач, использующее правила <a "
+"href='https://github.com/todotxt/todo.txt'>todo.txt</a>.</p><p>Правила "
+"осваиваются довольно быстро, и в KomoDo есть разделы справки по ним: <br>На "
+"панели инструментов нажмите кнопку <i><interface>Справка…</interface></i>."
+"<br>При редактировании задачи нажмите кнопку <i><interface>Сведения о "
+"синтаксисе…</interface></i>.</p><p>Правила можно соблюдать в большей или "
+"меньшей степени.<br> Экспериментируйте, чтобы найти идеальный для себя "
+"способ управления задачами.</p><p>Чтобы использовать существующий список, "
+"нажмите <i><interface>Открыть список задач…</interface></i>, а чтобы начать "
+"новый — <i><interface>Создать новый список задач…</interface></i>.</p>"
+
+#: src/ui/TodoDelegate.qml:70
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Toggle completion status"
+msgstr "Изменить состояние выполнения"
+
+#: src/ui/TodoDelegate.qml:106
+#, kde-format
+msgid "Priority"
+msgstr "Приоритет"
+
+#: src/ui/TodoDelegate.qml:203
+#, kde-format
+msgid "Task completion date"
+msgstr "Дата завершения задачи"
+
+#: src/ui/TodoDelegate.qml:216
+#, kde-format
+msgid "Task due date"
+msgstr "Срок выполнения задачи"
+
+#: src/ui/TodoDelegate.qml:229
+#, kde-format
+msgid "Task creation date"
+msgstr "Дата создания задачи"
+
+#: src/ui/TodoDelegate.qml:246
+#, kde-format
+msgctxt "@button"
+msgid "Edit in KomoDo…"
+msgstr "Изменить в KomoDo…"
+
+#: src/ui/TodoDelegate.qml:268
+#, kde-format
+msgctxt "@button"
+msgid "Edit"
+msgstr "Изменить"
+
+#: src/ui/TodoDelegate.qml:292
+#, kde-format
+msgctxt "@button"
+msgid "Delete"
+msgstr "Удалить"
+
+#: src/ui/TodoDelegate.qml:329
+#, kde-format
+msgctxt "Placeholder text for creating new tasks"
+msgid "(A) YYYY-MM-DD Description +Project @Context key:value"
+msgstr "(A) ГГГГ-ММ-ДД Описание +Проект @Контекст ключ:значение"
+
+#: src/ui/TodoDelegate.qml:365
+#, kde-format
+msgctxt "@button"
+msgid "Insert Date…"
+msgstr "Вставить дату…"
+
+#: src/ui/TodoDelegate.qml:367
+#, kde-format
+msgid "Open a date picker and insert it at cursor position"
+msgstr "Открыть выбор даты и вставить её в позицию курсора"
+
+#: src/ui/TodoDelegate.qml:379
+#, kde-format
+msgid "Syntax Information"
+msgstr "Сведения о синтаксисе"
+
+#: src/ui/TodoDelegate.qml:384
+#, kde-format
+msgctxt "Syntax quick guide"
+msgid ""
+"<p>Order of items matters:</p><pre>Completion Priority Creation-Date "
+"Description</pre><ul><li>x : Completion status. Remove to set task "
+"incompleted.</li><li>(A) : Priority. Can be from A to Z. Optional.</"
+"li><li>Completion Date: Date in Year-Month-Day format. Add only if there is "
+"creation date and task is completed.</li><li>Creation date: Date in Year-"
+"Month-Day format. Optional, but recommended.</li><li>Description: General "
+"task description. Mandatory.<ul><li>+Project: Projects this task is relevant "
+"to. Optional.</li><li>@Context: In which contexts this task is relevant in. "
+"Optional.</li><li>key:value: Various key-value pairs of information. "
+"Optional.</li></ul></li></ul><p>Description, contexts, key:value-pairs and "
+"projects can be mixed with each other.</p><p>For more detailed information "
+"and examples, click on the Help button.</p><br>"
+msgstr ""
+"<p>Порядок элементов имеет значение:</p><pre>Завершение Приоритет Дата-"
+"создания Описание</pre><ul><li>x : состояние выполнения. Удалите, чтобы "
+"отметить задачу как невыполненную.</li><li>(A) : приоритет. Может быть от A "
+"до Z. Необязательно.</li><li>Дата завершения: дата в формате год-месяц-день. "
+"Добавляйте, только если указана дата создания и задача выполнена.</"
+"li><li>Дата создания: дата в формате год-месяц-день. Необязательно, но "
+"рекомендуется.</li><li>Описание: общее описание задачи. Обязательно.<ul><li>"
+"+Проект: проекты, к которым относится задача. Необязательно.</"
+"li><li>@Контекст: контексты, в которых актуальна задача. Необязательно.</"
+"li><li>ключ:значение: различные пары «ключ — значение» с информацией. "
+"Необязательно.</li></ul></li></ul><p>Описание, контексты, пары «ключ — "
+"значение» и проекты можно смешивать друг с другом.</p><p>Более подробные "
+"сведения и примеры можно получить, нажав кнопку «Справка».</p><br>"
+
+#: src/ui/TodoDelegate.qml:389
+#, kde-format
+msgid "Syntax Information…"
+msgstr "Сведения о синтаксисе…"
+
+#: src/ui/TodoDelegate.qml:397
+#, kde-format
+msgid "Show todo.txt syntax reference"
+msgstr "Показать справку по синтаксису todo.txt"
+
+#: src/ui/TodoDelegate.qml:411
+#, kde-format
+msgctxt "@button"
+msgid "Save"
+msgstr "Сохранить"
+
+#: src/ui/TodoDelegate.qml:432
+#, kde-format
+msgctxt "@button"
+msgid "Cancel"
+msgstr "Отмена"
