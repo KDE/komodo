@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: komodo\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-29 00:49+0000\n"
-"PO-Revision-Date: 2026-09-03 19:14+0300\n"
+"PO-Revision-Date: 2026-10-06 16:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -317,7 +317,7 @@ msgstr "Lisää uusiin tehtäviin automaattisesti luomispäiväyksen"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Auto-reload on external changes"
-msgstr ""
+msgstr "Virkistä ulkoisen muutoksen jälkeen automaattisesti"
 
 #: src/TodoPage.qml:300
 #, kde-format
@@ -326,6 +326,8 @@ msgid ""
 "Reload the to-do list automatically when it changes on disk, such as through "
 "cloud sync"
 msgstr ""
+"Virkistä tehtäväluettelo automaattisesti sen muututtua levyllä esim. "
+"pilvitahdistuksen vuoksi"
 
 #: src/TodoPage.qml:308
 #, kde-format
