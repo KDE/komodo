@@ -324,7 +324,7 @@
         <p xml:lang="sk">Povolené inline odkazy v štýle markdown, opravy parsovania, odstránenie neproporcionálneho písma z úloh.</p>
         <p xml:lang="sl">Dovoli vgrajene povezave v slogu markdowna, nekaj popravkov razčlenjevanja, odstrani pisavo monospace iz opravil.</p>
         <p xml:lang="sv">Tillåt länkar på plats med markdown-stil, vissa tolkningskorrigeringar, borttagning av teckensnitt med fast breddsteg från uppgifter.</p>
-        <p xml:lang="tr">Markdown tarzı satır için bağlantılara izin ver, bazı ayrıştırma düzeltmeleri, görevlerden eş aralıklı yazıtipini kaldır</p>
+        <p xml:lang="tr">Markdown tarzı satır için bağlantılara izin ver, bazı ayrıştırma düzeltmeleri, görevlerden eş aralıklı yazı tipini kaldır</p>
         <p xml:lang="uk">Уможливлено вбудовані посилання у стилі markdown, деякі виправлення обробки, вилучено моноширинний шрифт із завдань.</p>
         <p xml:lang="zh-TW">允許使用 Markdown 風格的行內連結、一些剖析修正、讓待辦事項不要用等寬字型。</p>
       </description>
